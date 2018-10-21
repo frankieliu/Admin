@@ -1,0 +1,363 @@
+# -*- mode: org -*-
+#+STARTUP: indent hidestars showall
+
+* github setting keys
+https://github.com/settings/keys
+1. ssh-keygen -t rsa -b 4096 "your_email@example.com"  -> this can be
+   the user account from one of your laptops, example adam@quack
+2. go to github/profile/personal settings/ssh and gpg keys/new ssh key
+3. copy and paste ~/.ssh/id_rsa.pub
+4. now should be able to hub clone frankieliu/Admin
+5. [using ssh-agent]:
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/id_rsa (or location of your private key)
+
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent
+
+* stanford rec
+ashtanga yoga
+https://recwell.stanford.edu/Program/GetProgramDetails?courseId=7bad575a-700c-4c18-8f94-518fce90b625&semesterId=8bb86a37-662a-4c75-a803-d9d5ec76860e
+
+facility
+https://rec.stanford.edu/facilities/aoerc/
+
+Courtesy Card, Recreating All Access Card
+https://cardinalatwork.stanford.edu/benefits-rewards/sweeteners/courtesy-recreation-id-cards
+
+requirements to bring with you
+marriage license and birth certificate
+https://uit.stanford.edu/service/campuscard/courtesycard
+
+policy
+https://adminguide.stanford.edu/chapter-2/subchapter-4/policy-2-4-3
+https://rec.stanford.edu/facility-access/affiliates/
+
+Tressider
+https://uit.stanford.edu/service/campuscard
+
+* farmshare
+** change shell
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FAQ#How_do_I_change_my_shell.3F
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FAQ#How_do_I_change_my_shell.3F
+
+** slurm longer time
+While the maximum runtime for jobs is 2 days (unless you are
+submitting a job using the long quality-of-service), the default
+runtime is 2 hours. If your job requires more time to run you must
+request the additional time explicitly, using --time. You can also
+request less time than the default.
+
+** cluster description
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FarmShare_2#Remote_display
+
+rice 1 core 8 gb
+
+For more excess of limits use:
+srun --pty --qos=interactive $SHELL -l
+srun --pty --partition=gpu --gres=gpu:1 --qos=interactive $SHELL -l
+srun --pty --partition=bigmem --mem=96G --qos=interactive $SHELL -l
+
+wheat
+10 nodes with 16 cores and 128GB mem
+2 large-mem nodes with 16 cores and 768GB mem
+srun --partition=bigmem --qos=bigmem --mem=96G
+sbatch --partition=bigmem --qos=bigmem --mem=96G
+
+oat
+10 nodes with 16 cores 128GB mem, one Tesla K40 GPU
+srun --partition=gpu --qos=gpu --gres=gpu:1
+sbatch --partition=gpu --qos=gpu --gres=gpu:1
+
+--partitions: normal bigmem gpu
+
+** time limits
+--qos: normal (2days max) long (7days max) interactive (1day max)
+
+** quotas
+Per use quote 48GB
+only rice can access /afs
+Use /farmshare/user_data for scratch
+
+* slurm summary
+https://slurm.schedmd.com/pdfs/summary.pdf
+srun  --mem=<MB> -N<minnodes> --partition=<names> --qos=<name>
+--time=<time>
+sacct --accounts=frankieliu --en
+scancel  # cancel jobs
+squeue --users=frankliu
+sinfo --long
+
+* gentlemen of vision
+gentlemen of vision bay area
+https://www.youtube.com/watch?v=OFb0EUIkYac
+https://www.youtube.com/watch?v=THJ2YEvRgkM
+http://victorsho.com/#!/?page_id=42
+
+* prevent ssh from closing during forward
+ssh -N -L 5903:localhost:5901 frankliu@wheat09.stanford.edu
+
+-N : don't run a command, i.e. stays connected without having to run a
+command useful during port forwarding
+
+https://serverfault.com/questions/598210/prevent-closing-of-ssh-local-port-forwarding
+Some advocate autossh - don't know what this really is
+
+* slurm run interactive shell
+srun --qos=interactive --time=02:00:00 --pty bash -i
+
+* web programming fundamentals
+cs193x
+https://web.stanford.edu/class/cs193x/lectures/
+
+* stanford online resources 
+install this chrome plugin
+https://chrome.google.com/webstore/detail/library-access/hghakoefmnkhamdhenpbogkeopjlkpoa/related
+
+* naxos library
+https://stanford-naxosmusiclibrary-com.stanford.idm.oclc.org/catalogue/item.asp?cid=MELCD1001348
+
+* cgi
+https://www.tcl.tk/man/aolserver3.0/cgi-ch1.htm
+** stanford
+https://tools.stanford.edu/cgi-bin/cgi-request
+** instruction
+https://uit.stanford.edu/service/cgi
+
+* afs stanford
+https://uit.stanford.edu/software/afs/download
+requires openafs in windows and macs for ubuntu see separate instructions
+** kerberos
+https://uit.stanford.edu/service/kerberos/install_debian
+This might be a little old? (2014)
+Too many steps...
+** afs for mac or windows
+https://web.stanford.edu/service/afs/intro/mounting.html
+** webafs
+https://web.stanford.edu/service/afs/webafs/userguide/index.html
+** afs for beginners
+https://web.stanford.edu/service/afs/intro/index.html
+
+* linuxbrew
+frankliu@rice12:/afs/ir.stanford.edu/users/f/r/frankliu/cgi-bin$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+==> Select the Linuxbrew installation directory
+- Enter your password to install to /home/linuxbrew/.linuxbrew (recommended)
+- Press Control-D to install to /home/frankliu/.linuxbrew
+- Press Control-C to cancel installation
+Sorry, user frankliu may not run sudo on rice12.stanford.edu.
+==> This script will install:
+/home/frankliu/.linuxbrew/bin/brew
+/home/frankliu/.linuxbrew/share/doc/homebrew
+/home/frankliu/.linuxbrew/share/man/man1/brew.1
+/home/frankliu/.linuxbrew/share/zsh/site-functions/_brew
+/home/frankliu/.linuxbrew/etc/bash_completion.d/brew
+/home/frankliu/.cache/Homebrew/
+/home/frankliu/.linuxbrew/Homebrew
+==> The following new directories will be created:
+/home/frankliu/.linuxbrew/bin
+/home/frankliu/.linuxbrew/etc
+/home/frankliu/.linuxbrew/include
+/home/frankliu/.linuxbrew/lib
+/home/frankliu/.linuxbrew/sbin
+/home/frankliu/.linuxbrew/share
+/home/frankliu/.linuxbrew/var
+/home/frankliu/.linuxbrew/opt
+/home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions
+/home/frankliu/.linuxbrew/Cellar
+/home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew
+/home/frankliu/.linuxbrew/Frameworks
+
+Press RETURN to continue or any other key to abort
+==> /bin/mkdir -p /home/frankliu/.linuxbrew
+==> /bin/chown frankliu:operator /home/frankliu/.linuxbrew
+==> /bin/mkdir -p /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
+==> /bin/chmod g+rwx /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
+==> /bin/chmod 755 /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions
+==> /bin/chown frankliu /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
+==> /bin/chgrp operator /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
+==> /bin/mkdir -p /home/frankliu/.cache/Homebrew
+==> Downloading and installing Linuxbrew...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 122304 (delta 0), reused 2 (delta 0), pack-reused 122297
+Receiving objects: 100% (122304/122304), 27.74 MiB | 25.46 MiB/s, done.
+Resolving deltas: 100% (89729/89729), done.
+From https://github.com/Linuxbrew/brew
+ * [new branch]      master     -> origin/master
+ * [new tag]         1.0.0      -> 1.0.0
+ * [new tag]         1.0.1      -> 1.0.1
+ * [new tag]         1.0.2      -> 1.0.2
+ * [new tag]         1.0.3      -> 1.0.3
+ * [new tag]         1.0.4      -> 1.0.4
+ * [new tag]         1.0.5      -> 1.0.5
+ * [new tag]         1.0.6      -> 1.0.6
+ * [new tag]         1.0.7      -> 1.0.7
+ * [new tag]         1.0.8      -> 1.0.8
+ * [new tag]         1.0.9      -> 1.0.9
+ * [new tag]         1.1.0      -> 1.1.0
+ * [new tag]         1.1.0.1    -> 1.1.0.1
+ * [new tag]         1.1.1      -> 1.1.1
+ * [new tag]         1.1.10     -> 1.1.10
+ * [new tag]         1.1.11     -> 1.1.11
+ * [new tag]         1.1.12     -> 1.1.12
+ * [new tag]         1.1.13     -> 1.1.13
+ * [new tag]         1.1.2      -> 1.1.2
+ * [new tag]         1.1.2.1    -> 1.1.2.1
+ * [new tag]         1.1.3      -> 1.1.3
+ * [new tag]         1.1.4      -> 1.1.4
+ * [new tag]         1.1.5      -> 1.1.5
+ * [new tag]         1.1.6      -> 1.1.6
+ * [new tag]         1.1.7      -> 1.1.7
+ * [new tag]         1.1.8      -> 1.1.8
+ * [new tag]         1.1.9      -> 1.1.9
+ * [new tag]         1.2.0      -> 1.2.0
+ * [new tag]         1.2.1      -> 1.2.1
+ * [new tag]         1.2.2      -> 1.2.2
+ * [new tag]         1.2.3      -> 1.2.3
+ * [new tag]         1.2.4      -> 1.2.4
+ * [new tag]         1.2.5      -> 1.2.5
+ * [new tag]         1.2.6      -> 1.2.6
+ * [new tag]         1.2.7      -> 1.2.7
+ * [new tag]         1.2.8      -> 1.2.8
+ * [new tag]         1.3.0      -> 1.3.0
+ * [new tag]         1.3.1      -> 1.3.1
+ * [new tag]         1.3.2      -> 1.3.2
+ * [new tag]         1.3.3      -> 1.3.3
+ * [new tag]         1.3.4      -> 1.3.4
+ * [new tag]         1.3.5      -> 1.3.5
+ * [new tag]         1.3.6      -> 1.3.6
+ * [new tag]         1.3.7      -> 1.3.7
+ * [new tag]         1.3.8      -> 1.3.8
+ * [new tag]         1.3.9      -> 1.3.9
+ * [new tag]         1.4.0      -> 1.4.0
+ * [new tag]         1.4.1      -> 1.4.1
+ * [new tag]         1.4.2      -> 1.4.2
+ * [new tag]         1.4.3      -> 1.4.3
+ * [new tag]         1.5.0      -> 1.5.0
+ * [new tag]         1.5.1      -> 1.5.1
+ * [new tag]         1.5.10     -> 1.5.10
+ * [new tag]         1.5.11     -> 1.5.11
+ * [new tag]         1.5.12     -> 1.5.12
+ * [new tag]         1.5.13     -> 1.5.13
+ * [new tag]         1.5.14     -> 1.5.14
+ * [new tag]         1.5.2      -> 1.5.2
+ * [new tag]         1.5.3      -> 1.5.3
+ * [new tag]         1.5.4      -> 1.5.4
+ * [new tag]         1.5.5      -> 1.5.5
+ * [new tag]         1.5.6      -> 1.5.6
+ * [new tag]         1.5.7      -> 1.5.7
+ * [new tag]         1.5.8      -> 1.5.8
+ * [new tag]         1.5.9      -> 1.5.9
+ * [new tag]         1.6.0      -> 1.6.0
+ * [new tag]         1.6.1      -> 1.6.1
+ * [new tag]         1.6.10     -> 1.6.10
+ * [new tag]         1.6.11     -> 1.6.11
+ * [new tag]         1.6.12     -> 1.6.12
+ * [new tag]         1.6.13     -> 1.6.13
+ * [new tag]         1.6.14     -> 1.6.14
+ * [new tag]         1.6.15     -> 1.6.15
+ * [new tag]         1.6.16     -> 1.6.16
+ * [new tag]         1.6.17     -> 1.6.17
+ * [new tag]         1.6.2      -> 1.6.2
+ * [new tag]         1.6.3      -> 1.6.3
+ * [new tag]         1.6.4      -> 1.6.4
+ * [new tag]         1.6.5      -> 1.6.5
+ * [new tag]         1.6.6      -> 1.6.6
+ * [new tag]         1.6.7      -> 1.6.7
+ * [new tag]         1.6.8      -> 1.6.8
+ * [new tag]         1.6.9      -> 1.6.9
+ * [new tag]         1.7.0      -> 1.7.0
+ * [new tag]         1.7.1      -> 1.7.1
+ * [new tag]         1.7.2      -> 1.7.2
+ * [new tag]         1.7.3      -> 1.7.3
+ * [new tag]         1.7.4      -> 1.7.4
+ * [new tag]         1.7.5      -> 1.7.5
+ * [new tag]         1.7.6      -> 1.7.6
+ * [new tag]         1.7.7      -> 1.7.7
+Checking out files: 100% (1472/1472), done.
+HEAD is now at 7655407 .github/move.yml: Fix for Linuxbrew
+==> Downloading https://linuxbrew.bintray.com/bottles-portable-ruby/portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz
+==> Linuxbrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Linuxbrew/brew#donations
+==> Tapping homebrew/core
+Cloning into '/home/frankliu/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core'...
+remote: Enumerating objects: 4897, done.
+remote: Counting objects: 100% (4897/4897), done.
+remote: Compressing objects: 100% (4693/4693), done.
+remote: Total 4897 (delta 50), reused 329 (delta 12), pack-reused 0
+Receiving objects: 100% (4897/4897), 4.26 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (50/50), done.
+Checking connectivity... done.
+Checking out files: 100% (4913/4913), done.
+Tapped 3 commands and 4678 formulae (4,936 files, 13.2MB).
+Already up-to-date.
+==> Installation successful!
+
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics.html
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+==> Next steps:
+- Install the Linuxbrew dependencies if you have sudo access:
+  Debian, Ubuntu, etc.
+    sudo apt-get install build-essential
+  Fedora, Red Hat, CentOS, etc.
+    sudo yum groupinstall 'Development Tools'
+  See http://linuxbrew.sh/#dependencies for more information.
+- Add Linuxbrew to your ~/.profile by running
+    echo 'export PATH="/home/frankliu/.linuxbrew/bin:$PATH"' >>~/.profile
+    echo 'export MANPATH="/home/frankliu/.linuxbrew/share/man:$MANPATH"' >>~/.profile
+    echo 'export INFOPATH="/home/frankliu/.linuxbrew/share/info:$INFOPATH"' >>~/.profile
+- Add Linuxbrew to your PATH
+    PATH="/home/frankliu/.linuxbrew/bin:$PATH"
+- We recommend that you install GCC by running:
+    brew install gcc
+- After modifying your shell profile, you may need to restart your session
+  (logout and then log back in) if the brew command isn't found.
+- Run `brew help` to get started
+- Further documentation: 
+    https://docs.brew.sh
+Warning: /home/frankliu/.linuxbrew/bin is not in your PATH.
+
+* snap without sudo
+https://ubuntu-mate.community/t/snap-without-sudo/15473
+snap login
+snap install rg (ripgrep)
+
+* print python verion
+https://stackoverflow.com/questions/1252163/printing-python-version-in-output
+import sys
+print(sys.version)
+
+import platform
+platform.python_version()
+
+* every nth row excel
+=offset($A$2,(ROW()-2)*1,0)    : every other row 2,4,6,8, ....
+=offset($A$23,(ROW()-23)*2,0)  : every third row 23,26,29, ....
+
+* react and flask
+https://realpython.com/the-ultimate-flask-front-end/
+https://realpython.com/the-ultimate-flask-front-end-part-2/
+
+These don't really explain how flask is being used but it does have
+a simple react application.
+
+* vue and django and rabbitmq
+https://danidee10.github.io/blog/
+
+* django and cgi 
+https://gist.github.com/philchristensen/5845530
+https://docs.djangoproject.com/en/1.8/howto/deployment/fastcgi/
+
+* let's see if fastcgi works
+http://flask.pocoo.org/docs/0.12/deploying/fastcgi/
+
+* full stack react
+https://codeburst.io/creating-a-full-stack-web-application-with-python-npm-webpack-and-react-8925800503d9
