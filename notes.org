@@ -1,4 +1,4 @@
-# -*- mode: org -*-
+﻿# -*- mode: org -*-
 #+STARTUP: indent hidestars showall
 
 * github setting keys
@@ -361,3 +361,273 @@ http://flask.pocoo.org/docs/0.12/deploying/fastcgi/
 
 * full stack react
 https://codeburst.io/creating-a-full-stack-web-application-with-python-npm-webpack-and-react-8925800503d9
+
+* stanford geo
+** shared folder
+https://app.box.com/folder/14552064708
+** RIA
+http://www.guillaumelobet.be/RIA/
+** morphology TPS thin plate spline
+https://en.wikipedia.org/wiki/Geometric_morphometrics_in_anthropology
+http://www.dg1an3.net/2015/03/warptps.html
+** eucledian distance measurement
+https://www.youtube.com/watch?v=zGPmrRCnF6Y
+
+* latex proper subset 
+https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+
+* basic probability
+https://www.youtube.com/watch?v=Y8EOkJ75elM
+
+* what does independence look like on venn diagram
+https://www.youtube.com/watch?v=pV3nZAsJxl0
+https://www.ck12.org/book/CK-12-Algebra-II-with-Trigonometry/section/12.5/
+
+* user guide afs storage and ssh fundamental slurm
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/User_Guide#Storage
+https://slurm.schedmd.com/quickstart.html
+https://srcc.stanford.edu/services-systems-overview
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/Main_Page#Software
+
+* singularity
+https://singularity.lbl.gov/docs-docker
+http://singularity.lbl.gov/install-request
+
+flow of singularity
+http://singularity.lbl.gov/docs-flow
+
+build images from scratch
+http://singularity.lbl.gov/quickstart#build-images-from-scratch
+http://singularity.lbl.gov/archive/docs/v2-2/create-image
+
+mounting
+http://singularity.lbl.gov/archive/docs/v2-2/docs-mount
+
+hub - where images are located
+https://www.singularity-hub.org/collections/1819
+
+manual build
+https://github.com/singularityhub/singularityhub.github.io/wiki/Manual-Build
+
+build a container
+https://github.com/singularityhub/singularityhub.github.io/wiki/Build-A-Container
+
+my singularity repo - don't change it
+https://github.com/frankieliu/singularity
+
+company behind singularity
+https://www.sylabs.io/singularity/
+
+faq on singularity
+http://singularity.lbl.gov/faq
+http://singularity.lbl.gov/faq
+
+forum on singularity
+https://groups.google.com/a/lbl.gov/forum/#!forum/singularity
+
+web browser in singularity
+https://groups.google.com/a/lbl.gov/forum/#!topic/singularity/rtGSOf8Q0Iw
+
+example singularity script with firefox
+https://github.com/vsoch/singularity-butterfly/blob/master/Singularity
+
+sample singularity with emacs vim python stuff
+http://singularity-hub.org/containers/3790
+
+sample docker with tensorflow
+https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/Dockerfile
+
+* gsuite
+https://uit.stanford.edu/service/gsuite/login
+Webmail (GSB faculty, staff, and students, and some undergraduate students): webmail.stanford.edu
+Calendar (GSB faculty, staff, and students, and some undergraduate students): webcal.stanford.edu
+Drive: webdocs.stanford.edu
+
+** creating sites
+https://gsuite.google.com/learning-center/products/sites/get-started/#!/
+** deploy web apps and add them to your url
+https://developers.google.com/apps-script/guides/web
+
+* ipython notebooks in google cloud
+https://colab.research.google.com/notebooks/welcome.ipynb#recent=true
+
+* ubuntu list all installed packages
+sudo apt list --installed
+sudo dpkg -l
+https://www.rosehosting.com/blog/list-all-installed-packages-with-apt-on-ubuntu/
+
+manually installed packages
+Using apt-mark and aptitude
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+https://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
+
+* unpack deb standalone apps
+https://unix.stackexchange.com/questions/138188/easily-unpack-deb-edit-postinst-and-repack-deb
+mkdir tmp
+dpkg-deb -R original.deb tmp
+dpkg-deb -b tmp fixed.deb
+
+fakeroot might be needed
+
+* installing google-chrome
+download the deb
+dpkg-deb -r <package>.deb <location>
+https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-16-04-lts
+https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en
+https://www.google.com/chrome/
+
+* firefox download
+https://www.mozilla.org/en-US/firefox/download/thanks/
+https://ftp.mozilla.org/pub/firefox/releases/63.0b9/linux-x86_64/en-US/
+
+* ubuntu docker repository 
+https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=ubuntu+18&starCount=0
+** x11-apps in docker
+https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/25280523#25280523
+
+** docker with visual code, dotnet cli, npm, emacs, firefox and more
+https://github.com/cmiles74/docker-vscode
+
+** guis in docker
+http://wiki.ros.org/docker/Tutorials/GUI
+
+* stanford webauth and user authentication
+https://uit.stanford.edu/service/web/centralhosting/howto_user
+https://uit.stanford.edu/service/web/centralhosting/userauth
+
+SAML 2.0
+https://uit.stanford.edu/service/saml
+
+Combine node.js sso with shibboleth saml identify provider
+https://wiki.library.ucsf.edu/pages/viewpage.action?pageId=361762610
+
+* lamp vs mean replacing apache with node.js
+https://stackoverflow.com/questions/5346055/can-i-replace-apache-with-node-js
+run apache in proxy mode to serve dynamic pages with node and
+static pages with apache
+
+https://blog.cloudboost.io/get-apache-and-node-working-together-on-the-same-domain-with-javascript-ajax-requests-39db51959b79
+apache and node working together
+
+* web design stanford
+https://uit.stanford.edu/guide/website
+https://uit.stanford.edu/guide/website/personal
+https://uit.stanford.edu/service/web/design
+
+Web App Toolkit - database
+https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Stanford_Web_Application_Toolkit
+
+Wiki services
+https://opensource.stanford.edu/topics/web-development
+https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/How_to_get_your_first_PHP_script_running_at_Stanford
+https://tools.stanford.edu/cgi-bin/cgi-request
+https://uit.stanford.edu/service/cgi/personal
+https://web.stanford.edu/~frankliu/cgi-bin/lsbin.sh
+https://web.stanford.edu/~frankliu/cgi-bin/deploy.fcgi/slasfd
+https://uit.stanford.edu/service/cgi
+
+Debugging
+https://uit.stanford.edu/service/cgi/debugging
+https://uit.stanford.edu/service/cgi/debugging
+
+CGI scripts
+https://uit.stanford.edu/service/cgi/scripts
+
+CGI service
+https://uit.stanford.edu/service/cgi
+
+Php cookbook
+http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/PHP_Cookbook
+
+Cgi faq
+https://uit.stanford.edu/service/cgi/faq
+https://uit.stanford.edu/service/cgi/faq
+
+Example CGI scripts
+https://uit.stanford.edu/service/cgi/scripts
+https://tools.stanford.edu/sumysql
+
+Infrastructure tools
+https://tools.stanford.edu/
+https://tools.stanford.edu/cgi-bin/cgi-request
+
+Web resources
+https://uit.stanford.edu/service/web
+
+http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Main_Page
+http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Stanford_Web_Application_Toolkit
+
+
+https://stanford.service-now.com/services?id=get_help
+https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Special:Statistics
+https://stanford.service-now.com/services?id=get_help
+
+
+* f
+http://flask.pocoo.org/
+chrome://newtab/
+https://cloud.google.com/nodejs/docs/setup
+https://web.stanford.edu/~frankliu/cgi-bin/lsbin.sh
+https://gist.github.com/isaacs/579814
+chrome://newtab/
+http://linuxbrew.sh/
+https://opensource.com/article/18/7/evolution-package-managers
+https://unix.stackexchange.com/questions/5535/non-root-package-managers
+https://rundong.wordpress.com/2013/10/18/pkgsrc-my-favorite-non-root-package-manager-on-linux/
+https://blog.teamtreehouse.com/install-node-js-npm-linux
+https://srcc.stanford.edu/farmshare2/connecting
+https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/
+http://www.cgi-node.org/
+https://nodejs.org/download/
+http://www.cgi-node.org/downloads
+https://stackoverflow.com/questions/5248769/node-js-webserver-with-cgi-support-open-source
+https://stackoverflow.com/questions/9831594/apache-and-node-js-on-the-same-server
+https://stackoverflow.com/questions/32605232/how-to-deploy-nodejs-app-on-php-apache-server
+https://atticuswhite.com/blog/apache-serving-nodejs/
+https://www.quora.com/When-using-node-js-do-you-still-need-Nginx-or-Apache
+https://web.stanford.edu/~frankliu/cgi-bin/phpinfo.php
+https://www.youtube.com/watch?v=Te7HcRhwOI4
+https://stackoverflow.com/questions/31870244/apache-webserver-and-flask-app
+http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04
+https://www.embedthis.com/blog/posts/stop-using-cgi/stop-using-cgi.html
+https://blog.appdynamics.com/engineering/an-introduction-to-python-wsgi-servers-part-1/
+https://unix.stackexchange.com/questions/184877/how-to-list-all-loadable-kernel-modules
+https://web.stanford.edu/~frankliu/cgi-bin/hello.py
+https://superuser.com/questions/284898/how-to-check-which-apache-modules-are-enabled-installed
+https://modwsgi.readthedocs.io/en/develop/user-guides/quick-installation-guide.html
+https://cs.stanford.edu/computing-guide/web-pages
+http://www.cgi-node.org/docs
+https://www.google.com/search?ei=SRLMW4qgNKG90PEPj4ilsAI&q=how+to+pass+variables+to+python+cgi&oq=how+to+pass+variables+to+python+cgi&gs_l=psy-ab.3..33i22i29i30.15702.22871..23529...3.0..1.237.2677.37j0j1......0....1..gws-wiz.......0j0i71j35i39j0i67j0i131j0i20i263j35i304i39j0i13j0i22i30.Ei_8gCAXy_8
+https://stackoverflow.com/questions/7687490/how-to-pass-variable-to-a-python-cgi-script
+https://stackoverflow.com/questions/18669024/passing-variable-with-python-cgi
+https://stackoverflow.com/questions/3582398/getting-http-get-arguments-in-python
+https://stackoverflow.com/questions/5822280/passing-parameters-to-a-cgi-program-using-the-url-python
+https://docs.python.org/2/library/cgi.html
+https://github.com/agordon/cgi-tools
+https://tedboy.github.io/flask/quickstart/quickstart1.html
+
+
+* virtual env in python script and apache
+https://stackoverflow.com/questions/27695501/use-virtualenv-in-python-script
+
+Better way than virtualenv
+http://benjamincongdon.me/blog/2017/02/19/A-Better-Way-to-Wrangle-Python-Environments/
+
+* running virtual env python flask + apache
+https://homes.cs.washington.edu/~yjzhang/notes/python_web.html
+Tells me to point browser to the
+[address]/url/to/app/app.cgi/.
+
+* Deploy
+https://web.stanford.edu/~frankliu/cgi-bin/deploy.cgi/wss
+
+* Flask by example
+https://realpython.com/flask-by-example-part-1-project-setup/
+
+https://danidee10.github.io/blog/
+
+* Fast CGI and flask
+http://flask.pocoo.org/docs/0.12/deploying/fastcgi/
+https://www.google.com/search?q=executables+anaconda&oq=executables+anaconda&aqs=chrome..69i57.6750j0j7&sourceid=chrome&ie=UTF-8
