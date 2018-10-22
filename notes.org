@@ -557,57 +557,142 @@ https://uit.stanford.edu/service/web
 
 http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Main_Page
 http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Stanford_Web_Application_Toolkit
-
-
-https://stanford.service-now.com/services?id=get_help
 https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Special:Statistics
+
+https://stanford.service-now.com/services?id=get_help
 https://stanford.service-now.com/services?id=get_help
 
-
-* f
+* flask setup
 http://flask.pocoo.org/
-chrome://newtab/
+
+* node in google cloud
 https://cloud.google.com/nodejs/docs/setup
+https://cloud.google.com/free/docs/always-free-usage-limits
+https://cloud.google.com/appengine/pricing
+https://cloud.google.com/community/tutorials/run-expressjs-on-google-app-engine
+https://cloud.google.com/nodejs/getting-started/hello-world
+
+* my web page
 https://web.stanford.edu/~frankliu/cgi-bin/lsbin.sh
+
+* node-and-npm-in-30-seconds.sh
 https://gist.github.com/isaacs/579814
-chrome://newtab/
+
+* package managers
 http://linuxbrew.sh/
 https://opensource.com/article/18/7/evolution-package-managers
 https://unix.stackexchange.com/questions/5535/non-root-package-managers
+
+* using pkgsrc
 https://rundong.wordpress.com/2013/10/18/pkgsrc-my-favorite-non-root-package-manager-on-linux/
+
+* install node js with homebrew!!
 https://blog.teamtreehouse.com/install-node-js-npm-linux
+
+* farmshare connections
 https://srcc.stanford.edu/farmshare2/connecting
+
+* undertand full stack nice diagrams *good* react node express
 https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/
+
+* cgi and node
 http://www.cgi-node.org/
-https://nodejs.org/download/
 http://www.cgi-node.org/downloads
+https://nodejs.org/download/
+
+* node.js cgi-node
+basically runs javascript, should have fastcgi though
 https://stackoverflow.com/questions/5248769/node-js-webserver-with-cgi-support-open-source
-https://stackoverflow.com/questions/9831594/apache-and-node-js-on-the-same-server
+
+* great forum discussion on cgi-node
+https://news.ycombinator.com/item?id=8835564
+
+* express js over fastcgi-node
+https://stackoverflow.com/questions/23777920/use-expressjs-app-via-fastcgi 
+
+* apache proxy for node.js server
 https://stackoverflow.com/questions/32605232/how-to-deploy-nodejs-app-on-php-apache-server
+<VirtualHost example.com:*>
+    ProxyPreserveHost On
+
+    ProxyPass /api http://localhost:3000/
+    ProxyPassReverse /api http://localhost:3000/
+
+    ServerName localhost
+</VirtualHost>
+
+https://stackoverflow.com/questions/9831594/apache-and-node-js-on-the-same-server
+Also has information about adding mod_proxy for apache
+ProxyPass is great if you can fire up your own node.js webserver
+
+* not useful since not using a proxy, only useful for local serving
 https://atticuswhite.com/blog/apache-serving-nodejs/
+
+* node.js vs nginx and apache
 https://www.quora.com/When-using-node-js-do-you-still-need-Nginx-or-Apache
+
+* sample php cgi
 https://web.stanford.edu/~frankliu/cgi-bin/phpinfo.php
+
+* telegram bot with node.js
 https://www.youtube.com/watch?v=Te7HcRhwOI4
+
+* apache and flask
 https://stackoverflow.com/questions/31870244/apache-webserver-and-flask-app
 http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/
+
+* setting up lamp server from scratch! *good*
 https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04
+
+* alternatives to cgi and why cgi is bad
 https://www.embedthis.com/blog/posts/stop-using-cgi/stop-using-cgi.html
+
+* python wsgi servers *good*
+has some great history about wsgi in general
 https://blog.appdynamics.com/engineering/an-introduction-to-python-wsgi-servers-part-1/
+
+* kernel modules
 https://unix.stackexchange.com/questions/184877/how-to-list-all-loadable-kernel-modules
-https://web.stanford.edu/~frankliu/cgi-bin/hello.py
+find /lib/modules/$(uname -r) -type f -name '*.ko'
+find /lib/modules/$(uname -r) -type f -name '*.ko*'
+ls /proc/modules
+lsmod
+
+* List apache modules
 https://superuser.com/questions/284898/how-to-check-which-apache-modules-are-enabled-installed
+apachectl -t -D DUMP_MODULES  # must be root
+a2query -m
+curl http://localhost/server-info
+ls /etc/apache2/mods-enabled/
+ls /etc/apache2/mods-available/
+
+* hello world cgi python
+https://web.stanford.edu/~frankliu/cgi-bin/hello.py
+
+* mod_wsgi (web server gateway interface) apache and python
 https://modwsgi.readthedocs.io/en/develop/user-guides/quick-installation-guide.html
+
+* stanford webauth apache basicauth
+limiting access
 https://cs.stanford.edu/computing-guide/web-pages
+
+* cgi-node
 http://www.cgi-node.org/docs
+
+
+* passing variable to python cgi script
 https://www.google.com/search?ei=SRLMW4qgNKG90PEPj4ilsAI&q=how+to+pass+variables+to+python+cgi&oq=how+to+pass+variables+to+python+cgi&gs_l=psy-ab.3..33i22i29i30.15702.22871..23529...3.0..1.237.2677.37j0j1......0....1..gws-wiz.......0j0i71j35i39j0i67j0i131j0i20i263j35i304i39j0i13j0i22i30.Ei_8gCAXy_8
 https://stackoverflow.com/questions/7687490/how-to-pass-variable-to-a-python-cgi-script
 https://stackoverflow.com/questions/18669024/passing-variable-with-python-cgi
 https://stackoverflow.com/questions/3582398/getting-http-get-arguments-in-python
 https://stackoverflow.com/questions/5822280/passing-parameters-to-a-cgi-program-using-the-url-python
-https://docs.python.org/2/library/cgi.html
-https://github.com/agordon/cgi-tools
-https://tedboy.github.io/flask/quickstart/quickstart1.html
 
+* python package for cgi development
+https://github.com/agordon/cgi-tools
+https://docs.python.org/2/library/cgi.html
+
+* flask quickstart minimal
+https://tedboy.github.io/flask/quickstart/quickstart1.html
 
 * virtual env in python script and apache
 https://stackoverflow.com/questions/27695501/use-virtualenv-in-python-script
@@ -623,11 +708,17 @@ Tells me to point browser to the
 * Deploy
 https://web.stanford.edu/~frankliu/cgi-bin/deploy.cgi/wss
 
+
 * Flask by example
 https://realpython.com/flask-by-example-part-1-project-setup/
 
+* django rabbitmq vue.js flask cgi
 https://danidee10.github.io/blog/
+https://danidee10.github.io/2016/10/26/flask-by-example-6.html
 
 * Fast CGI and flask
 http://flask.pocoo.org/docs/0.12/deploying/fastcgi/
 https://www.google.com/search?q=executables+anaconda&oq=executables+anaconda&aqs=chrome..69i57.6750j0j7&sourceid=chrome&ie=UTF-8
+
+* linuxbrew chicken
+https://github.com/Linuxbrew/homebrew-core/blob/master/Formula/chicken.rb
