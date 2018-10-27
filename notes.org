@@ -722,3 +722,23 @@ https://www.google.com/search?q=executables+anaconda&oq=executables+anaconda&aqs
 
 * linuxbrew chicken
 https://github.com/Linuxbrew/homebrew-core/blob/master/Formula/chicken.rb
+
+* WSL
+Powershell (as admin)
+
+Note you need to upgrade windows 10 in order to wsl 
+
+PS C:\Users\frank\Downloads> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+PS C:\Users\frank\Downloads> Add-AppxPackage -Path ".\CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79
+rhkp1fndgsc.Appx"
+
+Accessing windows /mnt/c
+
+** Initializing 
+https://docs.microsoft.com/en-us/windows/wsl/initialize-distro
+
+** xwindows
+vcxsrv-64.1.20.1.3.installer.exe
+
+** what works in wsl
+https://blogs.msdn.microsoft.com/wsl/2017/04/11/testing-the-windows-subsystem-for-linux/
