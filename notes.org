@@ -722,3 +722,34 @@ https://www.google.com/search?q=executables+anaconda&oq=executables+anaconda&aqs
 
 * linuxbrew chicken
 https://github.com/Linuxbrew/homebrew-core/blob/master/Formula/chicken.rb
+
+* module is an alias
+               
+which module
+module: 	 aliased to eval ` $LMOD_CMD csh  !*` ; eval `$LMOD_SETTARG_CMD -s csh`
+
+* trek 2200
+http://www.roadbikereview.com/product/latest-bikes/road-bike/trek/2200.html
+DESCRIPTION
+
+Frame Material: aluminum, carbon seat stays
+Frame Angles: 73.8 head, 73.5 seat
+Sizes: 50cm, 52cm, 54cm, 56cm, 58cm, 60cm, 63cm
+Colors: Blue
+Fork: Bontrager Race Carbon
+Rear Shock: Not applicable
+Brake Levers: Shimano Ultegra STI Dual Control
+Handlebar: Bontrager Race
+Stem: Bontrager Race
+Headset: 1 1/8" threadless Cane Creek C1
+Front Der: Shimano 105
+Crankset: Shimano Ultegra, 39/53 teeth
+Rear Der: Shimano Ultegra SS
+Pedals: Shimano PD-M520 SPD
+Tires: 700 x 25c Bontrager Race Lite
+
+Most are three piece cranks 9/12 20tpi
+
+* bitcoin course
+https://www.coursera.org/learn/cryptocurrency/lecture/gFEJL/cryptographic-hash-functions
+
