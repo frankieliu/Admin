@@ -772,3 +772,117 @@ vcxsrv-64.1.20.1.3.installer.exe
 
 ** what works in wsl
 https://blogs.msdn.microsoft.com/wsl/2017/04/11/testing-the-windows-subsystem-for-linux/
+
+* Mapping network drive
+File explorer, there is a network icon on left pane or the This PC
+Right click and Map network drive
+Folder name (note you can also browse for the folder)
+\\jitter\samba
+
+* portable cygwin
+https://github.com/MachinaCore/CygwinPortable/issues/28
+
+* how to print last char of a file
+https://superuser.com/questions/252692/how-to-print-last-character-of-a-file
+
+tail -c 1 afile
+
+* python run process in background and get process id
+https://stackoverflow.com/questions/44107048/python-run-bash-command-with-redirection-in-background-and-get-the-process-id
+
+use shell=True in Popen
+
+* piping stdout and stderr popen python
+https://stackoverflow.com/questions/2331339/piping-output-of-subprocess-popen-to-files
+
+import subprocess
+with open("stdout.txt",'wb') as out, open("stderr.txt",'wb') as err:
+    subprocess.Popen("ls", stdout=out, stderr=err)
+* print string to s text file python
+https://stackoverflow.com/questions/5214578/python-print-string-to-text-file
+
+with open('afile','w') as tf:
+    tf.write('astring')
+or  print('astring', file=tf)
+
+* wb in python
+https://stackoverflow.com/questions/2665866/what-is-the-wb-mean-in-this-code-using-python
+
+writing to a file in binary mode
+
+* unicode text in text file python
+https://stackoverflow.com/questions/6048085/writing-unicode-text-to-a-text-file
+
+foo = u'....'  # some unicode stuff here
+f = open('test','w')
+f.write(foo.encode('utf8')
+f.close()
+
+f = file('test','r')
+print(f.read().decode('utf8'))
+
+* measuring time python
+https://stackoverflow.com/questions/7370801/measure-time-elapsed-in-python
+
+import time
+start = timt.time()
+print("hello")
+print(time.time() - start)
+
+* echo python
+https://stackoverflow.com/questions/17226912/why-does-simple-echo-in-subprocess-not-working
+
+import subprocess
+p = subprocess.Ppen('echo $HOME', shell=True, stdout=subprocess.PIPE)
+print p.communicate()[0];
+
+or
+subprocess.check_output(cmd, shell=True);
+
+* Passing double quote shell cmds to python
+https://stackoverflow.com/questions/14928860/passing-double-quote-shell-commands-in-python-to-subprocess-popen
+
+shell=True
+
+scritp.sh
+ffmepg -i "concat:1.ts|2.ts" -vcodec copy -acodec copy tmp.mp4
+
+import subprocess
+subprocell.call('.script.sh'; shell=True)
+
+
+* chmod in python
+https://stackoverflow.com/questions/12791997/how-do-you-do-a-simple-chmod-x-from-within-python
+import os
+import stat
+st = os.stat('afile')
+os.chmod('afile', st.st_mode | stat.S_IEXEC())
+stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+
+os.chmod("afile", 0o775)
+
+* python wait for process to terminate
+https://stackoverflow.com/questions/325463/launch-a-shell-command-with-in-a-python-script-wait-for-the-termination-and-ret
+
+import os
+os.system('ls')
+
+import os
+os.spawlp(os.P_WAIT,'ls','-l')
+
+# replaces current process
+import os
+os.exec*()
+
+import subprocess
+cmd = ['ls', '-l]
+suprocess.Popn(cmd).wait()
+
+import subporcess
+cmd = ['ls', '-l]
+p = suprocess.Popn(cmd, stdout=subporcess.PIPE)
+for line in p.stdout:
+    print(line)
+p.wait()
+print(p.returncode)
+
