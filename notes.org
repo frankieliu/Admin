@@ -772,3 +772,737 @@ vcxsrv-64.1.20.1.3.installer.exe
 
 ** what works in wsl
 https://blogs.msdn.microsoft.com/wsl/2017/04/11/testing-the-windows-subsystem-for-linux/
+
+* Mevn mongo express vue node
+https://medium.com/@anaida07/mevn-stack-application-part-1-3a27b61dcae0
+https://medium.com/@anaida07/mevn-stack-application-part-2-2-9ebcf8a22753
+https://www.packtpub.com/web-development/full-stack-web-development-vuejs-and-node
+https://codeburst.io/inside-the-book-full-stack-web-development-with-vue-js-and-node-50638d4dcc6a
+
+* Understanding how express works
+https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/
+https://www.google.com/search?q=understanding+web+server+stack&tbm=isch&source=iu&ictx=1&fir=uUsaqqiHxa7PyM%253A%252CsdQvRkCBOEHnUM%252C_&usg=AI4_-kR_uAbqFySbRtuSrDHkMbF3P7mhDA&sa=X&ved=2ahUKEwjkl4q9_aXeAhWpHzQIHemUDrUQ9QEwDXoECAMQBA#imgrc=uUsaqqiHxa7PyM:
+https://stackoverflow.com/questions/19411135/what-does-express-js-do-in-the-mean-stack
+http://evanhahn.com/understanding-express/
+
+* imagej
+https://imagej.nih.gov/ij/developer/macro/functions.html
+https://imagej.nih.gov/ij/docs/menus/analyze.html#manager
+https://imagej.nih.gov/ij/developer/api/ij/plugin/filter/EDM.html
+* eucledian distance
+https://www.google.com/search?q=euclidean+distance+map&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjR-emZ5KbeAhVvHjQIHYHnAi4Q_AUIDigB&biw=1533&bih=770#imgrc=QUJLe9J37P81sM:
+http://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/euclidean-distance.htm
+
+* google drive
+https://mail.google.com/mail/u/0/#search/sjg79%40stanford.edu/KtbxLwGrVJJzrrkSwBnHMxWfrGTSdTjxNV
+https://drive.google.com/drive/folders/0ALvoJu8CZfkLUk9PVA
+https://docs.google.com/spreadsheets/d/1K-Me9YfrVLxXZBY3E28QksIhVZDZ4S3x3K0th_cSuvI/edit#gid=1803918846
+* imagej guide
+https://imagej.nih.gov/ij/docs/guide/146-30.html
+
+* deep learning papers
+https://adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html
+https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf
+https://www.learnopencv.com/understanding-alexnet/
+https://www.quora.com/How-do-I-study-the-Deep-Learning-textbook-by-Ian-Goodfellow
+https://www.quora.com/What-is-the-most-systematic-way-to-understand-Deep-Learning-algorithms/answer/Prasoon-Goyal
+https://github.com/aymericdamien/TensorFlow-Examples
+http://www.deeplearningbook.org/contents/ml.html
+
+* unity 3d
+https://unity3d.com/machine-learning
+https://blogs.unity3d.com/2017/08/22/unity-ai-reinforcement-learning-with-q-learning/
+https://www.youtube.com/watch?v=XvbaCDvSzzY
+https://medium.mybridge.co/30-amazing-machine-learning-projects-for-the-past-year-v-2018-b853b8621ac7
+https://www.youtube.com/watch?v=bqsfkGbBU6k
+https://docs.unity3d.com/Manual/30_search.html?q=ai+agents
+https://www.amazon.com/Quick-Guide-Artificial-Intelligence-Unity-ebook/dp/B075CNMVQM
+https://unity3d.com/programming-in-unity
+
+
+* medical school cloud infrastructure
+http://med.stanford.edu/irt/infrastructure/cloud-infrastructure.html
+https://stanford.service-now.com/services?id=search&t=&portal=&titleStr=Describe%20your%20issue&q=Request%20to%20be%20part%20of%20the%20conversation%20as%20a%20single-channel%20guest%20into%20the%20IRT%20Slack%20instance%20in%20the%20%23googlecloudplatform%20channel&search=
+https://stanford.service-now.com/it_services?id=kb_article&sys_id=2f5fbdb8db7cdb004a8f75d88c96198f
+
+* stanford slack
+https://stanford.enterprise.slack.com/
+https://susciclu.slack.com/messages/C92TK7B8X/
+https://susciclu.slack.com/messages/C8CNSTB88/
+
+* google cloud genomics bigquery cloud storage
+https://www.google.com/search?q=bigquery+genomics+cloud+storage&oq=bigquery+genomics+cloud+storage&aqs=chrome..69i57.7028j0j7&sourceid=chrome&ie=UTF-8
+
+* firebase cloud firestore
+https://medium.com/@hiranya911/firebase-developing-an-app-engine-service-with-python-and-cloud-firestore-1640f92e14f4
+https://firebase.google.com/docs/firestore/rtdb-vs-firestore
+
+* free tier, console developer
+https://www.google.com/search?ei=_c3UW4qbJJK40PEPkrmS4Aw&q=google+free+tier+without+free+trial&oq=google+free+tier+without+free+trial&gs_l=psy-ab.3...6780.7506..7657...0.0..0.78.500.7......0....1..gws-wiz.......0i71.zuKgZ20KCt8
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&duration=PT1H
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&angularJsUrl=%2Fapis%2Fdashboard%3Fproject%3Dapi-project-950844133145&authuser=1&pli=1
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&angularJsUrl=%2Fapis%2Fdashboard%3Fproject%3Dapi-project-950844133145&authuser=1&pli=1
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&angularJsUrl=%2Fapis%2Fdashboard%3Fproject%3Dapi-project-950844133145&authuser=1
+https://console.developers.google.com/apis/library/compute.googleapis.com?filter=category:compute&id=a08439d8-80d6-43f1-af2e-6878251f018d&project=api-project-950844133145&authuser=1
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&duration=PT1H
+
+* sheets api
+https://console.developers.google.com/apis/library/sheets.googleapis.com?id=739c20c5-5641-41e8-a938-e55ddc082ad1&project=api-project-950844133145&authuser=1
+https://developers.google.com/sheets/api/guides/create
+https://stackoverflow.com/questions/38972452/python-google-spread-sheet-update-api-does-not-work-with-403
+https://drive.google.com/drive/u/0/folders/1mj-U1j1jpLwHOa2L35hmYnOE9mESX-V2
+https://docs.google.com/spreadsheets/d/1sBFa0BN7Q1xyhDAfa4h5KSMVlicwrxnFPn0OuZSq-rI/edit#gid=0
+
+* apps script and sheets
+https://developers.google.com/apps-script/overview
+https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id
+https://developers.google.com/apps-script/guides/sheets/functions
+https://developers.google.com/apps-script/guides/services/
+https://developers.google.com/apps-script/reference/spreadsheet/
+
+* adding ui inside sheets
+https://stackoverflow.com/questions/6876819/how-do-you-add-ui-inside-cells-in-a-google-spreadsheet-using-app-script
+https://en.support.wordpress.com/google-docs/
+
+* vue vs react
+https://deliciousbrains.com/react-vs-vue-2018/
+has good comments re vue cli - note most comments in vue's favor
+
+* vue cli
+https://forum.vuejs.org/t/migration-to-vue-cli-3-now/33404
+https://cli.vuejs.org/guide/
+
+* native vue
+https://vuido.mimec.org/usage
+https://electronjs.org/
+https://vuido.mimec.org/
+
+* pointer for functions
+ arr               // arr 
+ arr []            // is an array (so index it)
+ * arr []          // of pointers (so dereference them)
+ (* arr [])()      // to functions taking nothing (so call them with ())
+ void (* arr [])() // returning void 
+
+ so your answer is
+
+ void (* arr [])() = {};
+
+ But naturally, this is a bad practice, just use typedefs :)
+
+ Extra: Wonder how to declare an array of 3 pointers to functions
+ taking int and returning a pointer to an array of 4 pointers to
+ functions taking double and returning char? (how cool is that, huh?
+ :))
+
+ arr //arr
+ arr [3] //is an array of 3 (index it)
+ * arr [3] //pointers
+ (* arr [3])(int) //to functions taking int (call it) and
+ *(* arr [3])(int) //returning a pointer (dereference it)
+ (*(* arr [3])(int))[4] //to an array of 4
+ *(*(* arr [3])(int))[4] //pointers
+ (*(*(* arr [3])(int))[4])(double) //to functions taking double and
+ char (*(*(* arr [3])(int))[4])(double) //returning char
+
+* fullstack vue code
+https://mega.nz/#F!fVsGwJZL!e1tjZX8qwINZ3raPOEXNfQ
+
+* nice free tutorials
+https://discuss.freetutorials.us/t/wes-bos-fullstack-advanced-react-graphql-5-26-gb-download-free/31575/18
+
+* vue mode
+I use vue-html-mode, vue-mode, web-mode, js2-mode and tern (and lots
+of other things like emmet-mode, coffee-mode, projectile, rainbow-mode
+etc)
+
+I am actually using vue-html-mode, vue-mode, web-mode, js2-mode and
+tern as well but it's just coming out like a gray lumpy gravy.
+
+Here is my complete init file ... you can search the needed parts
+(it's small, but there are comment headers for each major mode so you
+can search by HTML, Javascript etc).
+
+https://pastebin.com/HqntzaVc
+
+Share
+Report
+Save
+
+* setting up emacs for javascript
+
+* google cloud
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                  Components                                                 │
+├───────────────┬──────────────────────────────────────────────────────┬──────────────────────────┬───────────┤
+│     Status    │                         Name                         │            ID            │    Size   │
+├───────────────┼──────────────────────────────────────────────────────┼──────────────────────────┼───────────┤
+│ Not Installed │ App Engine Go Extensions                             │ app-engine-go            │ 153.3 MiB │
+│ Not Installed │ Cloud Bigtable Command Line Tool                     │ cbt                      │   6.4 MiB │
+│ Not Installed │ Cloud Bigtable Emulator                              │ bigtable                 │   4.3 MiB │
+│ Not Installed │ Cloud Datalab Command Line Tool                      │ datalab                  │   < 1 MiB │
+│ Not Installed │ Cloud Datastore Emulator                             │ cloud-datastore-emulator │  17.7 MiB │
+│ Not Installed │ Cloud Datastore Emulator (Legacy)                    │ gcd-emulator             │  38.1 MiB │
+│ Not Installed │ Cloud Pub/Sub Emulator                               │ pubsub-emulator          │  33.4 MiB │
+│ Not Installed │ Cloud SQL Proxy                                      │ cloud_sql_proxy          │   3.8 MiB │
+│ Not Installed │ Emulator Reverse Proxy                               │ emulator-reverse-proxy   │  14.5 MiB │
+│ Not Installed │ Google Cloud Build Local Builder                     │ cloud-build-local        │   6.0 MiB │
+│ Not Installed │ Google Container Local Builder                       │ container-builder-local  │   4.5 MiB │
+│ Not Installed │ Google Container Registry's Docker credential helper │ docker-credential-gcr    │   1.8 MiB │
+│ Not Installed │ gcloud Alpha Commands                                │ alpha                    │   < 1 MiB │
+│ Not Installed │ gcloud Beta Commands                                 │ beta                     │   < 1 MiB │
+│ Not Installed │ gcloud app Java Extensions                           │ app-engine-java          │ 108.8 MiB │
+│ Not Installed │ gcloud app PHP Extensions                            │ app-engine-php           │           │
+│ Not Installed │ gcloud app Python Extensions                         │ app-engine-python        │   6.2 MiB │
+│ Not Installed │ gcloud app Python Extensions (Extra Libraries)       │ app-engine-python-extras │  28.5 MiB │
+│ Not Installed │ kubectl                                              │ kubectl                  │   < 1 MiB │
+│ Installed     │ BigQuery Command Line Tool                           │ bq                       │   < 1 MiB │
+│ Installed     │ Cloud SDK Core Libraries                             │ core                     │   8.7 MiB │
+│ Installed     │ Cloud Storage Command Line Tool                      │ gsutil                   │   3.5 MiB │
+└───────────────┴──────────────────────────────────────────────────────┴──────────────────────────┴───────────┘
+
+* configuring computer zone
+[gcloud config set compute/zone NAME].
+Did not print [6] options.
+Too many options [56]. Enter "list" at prompt to print choices fully.
+Please enter numeric choice or text value (must exactly match list 
+item):  11
+
+Your project default Compute Engine zone has been set to [us-west1-b].
+You can change it by running [gcloud config set compute/zone NAME].
+
+Your project default Compute Engine region has been set to [us-west1].
+You can change it by running [gcloud config set compute/region NAME].
+
+Created a default .boto configuration file at [/home/adam/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+Your Google Cloud SDK is configured and ready to use!
+
+- Commands that require authentication will use frankliu@stanford.edu by default
+- Commands will reference project `gbsc-gcp-lab-gssc` by default
+- Compute Engine commands will use region `us-west1` by default
+- Compute Engine commands will use zone `us-west1-b` by default
+
+Run `gcloud help config` to learn how to change individual settings
+
+This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+Run `gcloud topic configurations` to learn more.
+
+Some things to try next:
+
+- Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+- Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
+
+* hello world app engine
+git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
+cd nodejs-docs-samples/appengine/hello-world/flexible
+npm install
+npm start
+gcloud app deploy
+gcloud app browse
+# To view your application in the web browser run:
+# $ gcloud app browse
+
+
+* gcloud logs
+You can stream logs from the command line by running:
+$ gcloud app logs tail -s default
+
+* gcloud update
+Updates are available for some Cloud SDK components.  To install them,
+please run:
+  $ gcloud components update
+
+* nodejs docker
+https://github.com/GoogleCloudPlatform/nodejs-docker
+
+* you can specify your own runtime
+https://cloud.google.com/appengine/docs/flexible/custom-runtimes/
+https://cloud.google.com/appengine/docs/flexible/nodejs/runtime
+
+* gcloud get project name
+gcloud config list --format 'value(core.project)'
+gbsc-gcp-lab-gssc
+
+* gcloud help page
+gcloud topic formats
+
+* project nane
+export PROJECT_ID=$(gcloud config list --format '(value(core.project)')
+export PROJECT_ID=$(gcloud config get-vale project)
+Your active configuration is: [default]
+
+gcloud info | awk '/project:/ {print $2}' | tr -d '[]'
+
+* how-to
+https://cloud.google.com/appengine/docs/flexible/custom-runtimes/how-to
+buidling a custom runtime
+configuring your app
+testing and deploying your application
+debugging an instance (connecting to an instance with ssh)
+
+* Understanding flow of html
+https://stackoverflow.com/questions/49843822/connecting-a-python-backend-and-vue-js-frontend-on-google-app-engine
+
+Strictly speaking, your Python will not directly "load your app".
+
+First, at the risk of unneeded explaining, there's the important concept of where code resides vs where code executes. Your VueJS code resides on the server in a static file but executes in the client / browser. Q: How does it get from the server to the browser to execute? A: The client must send a request to the server to provide it. Q: What would cause the browser to send this request? A: Instructions in other code sent to it, most probably a <script> tag in HTML.
+
+So, the flow goes something like this (may vary for you depending on details not provided):
+
+Browser sends request to server (GAE) for HTML, such as the home page
+Server (GAE) responds with HTML
+This HTML may be dynamically created by Python or may be a static file.
+This HTML contains tags to instruct the browser to request more files: images, CSS, JS.
+This HTML should contain a <script> tag to request your VueJS code.
+Browser receives the HTML and processes it, including the <script> tag for your VueJS code.
+Browser sends request to server for the VueJS code.
+Server (GAE) responds with the static file containing the VueJS code.
+Browser receives the file containing VueJS codes, runs it, and your VueJS is now loaded & running!
+As your VueJS runs, it may send AJAX requests to the server (GAE) to get data and/or more code.
+Your VueJS code must reside in a static file on the server. To the server (Python), this static file is just a meaningless bag-of-bytes (if there's a syntax error in the code it won't be found until it executes client-side).
+
+How do you get these statics files into GAE so they are available when the browser requests it? You probably already got this (for CSS, images), but just in case you don't, see this link: Server Static Files for details on setting this up.
+
+* community tutorials
+
+https://cloud.google.com/appengine/docs/standard/nodejs/tutorials
+
+* bash verify target of symbolic link
+https://unix.stackexchange.com/questions/192294/how-to-verify-the-target-of-a-symbolic-link-points-toward-a-particular-path
+if [ "$(readlink -- "$alink")" == /home/fyliu/.ssh/config.noproxy ];
+then
+fi
+
+* stanford cees rfc head nodes
+https://www.google.com/search?q=cees+rfc+head+nodes+stanford&oq=cees+rfc+head+nodes+stanford&aqs=chrome..69i57.6029j0j7&sourceid=chrome&ie=UTF-8
+
+* gcloud you are not authenticated
+https://cloud.google.com/sdk/auth_success
+
+* gcloud nodejs-docs-samples
+https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/appengine/README.md
+# Google App Engine Node.js Samples
+
+These are samples for using [Node.js][nodejs] on
+[Google App Engine][appengine]. Many of these samples
+are referenced from the documentation on [cloud.google.com][appengine].
+
+There are also samples [submitted by the community][community_samples].
+
+See our other [Google Cloud Platform GitHub repositories](/GoogleCloudPlatform)
+for sample applications and scaffolding for other frameworks and use cases.
+
+-* [Run Locally](#run-locally)
+-* [Deploying](#deploying)
+-* [Official samples](#official-samples)
+-* [Community samples](#community-samples)
+
+## Run Locally
+
+Some samples have specific instructions. If there is a `README.md` file in the
+sample folder, please refer to it for any additional steps required to run the
+sample.
+
+The App Engine Node.js samples typically that you do the following:
+
+1.  [Setup your environment for Node.js developement][nodejs_dev].
+1.  [Install the Google Cloud SDK][sdk].
+1.  Acquire local credentials for authenticating with Google Cloud Platform APIs:
+
+        gcloud auth application-default login
+
+1.  Clone this repo:
+
+        git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git
+
+1.  Choose a sample:
+
+        cd appengine/sample-folder/
+
+1.  Install depedencies using `npm` or `yarn`:
+
+        npm install
+
+    or
+
+        yarn install
+
+1.  Run the sample with `npm` or `yarn` (See the sample's `README.md` file for
+    any additional setup):
+
+        npm start
+
+    or
+
+        yarn start
+
+1.  Visit the application at [http://localhost:8080][].
+
+## Deploying
+
+Some samples may have special deployment instructions.
+Refer to the `README.md` file in the sample folder.
+
+Many samples in this folder can be deployed to both App Engine Node.js standard
+environment and flexible environment. Those samples come with two different
+App Engine configuration files: `app.flexible.yaml` for flexible environment,
+and `app.standard.yaml` for standard environment.
+
+Samples with one single configuration file, `app.yaml`, can only be deployed
+to one of the two environments. See the `README.md` files for these samples
+for more information.
+
+Generally speaking, to deploy a sample application:
+
+1.  Use the [Google Cloud Console][console] to create a Google Cloud Platform
+    project.
+1.  [Enable billing][billing] for your project.
+
+1.  Use the Cloud SDK to deploy your app.
+
+    For samples with two configuration files (`app.flexible.yaml` and
+    `app.standard.yaml`), if you plan to use App Engine Node.js Standard
+    Environment, run
+
+        gcloud app deploy app.standard.yaml
+
+    To deploy to App Engine Node.js Flexible Environment, run
+
+        gcloud app deploy app.flexible.yaml
+
+    For samples with one configuration file (`app.yaml`), run
+
+        gcloud app deploy
+
+    to deploy the app to its compatible environment.
+
+    Note: If there is a `yarn.lock` file then `yarn install` will be used during
+    deployment. Delete the `yarn.lock` file to fall back to `npm install`.
+
+1.  View your deployed application at `https://YOUR_PROJECT_ID.appspot.com`.
+
+## Official samples
+
+View the [Official App Engine Node.js samples][official_samples].
+
+## Community samples
+
+View the [Community-contributed App Engine Node.js samples][community_samples].
+
+[nodejs]: https://nodejs.org/
+[appengine]: https://cloud.google.com/appengine/
+[nodejs_dev]: https://cloud.google.com/community/tutorials/how-to-prepare-a-nodejs-dev-environment
+[sdk]: https://cloud.google.com/sdk/
+[console]: https://console.cloud.google.com
+[billing]: https://support.google.com/cloud/answer/6293499#enable-billing
+[official_samples]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples/tree/master/appengine
+[community_samples]: https://cloud.google.com/community/tutorials/?q=%22Node.js%22
+
+* deploy mongodb on compute engine
+https://cloud.google.com/solutions/deploy-mongodb
+mostly about sharding not a lot of instruction
+
+List of tutorials
+https://cloud.google.com/docs/tutorials#mongodb
+
+This is a good tutorial
+https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
+
+This goes a little further than hello world 
+talks about uuid and redeploying
+https://codelabs.developers.google.com/codelabs/cloud-app-engine-node/index.html?index=..%2F..%2Findex#1
+
+Simple tutorial express and mongodb
+https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
+
+* bash adding numbers
+"$(($num1+$num2))"
+
+* bash variable assignment parameter expansion
+${parameter:-word}
+|                    | parameter        |              |             |
+|                    | set and not null | set but null | unset       |
+| ${parameter:-word} | parameter        | word         | word        |
+| ${parameter-word}  | parameter        | null         | word        |
+| ${parameter:=word} | parameter        | word         | assign word |
+| ${parameter=word}  | parameter        | null         | assign word |
+| ${parameter:?word} | parameter        | error, exit  | error, exit |
+| ${parameter?word}  | parameter        | sub null     | error, exit |
+| ${parameter:+word} | word             | sub null     | sub null    |
+| ${parameter+word}  | word             | sub word     | sub null    |
+
+* nix-setup-user
+Set user configuration
+multi-user mode for Nix
+https://nixos.org/releases/nix/nix-1.8/manual/
+
+Dbus launch problems
+https://github.com/moby/moby/issues/34175
+
+* mongodb tutorials
+- There are two mongodb tutorials slightly different from one another
+https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
+https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
+https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
+https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
+
+* mongodb node.js driver api
+http://mongodb.github.io/node-mongodb-native/2.2/api/Db.html#db
+
+* mongodb clusters security enterprise security
+https://cloud.mongodb.com/v2/5bdcb1a2014b76b6fa656c9c#clusters/security/enterpriseSecurity
+
+* project's cluster
+https://cloud.mongodb.com/v2/5bdcb1a2014b76b6fa656c9c#clusters
+
+* docs for atlas
+https://docs.atlas.mongodb.com/
+
+* query the database
+https://cloud.mongodb.com/v2/5bdcb1a2014b76b6fa656c9c#metrics/replicaSet/5bdcb23139ee1baceea159cc/explorer/test/IPs/find
+
+* ubuntu disable scrensaver/lock
+https://askubuntu.com/questions/177348/how-do-i-disable-the-screensaver-lock
+
+* sudo without password
+https://askubuntu.com/questions/147241/execute-sudo-without-password
+
+* joe editor
+https://joe-editor.sourceforge.io/4.5/man.html
+^k x to exit editor
+
+* gcloud flex runtimes
+https://cloud.google.com/appengine/docs/flexible/custom-runtimes/
+* gcloud debugging an instance
+https://cloud.google.com/appengine/docs/flexible/custom-runtimes/debugging-an-instance
+* gcloud tutorials
+node.js "app engine standard"
+
+* setting emacs for javascript
+https://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
+https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
+http://i.imgur.com/jEwgPsd.gif
+https://www.reddit.com/r/emacs/comments/7w0ox0/tide_or_tern/
+https://www.reddit.com/r/vuejs/comments/7dg1nb/how_do_you_set_up_emacs_to_develop_with_vue/
+http://ternjs.net/doc/manual.html#emacs
+https://github.com/AdamNiederer/vue-mode
+
+* vue cli
+https://flaviocopes.com/vue-cli/
+
+* Free tutorials!!
+https://discuss.freetutorials.us/top
+** firebase and angular 5
+https://discuss.freetutorials.us/t/skillshare-angular-5-and-firebase-building-real-world-app-features-2-21-gb-download-free/31635
+** vue js master class
+https://discuss.freetutorials.us/t/vueschool-the-vue-js-master-class-3-92-gb-download-free/31574/7
+** fullstack.io react
+https://discuss.freetutorials.us/t/ebook-fullstack-io-react-book-r36-july-2018-epub-pdf-code/13885
+Saw a couple of requests for this book and people trying to find a newer version & code.
+
+Decided to reupload.
+Fullstack React: The Complete Guide to React and Friends
+about the book: https://dereferer.me/?ohpy-l34wVRRw2Rj643r5Rx0Ez0090dlbg4BlNWPjJAwP7o-G 627
+
+link (Base64):
+aHR0cHM6Ly9tZWdhLm56LyNGIU9ZVWxrWXFCIU1xa0F0V1NVNGFaNW0zQlZkZEtyamc=
+
+* vueschool.io
+https://vueschool.io/plans
+
+* fullstack.io/vue
+https://www.fullstack.io/vue/
+
+* complete javascript course
+https://www.udemy.com/the-complete-javascript-course/
+https://medium.com/codingthesmartway-com-blog/top-3-javascript-online-courses-f06acd71eb90
+https://www.udemy.com/the-complete-javascript-course/?pmtag=FULLMUDEMAY&ranMID=39197&ranEAID=a1o1REVAqJg&ranSiteID=a1o1REVAqJg-j5gKmRtC35kaSaDGj7ubhw&siteID=a1o1REVAqJg-j5gKmRtC35kaSaDGj7ubhw&LSNPUBID=a1o1REVAqJg
+
+* coding javascript app from scratch no frameworks
+https://medium.com/codingthesmartway-com-blog/pure-javascript-building-a-real-world-application-from-scratch-5213591cfcd6
+
+* init.js
+https://www.toptal.com/javascript/guide-to-full-stack-javascript-initjs
+Good introduction to full stack using nodejs and javascript
+
+* printing to console apps script
+Browser.msgBox('message', Browser.Buttons.OK_CANCEL);
+Logger.log()
+scriptlet in html file can call Logger.log()
+Stackdriver Logging : shows console.log()
+
+* Use clasp to work on apps script locally
+https://github.com/google/clasp
+
+* spreadsheet api
+https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet
+
+* mongodb
+https://stackoverflow.com/questions/50448272/avoid-current-url-string-parser-is-deprecated-warning-by-setting-usenewurlpars
+MongoClient.connect("mongodb...", {userNewUrlParser: true});
+mongoose.connect("..." {userNewUrlParser: true})
+https://mongodb.github.io/node-mongodb-native/api-generated/mongoclient.html
+Look here for coonect parameters
+
+* mongodb v3.0
+Read more detail here about changes to connect
+
+https://stackoverflow.com/questions/47662220/db-collection-is-not-a-function-when-using-mongoclient-v3-0
+MongoClient.connect('mongodb://localhost:27017',
+ (err, client) => {
+ var db = client.db('name of database');
+});
+
+* https://gbsc-gcp-lab-gssc.appspot.com/key.json
+
+* mongodb query a collection
+https://www.quackit.com/mongodb/tutorial/mongodb_query_a_collection.cfm
+db.inventory.find( { field : { $ne: 10 } } ) 
+https://docs.mongodb.com/manual/tutorial/query-documents/
+https://docs.mongodb.com/manual/reference/operator/query/ne/
+
+* apps script libraries
+https://developers.google.com/apps-script/guides/libraries
+https://script.google.com/home
+
+* apps store
+https://docs.google.com/spreadsheets/d/1akU-WwDEuRylKSG0fIk9YIkO3Q4jmPsL0kgGpAwsZ_U/edit?addon_store#gid=0
+
+* class SpreadSheet
+https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#getActiveRange()
+https://developers.google.com/apps-script/reference/spreadsheet/
+
+* use this to code apps locally
+https://github.com/google/clasp
+https://stackoverflow.com/questions/46782386/how-to-edit-google-app-script-outside-of-the-browser-e-g-in-emacs-or-vim
+
+* rules, validation
+https://developers.google.com/apps-script/reference/spreadsheet/range#getsheet
+
+* logger
+https://developers.google.com/apps-script/reference/spreadsheet/range#getsheet
+
+* copy
+https://productforums.google.com/forum/#!topic/docs/SwIuouNeblw
+https://productforums.google.com/forum/#!topic/docs/SwIuouNeblw
+function copy() {
+    var s = SpreadsheetApp.getActive()
+        .getSheetByName('JobsFeedbackHistoryTracking')
+    s.getRange(1, 8, 100, 92)
+        .copyValuesToRange(s, 9, 93, 1, 100);
+}
+
+
+function Copy() {
+
+ var sss = SpreadsheetApp.openById('spreadsheet_key'); //replace with source ID
+ var ss = sss.getSheetByName('Source'); //replace with source Sheet tab name
+ var range = ss.getRange('A2:E6'); //assign the range you want to copy
+ var data = range.getValues();
+
+ var tss = SpreadsheetApp.openById('spreadsheet_key'); //replace with destination ID
+ var ts = tss.getSheetByName('SavedData'); //replace with destination Sheet tab name
+ ts.getRange(ts.getLastRow()+1, 1,5,5).setValues(data); //you will need to define the size of the copied data see getRange()
+
+}
+
+https://stackoverflow.com/questions/12291549/copy-a-range-from-one-spreadsheet-to-another
+
+var beginning_row = 12;
+var beginning_col = /*what ever corresponds to 'DA' */ ;
+
+var newRange = ts.getRange(beginning_row, beginning_col,
+featureList.length, featureList[0].length); //define target range
+
+
+
+down vote
+I am using somepart of someone here, I this code is working for me.
+
+function CopyRange() {
+ var sss = SpreadsheetApp.openById('spreadsheetid'); //replace with source ID
+ var ss = sss.getSheetByName('sheetname'); //replace with source Sheet tab name
+ var range = ss.getRange('A2:G50'); //assign the range you want to copy
+ var data = range.getValues();
+
+ var tss = SpreadsheetApp.openById('SpreadsheetID'); //replace with destination ID
+ var ts = tss.getSheetByName('sheetname2'); //replace with destination Sheet tab name
+
+ ts.getRange(ts.getLastRow()+1, 1,49,7).setValues(data); //you will need to define the size of the copied data see getRange()
+
+}
+
+// The code below will set the values for range A1:D2 to the values in an array.
+var myTable = [[1, 2, 3, 4],[5, 6, 7, 8]];
+var sheet = SpreadsheetApp.getActiveSheet();
+sheet.getRange(1,1,2,4).setValues(myTable);
+
+
+
+I use this function to copy an entire sheet's (values only) between documents:
+
+ function updateSourceToTarget(sourceID,sourceName,targetID,targetname){
+  Logger.log(sourceID + ' ' + sourceName + ' ' +targetname);
+  var source = SpreadsheetApp.openById(sourceID).getSheetByName(sourceName);
+  var destination = SpreadsheetApp.openById(targetID).getSheetByName(targetname);
+  var sourcelastRow = source.getLastRow();
+  var sourcelastCol = source.getLastColumn();
+  var sourcedata = source.getRange(1,1,sourcelastRow,sourcelastCol).getValues();
+  destination.getRange(1,1,sourcelastRow,sourcelastCol).setValues(sourcedata);
+ }
+
+then I call this function, in example:
+
+updateSourceToTarget('sourceID','sourceSheetName','targetID','targetSheetName'); 
+
+* trigger ui test if non-empty cell, and see if there is a change
+https://webapps.stackexchange.com/questions/87346/add-a-script-trigger-to-google-sheet-that-will-work-in-android-mobile-app
+https://webapps.stackexchange.com/questions/87346/add-a-script-trigger-to-google-sheet-that-will-work-in-android-mobile-app
+
+function onEdit(e) {
+  if (e.range.getA1Notation() == 'B1') {
+    if (/^\w+$/.test(e.value)) {        
+      eval(e.value)();
+      e.range.clear();
+    }
+  }
+}
+
+function insertSomething() { 
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.getRange(2,3).setValue('inserted something');
+}  
+
+function convertSomething() { 
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.getRange(3,3).setValue('converted something');
+}  
+
+* button
+http://googleappscripting.com/google-spreadsheet-button/
+
+* apps scrit
+https://developers.google.com/apps-script/
+
+* apps-script send email
+https://developers.google.com/apps-script/overview
+
+* apps-script chatbot
+https://developers.google.com/hangouts/chat/quickstart/apps-script-bot
+
+* apps-script forms
+https://developers.google.com/apps-script/quickstart/forms
+
+* binding a script vs standalone scripts
+https://developers.google.com/apps-script/guides/bound
+
+* my library
+https://script.google.com/home/my
+
+* forms
+https://script.google.com/macros/d/M20ou43RmJjPDYLw58v4hSLuLDfwAn5z9/edit?uiv=2&mid=ACjPJvHOeyFVKAS1Ua997dIrO4T4LXODKIA5my-XsUOcVG1Nv9KRZuhEvTwZ8dgfiZV3rt91-w7Su4CRuP0yh8XGCVvF3ZvzaPO2fMhLM4BAQMGTao3eA8nrcXRmlL7xNWkTNe_QJ2DyZzA
+
+* sequencing
+https://docs.google.com/spreadsheets/d/1eZSEFYa14xVP8UEf19Wf7eNT3QIEontS_cGQESQl9Pc/edit#gid=620323631
