@@ -1619,3 +1619,277 @@ for line in p.stdout:
 p.wait()
 print(p.returncode)
 
+* earth
+https://drive.google.com/drive/u/0/folders/16N9kPhdIt0vVhRq1BDTWg0JkS6b3nUUX
+https://docs.google.com/spreadsheets/d/1IW7CiLaw2xEr3MYuLwZ5mJWEbhAEU_hP9J6od5vb-jk/edit#gid=1200594845
+
+* lxd linux
+https://stackoverflow.com/questions/30430526/how-is-lxd-different-from-lxc-docker
+https://discuss.linuxcontainers.org/t/lxd-on-centos-7/1250
+https://www.reddit.com/r/linux/comments/7pxa1s/does_anyone_use_lxd_canonicals_linux_container/
+
+* gui in docker
+http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/
+https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/16311264#16311264
+
+* imagej
+** threshold
+https://imagej.nih.gov/ij/developer/macro/functions.html#setAutoThreshold
+** image
+https://imagej.nih.gov/ij/docs/menus/image.html
+** autothreshold
+https://www.google.com/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/4/46/Image_processing_post_otsus_algorithm.jpg&imgrefurl=https://en.wikipedia.org/wiki/Otsu%2527s_method&h=768&w=1024&tbnid=r78MMYg2gkKo-M:&q=otsu+threshold&tbnh=150&tbnw=200&usg=AI4_-kSOCXuFQPa_aOjwwIeeO9REqJfShQ&vet=12ahUKEwjux87F2rfeAhXcJjQIHV8UATQQ_B0wFXoECAQQBg..i&docid=6ofBwp6VxH1wrM&itg=1&sa=X&ved=2ahUKEwjux87F2rfeAhXcJjQIHV8UATQQ_B0wFXoECAQQBg
+https://en.wikipedia.org/wiki/Otsu%27s_method
+** imagePlus
+https://imagej.nih.gov/ij/developer/api/ij/ImagePlus.html
+** tutorials!
+https://imagej.nih.gov/ij/docs/pdfs/tutorial12.pdf
+https://imagej.nih.gov/ij/docs/pdfs/tutorial10.pdf
+https://albert.rierol.net/imagej_programming_tutorials.html
+** book
+https://link-springer-com.stanford.idm.oclc.org/chapter/10.1007%2F978-1-4471-6684-9_2
+https://link-springer-com.stanford.idm.oclc.org/content/pdf/10.1007%2F978-1-4471-6684-9.pdf
+** edm
+https://imagej.nih.gov/ij/developer/api/ij/plugin/filter/EDM.html
+** impagePrrocessor
+https://imagej.nih.gov/ij/developer/api/ij/process/ImageProcessor.html
+https://imagej.nih.gov/ij/developer/api/ij/process/ImageProcessor.html
+** edm
+http://imagejdocu.tudor.lu/doku.php?id=gui:process:binary&s[]=edm
+** binary
+https://imagej.nih.gov/ij/developer/api/ij/plugin/filter/Binary.html
+** source git
+https://imagej.net/GitHub
+https://github.com/fiji?page=4
+https://imagej.net/Git_mini_howto
+https://github.com/imagej/imagej
+https://www.google.com/search?q=imagej+source+code+for+analysis&oq=imagej+source+code+for+analysis&aqs=chrome..69i57.5470j0j7&sourceid=chrome&ie=UTF-8
+** browse source code here
+https://imagej.nih.gov/ij/developer/source/ij/plugin/filter/Analyzer.java.html
+** download zip here
+https://imagej.nih.gov/ij/download/src/
+https://www.google.com/search?q=imagej+ij+git&oq=imagej+ij+git&aqs=chrome..69i57j69i60.3758j0j7&sourceid=chrome&ie=UTF-8
+
+* emacs grep mode
+https://www.emacswiki.org/emacs/GrepMode#toc2
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Grep-Searching.html
+
+* java tabbed pane selectindex
+https://stackoverflow.com/questions/916948/java-jtabbedpane-how-can-i-select-a-tab-from-a-button
+
+* Load file matplotlib
+https://pythonprogramming.net/loading-file-data-matplotlib-tutorial/
+
+* python sys argv
+https://www.pythonforbeginners.com/system/python-sys-argv
+
+* returning arrays in java
+https://stackoverflow.com/questions/12869741/returning-arrays-in-java
+
+* python math
+https://docs.python.org/2/library/math.html
+
+* julia and pbs
+https://github.com/JuliaParallel/ClusterManagers.jl/blob/master/src/qsub.jl
+
+* stanford outlook 
+https://outlook.office.com/owa/?realm=stanford.edu&path=/mail/search
+
+* pbs and docker
+https://www.google.com/search?q=pbs+docker&oq=pbs+docker&aqs=chrome..69i57.2394j0j7&sourceid=chrome&ie=UTF-8
+
+* docker ubuntu image
+https://hub.docker.com/_/ubuntu/
+https://en.wikipedia.org/wiki/BusyBox
+
+* docker gui
+http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/
+https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/16311264#16311264
+
+* smerge emacs
+C-c ^ a : keep all
+C-c ^ n : next
+C-c ^ p : previous
+C-c ^ m : keep mine
+C-c ^ o : keep other
+
+C-c ^ e : ediff session : this is easier
+smerge-ediff
+vc-resolve-conflicts
+
+n/p : next previous
+a/b : keep a or b
+/ : ancestor
+q : quit
+
+M-x smerge-transient-stae
+
+~ : swap A/B order
+d : bind to keep both
+
+(defun ediff-copy-both-to-C ()
+  (interactive)
+  (ediff-copy-diff ediff-current-difference nil 'C nil
+                   (concat
+                    (ediff-get-region-contents ediff-current-difference 'A ediff-control-buffer)
+                    (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer))))
+(defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-both-to-C))
+(add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
+
+* xauth docker
+
+Xauthority becomes an issue with newer systems. I can either discard
+any protection with xhost + before running my docker containers, or I
+can pass in a well prepared Xauthority file. Typical Xauthority files
+are hostname specific. With docker, each container can have a
+different host name (set with docker run -h), but even setting the
+hostname of the container identical to the host system did not help in
+my case. xeyes (I like this example) simply would ignore the magic
+cookie and pass no credentials to the server. Hence we get an error
+message 'No protocol specified Cannot open display'
+
+The Xauthority file can be written in a way so that the hostname does
+not matter. We need to set the Authentication Family to
+'FamilyWild'. I am not sure, if xauth has a proper command line for
+this, so here is an example that combines xauth and sed to do that. We
+need to change the first 16 bits of the nlist output. The value of
+FamilyWild is 65535 or 0xffff.
+
+docker build -t xeyes - << __EOF__
+
+FROM debian
+RUN apt-get update
+RUN apt-get install -qqy x11-apps
+ENV DISPLAY :0
+CMD xeyes
+__EOF__
+
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+docker run -ti -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH xeyes
+
+Can be shortened to 
+-v $XSOCK -v $XAUTH --
+
+Ubuntu creates /tmp/.docker.xauth with permission 600
+In container xauth list
+chmod 644 $XAUTH
+xauth nslit :0 | ... command
+
+Replace last 4 lines
+xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f
+/tmp/.docker.xauth nmerge - && docker run -it -v
+/tmp/.X11-unix:/tmp/.X11-unix -v /tmp/.docker.xauth:/tmp/.docker.xauth
+-e XAUTHORITY=/tmp/.docker.xauth -e DISPLAY=$DISPLAY xeyes
+
+** Another way
+
+55
+down vote
+I just found this blog entry and want to share it here with you because I think it is the best way to do it and it is so easy.
+
+http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/
+
+PROS: 
++ no x server stuff in the docker container
++ no vnc client/server needed
++ no ssh with x forwarding 
++ much smaller docker containers
+
+CONS: 
+- using x on the host (not meant for secure-sandboxing)
+
+in case the link will fail someday I have put the most important part here: 
+dockerfile:
+
+FROM ubuntu:14.04
+
+RUN apt-get update && apt-get install -y firefox
+
+# Replace 1000 with your user / group id
+RUN export uid=1000 gid=1000 && \
+    mkdir -p /home/developer && \
+    echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
+    echo "developer:x:${uid}:" >> /etc/group && \
+    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
+    chmod 0440 /etc/sudoers.d/developer && \
+    chown ${uid}:${gid} -R /home/developer
+
+USER developer
+ENV HOME /home/developer
+CMD /usr/bin/firefox
+build the image:
+
+docker build -t firefox .
+and the run command:
+
+docker run -ti --rm \
+   -e DISPLAY=$DISPLAY \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
+   firefox
+of course you can also do this in the run command with sh -c "echo script-here"
+
+HINT: for audio take a look at: https://stackoverflow.com/a/28985715/2835523
+
+I was actually able to get it to work using MobaXTerm by using the
+Dockerfile as above and modifying the docker run command to mount
+/tmp/.X11-unix to /c:/Users/username and set the host IPv4 address for
+the DISPLAY environment variable.. – walksignison May 25 at 14:51
+
+** Another
+
+With docker data volumes it's very easy to expose xorg's unix domain
+socket inside the container.
+
+For example, with a Dockerfile like this:
+
+FROM debian
+RUN apt-get update
+RUN apt-get install -qqy x11-apps
+ENV DISPLAY :0
+CMD xeyes
+You could do the following:
+
+$ docker build -t xeyes - < Dockerfile
+$ XSOCK=/tmp/.X11-unix/X0
+$ docker run -v $XSOCK:$XSOCK xeyes
+
+This of course is essentially the same as X-forwarding. It grants the
+container full access to the xserver on the host, so it's only
+recommended if you trust what's inside.
+
+** more
+up vote
+24
+down vote
+You can also use subuser: https://github.com/timthelion/subuser
+
+This allows you to package many gui apps in docker. Firefox and emacs have been tested so far. With firefox, webGL doesn't work though. Chromium doesn't work at all.
+
+EDIT: Sound works!
+
+EDIT2: In the time since I first posted this, subuser has progressed greatly. I now have a website up subuser.org, and a new security model for connecting to X11 via XPRA bridging.
+
+shareimprove this answer
+edited Aug 17 '15 at 22:11
+answered Feb 11 '14 at 22:49
+
+timthelion
+553616
+3
+Please note that subuser is still very new and relatively untested. If you run into any problems please submit bug reports! – timthelion Feb 11 '14 at 22:52
+I'd avoid X11 if there's any way you can. Your killer app would be running the tor proxy in docker, and running a full browser with plugins in a child docker such that firewalling etc forces all network out via the tor docker. This would run laps around the current tor browser bundle for web usability because you'd let rich content through. – Will Feb 12 '14 at 6:31
+1
+Is the trouble for you with X11 security? Or is it that you want this
+working with windows? Or that you want this to work remotely? All of
+the above? I think that making this work with vnc is quite
+possible(though I wouldn't make it the default method because it adds
+a dependency on vnc). Making subuser work remotely isn't really
+possible/meaningfull. There is also this:
+github.com/rogaha/docker-desktop but from the bug reports it seems
+xpra might be unusable in real life. – timthelion Feb 12 '14 at 10:45
+
+** mobaterm 
+Please see original stackoverflow post
+https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/16311264#16311264
