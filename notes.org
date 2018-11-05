@@ -109,7 +109,7 @@ srun --qos=interactive --time=02:00:00 --pty bash -i
 cs193x
 https://web.stanford.edu/class/cs193x/lectures/
 
-* stanford online resources 
+* stanford online resources
 install this chrome plugin
 https://chrome.google.com/webstore/detail/library-access/hghakoefmnkhamdhenpbogkeopjlkpoa/related
 
@@ -321,7 +321,7 @@ Read the analytics documentation (and how to opt-out) here:
 - After modifying your shell profile, you may need to restart your session
   (logout and then log back in) if the brew command isn't found.
 - Run `brew help` to get started
-- Further documentation: 
+- Further documentation:
     https://docs.brew.sh
 Warning: /home/frankliu/.linuxbrew/bin is not in your PATH.
 
@@ -352,7 +352,7 @@ a simple react application.
 * vue and django and rabbitmq
 https://danidee10.github.io/blog/
 
-* django and cgi 
+* django and cgi
 https://gist.github.com/philchristensen/5845530
 https://docs.djangoproject.com/en/1.8/howto/deployment/fastcgi/
 
@@ -373,7 +373,7 @@ http://www.dg1an3.net/2015/03/warptps.html
 ** eucledian distance measurement
 https://www.youtube.com/watch?v=zGPmrRCnF6Y
 
-* latex proper subset 
+* latex proper subset
 https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
 
 * basic probability
@@ -481,7 +481,7 @@ https://www.google.com/chrome/
 https://www.mozilla.org/en-US/firefox/download/thanks/
 https://ftp.mozilla.org/pub/firefox/releases/63.0b9/linux-x86_64/en-US/
 
-* ubuntu docker repository 
+* ubuntu docker repository
 https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=ubuntu+18&starCount=0
 ** x11-apps in docker
 https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/25280523#25280523
@@ -608,7 +608,7 @@ https://stackoverflow.com/questions/5248769/node-js-webserver-with-cgi-support-o
 https://news.ycombinator.com/item?id=8835564
 
 * express js over fastcgi-node
-https://stackoverflow.com/questions/23777920/use-expressjs-app-via-fastcgi 
+https://stackoverflow.com/questions/23777920/use-expressjs-app-via-fastcgi
 
 * apache proxy for node.js server
 https://stackoverflow.com/questions/32605232/how-to-deploy-nodejs-app-on-php-apache-server
@@ -724,7 +724,7 @@ https://www.google.com/search?q=executables+anaconda&oq=executables+anaconda&aqs
 https://github.com/Linuxbrew/homebrew-core/blob/master/Formula/chicken.rb
 
 * module is an alias
-               
+
 which module
 module: 	 aliased to eval ` $LMOD_CMD csh  !*` ; eval `$LMOD_SETTARG_CMD -s csh`
 
@@ -756,7 +756,7 @@ https://www.coursera.org/learn/cryptocurrency/lecture/gFEJL/cryptographic-hash-f
 * WSL
 Powershell (as admin)
 
-Note you need to upgrade windows 10 in order to wsl 
+Note you need to upgrade windows 10 in order to wsl
 
 PS C:\Users\frank\Downloads> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 PS C:\Users\frank\Downloads> Add-AppxPackage -Path ".\CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79
@@ -764,7 +764,7 @@ rhkp1fndgsc.Appx"
 
 Accessing windows /mnt/c
 
-** Initializing 
+** Initializing
 https://docs.microsoft.com/en-us/windows/wsl/initialize-distro
 
 ** xwindows
@@ -878,11 +878,11 @@ https://electronjs.org/
 https://vuido.mimec.org/
 
 * pointer for functions
- arr               // arr 
+ arr               // arr
  arr []            // is an array (so index it)
  * arr []          // of pointers (so dereference them)
  (* arr [])()      // to functions taking nothing (so call them with ())
- void (* arr [])() // returning void 
+ void (* arr [])() // returning void
 
  so your answer is
 
@@ -965,7 +965,7 @@ Save
 [gcloud config set compute/zone NAME].
 Did not print [6] options.
 Too many options [56]. Enter "list" at prompt to print choices fully.
-Please enter numeric choice or text value (must exactly match list 
+Please enter numeric choice or text value (must exactly match list
 item):  11
 
 Your project default Compute Engine zone has been set to [us-west1-b].
@@ -1210,7 +1210,7 @@ https://cloud.google.com/docs/tutorials#mongodb
 This is a good tutorial
 https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
 
-This goes a little further than hello world 
+This goes a little further than hello world
 talks about uuid and redeploying
 https://codelabs.developers.google.com/codelabs/cloud-app-engine-node/index.html?index=..%2F..%2Findex#1
 
@@ -1359,7 +1359,7 @@ MongoClient.connect('mongodb://localhost:27017',
 
 * mongodb query a collection
 https://www.quackit.com/mongodb/tutorial/mongodb_query_a_collection.cfm
-db.inventory.find( { field : { $ne: 10 } } ) 
+db.inventory.find( { field : { $ne: 10 } } )
 https://docs.mongodb.com/manual/tutorial/query-documents/
 https://docs.mongodb.com/manual/reference/operator/query/ne/
 
@@ -1455,7 +1455,7 @@ I use this function to copy an entire sheet's (values only) between documents:
 
 then I call this function, in example:
 
-updateSourceToTarget('sourceID','sourceSheetName','targetID','targetSheetName'); 
+updateSourceToTarget('sourceID','sourceSheetName','targetID','targetSheetName');
 
 * trigger ui test if non-empty cell, and see if there is a change
 https://webapps.stackexchange.com/questions/87346/add-a-script-trigger-to-google-sheet-that-will-work-in-android-mobile-app
@@ -1463,22 +1463,22 @@ https://webapps.stackexchange.com/questions/87346/add-a-script-trigger-to-google
 
 function onEdit(e) {
   if (e.range.getA1Notation() == 'B1') {
-    if (/^\w+$/.test(e.value)) {        
+    if (/^\w+$/.test(e.value)) {
       eval(e.value)();
       e.range.clear();
     }
   }
 }
 
-function insertSomething() { 
+function insertSomething() {
   var sheet = SpreadsheetApp.getActiveSheet();
   sheet.getRange(2,3).setValue('inserted something');
-}  
+}
 
-function convertSomething() { 
+function convertSomething() {
   var sheet = SpreadsheetApp.getActiveSheet();
   sheet.getRange(3,3).setValue('converted something');
-}  
+}
 
 * button
 http://googleappscripting.com/google-spreadsheet-button/
@@ -1692,7 +1692,7 @@ https://docs.python.org/2/library/math.html
 * julia and pbs
 https://github.com/JuliaParallel/ClusterManagers.jl/blob/master/src/qsub.jl
 
-* stanford outlook 
+* stanford outlook
 https://outlook.office.com/owa/?realm=stanford.edu&path=/mail/search
 
 * pbs and docker
@@ -1769,7 +1769,7 @@ XAUTH=/tmp/.docker.xauth
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 docker run -ti -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH xeyes
 
-Can be shortened to 
+Can be shortened to
 -v $XSOCK -v $XAUTH --
 
 Ubuntu creates /tmp/.docker.xauth with permission 600
@@ -1791,16 +1791,16 @@ I just found this blog entry and want to share it here with you because I think 
 
 http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/
 
-PROS: 
+PROS:
 + no x server stuff in the docker container
 + no vnc client/server needed
-+ no ssh with x forwarding 
++ no ssh with x forwarding
 + much smaller docker containers
 
-CONS: 
+CONS:
 - using x on the host (not meant for secure-sandboxing)
 
-in case the link will fail someday I have put the most important part here: 
+in case the link will fail someday I have put the most important part here:
 dockerfile:
 
 FROM ubuntu:14.04
@@ -1890,6 +1890,56 @@ possible/meaningfull. There is also this:
 github.com/rogaha/docker-desktop but from the bug reports it seems
 xpra might be unusable in real life. – timthelion Feb 12 '14 at 10:45
 
-** mobaterm 
+** mobaterm
 Please see original stackoverflow post
 https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/16311264#16311264
+
+* neural networks topology geometry
+http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
+Extremely good about visualizing action of neural networks
+
+* perl tell and seek
+https://perldoc.perl.org/functions/tell.html
+https://perldoc.perl.org/functions/seek.html
+
+* python conver epoch time to datetime
+https://stackoverflow.com/questions/12400256/converting-epoch-time-into-the-datetime
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
+
+Or
+
+import datetime
+datetime.datetime.fromtimestamp(1347517370).strftime('%c')
+
+Or
+
+>>> import datetime
+>>> datetime.datetime.fromtimestamp(1347517370).strftime('%Y-%m-%d %H:%M:%S')
+'2012-09-13 14:22:50' # Local time
+
+To get UTC,
+
+>>> datetime.datetime.utcfromtimestamp(1347517370).strftime('%Y-%m-%d %H:%M:%S')
+  '2012-09-13 06:22:50'
+
+* grep only specifid group
+https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match
+grep -Po  -P for perl -o for only
+
+example
+grep  -oP 'foobar \K\w+' test.txt
+bash
+happy
+
+\K (?<=pattern) which use as a zero-width
+look-behind assertion before the text you
+want to output
+
+(?=pattern) xtzerwao-width look-ahead assertion
+after the text you want to output
+
+* python parsing from json file
+https://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file
+
+* python jsonstreamer
+https://github.com/kashifrazzaqui/json-streamer
