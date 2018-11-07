@@ -1943,3 +1943,214 @@ https://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file
 
 * python jsonstreamer
 https://github.com/kashifrazzaqui/json-streamer
+
+* genetics
+https://susciclu.slack.com/
+
+* vpn stanford
+https://uit.stanford.edu/service/vpn
+https://uit.stanford.edu/service/vpn/linux
+
+* merge conflicts in emacs
+https://emacs.stackexchange.com/questions/16469/how-to-merge-git-conflicts-in-emacs
+
+* ethernet frame
+https://www.google.com/search?ei=tZHYW962HqGT0gLd3JywAQ&q=ethernet+frame+max+size&oq=ethernet+frame+max+size&gs_l=psy-ab.3..0j0i22i30l4.14973.19099..19205...0.0..0.69.1207.22......0....1..gws-wiz.......35i39j0i131j0i20i264j0i131i20i264j0i67j0i20i263j0i20i263i264.GE2JzPMGzqE
+64-1522 bytes
+
+* prometheus query api
+https://prometheus.io/docs/prometheus/latest/querying/api/
+
+* emacs speed test
+https://oremacs.com/2015/02/24/emacs-speed-test/
+
+* parsing large files in python
+https://stackoverflow.com/questions/21653738/parsing-large-9gb-file-using-python
+
+* reading single character at a time
+https://stackoverflow.com/questions/2988211/how-to-read-a-single-character-at-a-time-from-a-file-in-python
+
+* python seek tell
+https://www.tutorialspoint.com/python/file_seek.htm
+https://stackoverflow.com/questions/15594817/f-seek-and-f-tell-to-read-each-line-of-text-file
+
+* python reg expressions
+https://www.tutorialspoint.com/python/python_reg_expressions.htm
+
+* python variable is defined
+https://www.oreilly.com/library/view/python-cookbook/0596001673/ch17s02.html
+
+* org clean view
+https://orgmode.org/guide/Clean-view.html
+
+* tcpdump
+# tcpdump is it going as fast as it can, can you see if server or
+# binary capture pcal value
+
+* python plot time series from a file
+https://stackoverflow.com/questions/1574088/plotting-time-in-python-with-matplotlib
+
+* convert epoch time
+https://www.epochconverter.com/
+
+* python json working with large datasets using pandas
+https://www.dataquest.io/blog/python-json-tutorial/
+
+* yajl used for jsonstream need to change some part of the code
+https://launchpad.net/ubuntu/+source/yajl
+https://lloyd.github.io/yajl/
+
+* reformat json files with yajl
+https://mobilefish.de/index.php/easily-re-format-json-files-yajl-tools-ubuntu-package
+https://www.google.com/search?q=loading+a+json+file+python&oq=loading+a+json+file+python&aqs=chrome..69i57.4435j0j7&sourceid=chrome&ie=UTF-8
+
+* pandas tutorial dataframe python
+https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#question1
+
+* json-streamer
+https://github.com/kashifrazzaqui/json-streamer/issues/5
+
+* get pid from shell
+https://stackoverflow.com/questions/21063765/get-pid-in-shell-bash
+echo $$
+echo $BASHPID
+
+* suspend running process
+http://go2linux.garron.me/linux/2011/01/stop-or-suspend-running-process-linux-control-it-882/
+https://unix.stackexchange.com/questions/2107/how-to-suspend-and-resume-processes
+
+kill -TSTP [pid]    : soft stop
+kill -STOP [pid]    : hard stop like C-Z
+kill -CONT [pid]    : resume execution
+
+https://stackoverflow.com/questions/41787234/how-to-know-the-process-id-of-current-bash-session
+
+* pbs
+https://hpcc.usc.edu/support/documentation/pbs-to-slurm/
+
+* quota
+https://drive.google.com/drive/quota
+
+* backup gmail to hard-drive
+Chrome extension to backup email
+https://www.thewindowsclub.com/backup-gmail-to-hard-drive
+https://chrome.google.com/webstore/detail/save-emails-and-attachmen/nflmnfjphdbeagnilbihcodcophecebc?hl=en
+https://docs.google.com/spreadsheets/d/1HGGFs57tarHJ9wfjZpPGYVWrTYe-w5Si8g3qWJleLF8/edit#gid=0
+http://www.gmail-backup.com/download
+
+* brazillian comics
+http://gibisclassicos.blogspot.com/2018/04/disney-especial-n-150-editora-abril.html
+http://www.mediafire.com/file/kqqe759g1omeq1j/DE150+-+Esportes.cbr
+https://www.sendspace.com/file/tgyasg
+
+* gmail size query
+https://www.labnol.org/internet/gmail-size-search/26669/
+size:5242880 list all email whose size is 5MB or greater
+
+* json-streamer
+https://github.com/kashifrazzaqui/json-streamer
+
+* parse large text file
+https://stackoverflow.com/questions/23505449/efficiently-read-and-parse-large-one-line-text-files
+
+* laze reading large file python
+https://stackoverflow.com/questions/519633/lazy-method-for-reading-big-file-in-python
+
+* how to sort a large array python
+http://neopythonic.blogspot.com/2008/10/sorting-million-32-bit-integers-in-2mb.html
+
+* read a file in chunks python
+https://stackoverflow.com/questions/4566498/python-file-iterator-over-a-binary-file-with-newer-idiom/4566523#4566523
+def read_in_chunks(infile, chunk_size=1024*64):
+    chunk = infile.read(chunk_size)
+    while chunk:
+        yield chunk
+        chunk = infile.read(chunk_size)
+
+* command line arguments python
+https://stackabuse.com/command-line-arguments-in-python/
+1. sys.argv[]
+2. getopt module
+3. argparse module
+
+* regex python
+https://docs.python.org/3.4/howto/regex.html
+https://docs.python.org/2/library/re.html
+
+* tmux copy and paste
+https://www.google.com/search?q=tmux+copy+and+paste&oq=tmux+copy+and+paste&aqs=chrome..69i57.2720j0j7&sourceid=chrome&ie=UTF-8
+
+* read().decode('utf-8') or simply .decode()
+https://stackoverflow.com/questions/31019854/typeerror-cant-use-a-string-pattern-on-a-bytes-like-object-in-re-findall
+https://stackoverflow.com/questions/11339955/string-encoding-and-decoding
+
+* find multiple occurences in a string python
+astring.find(asubstr, start_pos)
+https://stackoverflow.com/questions/3873361/finding-multiple-occurrences-of-a-string-within-a-string-in-python
+
+* slice strings python
+https://www.pythoncentral.io/cutting-and-slicing-strings-in-python/
+
+* static variables python
+https://stackoverflow.com/questions/279561/what-is-the-python-equivalent-of-static-variables-inside-a-function
+
+* python generator has additional stuff, iterators, closures, decorators
+https://www.programiz.com/python-programming/generator
+
+* concat bytes python
+https://stackoverflow.com/questions/28130722/python-bytes-concatenation/28130794
+a += b
+
+* this bytes concat doesn't work python
+https://docs.python.org/3/library/stdtypes.html
+bytes.join()
+
+* bytes python
+https://www.w3resource.com/python/python-bytes.php#bytes
+b'this is in bytes'
+
+* stanford axess
+https://axess.sahr.stanford.edu/group/guest/my-timecard-leave-balances
+
+* print in colors python
+https://stackoverflow.com/questions/287871/print-in-terminal-with-colors
+
+* python logging
+https://docs.python.org/2/howto/logging.html
+
+* python wrapper functions, taking arguments
+https://stackoverflow.com/questions/30904486/python-wrapper-function-taking-arguments-inside-decorator
+
+    def wrapper(*args,**kwargs):
+        some_function(*args,**kwargs)
+
+* python logging
+https://docs.python.org/3/howto/logging.html#logging-basic-tutorial
+logging.basicConfig(level=logging.INFO)
+
+* python wrapping logging
+https://bbengfort.github.io/snippets/2016/01/11/logging-mixin.html
+
+* python convert bytes to string
+https://stackoverflow.com/questions/606191/convert-bytes-to-a-string
+
+* create a format string with arbitrarily number of parameters
+https://www.google.com/search?q=how+to+create+a+format+string+with+arbitrarily+number+of+%7B%7D+python&oq=how+to+create+a+format+string+with+arbitrarily+number+of+%7B%7D+python&aqs=chrome..69i57.23241j0j7&sourceid=chrome&ie=UTF-8
+str = "{}" * number; str.format([])
+
+* jq! json queue count number of occurences of a word in a text file
+jq -r '..|objects|keys[]' < file.json
+-r recursive
+https://unix.stackexchange.com/questions/2244/how-do-i-count-the-number-of-occurrences-of-a-word-in-a-text-file-with-the-comma
+http://www.compciv.org/recipes/cli/jq-for-parsing-json/
+https://stedolan.github.io/jq/manual/
+https://github.com/stedolan/jq/tree/master/docs
+https://github.com/stedolan/jq/issues/785
+https://stackoverflow.com/questions/40396445/get-outputs-from-jq-on-a-single-line
+https://programminghistorian.org/en/lessons/json-and-jq#json-vs-json-lines
+https://unix.stackexchange.com/questions/451496/jq-print-values-in-one-line
+https://stedolan.github.io/jq/manual/v1.5/
+https://mail.google.com/mail/u/0/#inbox
+https://stackoverflow.com/questions/37710718/concat-2-fields-in-json-using-jq
+
+https://www.google.com/search?q=pandas+dataframe+working+with+time+series+with+non-overlapping+time+stamps&ei=GJbcW4zuD5PQ9AO1x4yIBw&start=10&sa=N&ved=0ahUKEwiM2o6KqrbeAhUTKH0KHbUjA3EQ8NMDCJgB&biw=1457&bih=918
