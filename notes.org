@@ -2154,3 +2154,62 @@ https://mail.google.com/mail/u/0/#inbox
 https://stackoverflow.com/questions/37710718/concat-2-fields-in-json-using-jq
 
 https://www.google.com/search?q=pandas+dataframe+working+with+time+series+with+non-overlapping+time+stamps&ei=GJbcW4zuD5PQ9AO1x4yIBw&start=10&sa=N&ved=0ahUKEwiM2o6KqrbeAhUTKH0KHbUjA3EQ8NMDCJgB&biw=1457&bih=918
+
+* imagej development
+https://imagej.net/Development
+https://imagej.net/Developing_ImageJ_in_IntelliJ_IDEA
+https://imagej.net/Architecture
+https://imagej.net/Philosophy#Release_early.2C_release_often
+https://imagej.net/MorphoLibJ
+https://imagej.net/Developing_ImageJ_in_IntelliJ_IDEA
+https://imagej.net/Frequently_Asked_Questions#What_is_the_difference_between_Fiji_and_ImageJ.3F
+https://imagej.net/List_of_update_sites
+https://imagej.net/MorphoLibJ
+https://imagej.net/Downloading_and_Building_Fiji_From_Source
+https://imagej.net/Developing_ImageJ_in_Eclipse
+https://imagej.net/Fiji/Downloads
+
+* list packages installed by homebrew
+https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
+
+* security with docker
+https://www.oreilly.com/ideas/five-security-concerns-when-using-docker
+
+* brew doctor
+https://gist.github.com/egilbert/896426
+
+* kubernetes
+https://kubernetes.io/
+
+* id pausd org schoology and infinite campus
+https://docs.google.com/document/d/1n75WZpurqy4sIl4fJa46kj4XGaPnGw6jprupSSvaJ4U/edit
+https://docs.google.com/document/d/1n75WZpurqy4sIl4fJa46kj4XGaPnGw6jprupSSvaJ4U/edit#
+https://app.schoology.com/parent/home
+
+* nodejs master class
+https://pirple.thinkific.com/courses/the-nodejs-master-class
+
+* jupyter notebook imagej
+https://forum.image.sc/t/jupyter-notebook-for-imagej/5421
+
+* xfiles
+https://www.hulu.com/series/the-x-files-d6a7aec6-72d2-46bb-b337-2cb412df64c8
+
+* best node js course
+https://www.quora.com/What-is-the-best-Node-js-course-online-I-need-a-step-by-step-app-example-for-Node-js-that-is-as-awesome-effective-as-CS101-from-Udacity-which-uses-Python-It-can-be-a-paid-course
+
+* github learning nodejs by examples
+https://github.com/workshopper/learnyounode
+
+* complete node.js course udemy
+https://www.udemy.com/the-complete-nodejs-developer-course-2/?LSNPUBID=jU79Zysihs4&siteID=jU79Zysihs4-NirGEJofNAMzBA6AEOza1Q
+
+* python concurrency and parallelism
+https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python
+* solid
+https://code.tutsplus.com/tutorials/solid-part-4-the-dependency-inversion-principle--net-36872
+* agile design patterns
+https://code.tutsplus.com/courses/agile-design-patterns
+* parse array of json objects
+https://stackoverflow.com/questions/50252063/how-to-parse-an-array-of-json-object-using-jq
+jq '.aheading.anarray[]
