@@ -2213,3 +2213,18 @@ https://code.tutsplus.com/courses/agile-design-patterns
 * parse array of json objects
 https://stackoverflow.com/questions/50252063/how-to-parse-an-array-of-json-object-using-jq
 jq '.aheading.anarray[]
+* interface tcp drop rate
+https://www.netcraftsmen.com/understanding-interface-errors-and-tcp-performance/
+
+Initially the customer did not appear to be very concerned because the
+percent of errors was below 3%. We personally find error rates of
+greater than 0.001% to be a cause for concern.
+
+* print in one line jq
+https://unix.stackexchange.com/questions/451496/jq-print-values-in-one-line
+https://unix.stackexchange.com/questions/451496/jq-print-values-in-one-line
+https://stackoverflow.com/questions/40396445/get-outputs-from-jq-on-a-single-line
+https://github.com/stedolan/jq/issues/785
+
+* good tutorial on jq
+https://programminghistorian.org/en/lessons/json-and-jq#json-vs-json-lines
