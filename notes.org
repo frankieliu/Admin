@@ -2228,3 +2228,232 @@ https://github.com/stedolan/jq/issues/785
 
 * good tutorial on jq
 https://programminghistorian.org/en/lessons/json-and-jq#json-vs-json-lines
+
+* html select list disabled and change css
+https://stackoverflow.com/questions/1379125/make-drop-down-list-item-unselectable
+https://www.w3schools.com/tags/att_option_disabled.asp
+https://stackoverflow.com/questions/15602140/how-to-style-disabled-options-in-a-form
+
+* vue binding attribute v-bind
+https://www.vuemastery.com/courses/intro-to-vue-js/attribute-binding/
+https://vuejs.org/v2/guide/syntax.html#Attributes
+
+* vue binding to boolean properties
+https://stackoverflow.com/questions/49208624/can-a-vue-boolean-prop-be-true-by-its-presence-and-false-by-its-absence
+
+* vue forms
+https://vuejs.org/v2/guide/forms.html
+
+* live-server npm keeps track of modifications in the directory, live reload
+https://www.npmjs.com/package/live-server
+
+* including javascript from other files
+https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
+
+* mozilla javascript export statement
+https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
+
+* javascript access variables from another file
+https://stackoverflow.com/questions/3244361/can-i-access-variables-from-another-file
+
+* passing uninitialize object in Java
+https://stackoverflow.com/questions/39205789/example-of-passing-an-uninitialized-object-as-parameter-in-java
+Not possible, initialize to null
+
+* imagej analyze menu
+https://imagej.nih.gov/ij/docs/menus/analyze.html
+
+* imagej shortcuts
+https://imagej.nih.gov/ij/docs/shortcuts.html
+
+* imagej overlays
+https://forum.image.sc/t/overlays-on-multi-frame-hyperstacks/8061/3
+
+* imagej imagecalculator
+https://imagej.nih.gov/ij/developer/source/ij/plugin/ImageCalculator.java.html
+
+* python plot 3d
+https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html
+from mpl_toolkits import mplot3d
+
+* numpy fortran array
+https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.asfortranarray.html
+
+* imagej convex hull and floatpolygon get coordinates of convex hull
+https://imagej.nih.gov/ij/plugins/docs/hull-circle/HullAndCircle05_.html
+https://imagej.nih.gov/ij/developer/api/ij/process/FloatPolygon.html
+
+* pandas plotting
+http://jonathansoma.com/lede/algorithms-2017/classes/fuzziness-matplotlib/understand-df-plot-in-pandas/
+https://stackoverflow.com/questions/34347145/pandas-plot-doesnt-show
+
+* pyplot ij reverse y, equal axis
+https://stackoverflow.com/questions/2051744/reverse-y-axis-in-pyplot
+https://matplotlib.org/examples/pylab_examples/axis_equal_demo.html
+
+* rotation matrix
+https://en.wikipedia.org/wiki/Rotation_matrix
+
+* convert columns in pandas to nparray
+https://stackoverflow.com/questions/31789160/convert-select-columns-in-pandas-dataframe-to-numpy-array
+a = df.iloc[:,1].values
+
+* zip two columns together
+https://stackoverflow.com/questions/44409084/how-to-zip-two-1d-numpy-array-to-2d-numpy-array
+np.array(list(zip(x,y)))
+
+* numpy indexing matrix multipy
+https://docs.scipy.org/doc/numpy-1.10.0/user/basics.indexing.html
+https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.matmul.html
+a[-1] : last element
+
+* scipy spatial ConvexHull Delaunay
+https://docs.scipy.org/doc/scipy-0.19.0/reference/spatial.html
+https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/scipy.spatial.ConvexHull.html
+https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/scipy.spatial.ConvexHull.html
+https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.Delaunay.find_simplex.html
+https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.Delaunay.html
+
+* Find if point in convex hull
+https://stackoverflow.com/questions/16750618/whats-an-efficient-way-to-find-if-a-point-lies-in-the-convex-hull-of-a-point-cl
+https://stackoverflow.com/questions/16750618/whats-an-efficient-way-to-find-if-a-point-lies-in-the-convex-hull-of-a-point-cl/22931719
+https://stackoverflow.com/questions/16750618/whats-an-efficient-way-to-find-if-a-point-lies-in-the-convex-hull-of-a-point-cl/22931719
+
+* Find intersection of line with convex hull
+https://stackoverflow.com/questions/30486312/intersection-of-nd-line-with-convex-hull-in-python
+https://stackoverflow.com/questions/30486312/intersection-of-nd-line-with-convex-hull-in-python
+
+* Find the centroid of convex hull
+https://stackoverflow.com/questions/31562534/scipy-centroid-of-convex-hull
+
+* Find the volume of convex hull
+https://stackoverflow.com/questions/24733185/volume-of-convex-hull-with-qhull-from-scipy
+
+* ImageJ Fill Holes
+http://imagej.1557.x6.nabble.com/Fill-holes-or-background-td3686344.html
+https://forum.image.sc/t/use-the-plugin-fill-holes-in-my-plugin/2136/5
+
+* numpy row vs column matrix
+https://stackoverflow.com/questions/17428621/python-differentiating-between-row-and-column-vectors
+Use reshape, e.g. np.reshape(3,1)
+
+* numpy add row to array
+https://stackoverflow.com/questions/3881453/numpy-add-row-to-array
+#+begin_src python
+  np.append([[1,1]], [[2,2]])
+#+end_src
+
+* python exit
+https://stackoverflow.com/questions/1187970/how-to-exit-from-python-without-traceback
+import sys
+sys.exit(0)
+
+* screenshots ubuntu
+https://askubuntu.com/questions/254808/where-are-partial-screenshot-stored-or-how-to-specifiy-location
+https://askubuntu.com/questions/114429/default-save-directory-for-gnome-screenshot
+PrtScn       : captures entire screen
+Alt PrtScn   : captures currently focused window
+Shift PrtScn : captures specific rectangular area
+
+* org mode adding links to existing files
+https://orgmode.org/manual/Handling-links.html
+C-u C-c C-l
+
+* bios mega
+https://www.kickstarter.com/projects/684398802/bios-origins-2nd-ed-pax-transhumanity-and-pax-porf
+
+* wistia
+1. copy link from video (right click)
+   wvideo=zecx3q8dbc
+2. get the wvideo= part (zecx3q8dbc)
+
+3. Either use youtube-dl
+   http://fast.wistia.net/embed/iframe/zecx3q8dbcw
+
+   can handbrake it later, or better yet
+
+   https://askubuntu.com/questions/486297/how-to-select-video-quality-from-youtube-dl
+
+   Select the video quality:
+   youtube-dl -F <link>
+   youtube-dl -f <number> <link>
+
+4. Paste in https://getvideo.at/en/ search and select the second 360
+   mp4 one
+
+* vlc codecs
+sudo aptitude install ubuntu-restricted-extras
+
+* coding with Mosh
+https://sso.teachable.com/secure/teachable_accounts/profile
+angular course
+
+* Use this to download videos
+https://getvideo.at/en/
+
+* Select video quality from youtube-dl
+https://askubuntu.com/questions/486297/how-to-select-video-quality-from-youtube-dl
+
+* c++ namespace std
+using namespace std
+
+* c++ finding the length of array
+https://stackoverflow.com/questions/4108313/how-do-i-find-the-length-of-an-array
+end(a) - begin(a)
+
+#+begin_src c++
+
+
+  #include <iostream>
+  #include <type_traits> // std::remove_extent std::remove_all_extents std::rank std::extent
+
+  template<class T, size_t N>
+  constexpr size_t length(T(&)[N]) { return N; }
+
+  template<class T, size_t N>
+  constexpr size_t length2(T(&arr)[N]) { return sizeof(arr) / sizeof(*arr); }
+
+  int main()
+  {
+      int a[5][4][3]{{{1,2,3}, {4,5,6}}, { }, {{7,8,9}}};
+
+      // New way
+      constexpr auto l1 = std::extent<decltype(a)>::value;     // 5
+      constexpr auto l2 = std::extent<decltype(a), 1>::value;  // 4
+      constexpr auto l3 = std::extent<decltype(a), 2>::value;  // 3
+      constexpr auto l4 = std::extent<decltype(a), 3>::value;  // 0
+
+      // Mixed way
+      constexpr auto la = length(a);
+      //constexpr auto lpa = length(*a);  // compile error
+      //auto lpa = length(*a);  // get at runtime
+      std::remove_extent<decltype(a)>::type pa;  // get at compile time
+      //std::remove_reference<decltype(*a)>::type pa;  // same as above
+      constexpr auto lpa = length(pa);
+      std::cout << la << ' ' << lpa << '\n';
+
+      // Old way
+      constexpr auto la2 = sizeof(a) / sizeof(*a);
+      constexpr auto lpa2 = sizeof(*a) / sizeof(**a);
+      std::cout << la2 << ' ' << lpa2 << '\n';
+
+      return 0;
+  }
+
+#+end_src
+
+* c++ array
+int x[2] = {0,1,2};
+
+you should use the array class and the array template. Try:
+
+#include <array>
+array<type_of_the_array, number_of_elements_in_the_array> Name_of_Array = {};
+
+so now if you want to find the length of the array all you have to do
+use the size function in the array class.
+
+Name_of_Array.size();
+
+* best anime
+https://sheet.host/user/animenz
