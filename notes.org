@@ -1004,7 +1004,6 @@ gcloud app browse
 # To view your application in the web browser run:
 # $ gcloud app browse
 
-
 * gcloud logs
 You can stream logs from the command line by running:
 $ gcloud app logs tail -s default
@@ -1013,6 +1012,9 @@ $ gcloud app logs tail -s default
 Updates are available for some Cloud SDK components.  To install them,
 please run:
   $ gcloud components update
+
+* How to choose a google cloud engine (standard flexible compute)
+https://cloud.google.com/appengine/docs/the-appengine-environments
 
 * nodejs docker
 https://github.com/GoogleCloudPlatform/nodejs-docker
@@ -1217,6 +1219,578 @@ https://codelabs.developers.google.com/codelabs/cloud-app-engine-node/index.html
 Simple tutorial express and mongodb
 https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
 
+* mongodb gcloud
+https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
+
+---
+title: Connect to MongoDB from Node.js on Google App Engine Flexible Environment
+description: Learn how to connect to MongoDB from a Node.js app running on Google App Engine flexible environment.
+author: jmdobry
+tags: App Engine, Node.js, MongoDB
+date_published: 2017-11-02
+---
+
+## MongoDB
+
+> [MongoDB][mongo] is a document database with the scalability and flexibility
+> that you want with the querying and indexing that you need
+>
+> – mongodb.com
+
+You can check out [Node.js and Google Cloud Platform][nodejs-gcp] to get an
+overview of Node.js itself and learn ways to run Node.js apps on Google Cloud
+Platform.
+
+## Prerequisites
+
+1. Create a project in the [Google Cloud Platform Console](https://console.cloud.google.com/).
+1. Enable billing for your project.
+1. Install the [Google Cloud SDK](/sdk/).
+1. [Prepare your environment for Node.js development][nodejs]
+
+### Create a MongoDB database
+
+There are multiple options for creating a new MongoDB database. For example:
+
+- Create a Google Compute Engine virtual machine with [MongoDB pre-installed](/launcher/?q=mongodb).
+- Create a MongoDB instance with [MongoDB Atlas on GCP](https://www.mongodb.com/cloud/atlas/mongodb-google-cloud).
+- Use [mLab](https://mlab.com/google/) to create a free MongoDB deployment on Google Cloud Platform.
+
+## Prepare the app
+
+1. Initialize a `package.json` file with the following command:
+
+        npm init
+
+1. Install dependencies:
+
+        npm install --save mongodb nconf
+
+1. Create a `server.js` file with the following contents:
+
+        'use strict';
+
+        const mongodb = require('mongodb');
+        const http = require('http');
+        const nconf = require('nconf');
+
+        // Read in keys and secrets. Using nconf use can set secrets via
+        // environment variables, command-line arguments, or a keys.json file.
+        nconf.argv().env().file('keys.json');
+
+        // Connect to a MongoDB server provisioned over at
+        // MongoLab.  See the README for more info.
+
+        const user = nconf.get('mongoUser');
+        const pass = nconf.get('mongoPass');
+        const host = nconf.get('mongoHost');
+        const port = nconf.get('mongoPort');
+
+        let uri = `mongodb://${user}:${pass}@${host}:${port}`;
+        if (nconf.get('mongoDatabase')) {
+          uri = `${uri}/${nconf.get('mongoDatabase')}`;
+        }
+        console.log(uri);
+
+        mongodb.MongoClient.connect(uri, (err, db) => {
+          if (err) {
+            throw err;
+          }
+
+          // Create a simple little server.
+          http.createServer((req, res) => {
+            if (req.url === '/_ah/health') {
+              res.writeHead(200, {
+                'Content-Type': 'text/plain'
+              });
+              res.write('OK');
+              res.end();
+              return;
+            }
+            // Track every IP that has visited this site
+            const collection = db.collection('IPs');
+
+            const ip = {
+              address: req.connection.remoteAddress
+            };
+
+            collection.insert(ip, (err) => {
+              if (err) {
+                throw err;
+              }
+
+              // push out a range
+              let iplist = '';
+              collection.find().toArray((err, data) => {
+                if (err) {
+                  throw err;
+                }
+                data.forEach((ip) => {
+                  iplist += `${ip.address}; `;
+                });
+
+                res.writeHead(200, {
+                  'Content-Type': 'text/plain'
+                });
+                res.write('IPs:\n');
+                res.end(iplist);
+              });
+            });
+          }).listen(process.env.PORT || 8080, () => {
+            console.log('started web process');
+          });
+        });
+
+1.  Create a `keys.json` file with the following content, replacing the
+    variables with your own values:
+
+        {
+          "mongoHost": "YOUR_MONGO_HOST",
+          "mongoPort": "YOUR_MONGO_PORT",
+          "mongoDatabase": "YOUR_MONGO_DB",
+          "mongoUser": "YOUR_MONGO_USERNAME",
+          "mongoPass": "YOUR_MONGO_PASSWORD"
+        }
+
+    Do not check your credentials into source control. Create a `.gitignore`
+    file if you don't have one, and add `keys.json` to it.
+
+## Run the app
+
+1.  Run the app locally:
+
+        npm start
+
+1.  Visit [http://localhost:8080](http://localhost:8080) to see the app.
+
+## Deploy the app
+
+1.  Create an `app.yaml` file with the following content:
+
+        runtime: nodejs
+        env: flex
+
+1.  Run the following command to deploy your app:
+
+        gcloud app deploy
+
+1.  View the deployed app:
+
+        gcloud app browse
+
+[mongo]: https://www.mongodb.com/
+[nodejs-gcp]: running-nodejs-on-google-cloud
+[nodejs]: /nodejs/docs/setup
+
+* mongodb gcloud
+
+https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
+
+---
+title: Hello World App - MongoDB Atlas and App Engine Flex - NodeJS
+description: Learn how to build Node.js application with Google App Engine flexible environment and MongoDB Atlas.
+author: arajwade,smithkh
+tags: App Engine, Node.js, MongoDB Atlas
+date_published: 2018-06-25
+---
+
+## Overview
+
+In this tutorial, you will be building a "Hello World" application using Node.js
+with Google App Engine flexible environment for our frontend and a MongoDB Atlas
+multi-regional cluster on Google Cloud Platform as our primary database.
+
+### Technical Complecity
+
+Beginner
+
+### Duration
+
+45 Minutes
+
+### Objectives
+
+1.  Create and configure MongoDB Atlas multi-regional cluster on GCP.
+2.  Configuring our Google Cloud Platform Account.
+3.  Configure a Node.js application on a GCE Debian VM on GCP.
+4.  Push your application to App Engine Flex on GCP.
+5.  Visit our new application from any web-enabled client terminal, including
+    mobile devices.
+
+## Part 1: Configuring the MongoDB Atlas
+
+1.  Create a free account on MongoDB Atlas on www.mongodb.com/cloud/atlas
+
+    Click on "Login" at the top of the page:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image18.png)
+
+2.  If you do not already have a MongoDB Atlas account, register for new account
+    at the bottom of the page. If you do, skip to Step 5.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image3.png)
+
+3.  Enter necessary details and click "Continue":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image12.png)
+
+4.  Once on the MongoDB Atlas Homepage, select "Build a New Cluster":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image15.png)
+
+5.  Create New Cluster by selecting Google Cloud Platform as a "Cloud Provider".
+    Next select the region where you want to place your Atlas cluster. Ideally,
+    your cluster will be located close to your end user for lower latency. Note
+    that we can select a free tier region in your area of choice, as noted by
+    the "Free Tier Available" icon. This is a no-cost option to get started.
+    However, since we are assuming our end users will span across the globe, we
+    want our Atlas cluster to be multi-regional. To enable a multi-regional
+    cluster, we will need to select a M10 or larger cluster size. So for now,
+    for our use case, let’s assume our primary end users for our application
+    will be based in the US and a smaller percentage based in the UK and
+    Australia. As such, we will select our primary region to be in North
+    America, based in Iowa (us-central1).
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image45.png)
+
+6.  Next, to enable multiple regions, lets configure our cluster size under
+    "Cluster Tier". Select "M10" under "Dedicated Development Clusters"
+    subheading since this is the minimal size to move forward for
+    multiple-regions.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image11.png)
+
+7.  Now that we selected a M10 cluster, let's go back to "Cloud Provider &
+    Region" and toggle the option to "Configure clusters across multiple
+    regions" from "No" to "Yes". Once we enable this we will see more options.
+    You will see your previously selected region as "Preferred" under "Node
+    Type". Since for our use-case we will also have some users in the UK and
+    Australia, we want to take into the considering the distance between our
+    primary cluster in the US and enable lower latency for better read
+    performance. As such, we will add a Read-only replica in London
+    (europe-west2) and Sydney (australia-southeast1). Under the subheading
+    "Deploy read-only replicas", select "Add a node" and add these two regions
+    with 1 node each.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image27.png)
+
+8.  We can skip the section "Additional settings" by clicking the "NEXT:
+    CLUSTER NAME" button since we will keep the default settings.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image35.png)
+
+9.  Under "'Cluster Name', provide a cluster Name." For this demo, we will keep
+    the default of "Cluster0". Click on "Create Cluster" button at the bottom of
+    the page.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image38.png)
+
+10.  Our cluster is spinning up...
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image36.png)
+
+11. While this spins up, let's click on "Security" tab and then click on
+    "Add New User".
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image22.png)
+
+12. Leave the default user as of "admin" and select a secure password. Record
+    your user name and password in a safe location for reference later. Under
+    "User Privileges", select "Atlas admin" and click on the "Add User" button
+    to complete this section.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image16.png)
+
+13.  Once done, we will see screen similar to this...
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image32.png)
+
+14. Under Security tab, select "IP Whitelist" and click on "Add IP Address".
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image26.png)
+
+15. Select "Allow Access from Anywhere" for the purpose of this demo and click
+    on "Confirm".  Note:  When actually putting something into production, you
+    will want to narrow the scope of where your database can be accessed and
+    specify a specific IP address/CIDR block.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image20.png)
+
+16. Go to "Overview" tab and click on "Connect" button.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image42.png)
+
+17. A window will open. Select "Connect Your Application"
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image19.png)
+
+18. Click on "I am using driver 3.4 or earlier" and copy the connection string
+    and keep it in a text file. We will be using it in our Node.js application
+    to connect to MongoDB Atlas in Part 2 of this document. Close the pop-up
+    dialogue
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image40.png)
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image41.png)
+
+## Part 2: Configuring our Google Cloud Platform Account
+
+1.  Go to cloud.google.com and login with your Google account. If you don't have
+    a Google account, please create a free trial account by following
+    instructions at this [link](https://console.cloud.google.com/freetrial).
+
+2.  If not already there, go to https://console.cloud.google.com/
+
+3.  Create a new project, by selecting the following dropdown in the top left:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image37.png)
+
+4.  A new window will pop up.  In it, select "New Project" in the top left:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image21.png)
+
+5.  Give your Hello World app a new project name and click the "Create" button:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image13.png)
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image46.png)
+
+6.  After your new project is done being created. Go back to the dropdown in
+    Step 3, select your new project name:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image4.png)
+
+7.  When the right project is selected, the name will change to reflect this in
+    the dropdown in the top left of your console:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image23.png)
+
+8.  Next, let's enable the specific APIs we will need:. Click on
+    "APIs & Services" in the left toolbar:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image10.png)
+
+9.  Then select, "ENABLE APIS AND SERVICES":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image30.png)
+
+10. Select both "Google App Engine Flexible Environment" and "Google App Engine
+    Admin API", then select "Enable":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image39.png)
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image44.png)
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image8.png)
+
+11. Next, lets enable App Engine for our specific language. Use the search bar
+    in the console and type in "App Engine". Select "App Engine" from the list
+    of options
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image31.png)
+
+12. In the blue box on the left, choose the "Select a language" dropdown:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image29.png)
+
+13. Choose Node.js:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image2.png)
+
+14. Select a region where the majority of your users will be, then select
+    "Next":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image5.png)
+
+15. Close out of the optional tutorial on the right side, by selecting "Cancel
+    Tutorial" in the bottom right:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image25.png)
+
+## Part 3: Configuring and deploying our Node.js application
+
+1. Create a Debian Linux GCE VM instance using the instructions given [here](https://cloud.google.com/compute/docs/quickstart-linux).
+
+    NOTE: When creating your instance, please be sure to enable "Allow full
+    access to all Cloud APIs" under "Identity and API access":
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image33.png)
+
+2. After your instance is created, SSH to your instance by clicking on the SSH button of your instance.
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image24.png)
+
+3. You should see a Linux window similar to this open...
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image6.png)
+
+4.  Configure your instance for Node.js and MongoDB client by executing
+    following comments.
+
+        sudo apt-get update
+
+        curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+        sudo apt-get install -y nodejs
+
+        sudo apt-get install -y build-essential
+
+        npm install nconf
+
+5.  Preparing the app - Initialize a package.json file with the following
+    command:
+
+        npm init
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image47.png)
+
+    For "package name", enter: "test"
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image34.png)
+
+    - For "version", enter: "1.0.0"
+    - For "description", leave blank
+    - For "entry point", enter: "server.js"
+    - For "test command", leave blank
+    - For "git repository", leave blank
+    - For "keywords", leave blank
+    - For "author", leave blank
+    - For "license", leave blank
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image7.png)
+
+    When done, you should see something similar to this...
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image14.png)
+
+    Enter "yes" and press enter
+
+6.  Install dependencies:
+
+        npm install mongodb@2.2.33 --save
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image17.png)
+
+7.  Create a `server.js` file with the following contents by using command.
+
+
+        nano server.js
+
+    Copy the given code into the Nano editor and save the file using Ctrl + X.
+    NOTE: See the highlighted section where you need to insert your own Atlas
+    Connection string.
+
+        'use strict';
+
+        const mongodb = require('mongodb');
+        const http = require('http');
+        const nconf = require('nconf');
+        let uri = ` PASTE YOUR MONGODB ATLAS CONNECTION STRING HERE `;
+        if (nconf.get('mongoDatabase')) {
+          uri = `${uri}/${nconf.get('mongoDatabase')}`;
+        }
+        console.log(uri);
+
+        mongodb.MongoClient.connect(uri, (err, db) => {
+          if (err) {
+            throw err;
+          }
+
+          // Create a simple little server.
+          http.createServer((req, res) => {
+            if (req.url === '/_ah/health') {
+              res.writeHead(200, {
+                'Content-Type': 'text/plain'
+              });
+              res.write('OK');
+              res.end();
+              return;
+            }
+
+
+            const collection = db.collection('Messages');
+            var datetime = new Date();
+            const msg = {
+              msgDescription: '\nHello World received on ' + datetime
+            };
+
+            collection.insert(msg, (err) => {
+              if (err) {
+                throw err;
+              }
+
+              // push out a range
+              let msglist = '';
+              collection.find().toArray((err, data) => {
+                if (err) {
+                  throw err;
+                }
+                data.forEach((msg) => {
+                  msglist += `${msg.msgDescription}; `;
+                });
+
+                res.writeHead(200, {
+                  'Content-Type': 'text/plain'
+                });
+        res.write('Messages received so far:\n');
+                res.end(msglist);
+              });
+            });
+          }).listen(process.env.PORT || 8080, () => {
+            console.log('started web process');
+          });
+        });
+
+    1.  Enter "Exit" to leave
+    1.  On prompt to save, enter "Y"
+    1.  Keep same file name, Hit Enter
+
+8.  Running our app - Run the app locally by running the following command:
+
+        npm start
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image43.png)
+
+9.  Open another instance of SSH session by repeating the steps listed in X.2
+    in the cloud console and run following command
+
+        curl localhost:8080
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image9.png)
+
+## Part 4: Push our application to App Engine Flex on GCP
+
+Deploying the app to App Engine Flex
+
+1.  Create an app.yaml file by running the following command:
+
+        nano app.yaml
+
+2.  Add following content to to app.yaml file by running the following command:
+
+        runtime: nodejs
+        env: flex
+
+3.  Run the following command to deploy your app by running the following command:
+
+        gcloud app deploy
+
+4.  View the deployed app by running the following command:
+
+        gcloud app browse
+
+## Part 5: Visit our new application from any web-enabled client terminal; including mobile devices.
+
+1.  Retrieve your external URL from the output of gcloud app browse command:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image28.png)
+
+2.  Use a web-enabled client terminal to visit your new "Hello World"
+    application using the external  URL in the previous step. You should see
+    webpage showing screen similar to this:
+
+    ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image1.png)
+
 * bash adding numbers
 "$(($num1+$num2))"
 
@@ -1279,6 +1853,7 @@ https://cloud.google.com/appengine/docs/flexible/custom-runtimes/
 https://cloud.google.com/appengine/docs/flexible/custom-runtimes/debugging-an-instance
 * gcloud tutorials
 node.js "app engine standard"
+
 
 * setting emacs for javascript
 https://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
@@ -2457,3 +3032,624 @@ Name_of_Array.size();
 
 * best anime
 https://sheet.host/user/animenz
+
+* 11/15/18
+* Vueschool good vuex free
+https://vueschool.io/plans
+https://vueschool.io/checkout?plan=MONTHLY
+https://vueschool.io/lessons/vuex-mutation-history-and-vue-devtools
+
+* Another reasonable class $10
+https://www.udemy.com/vuejs-2-the-complete-guide/?start=0
+https://support.udemy.com/hc/en-us/articles/229231167-Downloading-Courses
+
+* Interesting blog should go over it
+https://blog.rangle.io/how-to-create-data-driven-user-interfaces-in-vue/
+
+* Good forum
+https://forum.vuejs.org/top/all?order=views
+
+* Either quasar or vuetify
+https://quasar-framework.org/
+https://quasar-framework.org/quasar-play/android/index.html#/showcase
+** hot reload
+https://github.com/quasarframework/quasar/issues/21
+https://github.com/quasarframework/quasar-template-default/issues/10
+https://github.com/webpack-contrib/webpack-hot-middleware/issues/129
+
+* Renew
+https://www.namecheap.com/myaccount/login.aspx?returnurl=%2fcart%2faddtocart.aspx%3fproducttype%3ddomains%26action%3drenew%26domainlist%3dfrankliu.org
+
+* Horizontal containers
+https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
+https://uxdesign.cc/creating-horizontal-scrolling-containers-the-right-way-css-grid-c256f64fc585
+https://forum.vuejs.org/t/horizontal-scroll-using-buttons-in-vuejs/38089/2
+
+* vue mastery a bit pricey
+https://www.vuemastery.com/pricing
+
+* Comparison of books and websites for vue
+https://vuejsfeed.com/blog/best-resources-to-learn-vue-js-in-2018
+
+* vue news
+https://news.vuejs.org/issues/93
+
+* scotch.io
+https://scotch.io/tag/vue
+
+* vue and firebase
+https://vuejs.org/v2/examples/firebase.html
+https://tech-blog.abeja.asia/entry/firebase-on-vue
+
+* vue nuxt
+https://medium.com/vue-mastery/10-reasons-to-use-nuxt-js-for-your-next-web-application-522397c9366b
+
+* vue mastery
+https://www.vuemastery.com/courses/mastering-vuex/mastering-vuex-orientation
+
+* vue express
+Good tutorial
+https://www.techiediaries.com/vue-js-express-tutorial/
+https://cherubini.casa/vue-js-and-express-can-they-live-together-c17d48bc41b7
+
+* vue adonis
+https://dev.to/mzanggl/build-fullstack-javascript-apps-with-adonis-and-vue-3edc
+
+* vue and firestore vue and full stack
+https://www.youtube.com/user/TechGuyWeb/playlists
+
+* Deploying vue in google cloud
+https://forum.vuejs.org/t/deploying-to-cloud-such-as-google-cloud/16143/5
+https://stackoverflow.com/questions/53219588/deploying-vuejs-on-google-cloud
+
+* vue or react on google cloud
+https://www.youtube.com/watch?v=hh7DEAyDs2c
+
+* deployment to heroku or google cloud fails
+https://github.com/vuejs/vue-hackernews-2.0/issues/224
+
+* nodejs to google cloud
+https://www.youtube.com/watch?v=thlFWQ15Z-0
+
+* deploy node js apps on google app engine
+https://stackabuse.com/deploy-node-js-apps-on-google-app-engine/
+
+* firebase hosting
+https://firebase.google.com/docs/hosting/deploying
+
+* SPA on google cloud
+https://www.verypossible.com/blog/how-to-deploy-a-single-page-application-to-google-cloud
+
+* vue firebase firestore
+https://www.smashingmagazine.com/2018/04/vuejs-firebase-firestore/
+
+* Elixir google an vue?
+https://vue-hn.now.sh/item/16208809
+
+* firebase vue written by evan
+https://firebase.googleblog.com/2016/04/vuefire-firebase-meets-vuejs_0.html
+
+* nuxt on google app engine (in japanese)
+https://qiita.com/SatoTakumi/items/4f418dc5c700b9d66d7d
+
+* webpack on gcloud
+uploads assets to gcloud
+https://www.npmjs.com/package/webpack-google-cloud-storage-plugin
+
+
+* jobs for vue
+https://workatremote.com/remote-Google-Cloud+Vue.js-jobs
+
+* travis ci for firebase deployment
+https://docs.travis-ci.com/user/deployment/firebase/
+
+* nuxt.js gcloud deployment
+https://github.com/nuxt/nuxt.js/issues/344
+https://stackoverflow.com/questions/47122669/how-would-you-setup-nuxt-js-with-google-cloud-functions/50737486
+https://stackoverflow.com/questions/47122669/how-would-you-setup-nuxt-js-with-google-cloud-functions
+
+* nuxt also shows deployment
+https://nuxtjs.org/guide/commands/
+https://nuxtjs.org/faq/now-deployment/
+
+* nuxt deploy cosmic js?
+https://hackernoon.com/deploy-a-nuxt-js-tutorials-app-in-3-steps-20962ed7e74c
+
+* nuxt search engine optimization
+https://medium.com/vue-mastery/best-practices-for-nuxt-js-seo-32399c49b2e5
+https://medium.com/vue-mastery/vuepress-vs-nuxt-js-ffc46cc38756
+
+* Server-Side Render Vue Nuxt.js
+https://www.youtube.com/watch?v=ZYUWsjUxxUQ
+
+* Learn Vuex In 10 Minutes (Vue.js State Management)
+https://www.youtube.com/watch?v=LW9yIR4GoVU
+
+* nuxt features
+https://jaxenter.com/nuxt-js-vue-based-framework-141512.html
+https://jaxenter.com/nuxt-js-vue-based-framework-141512.html
+
+* nuxt and firebase (in japanese)
+https://inside.dmm.com/entry/2018/04/10/nuxt-firebase
+
+* compare backends
+https://medium.com/js-dojo/7-vue-js-backends-compared-74812da014f4
+https://medium.com/js-dojo/7-vue-js-backends-compared-74812da014f4
+
+* vue server side rendering router
+https://vuejsdevelopers.com/2017/12/11/vue-ssr-router/
+
+* vue in webstorm
+https://blog.jetbrains.com/webstorm/2018/01/working-with-vue-js-in-webstorm/
+https://www.jetbrains.com/help/idea/refactoring-source-code.html
+
+* vim book how to learn vim plan
+https://leanpub.com/deliberatevim
+https://medium.com/actualize-network/how-to-learn-vim-a-four-week-plan-cd8b376a9b85
+https://superuser.com/questions/246487/how-to-use-vimtutor
+https://superuser.com/questions/663006/how-to-exit-help-in-vim
+
+https://www.shortcutfoo.com/
+http://www.vimgenius.com/
+
+* cse373 hows heapify sum i/2^i
+course based on weiss
+https://courses.cs.washington.edu/courses/cse373/18wi/files/slides/
+
+* solutions to weiss
+https://www.quora.com/Is-there-an-answer-book-to-the-Data-Structures-and-Algorithm-Analysis-in-C-by-Mark-Allen-Weiss
+http://mail.csis.ul.ie/~cs4115/resources/res-map.html
+
+* solutions to intro to algorithms
+https://ita.skanev.com/about.html
+
+* mongodb compass allows you to view the mongodb
+login to cloud.mongodb.com
+
+There are 4 steps
+1. build your first cluster
+2. create your firstr database user
+3. whitelist your ip address
+4. connect to your cluster
+
+You can click connect, then you have a bunch of choices to view the
+database:
+
+mongo shell
+connect your application
+connect with mongodb compass
+
+** Connect to a Cluster
+On this page
+
+Prerequisites
+Use the Connect dialog to Connect to Your Cluster
+Prerequisites
+Whitelist
+To access a cluster, you must connect from an IP address on the Atlas project’s IP whitelist. If you need to add an IP address to the whitelist, you can do so in the Connect dialog. You can also add the IP address from the Security tab.
+MongoDB User
+To access a cluster, you must create a MongoDB User with access to the desired database(s) on your Atlas cluster. MongoDB users are separate from Atlas users. MongoDB users have access to MongoDB databases, while Atlas users have access to the Atlas application itself.
+
+You can create a MongoDB user to access to your Atlas cluster in the
+Connect dialog. You can also add the MongoDB user from the Clusters
+view.
+
+Use the Connect dialog to Connect to Your Cluster
+1
+Open the Connect dialog.
+Go to the Clusters view. Click the Connect button for the cluster to which you wish to connect.
+
+2
+Whitelist your connection IP address.
+Atlas only allows client connections to the cluster from entries in the project’s whitelist. The project whitelist is distinct from the API whitelist, which restricts API access to specific IP or CIDR addresses.
+
+NOTE
+
+You can skip this step if Atlas indicates in the Setup Connection Security step that you have already configured a whitelist entry in your cluster. To manage the IP whitelist, see Add Entries to the Whitelist.
+
+If the whitelist is empty, Atlas prompts you to add an IP address to the project’s whitelist. You can either:
+
+Click Add Your Current IP Address to whitelist your current IP address.
+
+Click Add a Different IP Address to add a single IP address or a
+CIDR-notated range of addresses.
+
+For Atlas clusters deployed on Amazon Web Services and using VPC
+Peering, you can add a Security Group associated with the peer VPC.
+
+You can provide an optional description for the newly added IP address
+or CIDR range. Click Add IP Address to add the address to the
+whitelist.
+
+3
+
+Create a MongoDB User.
+
+To access the cluster, you must create a MongoDB user with access to
+the desired database(s) on the cluster.
+
+NOTE
+
+You can skip this step if Atlas indicates in the Setup Connection
+Security step that you have at least one MongoDB user configured in
+your project. To manage existing MongoDB users, see Add MongoDB Users.
+
+If the project has no MongoDB users, Atlas prompts you to create a new
+user with the Atlas Admin privilege. Enter the new user’s Username and
+Password and click Create MongoDB User to save the user. Use this user
+to connect to your cluster in the following step.
+
+Once you have whitelisted an IP address and added a MongoDB user,
+click Choose Your Connection Method.
+
+4
+
+Select your preferred connection method.
+
+In the Choose a connection method step, Atlas provides instructions
+for each listed connection method. Click your preferred connection
+method and follow the instructions given.
+
+For connecting via a command line tool such as mongodump or
+mongorestore, use the Command Line Tools tab for an auto-generated
+template for connecting to your Atlas cluster with your preferred
+tool.
+
+SEE ALSO
+
+Connect via Driver
+Connect via Compass
+Connect via mongo Shell
+Connect via BI Connector for Atlas
+Browse Data via the Atlas Data Explorer
+Test Failover
+Best Practices Connecting from AWS Lambda
+Connection Limits and Instance Sizes
+
+* vim edit inside parents
+ci( ci)                 # change inside parens
+:help text-objects      # find out more about 'i' (inside)
+
+Use
+ca( ca)                 # change inside parens, parens included
+
+* vim editing buffers
+:b <#>       # if it a number
+:b <name>    # give it a name
+:bn          # next
+:ls          # list all buffers
+:e <name>    # open file in a new buffer
+
+* vim flake8
+
+install vim-pathogen (sudo aptitude install vim-pathogen)
+add the following to your .vimrc
+
+execute pathogen#infect()
+filetype plugin indent on
+syntax on
+autocmd BufWritePost *.py call Flake8()
+
+install using git clone on .vim/bundle directory
+git clone http://github.com/nvie/vim-flake8
+
+** using it
+F7 will start the flake8 process, but if you write to the file
+should automatically call Flake8()
+
+navigate to the flake8 window with C-W j (down)
+
+j,k + Enter to go to a particular line number
+
+then edit the line and save, Flake8() will auto launch and
+you get a fresh set of update errors
+
+* vim whitespace and line numbers
+:set number
+:set list
+:set listchars=...
+
+:help listchars
+
+* mongodb
+https://www.mongodb.com/cloud/atlas
+https://cloud.mongodb.com/v2/5bdcb1a2014b76b6fa656c9c#clusters/connect?clusterId=Cluster0
+https://docs.atlas.mongodb.com/connect-to-cluster/#connect-to-a-cluster
+
+* spacemacs
+https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#alternative-dotdirectory
+https://gist.github.com/kaz-yos/0c7bc69d3df6a9199b4db715b9455a30
+https://stackoverflow.com/questions/21568042/how-to-start-up-emacs-with-different-configurations
+https://github.com/syl20bnr/spacemacs/blob/master/doc/BEGINNERS_TUTORIAL.org
+https://emacs.stackexchange.com/questions/26121/portable-emacs-remapping-user-emacs-directory
+
+* finding median
+https://brilliant.org/wiki/median-finding-algorithm/
+
+* find rank k
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
+
+* choosing pivot
+https://stackoverflow.com/questions/164163/quicksort-choosing-the-pivot
+
+* median of medians algorithm
+https://stackoverflow.com/questions/12545795/explanation-of-the-median-of-medians-algorithm
+
+* Master theorem
+http://www.cse.unt.edu/~tarau/teaching/cf1/Master%20theorem.pdf
+http://www.cs.columbia.edu/~mihalis/cs4231/Handouts/Mastertheorem.pdf
+
+* Median of three value
+https://stackoverflow.com/questions/7559608/median-of-three-values-strategy
+
+* Python swap variables
+https://stackoverflow.com/questions/14836228/is-there-a-standardized-method-to-swap-two-variables-in-python
+
+* Quicksort Mergesort and Heapsort  Algorithm class
+http://www.cs.fsu.edu/~breno/COP-4530/slides/21-anim.pdf
+
+* Python pass by reference (list automatically pass by reference)
+https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference/986145#986145
+
+* Vim split windows with C-w s (horizontally)  C-w v (vertically)
+https://www.google.com/search?q=how+to+split+vim+windows&oq=how+to+split+vim+windows&aqs=chrome..69i57.8574j0j7&sourceid=chrome&ie=UTF-8
+
+Move in between them with C-w <direction>
+C-w r (rotate)
+:q close a window
+C-w +- increase height
+C-w >< increase width
+C-w = make them equal
+
+* Vim select between parentheses, and brackets
+ci) - change inside )
+https://stackoverflow.com/questions/1061933/how-to-select-between-brackets-or-quotes-or-in-vim
+
+* Vim tabs and buffers
+https://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
+
+* Vim select entire line Shift-V  yy to copy line to buffer
+https://stackoverflow.com/questions/18666376/vim-select-entire-line
+
+* vim find the next character ; ,
+https://stackoverflow.com/questions/10340562/vim-repeat-find-next-character-x
+
+* vim copy to clipboard "+ or "*
+https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim
+https://stackoverflow.com/questions/11042920/how-to-copy-and-paste-between-different-tmux-panes-running-vim-instances
+
+* vim change alternatives
+http://manpages.ubuntu.com/manpages/trusty/man8/update-alternatives.8.html
+
+* vim python 
+1. aptitude install vim-pathogen
+
+2. add to ~/.vimrc
+
+   execute pathogen#infect()
+   filetype plugin indent on
+   syntax on
+   autocmd BufWritePost *.py call Flake8()
+
+3. clone vim-flake to .vim/bundle
+https://github.com/nvie/vim-flake8
+
+* vim show all white space :set list
+https://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
+
+* vim adding a space around a symbol (i \rightarrow )
+https://vi.stackexchange.com/questions/8472/how-to-add-space-around-a-symbol-using-vim
+https://stackoverflow.com/questions/2443347/command-to-surround-a-character-with-spaces-in-vim
+
+* vim search and replace
+http://vim.wikia.com/wiki/Search_and_replace
+
+* min max heap
+https://en.wikipedia.org/wiki/Min-max_heap
+https://www.geeksforgeeks.org/binary-heap/
+https://cglab.ca/~morin/teaching/5408/refs/minmax.pdf
+https://rcoh.me/posts/reflections-on-two-years-of-freelancing/
+http://erdani.com/research/sea2017.pdf
+https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+https://stackoverflow.com/questions/5347091/slicing-nested-list
+http://interactivepython.org/courselib/static/pythonds/Trees/BinaryHeapImplementation.html
+https://www.geeksforgeeks.org/heap-sort/
+https://stackoverflow.com/questions/13142041/build-a-max-heap-and-iteration
+https://en.wikipedia.org/wiki/Binary_heap
+https://mail.google.com/mail/u/0/#inbox/KtbxLthRWGjbljjQTtZgHMZtgrfgrkjxNB
+https://zoom.us/postattendee?id=36
+http://oj.interviewkickstart.com/dashboard/student/
+http://oj.interviewkickstart.com/view_editorial/615/51/
+http://oj.interviewkickstart.com/view_topic/11/
+https://www.google.com/maps/place/St+Mark's+Episcopal+Church/@37.4305085,-122.1339244,16z/data=!4m5!3m4!1s0x808fbaf871e2a37f:0xc5b13dc323f7d2f2!8m2!3d37.4317382!4d-122.1296963
+https://www.quora.com/In-Python-how-do-I-convert-a-string-to-a-list-in-which-each-character-will-be-separated
+https://www.geeksforgeeks.org/merge-sort/
+https://stackoverflow.com/questions/10572624/mutable-strings-in-python
+https://stackoverflow.com/questions/11624190/python-convert-string-to-byte-array
+https://stackoverflow.com/questions/29177788/python-string-to-bytearray-and-back
+https://wiki.python.org/moin/UsingPickle
+https://www.google.com/search?q=split+even+odd+numbers&oq=split+even+odd+numbers&aqs=chrome..69i57.7106j0j4&sourceid=chrome&ie=UTF-8
+https://hal-upec-upem.archives-ouvertes.fr/hal-01212839
+https://www.geeksforgeeks.org/median-of-two-sorted-arrays/
+https://www.google.com/maps/place/Page+St+%26+Fillmore+St,+San+Francisco,+CA+94117/@37.7730409,-122.4481683,14z/data=!4m5!3m4!1s0x808580a6a5cb67ef:0x211b8a0c02363319!8m2!3d37.7730409!4d-122.4306588
+http://my.oracle.com/
+https://my.oracle.com/site/git/cnt2721210.pdf
+https://mightytext.net/web8/?exp=1
+https://oracle-auth.securew2.com/auth/success.html?sessionId=qsl7nt60lhormtpfqij8ijb9fk&state=cda74dcf-5d1d-4225-9900-c349214a11cd&xsrfsign=
+https://mail.google.com/mail/u/0/#inbox
+https://interview-kickstart.teachable.com/
+
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&duration=PT1H
+https://www.techiediaries.com/vue-js-express-tutorial/
+https://www.techiediaries.com/vuejs/
+https://cloud.mongodb.com/user?n=%2Fv2%2F5bdcb1a2014b76b6fa656c9c&nextHash=%23clusters%2Fconnect%3FclusterId%3DCluster0#/atlas/login
+https://docs.mongodb.com/manual/reference/connection-string/
+https://cloud.mongodb.com/user?n=%2Fv2%2F5bdcb1a2014b76b6fa656c9c&nextHash=%23clusters%2Fsecurity%2Fusers#/atlas/login
+https://mongoosejs.com/docs/connections.html
+https://mongoosejs.com/docs/connections.html#buffering
+https://cscnt.savannahstate.edu/StudentFiles/
+https://oracle.zoom.us/meeting/6505062381
+https://web.telegram.org/#/im?p=g243615789
+https://www.facebook.com/events/192679788310167/
+https://www.quora.com/How-to-use-VueJS-with-NodeJS
+https://appdividend.com/2017/08/04/vuejs-nodejs-tutorial/
+https://github.com/icebob/vue-express-mongo-boilerplate
+https://clients.mindbodyonline.com/classic/mainclass?studioid=12827&tg=&vt=&lvl=&stype=&view=&trn=0&page=&catid=&prodid=&date=11%2f19%2f2018&classid=0&prodGroupId=&sSU=&optForwardingLink=&qParam=&justloggedin=&nLgIn=&pMode=0&loc=1
+https://alligator.io/vuejs/using-new-vue-cli-3/
+https://dev.to/abiodunjames/build-a-todo-app-with-nodejs-expressjs-mongodb-and-vuejs--part-1--29n7
+https://www.google.com/search?q=shopping+app+vue+express+mongo&oq=shopping+app+vue+express+mongo&aqs=chrome..69i57.6044j0j7&sourceid=chrome&ie=UTF-8
+https://www.djamware.com/post/5a1b779f80aca75eadc12d6e/mongo-express-vue-nodejs-mevn-stack-crud-web-application
+https://imwz.io/building-a-store-with-vue-part-seven-express-api-setup/
+https://imwz.io/building-store-vue-part-one/
+https://medium.com/@jaouad_45834/full-stack-shopping-cart-with-mevn-stack-part-1-89dae1f35378
+https://supost.com/post/index/129870434
+https://web.stanford.edu/class/msande226/
+https://sfbay.craigslist.org/search/sss?query=boardgame&sort=rel
+https://outlook.office.com/owa/?realm=stanford.edu
+https://docs.google.com/forms/u/1/d/e/1FAIpQLScoWQlDlg-5_LdbhGVqH7b-6KuuC8-ycsHv1P66LwO1Nu1mKg/formResponse
+https://www.amazon.com/s/ref=sr_pg_2?rh=i%3Aaps%2Ck%3Abottom+bracket+removal+tool&page=2&keywords=bottom+bracket+removal+tool&ie=UTF8&qid=1542667947
+https://web.stanford.edu/class/msande226/
+http://localhost:8080/#/
+https://console.developers.google.com/apis/dashboard?project=api-project-950844133145&duration=PT1H
+https://console.developers.google.com/apis/library?project=gbsc-gcp-lab-gssc&authuser=1
+chrome://newtab/
+https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
+https://cloud.google.com/appengine/docs/flexible/nodejs/reference/app-yaml
+https://cloud.google.com/appengine/docs/standard/nodejs/quickstart
+https://cloud.google.com/sdk/docs/proxy-settings
+https://gbsc-gcp-lab-gssc.appspot.com/
+https://mhaligowski.github.io/blog/2017/04/05/template-for-react-application.html
+https://stackoverflow.com/questions/50245355/how-to-deploy-create-react-app-to-google-cloud
+https://github.com/facebook/create-react-app/issues/2077
+https://medium.com/google-cloud/server-side-rendered-react-on-google-cloud-functions-8b51b2b0878c
+https://boardgamegeek.com/boardgame/6472/game-thrones-first-edition/expansions
+https://boardgamegeek.com/boardgameexpansion/19400/game-thrones-storm-swords-expansion
+https://www.google.com/search?q=star+trek+ccg+boardgamegeek&oq=star+trek+ccg+boardgamegeek&aqs=chrome..69i57j69i64.12056j0j7&sourceid=chrome&ie=UTF-8
+https://www.youtube.com/watch?v=lrtRoTOWFHY
+https://medium.com/google-cloud/hosting-a-react-js-app-on-google-cloud-app-engine-6d1341b75d8c
+https://daveceddia.com/create-react-app-express-backend/
+https://www.dataexpedition.com/support/notes/tn0021.html
+http://cpham.perso.univ-pau.fr/TCP/58_3.PDF
+https://www.google.com/search?q=tcp+throughput+under+transmission+loss&ei=pZzzW9qNLIPN0PEPzpSfqAs&start=10&sa=N&ved=0ahUKEwia9P7Hn-LeAhWDJjQIHU7KB7UQ8NMDCJ0B&biw=1395&bih=670
+https://blog.thousandeyes.com/a-very-simple-model-for-tcp-throughput/
+http://www-sop.inria.fr/members/Chadi.Barakat/Sigmetrics1.pdf
+https://www.ietf.org/proceedings/50/I-D/pilc-error-06.txt
+https://ieeexplore-ieee-org.stanford.idm.oclc.org/document/1354700
+https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/back-issues/table-contents-5/ipj-archive/article09186a00800c8417.html
+https://web.telegram.org/#/im?p=@jieunjang
+https://www.netcraftsmen.com/understanding-interface-errors-and-tcp-performance/
+https://dl-acm-org.stanford.idm.oclc.org/citation.cfm?id=264023
+https://cseweb.ucsd.edu/classes/wi01/cse222/papers/mathis-tcpmodel-ccr97.pdf
+https://link-springer-com.stanford.idm.oclc.org/chapter/10.1007/978-3-642-56478-9_35
+https://link-springer-com.stanford.idm.oclc.org/content/pdf/10.1007%2F978-3-642-56478-9.pdf
+https://orgmode.org/worg/org-tutorials/org-latex-preview.html
+
+* org latex preview
+https://emacs.stackexchange.com/questions/30341/how-do-i-customize-the-process-that-gets-triggered-in-org-preview-latex-fragment
+https://orgmode.org/worg/org-tutorials/org-latex-preview.html
+https://www.reddit.com/r/emacs/comments/5rf9d4/help_org_setup_preview_latex_fragments/
+https://emacs-orgmode.gnu.narkive.com/tzPJkvJi/o-what-is-the-best-way-to-show-inline-math-formulas-in-org-mode
+https://orgmode.org/worg/org-tutorials/org-latex-preview.html
+https://github.com/jgm/pandoc/issues/2440
+Need to install texlive-latex-recommended texlive-latex-extra
+
+* tcp tutorial
+http://ssfnet.org/Exchange/tcp/tcpTutorialNotes.html
+
+* multiple connections to same port
+https://stackoverflow.com/questions/3329641/how-do-multiple-clients-connect-simultaneously-to-one-port-say-80-on-a-server
+https://blogs.technet.microsoft.com/askds/2008/10/29/port-exhaustion-and-you-or-why-the-netstat-tool-is-your-friend/
+https://stackoverflow.com/questions/1694144/can-two-applications-listen-to-the-same-port
+https://gemfire.docs.pivotal.io/96/geode/topologies_and_comm/cs_configuration/chapter_overview.html
+https://stackoverflow.com/questions/10861556/how-listening-to-a-socket-works
+https://stackoverflow.com/questions/3329641/how-do-multiple-clients-connect-simultaneously-to-one-port-say-80-on-a-server
+https://stackoverflow.com/questions/2997754/does-the-port-change-when-a-server-accepts-a-tcp-connection
+https://stackoverflow.com/questions/3638953/do-tcp-connections-get-moved-to-another-port-after-they-are-opened
+https://stackoverflow.com/questions/2997754/does-the-port-change-when-a-server-accepts-a-tcp-connection
+https://stackoverflow.com/questions/3329641/how-do-multiple-clients-connect-simultaneously-to-one-port-say-80-on-a-server?noredirect=1&lq=1
+http://www.scs.stanford.edu/07wi-cs244b/refs/net2.pdf
+https://stackoverflow.com/questions/11129212/tcp-can-two-different-sockets-share-a-port/11129641
+https://serverfault.com/questions/313168/is-it-possible-to-run-two-webservers-on-the-same-port-on-the-same-server-e-g
+
+* load balancer python
+https://github.com/bennr01/load_balancer/blob/master/load_balancer.py
+https://www.google.com/search?q=load+balancer+in+python&oq=load+balancer+in+python&aqs=chrome..69i57.4476j0j7&sourceid=chrome&ie=UTF-8
+https://github.com/j2kun/load-balancing/blob/master/loadbalance.py
+https://ecs-network.serv.pacific.edu/past-courses/2014-fall-ecpe-177/projects/project-5
+https://in.pycon.org/cfp/pycon-india-2015/proposals/python-load-balancer-0-to-1-million-requests-per-second~dwjRb/
+https://www.youtube.com/watch?v=5jNQgX-bTeM
+https://news.ycombinator.com/item?id=10885727
+https://www.geeksforgeeks.org/load-balancing-on-servers-random-algorithm/
+http://www.haproxy.org/
+https://jaxenter.com/one-million-requests-per-sec-no-sweat-for-compute-engine-says-google-107188.html
+https://www.techempower.com/blog/2014/03/04/one-million-http-rps-without-load-balancing-is-easy/
+https://pypi.org/project/txLoadBalancer/
+https://github.com/akan5938/mantrid
+https://medium.freecodecamp.org/million-requests-per-second-with-python-95c137af319
+
+* app engine help
+https://cloud.google.com/appengine/community
+https://stackoverflow.com/questions/tagged/google-app-engine
+https://stackoverflow.com/questions/tagged/google-app-engine?sort=faq&amp;pagesize=50
+https://groups.google.com/forum/#!forum/google-appengine
+https://github.com/search?q=app+engine&amp;type=Repositories
+https://bitbucket.org/repo/all?name=gae
+https://www.youtube.com/user/GoogleCloudPlatform
+https://cloudplatform.googleblog.com/
+
+* ticket number
+181119-003127
+was assigned to level 2 team
+did not send any confirmation
+
+* andrea wallman
+925-490-7704 
+719-534-5634 stephanie ballies (supervisor)
+http://oj.interviewkickstart.com/view_topic/12/
+https://www.vuemastery.com/conferences
+https://drive.google.com/drive/u/0/folders/1x1k7fYgPvmF2KIb3s0bPrz8BLNwCJ_8k
+https://docs.google.com/spreadsheets/d/13imr8QgbvA4l5AXg4sFCOAiP3QqowaSy-oL3eO5qf8A/edit#gid=2066805712
+http://oj.interviewkickstart.com/view_editorial/608/102/
+http://oj.interviewkickstart.com/view_test_problem/608/103/
+https://twitter.com/mylesborins?lang=en
+https://daveceddia.com/deploy-react-express-app-heroku/
+https://mhaligowski.github.io/blog/2017/04/05/template-for-react-application.html
+https://www.verypossible.com/blog/how-to-deploy-a-single-page-application-to-google-cloud
+https://www.mongodb.com/webinar/building-modern-apps-with-the-mern-stack-and-gcp
+https://www.google.com/search?q=Building+Modern+Apps+with+the+MERN+Stack+and+Google+Cloud+Platform&oq=Building+Modern+Apps+with+the+MERN+Stack+and+Google+Cloud+Platform&aqs=chrome..69i57j69i60l2j69i61.455j0j7&sourceid=chrome&ie=UTF-8
+https://resources.mongodb.com/vimeo-all-videos/building-modern-apps-with-the-mern-stack-and-google-cloud-platform-4
+https://www.youtube.com/results?search_query=building-modern-apps-with-the-mern-stack-and-google-cloud-platform
+https://vimeo.com/search?q=mern
+https://developer.okta.com/blog/2018/02/15/build-crud-app-vuejs-node
+https://medium.com/@jaouad_45834/full-stack-shopping-cart-with-mevn-stack-part-1-89dae1f35378
+https://nuxtjs.org/guide/development-tools
+https://www.youtube.com/watch?v=nteDXuqBfn0
+https://academind.com/learn/vue-js
+https://www.udemy.com/the-complete-vue-js-course/
+https://web.stanford.edu/class/msande226/datasets.html
+https://en.wikipedia.org/wiki/Bessel%27s_correction
+https://en.wikipedia.org/wiki/Bessel%27s_correction#Source_of_bias
+https://www.google.com/search?q=R+cannot+find+display&oq=R+cannot+find+display&aqs=chrome..69i57j69i64l3.3428j0j7&sourceid=chrome&ie=UTF-8
+https://mail.google.com/mail/u/0/#inbox
+http://oj.interviewkickstart.com/view_test_problem/608/100/
+https://stackoverflow.com/questions/1535327/how-to-print-objects-of-class-using-print
+http://animeheaven.eu/50latest.php
+https://kisscartoon.ac/Cartoon/Star-Wars-Resistance-Season-1/Episode-001-The-Recruit?id=81586&s=fserver
+https://reactdom.com/vue
+https://www.udemy.com/vue-web-apps/?ranMID=39197&ranEAID=R7BSs79ua1Y&ranSiteID=R7BSs79ua1Y-CbZPNlJ7DYYsmMsWlpdMWg&siteID=R7BSs79ua1Y-CbZPNlJ7DYYsmMsWlpdMWg&LSNPUBID=R7BSs79ua1Y
+https://www.udemy.com/vuejs-2-essentials/?ranMID=39197&ranEAID=R7BSs79ua1Y&ranSiteID=R7BSs79ua1Y-CkUmu5E53HQO9FJ2.f8_RA&siteID=R7BSs79ua1Y-CkUmu5E53HQO9FJ2.f8_RA&LSNPUBID=R7BSs79ua1Y
+https://digitaldefynd.com/best-vue-js-tutorial-course-certification-training/
+https://devopscube.com/pluralsight-free-subscription/
+https://crunchadeal.com/coupon/get-70-free-online-courses-for-2-months-from-pluralsight/
+https://www.pluralsight.com/partners/google?growid=googleindiahomev1&clickid=RhixA3zEJTTH07dSTaVBOXZdUkgyeZ3gEUU72s0&irgwc=1&mpid=133200&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=133200&aid=7010a000001xAKZAA2
+https://www.pluralsight.com/pricing
+https://www.pluralsight.com/partners/google?growid=googleindiahomev1&clickid=RhixA3zEJTTH07dSTaVBOXZdUkgycJzgEUU72s0&irgwc=1&mpid=133200&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=133200&aid=7010a000001xAKZAA2
+https://absolute-sharepoint.com/2015/12/free-pluralsight-6-month-subscription.html
+https://www.pluralsight.com/learn?clickid=RhixA3zEJTTH07dSTaVBOXZdUkgycJyAEUU72s0&irgwc=1&mpid=1192259&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1192259&aid=7010a000001xAKZAA2
+https://www.google.com/search?q=how+to+remove+duplicates+from+heap&oq=how+to+remove+duplicates+from+heap&aqs=chrome..69i57.4443j0j7&sourceid=chrome&ie=UTF-8
+chrome://newtab/
+https://mail.google.com/mail/u/0/#search/pluralsight/FMfcgxvzLDxhTnbJpFmwDBMbrPwkZXnG
+https://docs.python.org/2/library/sets.html
+https://www.oraclesgame.com/
+chrome://newtab/
+chrome://newtab/
