@@ -2938,6 +2938,10 @@ C-u C-c C-l
 https://www.kickstarter.com/projects/684398802/bios-origins-2nd-ed-pax-transhumanity-and-pax-porf
 
 * wistia
+
+0. Note also can search in the webpage's html
+   https://fast.wistia.net/embed/iframe/cdwzrw7huu
+
 1. copy link from video (right click)
    wvideo=zecx3q8dbc
 2. get the wvideo= part (zecx3q8dbc)
@@ -2955,6 +2959,8 @@ https://www.kickstarter.com/projects/684398802/bios-origins-2nd-ed-pax-transhuma
 
 4. Paste in https://getvideo.at/en/ search and select the second 360
    mp4 one
+
+   youtube-dl -f iphone_video <link> should work
 
 * vlc codecs
 sudo aptitude install ubuntu-restricted-extras
@@ -3421,7 +3427,7 @@ https://stackoverflow.com/questions/11042920/how-to-copy-and-paste-between-diffe
 * vim change alternatives
 http://manpages.ubuntu.com/manpages/trusty/man8/update-alternatives.8.html
 
-* vim python 
+* vim python
 1. aptitude install vim-pathogen
 
 2. add to ~/.vimrc
@@ -3603,7 +3609,7 @@ was assigned to level 2 team
 did not send any confirmation
 
 * andrea wallman
-925-490-7704 
+925-490-7704
 719-534-5634 stephanie ballies (supervisor)
 http://oj.interviewkickstart.com/view_topic/12/
 https://www.vuemastery.com/conferences
@@ -3653,3 +3659,126 @@ https://docs.python.org/2/library/sets.html
 https://www.oraclesgame.com/
 chrome://newtab/
 chrome://newtab/
+
+* jq -c option
+compact output, i.e. do not pretty print
+
+* jq '.[]'
+. is the identify operator
+.foo produce the value
+
+* git submodules untracked
+https://stackoverflow.com/questions/4161022/how-to-track-untracked-content
+git submodule add http://github.com/....
+
+* flask + vue
+
+Following this one
+https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
+
+** setup
+1. create a directory, e.g. flask, cd flask
+2. create a virtualenv
+   conda create -p pygoogle pip python=2.7
+3. conda activate pygoogle/   # note you need the '/' at the end
+4. pip install google-cloud
+
+https://cloud.google.com/python/setup
+
+** files
+https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
+
+appengine_config.py
+
+#+begin_src python
+  from google.appengine.ext import vendor
+
+  # Add any libraries installed in the "lib" folder
+  vendor.add('lib')
+#+end_src
+
+requirements.txt
+
+#+begin_src python
+  Flask==1.0.2
+  Werkzeug==0.14.0
+#+end_src
+
+** In the virtual env (pygoogle) install the necessary libraries
+pip install -t lib -r requirements.txt
+
+** yaml
+
+app.yaml
+
+#+begin_src yaml
+  runtime: python27
+  api_version: 1
+  threadsafe: true
+
+  handlers:
+  - url: /static
+    static_dir: static
+  - url: /.*
+    script: main.app
+
+#+end_src
+
+** request handler
+
+main.py
+
+** to run the development version
+export CLOUDSDK_PYTHON=$(which python2)
+dev_appserver.py app.yaml
+
+** update gcloud service update and install
+gcloud components update
+gcloud components install cloud-datastore-emulator
+gcloud components install app-engine-pythonn
+
+
+** python 3.7
+https://cloud.google.com/appengine/docs/standard/python3/testing-and-deploying-your-app
+
+** error with ssl on yaml
+https://stackoverflow.com/questions/5128845/importerror-no-module-named-ssl
+add to app.yaml:
+
+libraries:
+- name: ssl
+  version: latest
+* python __init__.py
+http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html
+
+apackage/
+ __init__.py
+ amodule.py
+
+Add to __init__.py
+from apackage.amodule import afunc
+
+Now you can just:
+from apackage import afunc
+
+instead of:
+from apackage.amodule import afunc
+
+* cleaning up google drive and email
+https://drive.google.com/#quota
+
+Note that rclone always copies the contents of a directory, never the
+directory itself:
+
+rclone copy from_remote:some-folder local-folder
+rclone mkdir to_remote:some-folder
+rclone copy local-folder to_remote:some-folder
+
+* cleaning up email
+1. In Gmail/Search box, has:attachment larger:10M
+2. In Gmail, download the attachments
+3. In Thunderbird, delete the attachments
+
+* cleaning up photos
+https://photos.google.com/settings
+recover will change the images to high quality
