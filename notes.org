@@ -14,6 +14,11 @@ https://github.com/settings/keys
 
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent
 
+6. Test your key
+   ssh -T git@github.com
+7. Clone a repository using:
+   git clone git@github.com:frankieliu/Admin
+
 * stanford rec
 ashtanga yoga
 https://recwell.stanford.edu/Program/GetProgramDetails?courseId=7bad575a-700c-4c18-8f94-518fce90b625&semesterId=8bb86a37-662a-4c75-a803-d9d5ec76860e
