@@ -3998,7 +3998,9 @@ sudo aptitude install libgtk2.0-0:i386
 sudo aptitude install libpangox-1.0-0
 
 * Installation clear-corporate and clear-internet
-Follow the instructions on the Help Card for Linux https://oradocs-corp.sites.us2.oraclecloud.com/authsite/itweb/services/networking/wifi.html (Download the installer at https://vsupport.oracle.com/wifi)
+Follow the instructions on the Help Card for Linux
+https://oradocs-corp.sites.us2.oraclecloud.com/authsite/itweb/services/networking/wifi.html
+(Download the installer at https://vsupport.oracle.com/wifi)
 
 Known Issue
 
