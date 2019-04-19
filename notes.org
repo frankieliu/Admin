@@ -1,7 +1,7 @@
 ﻿# -*- mode: org -*-
 #+STARTUP: indent hidestars showall
 
-* github setting keys
+* github setting keys push without password
 https://github.com/settings/keys
 1. ssh-keygen -t rsa -b 4096 "your_email@example.com"  -> this can be
    the user account from one of your laptops, example adam@quack
@@ -13,6 +13,15 @@ https://github.com/settings/keys
    ssh-add ~/.ssh/id_rsa (or location of your private key)
 
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent
+
+6. Test your key
+   ssh -T git@github.com
+7. Clone a repository using:
+   git clone git@github.com:frankieliu/Admin
+8. Now you should be able to push without a password
+9. In case you already have an existing repoository:
+   git remote get-url origin   # check what is the current one
+   git remote set-url origin git@github.com:frankieliu/Admin
 
 * stanford rec
 ashtanga yoga
@@ -4056,3 +4065,44 @@ https://www.jetbrains.com/help/idea/using-emacs-as-an-external-editor.html
 * ipython reload
 c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+
+* oraclevpn
+download from myaccess.oraclevpn.com
+sudo aptitude install libgtk2.0-0:i386
+sudo aptitude install libpangox-1.0-0
+
+* Installation clear-corporate and clear-internet
+Follow the instructions on the Help Card for Linux https://oradocs-corp.sites.us2.oraclecloud.com/authsite/itweb/services/networking/wifi.html (Download the installer at https://vsupport.oracle.com/wifi)
+
+Known Issue
+
+Common error after installation of Next Generation Wi-Fi on Linux:
+Configured Network is however not in range.
+
+Run
+
+# iwlist <wifi-interface> scan essid clear-corporate
+
+to make the ESSID visible.
+
+$ bash SecureW2_JoinNow.run
+
+Verification successful
+ 
+We are now launching a separate dialog to continue sign-in at your account provider website.
+ 
+When you have successfully signed-in, the application will continue.
+Next/Cancel? [Next]
+ 
+Generating Key...
+Enrolling Certificate...
+Issued
+ 
+Connecting...
+ 
+Configuration succeeded. Configured Network is however not in range.
+ 
+Click on the wireless tray icon to validate if your network is
+available. If you are seeing intermittent issues or low signal
+strength please move your device to re-establish a better connection
+and retry.
