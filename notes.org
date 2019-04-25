@@ -4108,3 +4108,14 @@ Click on the wireless tray icon to validate if your network is
 available. If you are seeing intermittent issues or low signal
 strength please move your device to re-establish a better connection
 and retry.
+
+* reinstalling operating system mac
+1. From app store download mojave
+
+2. Format USB drive to mac journaled
+
+3. Use the command line to create a USB key
+   /Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled
+
+* Installing fonts mac
+https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts
