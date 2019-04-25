@@ -1,0 +1,1 @@
+lpinfo -m > lpinfo.org

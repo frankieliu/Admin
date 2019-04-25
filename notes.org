@@ -4108,6 +4108,7 @@ Click on the wireless tray icon to validate if your network is
 available. If you are seeing intermittent issues or low signal
 strength please move your device to re-establish a better connection
 and retry.
+<<<<<<< HEAD
 * ubuntu virtual box
 
 https://brb.nci.nih.gov/seqtools/installUbuntu.html
@@ -4357,3 +4358,29 @@ be go back to download and use BRB-SeqTools program.
 
 Questions? Kindly contact arraytools [at] emmes.com using the subject
 heading install Ubuntu on virtualBox question.
+=======
+
+* reinstalling operating system mac
+1. From app store download mojave
+
+2. Format USB drive to mac journaled
+
+3. Use the command line to create a USB key
+   /Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled
+
+* Installing fonts mac
+https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts
+
+* editing config file
+
+git config --global --edit
+git config --global alias.foo "commit -a -m 'none'"
+
+# This is Git's per-user configuration file.
+[user]
+	name = Frankie Liu
+	email = frankie.y.liu@gmail.com
+[alias]
+	foo = commit -a -m 'none'
+	coa = commit -a -m
+>>>>>>> f6bc42a345342f8e9d8c0c9976b6ff3da143d799
