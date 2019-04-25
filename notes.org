@@ -4119,3 +4119,16 @@ and retry.
 
 * Installing fonts mac
 https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts
+
+* editing config file
+
+git config --global --edit
+git config --global alias.foo "commit -a -m 'none'"
+
+# This is Git's per-user configuration file.
+[user]
+	name = Frankie Liu
+	email = frankie.y.liu@gmail.com
+[alias]
+	foo = commit -a -m 'none'
+	coa = commit -a -m
