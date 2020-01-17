@@ -5464,3 +5464,5 @@ inoremap <A-f> <Esc>lwi
 inoremap <A-b> <Esc>bi
 inoremap <A-S-f> <Esc>lWi
 inoremap <A-S-b> <Esc>Bi
+
+* github password
