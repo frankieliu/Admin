@@ -1,0 +1,153 @@
+! xrdb -merge ~/.Xresources
+!
+! Debugging xterm
+! https://forums.gentoo.org/viewtopic-t-1085290-start-0.html
+!
+! Setting resources for xterm
+! http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
+!
+! Setting up Source Code Pro
+! https://www.tigraine.at/2016/09/20/setting-source-code-pro-as-default-font-in-xterm
+! XTerm*faceName: Source Code Pro
+! XTerm*faceSize: 12
+!
+! Copy and paste Shift-Insert using VcXsrv
+! allow clipboard
+!
+! About inconsolata-g
+! https://leonardo-m.livejournal.com/77079.html
+!
+! About setting inconsolata-g in Xresources
+! https://scripter.co/installing-custom-fonts-in-linux/
+!
+! 1. Create a folder .fonts in your $HOME directory.
+!
+! 2. Download fonts of your choice (ttf or otf format to ~/.fonts).
+!
+! 3. Refresh the fonts cache with fc-cache -fv.
+! 
+! 4. You can verify if your custom fonts got added to the cache using fc-list.
+!    For example, I would do fc-list -f "%{family}\n" | sort -u | grep
+!    'Inconsolata'1 to check if my downloaded Inconsolata fonts got into the
+!    font cache.
+!
+! 5. Add the below .Xdefaults snippet to your ~/.Xdefaults
+!
+! 6. Add xrdb -merge $HOME/.Xdefaults to your shell init script. My shell init
+!    script is ~/.alias.
+!
+XTerm*faceName: Inconsolata\\-g:style=g:size=11
+
+! Colours are in groups as the second one should be a brighter version.
+
+! Background: black, dark grey
+#define _background #272822
+#define _color8 #303030
+
+! Color1/foreground: light grey: standard files, cursor
+! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
+#define _foreground #d0d0d0
+#define _color9 #ff0090
+
+! Color2: dark green: world read/write dir e.g. /tmp
+! Color10: bright green: binaries user can execute /bin
+#define _color2 #66AA11
+#define _color10 #80FF00
+
+! Color3: medium brown: fifo e.g mkfifo fifotest
+! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
+#define _color3 #c47f2c
+#define _color11 #ffba68
+
+! Color4: medium blue: FIXME: unused?
+! Color12: light blue: directory
+#define _color4 #30309b
+#define _color12 #5f5fee
+
+! Color5: dark purple: Not used in ls, in ranger (not sure where it gets it colors from though)
+! Color13: light purple: socket file /var/run/dbus_system_bus_socket
+#define _color5 #7e40a5
+#define _color13 #bb88dd
+
+! Color6: medium magenta: FIXME: unused?
+! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
+#define _color6 #3579A8
+#define _color14 #4eb4fa
+
+! Color7: medium grey: setuid file e.g. /usr/bin/sudo
+! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
+#define _color7 #9999AA
+! Trying white in case it helps
+#define _color15 #ffffff
+!#define _color15 #d0d0d0
+
+! General - covering all X clients
+!*background: _background
+!*foreground: _foreground
+! Not sure what this one does - Solarise had it at base3
+!*fadeColor: XXX ! Not sure what this does
+
+! XTerm specific
+xterm*background: _background
+xterm*foreground: _foreground
+
+xterm*color0: _background
+xterm*color1: _foreground
+xterm*color2: _color2
+xterm*color3: _color3
+xterm*color4: _color4
+xterm*color5: _color5
+xterm*color6: _color6
+xterm*color7: _color7
+! 8-15 are considered brighter colours of 1-7
+xterm*color8: _color8
+xterm*color9: _color9
+xterm*color10: _color10
+xterm*color11: _color11
+xterm*color12: _color12
+xterm*color13: _color13
+xterm*color14: _color14
+xterm*color15: _color15
+
+! Mouse pointer
+XTerm*pointerColor: white
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: yellow
+XTerm*cursorBlink: true
+
+XTerm*scrollBar: True
+XTerm*rightScrollBar: True
+XTerm*saveLines: 10000
+XTerm*vt100*geometry:   88x24
+XTerm*renderFont: true
+
+!XTerm*faceName: DejaVu Sans Mono Bold:size=11
+!XTerm*faceName: Ubuntu Mono:size=15
+UXTerm*faceName: Terminus:style=Regular:size=15
+UXTerm*background: _background
+UXTerm*foreground: _foreground
+UXTerm*color0: _background
+UXTerm*color1: _foreground
+UXTerm*color2: _color2
+UXTerm*color3: _color3
+UXTerm*color4: _color4
+UXTerm*color5: _color5
+UXTerm*color6: _color6
+UXTerm*color7: _color7
+UXTerm*color8: _color8
+UXTerm*color9: _color9
+UXTerm*color10: _color10
+UXTerm*color11: _color11
+UXTerm*color12: _color12
+UXTerm*color13: _color13
+UXTerm*color14: _color14
+UXTerm*color15: _color15
+UXTerm*pointerColor: white
+UXTerm*pointerColorBackground: black
+UXTerm*cursorColor: yellow
+UXTerm*cursorBlink: true
+UXTerm*scrollBar: True
+UXTerm*rightScrollBar: True
+UXTerm*saveLines: 10000
+UXTerm*vt100*geometry:   88x24
+UXTerm*renderFont: true
