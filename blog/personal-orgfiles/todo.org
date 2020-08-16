@@ -1,0 +1,24 @@
+# -*- mode: org -*-
+#+STARTUP: indent hidestars showall
+
+
+* TODO tasks todo
+** DONE Read from https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+   CLOSED: [2019-06-24 Mon 05:03]
+
+   - use Shift arrow to cycle through TODO and DONE
+   - use C-c C-t to mark as done
+   - A-Enter for another item
+   - 
+   - use A-S-Enter for checkbox
+   - [ ]
+** TODO 
+   SCHEDULED: <2019-06-24 Mon>
+** TODO 
+   SCHEDULED: <2019-06-18 Tue>
+** TODO 
+
+
+(setq org-agenda-files (append
+(file-expand-wildcards "~/github/Admin/work-orgfles/*.org")
+(file-expand-wildcards "~/github/Admin/personal-orgfiles/*.org"))

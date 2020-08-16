@@ -1,0 +1,27 @@
+# -*- mode: org -*-
+#+STARTUP: indent hidestars showall
+
+* Sun
+* Mon
+** TODO Pick up kipling
+SCHEDULED: <2019-06-24 Mon 8am>
+:LOGBOOK:
+CLOCK: [2019-06-24 Mon 05:42]--[2019-06-24 Mon 05:43] =>  0:01
+:END:
+** DONE Sample clock
+CLOSED: [2019-06-24 Mon 05:48]
+:PROPERTIES:
+:Effort:   0:12
+:END:
+:LOGBOOK:
+CLOCK: [2019-06-24 Mon 05:47]--[2019-06-24 Mon 05:48] =>  0:01
+:END:
+
+* Tue
+** TODO Sample clock
+* Wed
+** TODO Go to Kaiser Fufu
+SCHEDULED: <2019-06-26 Wed 8am>
+* Thu
+* Fri
+* Sat
