@@ -1,4 +1,4 @@
-﻿# -*- mode: org -*-
+﻿-*- mode: org -*-
 #+STARTUP: indent hidestars showall
 
 * github setting keys push without password
@@ -9,8 +9,8 @@ https://github.com/settings/keys
 3. copy and paste ~/.ssh/id_rsa.pub
 4. now should be able to hub clone frankieliu/Admin
 5. [using ssh-agent]:
-   eval "$(ssh-agent -s)"
-   ssh-add ~/.ssh/id_rsa (or location of your private key)
+   eval "$(ssh-agent -s)" ssh-add ~/.ssh/id_rsa (or location of your private
+   key)
 
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent
 
@@ -20,29 +20,25 @@ https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-s
    git clone git@github.com:frankieliu/Admin
 8. Now you should be able to push without a password
 9. In case you already have an existing repoository:
-   git remote get-url origin   # check what is the current one
-   git remote set-url origin git@github.com:frankieliu/Admin
+   git remote get-url origin # check what is the current one git remote set-url
+   origin git@github.com:frankieliu/Admin
 
 * stanford rec
 ashtanga yoga
 https://recwell.stanford.edu/Program/GetProgramDetails?courseId=7bad575a-700c-4c18-8f94-518fce90b625&semesterId=8bb86a37-662a-4c75-a803-d9d5ec76860e
 
-facility
-https://rec.stanford.edu/facilities/aoerc/
+facility https://rec.stanford.edu/facilities/aoerc/
 
 Courtesy Card, Recreating All Access Card
 https://cardinalatwork.stanford.edu/benefits-rewards/sweeteners/courtesy-recreation-id-cards
 
-requirements to bring with you
-marriage license and birth certificate
+requirements to bring with you marriage license and birth certificate
 https://uit.stanford.edu/service/campuscard/courtesycard
 
-policy
-https://adminguide.stanford.edu/chapter-2/subchapter-4/policy-2-4-3
+policy https://adminguide.stanford.edu/chapter-2/subchapter-4/policy-2-4-3
 https://rec.stanford.edu/facility-access/affiliates/
 
-Tressider
-https://uit.stanford.edu/service/campuscard
+Tressider https://uit.stanford.edu/service/campuscard
 
 * farmshare
 ** change shell
@@ -50,32 +46,26 @@ https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FAQ#How_do_I_cha
 https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FAQ#How_do_I_change_my_shell.3F
 
 ** slurm longer time
-While the maximum runtime for jobs is 2 days (unless you are
-submitting a job using the long quality-of-service), the default
-runtime is 2 hours. If your job requires more time to run you must
-request the additional time explicitly, using --time. You can also
-request less time than the default.
+While the maximum runtime for jobs is 2 days (unless you are submitting a job
+using the long quality-of-service), the default runtime is 2 hours. If your job
+requires more time to run you must request the additional time explicitly, using
+--time. You can also request less time than the default.
 
 ** cluster description
 https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FarmShare_2#Remote_display
 
 rice 1 core 8 gb
 
-For more excess of limits use:
-srun --pty --qos=interactive $SHELL -l
-srun --pty --partition=gpu --gres=gpu:1 --qos=interactive $SHELL -l
-srun --pty --partition=bigmem --mem=96G --qos=interactive $SHELL -l
+For more excess of limits use: srun --pty --qos=interactive $SHELL -l srun --pty
+--partition=gpu --gres=gpu:1 --qos=interactive $SHELL -l srun --pty
+--partition=bigmem --mem=96G --qos=interactive $SHELL -l
 
-wheat
-10 nodes with 16 cores and 128GB mem
-2 large-mem nodes with 16 cores and 768GB mem
-srun --partition=bigmem --qos=bigmem --mem=96G
-sbatch --partition=bigmem --qos=bigmem --mem=96G
+wheat 10 nodes with 16 cores and 128GB mem 2 large-mem nodes with 16 cores and
+768GB mem srun --partition=bigmem --qos=bigmem --mem=96G sbatch
+--partition=bigmem --qos=bigmem --mem=96G
 
-oat
-10 nodes with 16 cores 128GB mem, one Tesla K40 GPU
-srun --partition=gpu --qos=gpu --gres=gpu:1
-sbatch --partition=gpu --qos=gpu --gres=gpu:1
+oat 10 nodes with 16 cores 128GB mem, one Tesla K40 GPU srun --partition=gpu
+--qos=gpu --gres=gpu:1 sbatch --partition=gpu --qos=gpu --gres=gpu:1
 
 --partitions: normal bigmem gpu
 
@@ -83,30 +73,23 @@ sbatch --partition=gpu --qos=gpu --gres=gpu:1
 --qos: normal (2days max) long (7days max) interactive (1day max)
 
 ** quotas
-Per use quote 48GB
-only rice can access /afs
-Use /farmshare/user_data for scratch
+Per use quote 48GB only rice can access /afs Use /farmshare/user_data for
+scratch
 
 * slurm summary
-https://slurm.schedmd.com/pdfs/summary.pdf
-srun  --mem=<MB> -N<minnodes> --partition=<names> --qos=<name>
---time=<time>
-sacct --accounts=frankieliu --en
-scancel  # cancel jobs
-squeue --users=frankliu
-sinfo --long
+https://slurm.schedmd.com/pdfs/summary.pdf srun --mem=<MB> -N<minnodes>
+--partition=<names> --qos=<name> --time=<time> sacct --accounts=frankieliu --en
+scancel # cancel jobs squeue --users=frankliu sinfo --long
 
 * gentlemen of vision
-gentlemen of vision bay area
-https://www.youtube.com/watch?v=OFb0EUIkYac
-https://www.youtube.com/watch?v=THJ2YEvRgkM
-http://victorsho.com/#!/?page_id=42
+gentlemen of vision bay area https://www.youtube.com/watch?v=OFb0EUIkYac
+https://www.youtube.com/watch?v=THJ2YEvRgkM http://victorsho.com/#!/?page_id=42
 
 * prevent ssh from closing during forward
 ssh -N -L 5903:localhost:5901 frankliu@wheat09.stanford.edu
 
--N : don't run a command, i.e. stays connected without having to run a
-command useful during port forwarding
+-N : don't run a command, i.e. stays connected without having to run a command
+useful during port forwarding
 
 https://serverfault.com/questions/598210/prevent-closing-of-ssh-local-port-forwarding
 Some advocate autossh - don't know what this really is
@@ -115,8 +98,7 @@ Some advocate autossh - don't know what this really is
 srun --qos=interactive --time=02:00:00 --pty bash -i
 
 * web programming fundamentals
-cs193x
-https://web.stanford.edu/class/cs193x/lectures/
+cs193x https://web.stanford.edu/class/cs193x/lectures/
 
 * stanford online resources
 install this chrome plugin
@@ -133,12 +115,11 @@ https://tools.stanford.edu/cgi-bin/cgi-request
 https://uit.stanford.edu/service/cgi
 
 * afs stanford
-https://uit.stanford.edu/software/afs/download
-requires openafs in windows and macs for ubuntu see separate instructions
+https://uit.stanford.edu/software/afs/download requires openafs in windows and
+macs for ubuntu see separate instructions
 ** kerberos
-https://uit.stanford.edu/service/kerberos/install_debian
-This might be a little old? (2014)
-Too many steps...
+https://uit.stanford.edu/service/kerberos/install_debian This might be a little
+old? (2014) Too many steps...
 ** afs for mac or windows
 https://web.stanford.edu/service/afs/intro/mounting.html
 ** webafs
@@ -147,53 +128,70 @@ https://web.stanford.edu/service/afs/webafs/userguide/index.html
 https://web.stanford.edu/service/afs/intro/index.html
 
 * linuxbrew
-frankliu@rice12:/afs/ir.stanford.edu/users/f/r/frankliu/cgi-bin$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+frankliu@rice12:/afs/ir.stanford.edu/users/f/r/frankliu/cgi-bin$ sh -c "$(curl
+-fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ==> Select the Linuxbrew installation directory
 - Enter your password to install to /home/linuxbrew/.linuxbrew (recommended)
 - Press Control-D to install to /home/frankliu/.linuxbrew
 - Press Control-C to cancel installation
-Sorry, user frankliu may not run sudo on rice12.stanford.edu.
-==> This script will install:
-/home/frankliu/.linuxbrew/bin/brew
+Sorry, user frankliu may not run sudo on rice12.stanford.edu. ==> This script
+will install: /home/frankliu/.linuxbrew/bin/brew
 /home/frankliu/.linuxbrew/share/doc/homebrew
 /home/frankliu/.linuxbrew/share/man/man1/brew.1
 /home/frankliu/.linuxbrew/share/zsh/site-functions/_brew
 /home/frankliu/.linuxbrew/etc/bash_completion.d/brew
-/home/frankliu/.cache/Homebrew/
-/home/frankliu/.linuxbrew/Homebrew
-==> The following new directories will be created:
-/home/frankliu/.linuxbrew/bin
-/home/frankliu/.linuxbrew/etc
-/home/frankliu/.linuxbrew/include
-/home/frankliu/.linuxbrew/lib
-/home/frankliu/.linuxbrew/sbin
-/home/frankliu/.linuxbrew/share
-/home/frankliu/.linuxbrew/var
-/home/frankliu/.linuxbrew/opt
+/home/frankliu/.cache/Homebrew/ /home/frankliu/.linuxbrew/Homebrew ==> The
+following new directories will be created: /home/frankliu/.linuxbrew/bin
+/home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include
+/home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin
+/home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var
+/home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions
+/home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
+
+Press RETURN to continue or any other key to abort ==> /bin/mkdir -p
+/home/frankliu/.linuxbrew ==> /bin/chown frankliu:operator
+/home/frankliu/.linuxbrew ==> /bin/mkdir -p /home/frankliu/.linuxbrew/bin
+/home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include
+/home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin
+/home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var
+/home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions
+/home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks ==>
+/bin/chmod g+rwx /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc
+/home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib
+/home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share
+/home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt
 /home/frankliu/.linuxbrew/share/zsh
 /home/frankliu/.linuxbrew/share/zsh/site-functions
-/home/frankliu/.linuxbrew/Cellar
-/home/frankliu/.linuxbrew/Caskroom
-/home/frankliu/.linuxbrew/Homebrew
-/home/frankliu/.linuxbrew/Frameworks
-
-Press RETURN to continue or any other key to abort
-==> /bin/mkdir -p /home/frankliu/.linuxbrew
-==> /bin/chown frankliu:operator /home/frankliu/.linuxbrew
-==> /bin/mkdir -p /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
-==> /bin/chmod g+rwx /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
-==> /bin/chmod 755 /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions
-==> /bin/chown frankliu /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
-==> /bin/chgrp operator /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc /home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib /home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share /home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt /home/frankliu/.linuxbrew/share/zsh /home/frankliu/.linuxbrew/share/zsh/site-functions /home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom /home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks
-==> /bin/mkdir -p /home/frankliu/.cache/Homebrew
-==> Downloading and installing Linuxbrew...
-remote: Enumerating objects: 7, done.
-remote: Counting objects: 100% (7/7), done.
-remote: Compressing objects: 100% (7/7), done.
-remote: Total 122304 (delta 0), reused 2 (delta 0), pack-reused 122297
-Receiving objects: 100% (122304/122304), 27.74 MiB | 25.46 MiB/s, done.
-Resolving deltas: 100% (89729/89729), done.
-From https://github.com/Linuxbrew/brew
+/home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks ==>
+/bin/chmod 755 /home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions ==> /bin/chown frankliu
+/home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc
+/home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib
+/home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share
+/home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt
+/home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions
+/home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks ==>
+/bin/chgrp operator /home/frankliu/.linuxbrew/bin /home/frankliu/.linuxbrew/etc
+/home/frankliu/.linuxbrew/include /home/frankliu/.linuxbrew/lib
+/home/frankliu/.linuxbrew/sbin /home/frankliu/.linuxbrew/share
+/home/frankliu/.linuxbrew/var /home/frankliu/.linuxbrew/opt
+/home/frankliu/.linuxbrew/share/zsh
+/home/frankliu/.linuxbrew/share/zsh/site-functions
+/home/frankliu/.linuxbrew/Cellar /home/frankliu/.linuxbrew/Caskroom
+/home/frankliu/.linuxbrew/Homebrew /home/frankliu/.linuxbrew/Frameworks ==>
+/bin/mkdir -p /home/frankliu/.cache/Homebrew ==> Downloading and installing
+Linuxbrew... remote: Enumerating objects: 7, done. remote: Counting objects:
+100% (7/7), done. remote: Compressing objects: 100% (7/7), done. remote: Total
+122304 (delta 0), reused 2 (delta 0), pack-reused 122297 Receiving objects: 100%
+(122304/122304), 27.74 MiB | 25.46 MiB/s, done. Resolving deltas: 100%
+(89729/89729), done. From https://github.com/Linuxbrew/brew
  * [new branch]      master     -> origin/master
  * [new tag]         1.0.0      -> 1.0.0
  * [new tag]         1.0.1      -> 1.0.1
@@ -285,44 +283,37 @@ From https://github.com/Linuxbrew/brew
  * [new tag]         1.7.5      -> 1.7.5
  * [new tag]         1.7.6      -> 1.7.6
  * [new tag]         1.7.7      -> 1.7.7
-Checking out files: 100% (1472/1472), done.
-HEAD is now at 7655407 .github/move.yml: Fix for Linuxbrew
-==> Downloading https://linuxbrew.bintray.com/bottles-portable-ruby/portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz
+Checking out files: 100% (1472/1472), done. HEAD is now at 7655407
+.github/move.yml: Fix for Linuxbrew ==> Downloading
+https://linuxbrew.bintray.com/bottles-portable-ruby/portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz
 ######################################################################## 100.0%
-==> Pouring portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz
-==> Linuxbrew is run entirely by unpaid volunteers. Please consider donating:
-  https://github.com/Linuxbrew/brew#donations
-==> Tapping homebrew/core
-Cloning into '/home/frankliu/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core'...
-remote: Enumerating objects: 4897, done.
-remote: Counting objects: 100% (4897/4897), done.
-remote: Compressing objects: 100% (4693/4693), done.
-remote: Total 4897 (delta 50), reused 329 (delta 12), pack-reused 0
-Receiving objects: 100% (4897/4897), 4.26 MiB | 0 bytes/s, done.
-Resolving deltas: 100% (50/50), done.
-Checking connectivity... done.
-Checking out files: 100% (4913/4913), done.
-Tapped 3 commands and 4678 formulae (4,936 files, 13.2MB).
-Already up-to-date.
+==> Pouring portable-ruby-2.3.7.x86_64_linux.bottle.tar.gz ==> Linuxbrew is run
+entirely by unpaid volunteers. Please consider donating:
+https://github.com/Linuxbrew/brew#donations ==> Tapping homebrew/core Cloning
+into '/home/frankliu/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core'...
+remote: Enumerating objects: 4897, done. remote: Counting objects: 100%
+(4897/4897), done. remote: Compressing objects: 100% (4693/4693), done. remote:
+Total 4897 (delta 50), reused 329 (delta 12), pack-reused 0 Receiving objects:
+100% (4897/4897), 4.26 MiB | 0 bytes/s, done. Resolving deltas: 100% (50/50),
+done. Checking connectivity... done. Checking out files: 100% (4913/4913), done.
+Tapped 3 commands and 4678 formulae (4,936 files, 13.2MB). Already up-to-date.
 ==> Installation successful!
 
-==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
-Read the analytics documentation (and how to opt-out) here:
-  https://docs.brew.sh/Analytics.html
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics. Read
+the analytics documentation (and how to opt-out) here:
+https://docs.brew.sh/Analytics.html
 
 ==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
-  https://github.com/Homebrew/brew#donations
-==> Next steps:
+  https://github.com/Homebrew/brew#donations ==> Next steps:
 - Install the Linuxbrew dependencies if you have sudo access:
-  Debian, Ubuntu, etc.
-    sudo apt-get install build-essential
-  Fedora, Red Hat, CentOS, etc.
-    sudo yum groupinstall 'Development Tools'
-  See http://linuxbrew.sh/#dependencies for more information.
+  Debian, Ubuntu, etc. sudo apt-get install build-essential Fedora, Red Hat,
+  CentOS, etc. sudo yum groupinstall 'Development Tools' See
+  http://linuxbrew.sh/#dependencies for more information.
 - Add Linuxbrew to your ~/.profile by running
-    echo 'export PATH="/home/frankliu/.linuxbrew/bin:$PATH"' >>~/.profile
-    echo 'export MANPATH="/home/frankliu/.linuxbrew/share/man:$MANPATH"' >>~/.profile
-    echo 'export INFOPATH="/home/frankliu/.linuxbrew/share/info:$INFOPATH"' >>~/.profile
+    echo 'export PATH="/home/frankliu/.linuxbrew/bin:$PATH"' >>~/.profile echo
+  'export MANPATH="/home/frankliu/.linuxbrew/share/man:$MANPATH"' >>~/.profile
+  echo 'export INFOPATH="/home/frankliu/.linuxbrew/share/info:$INFOPATH"'
+  >>~/.profile
 - Add Linuxbrew to your PATH
     PATH="/home/frankliu/.linuxbrew/bin:$PATH"
 - We recommend that you install GCC by running:
@@ -331,32 +322,29 @@ Read the analytics documentation (and how to opt-out) here:
   (logout and then log back in) if the brew command isn't found.
 - Run `brew help` to get started
 - Further documentation:
-    https://docs.brew.sh
-Warning: /home/frankliu/.linuxbrew/bin is not in your PATH.
+    https://docs.brew.sh Warning: /home/frankliu/.linuxbrew/bin is not in your
+PATH.
 
 * snap without sudo
-https://ubuntu-mate.community/t/snap-without-sudo/15473
-snap login
-snap install rg (ripgrep)
+https://ubuntu-mate.community/t/snap-without-sudo/15473 snap login snap install
+rg (ripgrep)
 
 * print python verion
 https://stackoverflow.com/questions/1252163/printing-python-version-in-output
-import sys
-print(sys.version)
+import sys print(sys.version)
 
-import platform
-platform.python_version()
+import platform platform.python_version()
 
 * every nth row excel
-=offset($A$2,(ROW()-2)*1,0)    : every other row 2,4,6,8, ....
-=offset($A$23,(ROW()-23)*2,0)  : every third row 23,26,29, ....
+=offset($A$2,(ROW()-2)*1,0) : every other row 2,4,6,8, ....
+=offset($A$23,(ROW()-23)*2,0) : every third row 23,26,29, ....
 
 * react and flask
 https://realpython.com/the-ultimate-flask-front-end/
 https://realpython.com/the-ultimate-flask-front-end-part-2/
 
-These don't really explain how flask is being used but it does have
-a simple react application.
+These don't really explain how flask is being used but it does have a simple
+react application.
 
 * vue and django and rabbitmq
 https://danidee10.github.io/blog/
@@ -402,18 +390,15 @@ https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/Main_Page#Softwa
 https://singularity.lbl.gov/docs-docker
 http://singularity.lbl.gov/install-request
 
-flow of singularity
-http://singularity.lbl.gov/docs-flow
+flow of singularity http://singularity.lbl.gov/docs-flow
 
 build images from scratch
 http://singularity.lbl.gov/quickstart#build-images-from-scratch
 http://singularity.lbl.gov/archive/docs/v2-2/create-image
 
-mounting
-http://singularity.lbl.gov/archive/docs/v2-2/docs-mount
+mounting http://singularity.lbl.gov/archive/docs/v2-2/docs-mount
 
-hub - where images are located
-https://www.singularity-hub.org/collections/1819
+hub - where images are located https://www.singularity-hub.org/collections/1819
 
 manual build
 https://github.com/singularityhub/singularityhub.github.io/wiki/Manual-Build
@@ -421,15 +406,11 @@ https://github.com/singularityhub/singularityhub.github.io/wiki/Manual-Build
 build a container
 https://github.com/singularityhub/singularityhub.github.io/wiki/Build-A-Container
 
-my singularity repo - don't change it
-https://github.com/frankieliu/singularity
+my singularity repo - don't change it https://github.com/frankieliu/singularity
 
-company behind singularity
-https://www.sylabs.io/singularity/
+company behind singularity https://www.sylabs.io/singularity/
 
-faq on singularity
-http://singularity.lbl.gov/faq
-http://singularity.lbl.gov/faq
+faq on singularity http://singularity.lbl.gov/faq http://singularity.lbl.gov/faq
 
 forum on singularity
 https://groups.google.com/a/lbl.gov/forum/#!forum/singularity
@@ -447,10 +428,10 @@ sample docker with tensorflow
 https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/Dockerfile
 
 * gsuite
-https://uit.stanford.edu/service/gsuite/login
-Webmail (GSB faculty, staff, and students, and some undergraduate students): webmail.stanford.edu
-Calendar (GSB faculty, staff, and students, and some undergraduate students): webcal.stanford.edu
-Drive: webdocs.stanford.edu
+https://uit.stanford.edu/service/gsuite/login Webmail (GSB faculty, staff, and
+students, and some undergraduate students): webmail.stanford.edu Calendar (GSB
+faculty, staff, and students, and some undergraduate students):
+webcal.stanford.edu Drive: webdocs.stanford.edu
 
 ** creating sites
 https://gsuite.google.com/learning-center/products/sites/get-started/#!/
@@ -461,27 +442,24 @@ https://developers.google.com/apps-script/guides/web
 https://colab.research.google.com/notebooks/welcome.ipynb#recent=true
 
 * ubuntu list all installed packages
-sudo apt list --installed
-sudo dpkg -l
+sudo apt list --installed sudo dpkg -l
 https://www.rosehosting.com/blog/list-all-installed-packages-with-apt-on-ubuntu/
 
-manually installed packages
-Using apt-mark and aptitude
-comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
-comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+manually installed packages Using apt-mark and aptitude comm -23 <(apt-mark
+showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n
+'s/^Package: //p' | sort -u) comm -23 <(aptitude search '~i !~M' -F '%p' | sed
+"s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n
+'s/^Package: //p' | sort -u)
 https://askubuntu.com/questions/2389/generating-list-of-manually-installed-packages-and-querying-individual-packages
 
 * unpack deb standalone apps
 https://unix.stackexchange.com/questions/138188/easily-unpack-deb-edit-postinst-and-repack-deb
-mkdir tmp
-dpkg-deb -R original.deb tmp
-dpkg-deb -b tmp fixed.deb
+mkdir tmp dpkg-deb -R original.deb tmp dpkg-deb -b tmp fixed.deb
 
 fakeroot might be needed
 
 * installing google-chrome
-download the deb
-dpkg-deb -r <package>.deb <location>
+download the deb dpkg-deb -r <package>.deb <location>
 https://www.linuxbabe.com/ubuntu/install-google-chrome-ubuntu-16-04-lts
 https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en
 https://www.google.com/chrome/
@@ -505,16 +483,15 @@ http://wiki.ros.org/docker/Tutorials/GUI
 https://uit.stanford.edu/service/web/centralhosting/howto_user
 https://uit.stanford.edu/service/web/centralhosting/userauth
 
-SAML 2.0
-https://uit.stanford.edu/service/saml
+SAML 2.0 https://uit.stanford.edu/service/saml
 
 Combine node.js sso with shibboleth saml identify provider
 https://wiki.library.ucsf.edu/pages/viewpage.action?pageId=361762610
 
 * lamp vs mean replacing apache with node.js
 https://stackoverflow.com/questions/5346055/can-i-replace-apache-with-node-js
-run apache in proxy mode to serve dynamic pages with node and
-static pages with apache
+run apache in proxy mode to serve dynamic pages with node and static pages with
+apache
 
 https://blog.cloudboost.io/get-apache-and-node-working-together-on-the-same-domain-with-javascript-ajax-requests-39db51959b79
 apache and node working together
@@ -527,8 +504,7 @@ https://uit.stanford.edu/service/web/design
 Web App Toolkit - database
 https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Stanford_Web_Application_Toolkit
 
-Wiki services
-https://opensource.stanford.edu/topics/web-development
+Wiki services https://opensource.stanford.edu/topics/web-development
 https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/How_to_get_your_first_PHP_script_running_at_Stanford
 https://tools.stanford.edu/cgi-bin/cgi-request
 https://uit.stanford.edu/service/cgi/personal
@@ -536,33 +512,26 @@ https://web.stanford.edu/~frankliu/cgi-bin/lsbin.sh
 https://web.stanford.edu/~frankliu/cgi-bin/deploy.fcgi/slasfd
 https://uit.stanford.edu/service/cgi
 
-Debugging
-https://uit.stanford.edu/service/cgi/debugging
+Debugging https://uit.stanford.edu/service/cgi/debugging
 https://uit.stanford.edu/service/cgi/debugging
 
-CGI scripts
-https://uit.stanford.edu/service/cgi/scripts
+CGI scripts https://uit.stanford.edu/service/cgi/scripts
 
-CGI service
-https://uit.stanford.edu/service/cgi
+CGI service https://uit.stanford.edu/service/cgi
 
 Php cookbook
 http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/PHP_Cookbook
 
-Cgi faq
-https://uit.stanford.edu/service/cgi/faq
+Cgi faq https://uit.stanford.edu/service/cgi/faq
 https://uit.stanford.edu/service/cgi/faq
 
-Example CGI scripts
-https://uit.stanford.edu/service/cgi/scripts
+Example CGI scripts https://uit.stanford.edu/service/cgi/scripts
 https://tools.stanford.edu/sumysql
 
-Infrastructure tools
-https://tools.stanford.edu/
+Infrastructure tools https://tools.stanford.edu/
 https://tools.stanford.edu/cgi-bin/cgi-request
 
-Web resources
-https://uit.stanford.edu/service/web
+Web resources https://uit.stanford.edu/service/web
 
 http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Main_Page
 http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/Stanford_Web_Application_Toolkit
@@ -605,8 +574,7 @@ https://srcc.stanford.edu/farmshare2/connecting
 https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/
 
 * cgi and node
-http://www.cgi-node.org/
-http://www.cgi-node.org/downloads
+http://www.cgi-node.org/ http://www.cgi-node.org/downloads
 https://nodejs.org/download/
 
 * node.js cgi-node
@@ -621,18 +589,16 @@ https://stackoverflow.com/questions/23777920/use-expressjs-app-via-fastcgi
 
 * apache proxy for node.js server
 https://stackoverflow.com/questions/32605232/how-to-deploy-nodejs-app-on-php-apache-server
-<VirtualHost example.com:*>
-    ProxyPreserveHost On
+<VirtualHost example.com:*> ProxyPreserveHost On
 
-    ProxyPass /api http://localhost:3000/
-    ProxyPassReverse /api http://localhost:3000/
+    ProxyPass /api http://localhost:3000/ ProxyPassReverse /api
+    http://localhost:3000/
 
-    ServerName localhost
-</VirtualHost>
+    ServerName localhost </VirtualHost>
 
 https://stackoverflow.com/questions/9831594/apache-and-node-js-on-the-same-server
-Also has information about adding mod_proxy for apache
-ProxyPass is great if you can fire up your own node.js webserver
+Also has information about adding mod_proxy for apache ProxyPass is great if you
+can fire up your own node.js webserver
 
 * not useful since not using a proxy, only useful for local serving
 https://atticuswhite.com/blog/apache-serving-nodejs/
@@ -662,18 +628,14 @@ https://blog.appdynamics.com/engineering/an-introduction-to-python-wsgi-servers-
 
 * kernel modules
 https://unix.stackexchange.com/questions/184877/how-to-list-all-loadable-kernel-modules
-find /lib/modules/$(uname -r) -type f -name '*.ko'
-find /lib/modules/$(uname -r) -type f -name '*.ko*'
-ls /proc/modules
-lsmod
+find /lib/modules/$(uname -r) -type f -name '*.ko' find /lib/modules/$(uname -r)
+-type f -name '*.ko*' ls /proc/modules lsmod
 
 * List apache modules
 https://superuser.com/questions/284898/how-to-check-which-apache-modules-are-enabled-installed
-apachectl -t -D DUMP_MODULES  # must be root
-a2query -m
-curl http://localhost/server-info
-ls /etc/apache2/mods-enabled/
-ls /etc/apache2/mods-available/
+apachectl -t -D DUMP_MODULES # must be root a2query -m curl
+http://localhost/server-info ls /etc/apache2/mods-enabled/ ls
+/etc/apache2/mods-available/
 
 * hello world cgi python
 https://web.stanford.edu/~frankliu/cgi-bin/hello.py
@@ -682,8 +644,7 @@ https://web.stanford.edu/~frankliu/cgi-bin/hello.py
 https://modwsgi.readthedocs.io/en/develop/user-guides/quick-installation-guide.html
 
 * stanford webauth apache basicauth
-limiting access
-https://cs.stanford.edu/computing-guide/web-pages
+limiting access https://cs.stanford.edu/computing-guide/web-pages
 
 * cgi-node
 http://www.cgi-node.org/docs
@@ -697,8 +658,7 @@ https://stackoverflow.com/questions/3582398/getting-http-get-arguments-in-python
 https://stackoverflow.com/questions/5822280/passing-parameters-to-a-cgi-program-using-the-url-python
 
 * python package for cgi development
-https://github.com/agordon/cgi-tools
-https://docs.python.org/2/library/cgi.html
+https://github.com/agordon/cgi-tools https://docs.python.org/2/library/cgi.html
 
 * flask quickstart minimal
 https://tedboy.github.io/flask/quickstart/quickstart1.html
@@ -710,9 +670,8 @@ Better way than virtualenv
 http://benjamincongdon.me/blog/2017/02/19/A-Better-Way-to-Wrangle-Python-Environments/
 
 * running virtual env python flask + apache
-https://homes.cs.washington.edu/~yjzhang/notes/python_web.html
-Tells me to point browser to the
-[address]/url/to/app/app.cgi/.
+https://homes.cs.washington.edu/~yjzhang/notes/python_web.html Tells me to point
+browser to the [address]/url/to/app/app.cgi/.
 
 * Deploy
 https://web.stanford.edu/~frankliu/cgi-bin/deploy.cgi/wss
@@ -734,30 +693,24 @@ https://github.com/Linuxbrew/homebrew-core/blob/master/Formula/chicken.rb
 
 * module is an alias
 
-which module
-module: 	 aliased to eval ` $LMOD_CMD csh  !*` ; eval `$LMOD_SETTARG_CMD -s csh`
+which module module: aliased to eval ` $LMOD_CMD csh !*` ; eval
+`$LMOD_SETTARG_CMD -s csh`
 
 * trek 2200
 http://www.roadbikereview.com/product/latest-bikes/road-bike/trek/2200.html
 DESCRIPTION
 
-Frame Material: aluminum, carbon seat stays
-Frame Angles: 73.8 head, 73.5 seat
-Sizes: 50cm, 52cm, 54cm, 56cm, 58cm, 60cm, 63cm
-Colors: Blue
-Fork: Bontrager Race Carbon
-Rear Shock: Not applicable
-Brake Levers: Shimano Ultegra STI Dual Control
-Handlebar: Bontrager Race
-Stem: Bontrager Race
-Headset: 1 1/8" threadless Cane Creek C1
-Front Der: Shimano 105
-Crankset: Shimano Ultegra, 39/53 teeth
-Rear Der: Shimano Ultegra SS
-Pedals: Shimano PD-M520 SPD
-Tires: 700 x 25c Bontrager Race Lite
+Frame Material: aluminum, carbon seat stays Frame Angles: 73.8 head, 73.5 seat
+Sizes: 50cm, 52cm, 54cm, 56cm, 58cm, 60cm, 63cm Colors: Blue Fork: Bontrager
+Race Carbon Rear Shock: Not applicable Brake Levers: Shimano Ultegra STI Dual
+Control Handlebar: Bontrager Race Stem: Bontrager Race Headset: 1 1/8"
+threadless Cane Creek C1 Front Der: Shimano 105 Crankset: Shimano Ultegra, 39/53
+teeth Rear Der: Shimano Ultegra SS Pedals: Shimano PD-M520 SPD Tires: 700 x 25c
+Bontrager Race Lite
 
 Most are three piece cranks 9/12 20tpi
+* tmux
+https://scripter.co/command-to-every-pane-window-session-in-tmux/
 
 * bitcoin course
 https://www.coursera.org/learn/cryptocurrency/lecture/gFEJL/cryptographic-hash-functions
@@ -767,9 +720,59 @@ Powershell (as admin)
 
 Note you need to upgrade windows 10 in order to wsl
 
-PS C:\Users\frank\Downloads> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-PS C:\Users\frank\Downloads> Add-AppxPackage -Path ".\CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79
+PS C:\Users\frank\Downloads> Enable-WindowsOptionalFeature -Online -FeatureName
+Microsoft-Windows-Subsystem-Linux PS C:\Users\frank\Downloads> Add-AppxPackage
+-Path ".\CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79
 rhkp1fndgsc.Appx"
+
+https://itsfoss.com/install-bash-on-windows/
+1. Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+2. Reboot
+3. Windows Store and search for Linux, install Ubuntu18
+4. Installing on older windows10:
+   1. Press Windows Key + I (settings
+   2. Go to Update and Security
+   3. Choose For developers
+   4. Enable Developer mode
+   5. Search for Control Panel
+   6. Open Programs
+   7. In Programs and Features
+   8. Turn Windows features on and off
+   9. Turn on Windows Subsystem for Linux
+   10. Restart
+   11. Search for bash
+   12. Start menu and search for Ubuntu or Bash
+https://medium.com/better-programming/make-bash-on-ubuntu-on-windows-10-look-like-the-ubuntu-terminal-f7566008c5c2
+1. Go to http://font.ubuntu.com/
+2. Install all four fonts
+3. Change bash window to use Ubuntu Mono font
+4. In colors change the following slots
+
+| Slot 1  | Red: 78  | Green: 154 | Blue: 6   |
+| Slot 2  | Red: 52  | Green: 101 | Blue: 164 |
+| Slot 3  | Red: 48  | Green: 10  | Blue: 36  |
+| Slot 4  | Red: 6   | Green: 152 | Blue: 154 |
+| Slot 5  | Red: 204 | Green: 0   | Blue: 0   |
+| Slot 6  | Red: 117 | Green: 80  | Blue: 123 |
+| Slot 7  | Red: 196 | Green: 160 | Blue: 0   |
+| Slot 8  | Red: 211 | Green: 215 | Blue: 207 |
+| Slot 9  | Red: 85  | Green: 87  | Blue: 83  |
+| Slot 10 | Red: 114 | Green: 159 | Blue: 207 |
+| Slot 11 | Red: 138 | Green: 226 | Blue: 52  |
+| Slot 12 | Red: 52  | Green: 226 | Blue: 226 |
+| Slot 13 | Red: 239 | Green: 41  | Blue: 41  |
+| Slot 14 | Red: 173 | Green: 127 | Blue: 168 |
+| Slot 15 | Red: 252 | Green: 233 | Blue: 79  |
+| Slot 16 | Red: 238 | Green: 238 | Blue: 238 |
+
+5. Screen Text and Popup Backgroun set to slot 16
+   Screen Backgroun and Popup Text set to slot 3
+
+https://pbpython.com/wsl-python.html https://pbpython.com/wsl-python.html Making
+python work with WSL
+
+https://medium.com/@sanajitghosh/run-python-codes-develop-ml-models-using-wsl-windows-10-40f8bb39fd45
+
 
 Accessing windows /mnt/c
 
@@ -875,24 +878,21 @@ https://stackoverflow.com/questions/6876819/how-do-you-add-ui-inside-cells-in-a-
 https://en.support.wordpress.com/google-docs/
 
 * vue vs react
-https://deliciousbrains.com/react-vs-vue-2018/
-has good comments re vue cli - note most comments in vue's favor
+https://deliciousbrains.com/react-vs-vue-2018/ has good comments re vue cli -
+note most comments in vue's favor
 
 * vue cli
 https://forum.vuejs.org/t/migration-to-vue-cli-3-now/33404
 https://cli.vuejs.org/guide/
 
 * native vue
-https://vuido.mimec.org/usage
-https://electronjs.org/
-https://vuido.mimec.org/
+https://vuido.mimec.org/usage https://electronjs.org/ https://vuido.mimec.org/
 
 * pointer for functions
- arr               // arr
- arr []            // is an array (so index it)
+ arr // arr arr [] // is an array (so index it)
  * arr []          // of pointers (so dereference them)
- (* arr [])()      // to functions taking nothing (so call them with ())
- void (* arr [])() // returning void
+ (* arr [])() // to functions taking nothing (so call them with ()) void (* arr
+ [])() // returning void
 
  so your answer is
 
@@ -900,20 +900,17 @@ https://vuido.mimec.org/
 
  But naturally, this is a bad practice, just use typedefs :)
 
- Extra: Wonder how to declare an array of 3 pointers to functions
- taking int and returning a pointer to an array of 4 pointers to
- functions taking double and returning char? (how cool is that, huh?
- :))
+ Extra: Wonder how to declare an array of 3 pointers to functions taking int and
+ returning a pointer to an array of 4 pointers to functions taking double and
+ returning char? (how cool is that, huh? :))
 
- arr //arr
- arr [3] //is an array of 3 (index it)
+ arr //arr arr [3] //is an array of 3 (index it)
  * arr [3] //pointers
- (* arr [3])(int) //to functions taking int (call it) and
- *(* arr [3])(int) //returning a pointer (dereference it)
- (*(* arr [3])(int))[4] //to an array of 4
- *(*(* arr [3])(int))[4] //pointers
- (*(*(* arr [3])(int))[4])(double) //to functions taking double and
- char (*(*(* arr [3])(int))[4])(double) //returning char
+ (* arr [3])(int) //to functions taking int (call it) and *(* arr [3])(int)
+ //returning a pointer (dereference it) (*(* arr [3])(int))[4] //to an array of
+ 4 *(*(* arr [3])(int))[4] //pointers (*(*(* arr [3])(int))[4])(double) //to
+ functions taking double and char (*(*(* arr [3])(int))[4])(double) //returning
+ char
 
 * fullstack vue code
 https://mega.nz/#F!fVsGwJZL!e1tjZX8qwINZ3raPOEXNfQ
@@ -922,72 +919,66 @@ https://mega.nz/#F!fVsGwJZL!e1tjZX8qwINZ3raPOEXNfQ
 https://discuss.freetutorials.us/t/wes-bos-fullstack-advanced-react-graphql-5-26-gb-download-free/31575/18
 
 * vue mode
-I use vue-html-mode, vue-mode, web-mode, js2-mode and tern (and lots
-of other things like emmet-mode, coffee-mode, projectile, rainbow-mode
-etc)
+I use vue-html-mode, vue-mode, web-mode, js2-mode and tern (and lots of other
+things like emmet-mode, coffee-mode, projectile, rainbow-mode etc)
 
-I am actually using vue-html-mode, vue-mode, web-mode, js2-mode and
-tern as well but it's just coming out like a gray lumpy gravy.
+I am actually using vue-html-mode, vue-mode, web-mode, js2-mode and tern as well
+but it's just coming out like a gray lumpy gravy.
 
-Here is my complete init file ... you can search the needed parts
-(it's small, but there are comment headers for each major mode so you
-can search by HTML, Javascript etc).
+Here is my complete init file ... you can search the needed parts (it's small,
+but there are comment headers for each major mode so you can search by HTML,
+Javascript etc).
 
 https://pastebin.com/HqntzaVc
 
-Share
-Report
-Save
+Share Report Save
 
 * setting up emacs for javascript
 
 * google cloud
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                                  Components                                                 │
+│ Components │
 ├───────────────┬──────────────────────────────────────────────────────┬──────────────────────────┬───────────┤
-│     Status    │                         Name                         │            ID            │    Size   │
+│ Status │ Name │ ID │ Size │
 ├───────────────┼──────────────────────────────────────────────────────┼──────────────────────────┼───────────┤
-│ Not Installed │ App Engine Go Extensions                             │ app-engine-go            │ 153.3 MiB │
-│ Not Installed │ Cloud Bigtable Command Line Tool                     │ cbt                      │   6.4 MiB │
-│ Not Installed │ Cloud Bigtable Emulator                              │ bigtable                 │   4.3 MiB │
-│ Not Installed │ Cloud Datalab Command Line Tool                      │ datalab                  │   < 1 MiB │
-│ Not Installed │ Cloud Datastore Emulator                             │ cloud-datastore-emulator │  17.7 MiB │
-│ Not Installed │ Cloud Datastore Emulator (Legacy)                    │ gcd-emulator             │  38.1 MiB │
-│ Not Installed │ Cloud Pub/Sub Emulator                               │ pubsub-emulator          │  33.4 MiB │
-│ Not Installed │ Cloud SQL Proxy                                      │ cloud_sql_proxy          │   3.8 MiB │
-│ Not Installed │ Emulator Reverse Proxy                               │ emulator-reverse-proxy   │  14.5 MiB │
-│ Not Installed │ Google Cloud Build Local Builder                     │ cloud-build-local        │   6.0 MiB │
-│ Not Installed │ Google Container Local Builder                       │ container-builder-local  │   4.5 MiB │
-│ Not Installed │ Google Container Registry's Docker credential helper │ docker-credential-gcr    │   1.8 MiB │
-│ Not Installed │ gcloud Alpha Commands                                │ alpha                    │   < 1 MiB │
-│ Not Installed │ gcloud Beta Commands                                 │ beta                     │   < 1 MiB │
-│ Not Installed │ gcloud app Java Extensions                           │ app-engine-java          │ 108.8 MiB │
-│ Not Installed │ gcloud app PHP Extensions                            │ app-engine-php           │           │
-│ Not Installed │ gcloud app Python Extensions                         │ app-engine-python        │   6.2 MiB │
-│ Not Installed │ gcloud app Python Extensions (Extra Libraries)       │ app-engine-python-extras │  28.5 MiB │
-│ Not Installed │ kubectl                                              │ kubectl                  │   < 1 MiB │
-│ Installed     │ BigQuery Command Line Tool                           │ bq                       │   < 1 MiB │
-│ Installed     │ Cloud SDK Core Libraries                             │ core                     │   8.7 MiB │
-│ Installed     │ Cloud Storage Command Line Tool                      │ gsutil                   │   3.5 MiB │
+│ Not Installed │ App Engine Go Extensions │ app-engine-go │ 153.3 MiB │ │ Not
+Installed │ Cloud Bigtable Command Line Tool │ cbt │ 6.4 MiB │ │ Not Installed │
+Cloud Bigtable Emulator │ bigtable │ 4.3 MiB │ │ Not Installed │ Cloud Datalab
+Command Line Tool │ datalab │ < 1 MiB │ │ Not Installed │ Cloud Datastore
+Emulator │ cloud-datastore-emulator │ 17.7 MiB │ │ Not Installed │ Cloud
+Datastore Emulator (Legacy) │ gcd-emulator │ 38.1 MiB │ │ Not Installed │ Cloud
+Pub/Sub Emulator │ pubsub-emulator │ 33.4 MiB │ │ Not Installed │ Cloud SQL
+Proxy │ cloud_sql_proxy │ 3.8 MiB │ │ Not Installed │ Emulator Reverse Proxy │
+emulator-reverse-proxy │ 14.5 MiB │ │ Not Installed │ Google Cloud Build Local
+Builder │ cloud-build-local │ 6.0 MiB │ │ Not Installed │ Google Container Local
+Builder │ container-builder-local │ 4.5 MiB │ │ Not Installed │ Google Container
+Registry's Docker credential helper │ docker-credential-gcr │ 1.8 MiB │ │ Not
+Installed │ gcloud Alpha Commands │ alpha │ < 1 MiB │ │ Not Installed │ gcloud
+Beta Commands │ beta │ < 1 MiB │ │ Not Installed │ gcloud app Java Extensions │
+app-engine-java │ 108.8 MiB │ │ Not Installed │ gcloud app PHP Extensions │
+app-engine-php │ │ │ Not Installed │ gcloud app Python Extensions │
+app-engine-python │ 6.2 MiB │ │ Not Installed │ gcloud app Python Extensions
+(Extra Libraries) │ app-engine-python-extras │ 28.5 MiB │ │ Not Installed │
+kubectl │ kubectl │ < 1 MiB │ │ Installed │ BigQuery Command Line Tool │ bq │ <
+1 MiB │ │ Installed │ Cloud SDK Core Libraries │ core │ 8.7 MiB │ │ Installed │
+Cloud Storage Command Line Tool │ gsutil │ 3.5 MiB │
 └───────────────┴──────────────────────────────────────────────────────┴──────────────────────────┴───────────┘
 
 * configuring computer zone
-[gcloud config set compute/zone NAME].
-Did not print [6] options.
-Too many options [56]. Enter "list" at prompt to print choices fully.
-Please enter numeric choice or text value (must exactly match list
-item):  11
+[gcloud config set compute/zone NAME]. Did not print [6] options. Too many
+options [56]. Enter "list" at prompt to print choices fully. Please enter
+numeric choice or text value (must exactly match list item): 11
 
-Your project default Compute Engine zone has been set to [us-west1-b].
-You can change it by running [gcloud config set compute/zone NAME].
+Your project default Compute Engine zone has been set to [us-west1-b]. You can
+change it by running [gcloud config set compute/zone NAME].
 
-Your project default Compute Engine region has been set to [us-west1].
-You can change it by running [gcloud config set compute/region NAME].
+Your project default Compute Engine region has been set to [us-west1]. You can
+change it by running [gcloud config set compute/region NAME].
 
-Created a default .boto configuration file at [/home/adam/.boto]. See this file and
-[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
-information about configuring Google Cloud Storage.
-Your Google Cloud SDK is configured and ready to use!
+Created a default .boto configuration file at [/home/adam/.boto]. See this file
+and [https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage. Your Google Cloud SDK is
+configured and ready to use!
 
 - Commands that require authentication will use frankliu@stanford.edu by default
 - Commands will reference project `gbsc-gcp-lab-gssc` by default
@@ -996,8 +987,9 @@ Your Google Cloud SDK is configured and ready to use!
 
 Run `gcloud help config` to learn how to change individual settings
 
-This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
-Run `gcloud topic configurations` to learn more.
+This gcloud configuration is called [default]. You can create additional
+configurations if you work with multiple accounts and/or projects. Run `gcloud
+topic configurations` to learn more.
 
 Some things to try next:
 
@@ -1005,23 +997,19 @@ Some things to try next:
 - Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
 
 * hello world app engine
-git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
-cd nodejs-docs-samples/appengine/hello-world/flexible
-npm install
-npm start
-gcloud app deploy
-gcloud app browse
+git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples cd
+nodejs-docs-samples/appengine/hello-world/flexible npm install npm start gcloud
+app deploy gcloud app browse
 # To view your application in the web browser run:
 # $ gcloud app browse
 
 * gcloud logs
-You can stream logs from the command line by running:
-$ gcloud app logs tail -s default
+You can stream logs from the command line by running: $ gcloud app logs tail -s
+default
 
 * gcloud update
-Updates are available for some Cloud SDK components.  To install them,
-please run:
-  $ gcloud components update
+Updates are available for some Cloud SDK components. To install them, please
+run: $ gcloud components update
 
 * How to choose a google cloud engine (standard flexible compute)
 https://cloud.google.com/appengine/docs/the-appengine-environments
@@ -1034,24 +1022,21 @@ https://cloud.google.com/appengine/docs/flexible/custom-runtimes/
 https://cloud.google.com/appengine/docs/flexible/nodejs/runtime
 
 * gcloud get project name
-gcloud config list --format 'value(core.project)'
-gbsc-gcp-lab-gssc
+gcloud config list --format 'value(core.project)' gbsc-gcp-lab-gssc
 
 * gcloud help page
 gcloud topic formats
 
 * project nane
-export PROJECT_ID=$(gcloud config list --format '(value(core.project)')
-export PROJECT_ID=$(gcloud config get-vale project)
-Your active configuration is: [default]
+export PROJECT_ID=$(gcloud config list --format '(value(core.project)') export
+PROJECT_ID=$(gcloud config get-vale project) Your active configuration is:
+[default]
 
 gcloud info | awk '/project:/ {print $2}' | tr -d '[]'
 
 * how-to
-https://cloud.google.com/appengine/docs/flexible/custom-runtimes/how-to
-buidling a custom runtime
-configuring your app
-testing and deploying your application
+https://cloud.google.com/appengine/docs/flexible/custom-runtimes/how-to buidling
+a custom runtime configuring your app testing and deploying your application
 debugging an instance (connecting to an instance with ssh)
 
 * Understanding flow of html
@@ -1059,23 +1044,34 @@ https://stackoverflow.com/questions/49843822/connecting-a-python-backend-and-vue
 
 Strictly speaking, your Python will not directly "load your app".
 
-First, at the risk of unneeded explaining, there's the important concept of where code resides vs where code executes. Your VueJS code resides on the server in a static file but executes in the client / browser. Q: How does it get from the server to the browser to execute? A: The client must send a request to the server to provide it. Q: What would cause the browser to send this request? A: Instructions in other code sent to it, most probably a <script> tag in HTML.
+First, at the risk of unneeded explaining, there's the important concept of
+where code resides vs where code executes. Your VueJS code resides on the server
+in a static file but executes in the client / browser. Q: How does it get from
+the server to the browser to execute? A: The client must send a request to the
+server to provide it. Q: What would cause the browser to send this request? A:
+Instructions in other code sent to it, most probably a <script> tag in HTML.
 
-So, the flow goes something like this (may vary for you depending on details not provided):
+So, the flow goes something like this (may vary for you depending on details not
+provided):
 
-Browser sends request to server (GAE) for HTML, such as the home page
-Server (GAE) responds with HTML
-This HTML may be dynamically created by Python or may be a static file.
-This HTML contains tags to instruct the browser to request more files: images, CSS, JS.
-This HTML should contain a <script> tag to request your VueJS code.
-Browser receives the HTML and processes it, including the <script> tag for your VueJS code.
-Browser sends request to server for the VueJS code.
-Server (GAE) responds with the static file containing the VueJS code.
-Browser receives the file containing VueJS codes, runs it, and your VueJS is now loaded & running!
-As your VueJS runs, it may send AJAX requests to the server (GAE) to get data and/or more code.
-Your VueJS code must reside in a static file on the server. To the server (Python), this static file is just a meaningless bag-of-bytes (if there's a syntax error in the code it won't be found until it executes client-side).
+Browser sends request to server (GAE) for HTML, such as the home page Server
+(GAE) responds with HTML This HTML may be dynamically created by Python or may
+be a static file. This HTML contains tags to instruct the browser to request
+more files: images, CSS, JS. This HTML should contain a <script> tag to request
+your VueJS code. Browser receives the HTML and processes it, including the
+<script> tag for your VueJS code. Browser sends request to server for the VueJS
+code. Server (GAE) responds with the static file containing the VueJS code.
+Browser receives the file containing VueJS codes, runs it, and your VueJS is now
+loaded & running! As your VueJS runs, it may send AJAX requests to the server
+(GAE) to get data and/or more code. Your VueJS code must reside in a static file
+on the server. To the server (Python), this static file is just a meaningless
+bag-of-bytes (if there's a syntax error in the code it won't be found until it
+executes client-side).
 
-How do you get these statics files into GAE so they are available when the browser requests it? You probably already got this (for CSS, images), but just in case you don't, see this link: Server Static Files for details on setting this up.
+How do you get these statics files into GAE so they are available when the
+browser requests it? You probably already got this (for CSS, images), but just
+in case you don't, see this link: Server Static Files for details on setting
+this up.
 
 * community tutorials
 
@@ -1083,9 +1079,7 @@ https://cloud.google.com/appengine/docs/standard/nodejs/tutorials
 
 * bash verify target of symbolic link
 https://unix.stackexchange.com/questions/192294/how-to-verify-the-target-of-a-symbolic-link-points-toward-a-particular-path
-if [ "$(readlink -- "$alink")" == /home/fyliu/.ssh/config.noproxy ];
-then
-fi
+if [ "$(readlink -- "$alink")" == /home/fyliu/.ssh/config.noproxy ]; then fi
 
 * stanford cees rfc head nodes
 https://www.google.com/search?q=cees+rfc+head+nodes+stanford&oq=cees+rfc+head+nodes+stanford&aqs=chrome..69i57.6029j0j7&sourceid=chrome&ie=UTF-8
@@ -1097,19 +1091,17 @@ https://cloud.google.com/sdk/auth_success
 https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/appengine/README.md
 # Google App Engine Node.js Samples
 
-These are samples for using [Node.js][nodejs] on
-[Google App Engine][appengine]. Many of these samples
-are referenced from the documentation on [cloud.google.com][appengine].
+These are samples for using [Node.js][nodejs] on [Google App Engine][appengine].
+Many of these samples are referenced from the documentation on
+[cloud.google.com][appengine].
 
 There are also samples [submitted by the community][community_samples].
 
 See our other [Google Cloud Platform GitHub repositories](/GoogleCloudPlatform)
 for sample applications and scaffolding for other frameworks and use cases.
 
--* [Run Locally](#run-locally)
--* [Deploying](#deploying)
--* [Official samples](#official-samples)
--* [Community samples](#community-samples)
+-* [Run Locally](#run-locally) [Deploying](#deploying) [Official
+-* samples](#official-samples) [Community samples](#community-samples)
 
 ## Run Locally
 
@@ -1154,17 +1146,17 @@ The App Engine Node.js samples typically that you do the following:
 
 ## Deploying
 
-Some samples may have special deployment instructions.
-Refer to the `README.md` file in the sample folder.
+Some samples may have special deployment instructions. Refer to the `README.md`
+file in the sample folder.
 
 Many samples in this folder can be deployed to both App Engine Node.js standard
-environment and flexible environment. Those samples come with two different
-App Engine configuration files: `app.flexible.yaml` for flexible environment,
-and `app.standard.yaml` for standard environment.
+environment and flexible environment. Those samples come with two different App
+Engine configuration files: `app.flexible.yaml` for flexible environment, and
+`app.standard.yaml` for standard environment.
 
-Samples with one single configuration file, `app.yaml`, can only be deployed
-to one of the two environments. See the `README.md` files for these samples
-for more information.
+Samples with one single configuration file, `app.yaml`, can only be deployed to
+one of the two environments. See the `README.md` files for these samples for
+more information.
 
 Generally speaking, to deploy a sample application:
 
@@ -1175,8 +1167,8 @@ Generally speaking, to deploy a sample application:
 1.  Use the Cloud SDK to deploy your app.
 
     For samples with two configuration files (`app.flexible.yaml` and
-    `app.standard.yaml`), if you plan to use App Engine Node.js Standard
-    Environment, run
+   `app.standard.yaml`), if you plan to use App Engine Node.js Standard
+   Environment, run
 
         gcloud app deploy app.standard.yaml
 
@@ -1191,7 +1183,7 @@ Generally speaking, to deploy a sample application:
     to deploy the app to its compatible environment.
 
     Note: If there is a `yarn.lock` file then `yarn install` will be used during
-    deployment. Delete the `yarn.lock` file to fall back to `npm install`.
+   deployment. Delete the `yarn.lock` file to fall back to `npm install`.
 
 1.  View your deployed application at `https://YOUR_PROJECT_ID.appspot.com`.
 
@@ -1203,27 +1195,26 @@ View the [Official App Engine Node.js samples][official_samples].
 
 View the [Community-contributed App Engine Node.js samples][community_samples].
 
-[nodejs]: https://nodejs.org/
-[appengine]: https://cloud.google.com/appengine/
-[nodejs_dev]: https://cloud.google.com/community/tutorials/how-to-prepare-a-nodejs-dev-environment
-[sdk]: https://cloud.google.com/sdk/
-[console]: https://console.cloud.google.com
+[nodejs]: https://nodejs.org/ [appengine]: https://cloud.google.com/appengine/
+[nodejs_dev]:
+https://cloud.google.com/community/tutorials/how-to-prepare-a-nodejs-dev-environment
+[sdk]: https://cloud.google.com/sdk/ [console]: https://console.cloud.google.com
 [billing]: https://support.google.com/cloud/answer/6293499#enable-billing
-[official_samples]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples/tree/master/appengine
-[community_samples]: https://cloud.google.com/community/tutorials/?q=%22Node.js%22
+[official_samples]:
+https://github.com/GoogleCloudPlatform/nodejs-docs-samples/tree/master/appengine
+[community_samples]:
+https://cloud.google.com/community/tutorials/?q=%22Node.js%22
 
 * deploy mongodb on compute engine
-https://cloud.google.com/solutions/deploy-mongodb
-mostly about sharding not a lot of instruction
+https://cloud.google.com/solutions/deploy-mongodb mostly about sharding not a
+lot of instruction
 
-List of tutorials
-https://cloud.google.com/docs/tutorials#mongodb
+List of tutorials https://cloud.google.com/docs/tutorials#mongodb
 
 This is a good tutorial
 https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
 
-This goes a little further than hello world
-talks about uuid and redeploying
+This goes a little further than hello world talks about uuid and redeploying
 https://codelabs.developers.google.com/codelabs/cloud-app-engine-node/index.html?index=..%2F..%2Findex#1
 
 Simple tutorial express and mongodb
@@ -1232,20 +1223,15 @@ https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
 * mongodb gcloud
 https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine
 
----
-title: Connect to MongoDB from Node.js on Google App Engine Flexible Environment
-description: Learn how to connect to MongoDB from a Node.js app running on Google App Engine flexible environment.
-author: jmdobry
-tags: App Engine, Node.js, MongoDB
-date_published: 2017-11-02
----
+--- title: Connect to MongoDB from Node.js on Google App Engine Flexible
+Environment description: Learn how to connect to MongoDB from a Node.js app
+running on Google App Engine flexible environment. author: jmdobry tags: App
+Engine, Node.js, MongoDB date_published: 2017-11-02 ---
 
 ## MongoDB
 
 > [MongoDB][mongo] is a document database with the scalability and flexibility
-> that you want with the querying and indexing that you need
->
-> – mongodb.com
+> that you want with the querying and indexing that you need – mongodb.com
 
 You can check out [Node.js and Google Cloud Platform][nodejs-gcp] to get an
 overview of Node.js itself and learn ways to run Node.js apps on Google Cloud
@@ -1280,90 +1266,52 @@ There are multiple options for creating a new MongoDB database. For example:
 
         'use strict';
 
-        const mongodb = require('mongodb');
-        const http = require('http');
-        const nconf = require('nconf');
+        const mongodb = require('mongodb'); const http = require('http'); const
+   nconf = require('nconf');
 
-        // Read in keys and secrets. Using nconf use can set secrets via
-        // environment variables, command-line arguments, or a keys.json file.
-        nconf.argv().env().file('keys.json');
+        // Read in keys and secrets. Using nconf use can set secrets via //
+   environment variables, command-line arguments, or a keys.json file.
+   nconf.argv().env().file('keys.json');
 
-        // Connect to a MongoDB server provisioned over at
-        // MongoLab.  See the README for more info.
+        // Connect to a MongoDB server provisioned over at // MongoLab. See the
+   README for more info.
 
-        const user = nconf.get('mongoUser');
-        const pass = nconf.get('mongoPass');
-        const host = nconf.get('mongoHost');
-        const port = nconf.get('mongoPort');
+        const user = nconf.get('mongoUser'); const pass =
+   nconf.get('mongoPass'); const host = nconf.get('mongoHost'); const port =
+   nconf.get('mongoPort');
 
-        let uri = `mongodb://${user}:${pass}@${host}:${port}`;
-        if (nconf.get('mongoDatabase')) {
-          uri = `${uri}/${nconf.get('mongoDatabase')}`;
-        }
-        console.log(uri);
+        let uri = `mongodb://${user}:${pass}@${host}:${port}`; if
+   (nconf.get('mongoDatabase')) { uri = `${uri}/${nconf.get('mongoDatabase')}`;
+   } console.log(uri);
 
-        mongodb.MongoClient.connect(uri, (err, db) => {
-          if (err) {
-            throw err;
-          }
+        mongodb.MongoClient.connect(uri, (err, db) => { if (err) { throw err; }
 
-          // Create a simple little server.
-          http.createServer((req, res) => {
-            if (req.url === '/_ah/health') {
-              res.writeHead(200, {
-                'Content-Type': 'text/plain'
-              });
-              res.write('OK');
-              res.end();
-              return;
-            }
-            // Track every IP that has visited this site
-            const collection = db.collection('IPs');
+          // Create a simple little server. http.createServer((req, res) => { if
+   (req.url === '/_ah/health') { res.writeHead(200, { 'Content-Type':
+   'text/plain' }); res.write('OK'); res.end(); return; } // Track every IP that
+   has visited this site const collection = db.collection('IPs');
 
-            const ip = {
-              address: req.connection.remoteAddress
-            };
+            const ip = { address: req.connection.remoteAddress };
 
-            collection.insert(ip, (err) => {
-              if (err) {
-                throw err;
-              }
+            collection.insert(ip, (err) => { if (err) { throw err; }
 
-              // push out a range
-              let iplist = '';
-              collection.find().toArray((err, data) => {
-                if (err) {
-                  throw err;
-                }
-                data.forEach((ip) => {
-                  iplist += `${ip.address}; `;
-                });
+              // push out a range let iplist = '';
+   collection.find().toArray((err, data) => { if (err) { throw err; }
+   data.forEach((ip) => { iplist += `${ip.address}; `; });
 
-                res.writeHead(200, {
-                  'Content-Type': 'text/plain'
-                });
-                res.write('IPs:\n');
-                res.end(iplist);
-              });
-            });
-          }).listen(process.env.PORT || 8080, () => {
-            console.log('started web process');
-          });
-        });
+                res.writeHead(200, { 'Content-Type': 'text/plain' });
+   res.write('IPs:\n'); res.end(iplist); }); }); }).listen(process.env.PORT ||
+   8080, () => { console.log('started web process'); }); });
 
 1.  Create a `keys.json` file with the following content, replacing the
     variables with your own values:
 
-        {
-          "mongoHost": "YOUR_MONGO_HOST",
-          "mongoPort": "YOUR_MONGO_PORT",
-          "mongoDatabase": "YOUR_MONGO_DB",
-          "mongoUser": "YOUR_MONGO_USERNAME",
-          "mongoPass": "YOUR_MONGO_PASSWORD"
-        }
+        { "mongoHost": "YOUR_MONGO_HOST", "mongoPort": "YOUR_MONGO_PORT",
+   "mongoDatabase": "YOUR_MONGO_DB", "mongoUser": "YOUR_MONGO_USERNAME",
+   "mongoPass": "YOUR_MONGO_PASSWORD" }
 
     Do not check your credentials into source control. Create a `.gitignore`
-    file if you don't have one, and add `keys.json` to it.
+   file if you don't have one, and add `keys.json` to it.
 
 ## Run the app
 
@@ -1377,8 +1325,7 @@ There are multiple options for creating a new MongoDB database. For example:
 
 1.  Create an `app.yaml` file with the following content:
 
-        runtime: nodejs
-        env: flex
+        runtime: nodejs env: flex
 
 1.  Run the following command to deploy your app:
 
@@ -1388,21 +1335,17 @@ There are multiple options for creating a new MongoDB database. For example:
 
         gcloud app browse
 
-[mongo]: https://www.mongodb.com/
-[nodejs-gcp]: running-nodejs-on-google-cloud
+[mongo]: https://www.mongodb.com/ [nodejs-gcp]: running-nodejs-on-google-cloud
 [nodejs]: /nodejs/docs/setup
 
 * mongodb gcloud
 
 https://cloud.google.com/community/tutorials/mongodb-atlas-appengineflex-nodejs-app
 
----
-title: Hello World App - MongoDB Atlas and App Engine Flex - NodeJS
-description: Learn how to build Node.js application with Google App Engine flexible environment and MongoDB Atlas.
-author: arajwade,smithkh
-tags: App Engine, Node.js, MongoDB Atlas
-date_published: 2018-06-25
----
+--- title: Hello World App - MongoDB Atlas and App Engine Flex - NodeJS
+description: Learn how to build Node.js application with Google App Engine
+flexible environment and MongoDB Atlas. author: arajwade,smithkh tags: App
+Engine, Node.js, MongoDB Atlas date_published: 2018-06-25 ---
 
 ## Overview
 
@@ -1450,37 +1393,37 @@ Beginner
 
 5.  Create New Cluster by selecting Google Cloud Platform as a "Cloud Provider".
     Next select the region where you want to place your Atlas cluster. Ideally,
-    your cluster will be located close to your end user for lower latency. Note
-    that we can select a free tier region in your area of choice, as noted by
-    the "Free Tier Available" icon. This is a no-cost option to get started.
-    However, since we are assuming our end users will span across the globe, we
-    want our Atlas cluster to be multi-regional. To enable a multi-regional
-    cluster, we will need to select a M10 or larger cluster size. So for now,
-    for our use case, let’s assume our primary end users for our application
-    will be based in the US and a smaller percentage based in the UK and
-    Australia. As such, we will select our primary region to be in North
-    America, based in Iowa (us-central1).
+   your cluster will be located close to your end user for lower latency. Note
+   that we can select a free tier region in your area of choice, as noted by the
+   "Free Tier Available" icon. This is a no-cost option to get started. However,
+   since we are assuming our end users will span across the globe, we want our
+   Atlas cluster to be multi-regional. To enable a multi-regional cluster, we
+   will need to select a M10 or larger cluster size. So for now, for our use
+   case, let’s assume our primary end users for our application will be based in
+   the US and a smaller percentage based in the UK and Australia. As such, we
+   will select our primary region to be in North America, based in Iowa
+   (us-central1).
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image45.png)
 
 6.  Next, to enable multiple regions, lets configure our cluster size under
     "Cluster Tier". Select "M10" under "Dedicated Development Clusters"
-    subheading since this is the minimal size to move forward for
-    multiple-regions.
+   subheading since this is the minimal size to move forward for
+   multiple-regions.
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image11.png)
 
 7.  Now that we selected a M10 cluster, let's go back to "Cloud Provider &
     Region" and toggle the option to "Configure clusters across multiple
-    regions" from "No" to "Yes". Once we enable this we will see more options.
-    You will see your previously selected region as "Preferred" under "Node
-    Type". Since for our use-case we will also have some users in the UK and
-    Australia, we want to take into the considering the distance between our
-    primary cluster in the US and enable lower latency for better read
-    performance. As such, we will add a Read-only replica in London
-    (europe-west2) and Sydney (australia-southeast1). Under the subheading
-    "Deploy read-only replicas", select "Add a node" and add these two regions
-    with 1 node each.
+   regions" from "No" to "Yes". Once we enable this we will see more options.
+   You will see your previously selected region as "Preferred" under "Node
+   Type". Since for our use-case we will also have some users in the UK and
+   Australia, we want to take into the considering the distance between our
+   primary cluster in the US and enable lower latency for better read
+   performance. As such, we will add a Read-only replica in London
+   (europe-west2) and Sydney (australia-southeast1). Under the subheading
+   "Deploy read-only replicas", select "Add a node" and add these two regions
+   with 1 node each.
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image27.png)
 
@@ -1491,7 +1434,7 @@ Beginner
 
 9.  Under "'Cluster Name', provide a cluster Name." For this demo, we will keep
     the default of "Cluster0". Click on "Create Cluster" button at the bottom of
-    the page.
+   the page.
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image38.png)
 
@@ -1520,7 +1463,7 @@ Beginner
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image26.png)
 
 15. Select "Allow Access from Anywhere" for the purpose of this demo and click
-    on "Confirm".  Note:  When actually putting something into production, you
+    on "Confirm". Note: When actually putting something into production, you
     will want to narrow the scope of where your database can be accessed and
     specify a specific IP address/CIDR block.
 
@@ -1547,7 +1490,7 @@ Beginner
 
 1.  Go to cloud.google.com and login with your Google account. If you don't have
     a Google account, please create a free trial account by following
-    instructions at this [link](https://console.cloud.google.com/freetrial).
+   instructions at this [link](https://console.cloud.google.com/freetrial).
 
 2.  If not already there, go to https://console.cloud.google.com/
 
@@ -1622,7 +1565,7 @@ Beginner
 1. Create a Debian Linux GCE VM instance using the instructions given [here](https://cloud.google.com/compute/docs/quickstart-linux).
 
     NOTE: When creating your instance, please be sure to enable "Allow full
-    access to all Cloud APIs" under "Identity and API access":
+   access to all Cloud APIs" under "Identity and API access":
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image33.png)
 
@@ -1692,64 +1635,32 @@ Beginner
 
         'use strict';
 
-        const mongodb = require('mongodb');
-        const http = require('http');
-        const nconf = require('nconf');
-        let uri = ` PASTE YOUR MONGODB ATLAS CONNECTION STRING HERE `;
-        if (nconf.get('mongoDatabase')) {
-          uri = `${uri}/${nconf.get('mongoDatabase')}`;
-        }
-        console.log(uri);
+        const mongodb = require('mongodb'); const http = require('http'); const
+        nconf = require('nconf'); let uri = ` PASTE YOUR MONGODB ATLAS
+        CONNECTION STRING HERE `; if (nconf.get('mongoDatabase')) { uri =
+        `${uri}/${nconf.get('mongoDatabase')}`; } console.log(uri);
 
-        mongodb.MongoClient.connect(uri, (err, db) => {
-          if (err) {
-            throw err;
-          }
+        mongodb.MongoClient.connect(uri, (err, db) => { if (err) { throw err; }
 
-          // Create a simple little server.
-          http.createServer((req, res) => {
-            if (req.url === '/_ah/health') {
-              res.writeHead(200, {
-                'Content-Type': 'text/plain'
-              });
-              res.write('OK');
-              res.end();
-              return;
-            }
+          // Create a simple little server. http.createServer((req, res) => { if
+          (req.url === '/_ah/health') { res.writeHead(200, { 'Content-Type':
+          'text/plain' }); res.write('OK'); res.end(); return; }
 
 
-            const collection = db.collection('Messages');
-            var datetime = new Date();
-            const msg = {
-              msgDescription: '\nHello World received on ' + datetime
-            };
+            const collection = db.collection('Messages'); var datetime = new
+            Date(); const msg = { msgDescription: '\nHello World received on ' +
+            datetime };
 
-            collection.insert(msg, (err) => {
-              if (err) {
-                throw err;
-              }
+            collection.insert(msg, (err) => { if (err) { throw err; }
 
-              // push out a range
-              let msglist = '';
-              collection.find().toArray((err, data) => {
-                if (err) {
-                  throw err;
-                }
-                data.forEach((msg) => {
-                  msglist += `${msg.msgDescription}; `;
-                });
+              // push out a range let msglist = '';
+              collection.find().toArray((err, data) => { if (err) { throw err; }
+              data.forEach((msg) => { msglist += `${msg.msgDescription}; `; });
 
-                res.writeHead(200, {
-                  'Content-Type': 'text/plain'
-                });
-        res.write('Messages received so far:\n');
-                res.end(msglist);
-              });
-            });
-          }).listen(process.env.PORT || 8080, () => {
-            console.log('started web process');
-          });
-        });
+                res.writeHead(200, { 'Content-Type': 'text/plain' });
+                  res.write('Messages received so far:\n'); res.end(msglist);
+                  }); }); }).listen(process.env.PORT || 8080, () => {
+                  console.log('started web process'); }); });
 
     1.  Enter "Exit" to leave
     1.  On prompt to save, enter "Y"
@@ -1778,8 +1689,7 @@ Deploying the app to App Engine Flex
 
 2.  Add following content to to app.yaml file by running the following command:
 
-        runtime: nodejs
-        env: flex
+        runtime: nodejs env: flex
 
 3.  Run the following command to deploy your app by running the following command:
 
@@ -1789,15 +1699,16 @@ Deploying the app to App Engine Flex
 
         gcloud app browse
 
-## Part 5: Visit our new application from any web-enabled client terminal; including mobile devices.
+## Part 5: Visit our new application from any web-enabled client terminal;
+including mobile devices.
 
 1.  Retrieve your external URL from the output of gcloud app browse command:
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image28.png)
 
 2.  Use a web-enabled client terminal to visit your new "Hello World"
-    application using the external  URL in the previous step. You should see
-    webpage showing screen similar to this:
+    application using the external URL in the previous step. You should see
+   webpage showing screen similar to this:
 
     ![image](https://storage.googleapis.com/gcp-community/tutorials/mongodb-atlas-appengineflex-nodejs-app/image1.png)
 
@@ -1818,12 +1729,10 @@ ${parameter:-word}
 | ${parameter+word}  | word             | sub word     | sub null    |
 
 * nix-setup-user
-Set user configuration
-multi-user mode for Nix
+Set user configuration multi-user mode for Nix
 https://nixos.org/releases/nix/nix-1.8/manual/
 
-Dbus launch problems
-https://github.com/moby/moby/issues/34175
+Dbus launch problems https://github.com/moby/moby/issues/34175
 
 * mongodb tutorials
 - There are two mongodb tutorials slightly different from one another
@@ -1854,8 +1763,7 @@ https://askubuntu.com/questions/177348/how-do-i-disable-the-screensaver-lock
 https://askubuntu.com/questions/147241/execute-sudo-without-password
 
 * joe editor
-https://joe-editor.sourceforge.io/4.5/man.html
-^k x to exit editor
+https://joe-editor.sourceforge.io/4.5/man.html ^k x to exit editor
 
 * gcloud flex runtimes
 https://cloud.google.com/appengine/docs/flexible/custom-runtimes/
@@ -1871,8 +1779,7 @@ https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.ht
 http://i.imgur.com/jEwgPsd.gif
 https://www.reddit.com/r/emacs/comments/7w0ox0/tide_or_tern/
 https://www.reddit.com/r/vuejs/comments/7dg1nb/how_do_you_set_up_emacs_to_develop_with_vue/
-http://ternjs.net/doc/manual.html#emacs
-https://github.com/AdamNiederer/vue-mode
+http://ternjs.net/doc/manual.html#emacs https://github.com/AdamNiederer/vue-mode
 
 * vue cli
 https://flaviocopes.com/vue-cli/
@@ -1885,11 +1792,12 @@ https://discuss.freetutorials.us/t/skillshare-angular-5-and-firebase-building-re
 https://discuss.freetutorials.us/t/vueschool-the-vue-js-master-class-3-92-gb-download-free/31574/7
 ** fullstack.io react
 https://discuss.freetutorials.us/t/ebook-fullstack-io-react-book-r36-july-2018-epub-pdf-code/13885
-Saw a couple of requests for this book and people trying to find a newer version & code.
+Saw a couple of requests for this book and people trying to find a newer version
+& code.
 
-Decided to reupload.
-Fullstack React: The Complete Guide to React and Friends
-about the book: https://dereferer.me/?ohpy-l34wVRRw2Rj643r5Rx0Ez0090dlbg4BlNWPjJAwP7o-G 627
+Decided to reupload. Fullstack React: The Complete Guide to React and Friends
+about the book:
+https://dereferer.me/?ohpy-l34wVRRw2Rj643r5Rx0Ez0090dlbg4BlNWPjJAwP7o-G 627
 
 link (Base64):
 aHR0cHM6Ly9tZWdhLm56LyNGIU9ZVWxrWXFCIU1xa0F0V1NVNGFaNW0zQlZkZEtyamc=
@@ -1909,14 +1817,12 @@ https://www.udemy.com/the-complete-javascript-course/?pmtag=FULLMUDEMAY&ranMID=3
 https://medium.com/codingthesmartway-com-blog/pure-javascript-building-a-real-world-application-from-scratch-5213591cfcd6
 
 * init.js
-https://www.toptal.com/javascript/guide-to-full-stack-javascript-initjs
-Good introduction to full stack using nodejs and javascript
+https://www.toptal.com/javascript/guide-to-full-stack-javascript-initjs Good
+introduction to full stack using nodejs and javascript
 
 * printing to console apps script
-Browser.msgBox('message', Browser.Buttons.OK_CANCEL);
-Logger.log()
-scriptlet in html file can call Logger.log()
-Stackdriver Logging : shows console.log()
+Browser.msgBox('message', Browser.Buttons.OK_CANCEL); Logger.log() scriptlet in
+html file can call Logger.log() Stackdriver Logging : shows console.log()
 
 * Use clasp to work on apps script locally
 https://github.com/google/clasp
@@ -1935,10 +1841,8 @@ Look here for coonect parameters
 Read more detail here about changes to connect
 
 https://stackoverflow.com/questions/47662220/db-collection-is-not-a-function-when-using-mongoclient-v3-0
-MongoClient.connect('mongodb://localhost:27017',
- (err, client) => {
- var db = client.db('name of database');
-});
+MongoClient.connect('mongodb://localhost:27017', (err, client) => { var db =
+client.db('name of database'); });
 
 * https://gbsc-gcp-lab-gssc.appspot.com/key.json
 
@@ -1971,25 +1875,24 @@ https://developers.google.com/apps-script/reference/spreadsheet/range#getsheet
 
 * copy
 https://productforums.google.com/forum/#!topic/docs/SwIuouNeblw
-https://productforums.google.com/forum/#!topic/docs/SwIuouNeblw
-function copy() {
-    var s = SpreadsheetApp.getActive()
-        .getSheetByName('JobsFeedbackHistoryTracking')
-    s.getRange(1, 8, 100, 92)
-        .copyValuesToRange(s, 9, 93, 1, 100);
-}
+https://productforums.google.com/forum/#!topic/docs/SwIuouNeblw function copy()
+{ var s = SpreadsheetApp.getActive()
+.getSheetByName('JobsFeedbackHistoryTracking') s.getRange(1, 8, 100, 92)
+.copyValuesToRange(s, 9, 93, 1, 100); }
 
 
 function Copy() {
 
  var sss = SpreadsheetApp.openById('spreadsheet_key'); //replace with source ID
- var ss = sss.getSheetByName('Source'); //replace with source Sheet tab name
- var range = ss.getRange('A2:E6'); //assign the range you want to copy
- var data = range.getValues();
+ var ss = sss.getSheetByName('Source'); //replace with source Sheet tab name var
+ range = ss.getRange('A2:E6'); //assign the range you want to copy var data =
+ range.getValues();
 
- var tss = SpreadsheetApp.openById('spreadsheet_key'); //replace with destination ID
- var ts = tss.getSheetByName('SavedData'); //replace with destination Sheet tab name
- ts.getRange(ts.getLastRow()+1, 1,5,5).setValues(data); //you will need to define the size of the copied data see getRange()
+ var tss = SpreadsheetApp.openById('spreadsheet_key'); //replace with
+ destination ID var ts = tss.getSheetByName('SavedData'); //replace with
+ destination Sheet tab name ts.getRange(ts.getLastRow()+1,
+ 1,5,5).setValues(data); //you will need to define the size of the copied data
+ see getRange()
 
 }
 
@@ -5466,3 +5369,1818 @@ inoremap <A-S-f> <Esc>lWi
 inoremap <A-S-b> <Esc>Bi
 
 * github password
+
+* sync google and evolution
+http://www.ubuntugeek.com/how-to-sync-google-and-evolution-calendars-in-ubuntu.html
+1. Define a Google calendar at www.google.com
+2. Under settings, define your calendar as public
+3. Start Evolution and go to Calendars
+4. Click New > Calendar
+5. Complete the Properties as follows:
+6. Type: choose CalDAV
+7. Name: your choice
+8. URL: caldav://www.google.com/calendar/dav/username@gmail.com/events
+9. Check the box: Use SSL
+10. Username: username
+11. Set the refresh time as desired
+12. Click OK
+13. Click Edit > Preferences > Calendar Publishing
+14. Click Add
+15. Under General:
+16. Select Publish as: iCal
+17. Select Publishing Frequency: Manual (via Action Menu)
+18. Under Sources:
+19. Click on your CalDAV calendar
+20. Click on Publishing Location
+21. Under Service Type select: Secure WebDAV (HTTPS)
+22. Server: www.google.com
+23. File: /calendar/dav/username@gmail.com/events
+24. Under Optional Information:
+25. Port: leave blank
+26. Username: username
+27. Password: password
+28. Check the box Remember Password
+29. Click OK
+30. Click Close to return to Calendars-Evolution
+
+Test it by entering a New Appointment
+Click on Action > Publish Calendar Information
+Go to your Google Calendar web page an hit the refresh button
+The New Appointment should show within a few seconds
+
+* caldev lightning (thunderbird)
+Configuring Mozilla Lightning to Connect to Oracle Beehive
+To configure Mozilla Lightning to connect to Oracle Beehive:
+
+1. Verify that Mozilla Thunderbird is running on your computer and that you have installed the Lightning add-on.
+
+2. Open a Web browser and enter the location for Oracle Beehive CalDAV Companion Web Access using the following structure:
+
+https://<Server-Name>:<Port-Number>/caldav
+
+Example:
+
+Your server name is server.example.com and your port number is 5555, so the URL you enter is https://server.example.com:5555/caldav.
+For more information on client URLs, refer to Accessing Calendars of Other Users, Resources, and Team Workspaces.
+
+If you do not know the Oracle Beehive CalDAV Companion Web Access URL, contact your system administrator.
+
+3. Enter your Oracle Beehive user name and password. Click OK.
+
+4. Click the Help link in the top right-hand corner of the window.
+
+5. In the Configuring Mozilla Lightning section, copy the URL next to Location.
+
+6. Switch to Mozilla Thunderbird.
+
+7. Click the Calendars tab.
+
+8. On the menu, click Calendar and then click New Calendar. The Create New Calendar window opens.
+
+9. Select On the Network and click Next.
+
+10. In the Format list, select CalDAV.
+
+11. In the Location box, paste the location of your Oracle Beehive calendar (the URL that you copied in Step #5).
+
+12. Click Next.
+
+13. Enter a calendar name, choose a display color for your calendar entries, and click Next.
+
+14. Enter your user name and password, and click OK.
+
+15. Click Finish. You are now subscribed to your Oracle Beehive calendar. It may
+    take a few seconds for Lightning to retrieve the contents of your calendar
+    from the server.
+
+* org mode inserting html table
+select the region then C-c |
+
+* perl array init
+my @a = qw(
+a
+b
+c
+d
+e
+);
+
+* perl multiline string
+my $q = qq(
+asdfa
+asdf
+afd
+as
+fads
+);
+
+* perl array init
+my @a = (0) x 4;
+
+* perl print env
+
+print $ENV{'HOSTNAME'};
+
+* slurm commands
+https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/
+
+* shell bash variables in makefile
+
+make sure that execution script is all in one shell by concatenating commands
+with ';'
+
+target:
+      a=1; \
+      b=2; \
+      echo $$a $$b
+
+https://stackoverflow.com/questions/1909188/define-make-variable-at-rule-execution-time
+
+* choosing the shell in makefile
+SHELL := /bin/bash
+
+or directly
+
+bash -c "diff <(sort file1) <(sort file2) >$@"
+https://stackoverflow.com/questions/589276/how-can-i-use-bash-syntax-in-makefile-targets
+
+* setting a make variable from file content
+file := somefile.txt
+variable := $(shell cat ${file})
+
+alternatively
+
+variable = $(file < somefile.txt)
+
+* sed replacing with file contents
+sed -e "s/from/$(cat file2)/" file1
+
+https://unix.stackexchange.com/questions/141387/sed-replace-string-with-file-contents
+
+* sed in place
+sed -i 's/word1/word2/g' -e 's/xx/yy/g' input.file
+
+https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+
+
+* bash aliases
+https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+Nice set of aliases, should look more closely
+
+* auto incrementing with makefiles
+https://www.linuxjournal.com/content/add-auto-incrementing-build-number-your-build-process
+
+# Makefile
+
+# Name of text file containing build number.
+BUILD_NUMBER_FILE=build-number.txt
+
+OBJECTS=bnum.o
+
+a.out: $(OBJECTS) $(BUILD_NUMBER_FILE)
+    $(CC) $(LDFLAGS) $(BUILD_NUMBER_LDFLAGS) -o $@ $(OBJECTS)
+
+# Include build number rules.
+include buildnumber.mak
+
+$(BUILD_NUMBER_FILE): $(OBJECTS)
+    @if ! test -f $(BUILD_NUMBER_FILE); then echo 0 > $(BUILD_NUMBER_FILE); fi
+    @echo $$(($$(cat $(BUILD_NUMBER_FILE)) + 1)) > $(BUILD_NUMBER_FILE)
+
+https://www.linuxjournal.com/content/add-auto-incrementing-build-number-your-build-process
+
+* colorized diff
+
+https://stackoverflow.com/questions/8800578/how-to-colorize-diff-on-the-command-line
+ydiff
+sdiff with color?
+git diff --color --no-index file1 file2
+diff --color
+
+* sbatch with varying output and error names
+#SBATCH --job-name=test
+#SBATCH --output=%x-%j-%N.out
+#SBATCH --error=%x-%j-%N.err
+
+https://bugs.schedmd.com/show_bug.cgi?id=4254
+
+* conda environments
+
+https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment
+
+* echo cancelation audio
+https://askubuntu.com/questions/859104/echo-cancellation-and-noise-reduction-for-ubuntu-16-04-lts
+
+Edit /etc/pulse/default.pa and add the following lines to the end of the file
+and restart pulseaudio with pulseaudio -k
+
+#Active Noise Removal
+.ifexists module-echo-cancel.so
+load-module module-echo-cancel aec_method=webrtc source_name=mic source_properties=device.description=MicHD
+set-default-source "mic"
+.endif
+
+https://askubuntu.com/questions/18958/realtime-noise-removal-with-pulseaudio
+
+** Pulseaudio module module-echo-cancel
+
+I started reading a lot about PulseAudio and "hidden" options it had so I
+could find one that was similar to this question. The one I found was the
+noise-cancellation module, which is one that dramatically lowers any static
+noise on the microphone and even A LOT of the background noise, basically
+giving you the benefit of only recording your own voice with excellent
+quality (For audio recording for example). To do this follow this steps:
+
+sudo nano /etc/pulse/default.pa
+
+Add the following line anywhere on the file, but I recommend almost at the
+end where you will find a comment about Echo Cancellation stuff (~line 140):
+
+load-module module-echo-cancel
+
+Reload PulseAudio (pulseaudio -k) or simply restart the computer. You should
+be able to select the new Noise Cancellation option from the Input Device
+Section:
+
+screenshot
+
+You can find more information about it on the Echo Cancel Module Page
+
+Set input as default
+
+If you wish to set as default the echo cancel device simply turn the above
+line into:
+
+load-module module-echo-cancel source_name=logitechsource
+
+and then at the bottom of the file add
+
+set-default-source logitechsource
+
+In this case I named the source logitechsource, but you can name it whatever
+you want and simply either restart pulseaudio.
+
+Rename device
+
+Lastly, if you do not want a super long name on the Sound Settings (When you
+want to select an input/output device). My suggestion is renaming the input
+device like this:
+
+load-module module-echo-cancel source_name=logitechsource source_properties=device.description=LogitechHD
+
+And again, restarting pulseaudio. The end result looks like this:
+
+screenshot
+
+If you want to avoid the echo module from adjusting the volume slider
+automatically, you can set load-module module-echo-cancel aec_method=webrtc
+aec_args="analog_gain_control=0 digital_gain_control=1" as per
+gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/224 – joelostblom Oct 13
+'18 at 23:08
+* dzone website
+Look for div class container-fluid body withSlider
+This one contains what you need the rest can be deleted.
+* krita mypaint gimp ora format
+The only applcations that open ora: krita, mypant, gimp
+But it appears that zip can extract out the .png
+unzip $ZIPFILE mergedimage.png.
+
+* animated gif
+peek -> capture screen
+and keyboard capture
+screenkey -> show which keys are being typed
+sudo aptitude install python-appindicator
+pkill -f screenkey
+
+* inkscape
+how to
+sudo aptitude install python-appindicator
+render parametric curve
+choose a rectangle and apply to it
+
+sample 80
+x = t*pi + cos(3*pi*t)
+y = sin(3*pi*t)
+
+select a line and a path and menu text put on path
+ 
+* ascii art
+Setting up ditta in org mode
+https://www.johndcook.com/blog/2016/06/15/ascii-art-diagrams-in-emacs-org-mode/
+
+Drawing ascii art
+asciiflow.com
+
+For the mac:
+monodraw.helftone.com
+
+* combine both ascii and awesome
+** closure script for drawing ascii art very nicely done
+https://github.com/astashov/tixi
+
+* Transcript from python to javascript so you can run on web browser
+https://www.transcrypt.org/examples#jquery_demo
+
+* Drawing ascii with box characters
+https://clubmate.fi/using-pseudographics-in-blogposts-drawing-ascii-diagrams-and-boxes/
+
+* Ascii drawing large text banners
+http://www.network-science.de/ascii/
+http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+* Asciio
+https://unix.stackexchange.com/questions/126630/creating-diagrams-in-ascii
+
+* This is great with Unicode and Ascii support
+http://diiagrams.com/
+http://diiagrams.com/js.js
+
+* asciidoctor-diagram
+https://github.com/asciidoctor/asciidoctor-diagram
+
+* another nice looking one:  (svgbob)
+https://mbarkhau.keybase.pub/asciigrid/
+
+This is based on svgbob!
+https://github.com/ivanceras/svgbob
+This tools is amazing!
+https://hn.nuxtjs.org/item/19857349
+
+* Look into asciidoctor
+and also asciidoctor.js
+
+* Gnu pic language
+https://en.wikipedia.org/wiki/Pic_language
+http://floppsie.comp.glam.ac.uk/Glamorgan/gaius/web/pic.html
+
+* Using graphviz and line art
+http://jwilk.net/software/lddot
+http://jwilk.net/software/dothost
+http://jwilk.net/software/
+
+* This is the best post
+https://unix.stackexchange.com/questions/126630/creating-diagrams-in-ascii
+
+* Graph-easy
+https://github.com/ironcamel/Graph-Easy
+
+* Vim drawit
+
+* JavE
+Using java to draw ascii art
+http://www.jave.de/
+
+* Codeplotter
+https://www.codeproject.com/Articles/4514/CodePlotter-1-6-Add-and-edit-diagrams-in-your-code
+
+* Fossil-draw
+redux
+https://blog.pusher.com/the-what-and-why-of-redux/
+
+* Collection of ascii art
+http://www.ascii-art.de/
+http://www.ascii-art.de/ascii/anim/kiss_anim.shtml
+http://www.textfiles.com/art/
+
+* UML ascii art
+http://wiki.c2.com/?UmlAsciiArt
+
+* Animation
+https://www2.b3ta.com/_bunny/texbunny.gif
+
+* Installing perl modules ubuntu
+In general install with
+libfoo-ba-perl for module foo::bar
+
+cpan is an installer for Perl modules from the CPAN, and it is installed by default
+You don't download CPAN packages manually, but do `cpan CAM::PDF' to install from CPAN.
+/usr/local/lib/pkgconfig is a very strange place to put these things, better delete that again.
+But all of that is not needed, as Ubuntu ships CAM::PDF:
+
+sudo apt-get install libcam-pdf-perl
+
+Generally, if a Perl library is named Foo::Bar on CPAN, the Debian/Ubuntu
+package will be named libfoo-bar-perl. Use these packages before trying to
+install them with cpan from CPAN.
+
+the file says use CAM::PDF;. If I am understanding you correctly I should change
+this line to use libcam-pdf-perl? – DᴀʀᴛʜVᴀᴅᴇʀ Mar 28 '13 at 21:41
+
+No, you don't change the script. I was only talking about installing the
+appropriate packages so CAM::PDF gets installed. – Dennis Kaarsemaker Mar 28 '13
+at 21:41
+
+* How to fork after cloning
+https://gist.github.com/jagregory/710671
+
+* how to generate a pull request
+In summary, if you want to contribute to a project, the simplest way is to:
+Find a project you want to contribute to.
+Fork it.
+Clone it to your local system.
+Make a new branch.
+Make your changes.
+Push it back to your repo.
+Click the Compare & pull request button.
+Click Create pull request to open a new pull request.
+
+* Moving changes to a new branch
+
+Situation you made some changes and now you want to put those changes in a new
+branch
+ 
+First, go to the new branch using
+
+git checkout -b <new-branch-name> 
+
+This will checkout to a new branch or existing branch from your current there you can add files using 
+
+git add <files>
+
+And commit the files using
+
+git commit -m”your commit message”
+
+Thus we can move existing uncommitted work to a new branch and there you can commit. 
+
+* tmux sending 
+https://scripter.co/command-to-every-pane-window-session-in-tmux/
+tmux list-panes -a -F '#{session_name}:#{window_index}:#{pane_index}'
+tmux send-keys -t $PANE '%1' Enter
+
+* inkscape python latex
+** Problem:
+cannot render latex
+** Solution
+Edit while inkscape while closed:
+~/.config/inkscape/preferences.xml
+under <group id="extensions" /> add
+python-interpreter="/usr/bin/python2.7"
+https://www.reddit.com/r/openSUSE/comments/9mlj82/inkscape_latextext_and_writetex_are_not_working/
+https://stackoverflow.com/questions/52046845/changing-the-python-interpreter-for-inkscape
+
+More inkscape solutions:
+https://tex.stackexchange.com/questions/61274/is-there-any-way-to-type-latex-code-directly-into-the-text-boxes-inkscape
+
+https://writetex.tk/
+
+* Renumber pages of a PDF
+https://askubuntu.com/questions/32048/renumber-pages-of-a-pdf
+Latex
+jPDF Tweak
+PDF Mod
+ghostscript
+https://github.com/lovasoa/pagelabels-py
+pyPdf
+PDFEdit
+https://superuser.com/questions/232553/how-to-change-internal-page-numbers-in-the-meta-data-of-a-pdf
+https://stackoverflow.com/questions/17571605/how-to-change-offset-page-numbering-in-pdf
+https://superuser.com/questions/1445026/how-to-change-pdf-pagination-in-linux
+
+** Numbering PDF Pages
+http://cazencott.info/index.php/post/2015/04/30/Numbering-PDF-Pages
+Chloé-Agathe Azencott
+
+Researcher at the Centre for Computational Biology (CBIO) of Mines ParisTech,
+Institut Curie and INSERM.
+
+home contact CODE RESEARCH CV TALKS TEACHING DIVERSITY
+
+« PYDATA PARIS 2015 LOCAL USER INSTALLATION OF GCC »
+
+2015-04-30
+Numbering PDF Pages With pdftk
+scroll down
+
+I've recently been putting together applications (to ask for funding for PhD
+students) that required me to create single PDF files containing various
+documents (some I had produced myself, some I had scanned). I knew how to do
+this using gs or pdftk, but then I found myself with large documents (around 30
+pages) and realized page numbers would be really helpful. "I'm sure there's a
+way to do this with pdftk," I thought to myself. And sure enough, there was.
+
+So here are the magic commands.
+
+To concatenate all your original PDF documents in a single PDF file:
+
+gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=single_file.pdf file_1.pdf file_2.pdf ... file_last.pdf
+
+or
+
+ pdftk file_1.pdf file_2.pdf ... file_last.pdf output single_file.pdf
+
+Now you need to create a PDF that contains only page numbers. In numbers.tex:
+
+ \documentclass[12pt,a4paper]{article}
+ \usepackage{multido}
+ \usepackage[hmargin=.8cm,vmargin=1.5cm,nohead,nofoot]{geometry}
+ \begin{document}
+ \multido{}{31}{\vphantom{x}\newpage}
+ \end{document}
+
+(where 31 is your total number of pages.)
+
+Then create numbers.pdf
+
+ pdflatex numbers.tex
+
+Now you need to split your documents to work single page per single page:
+
+ pdftk numbers.pdf burst output number_%03d.pdf
+ pdftk single_file.pdf burst output page_%03d.pdf
+
+Now stamp the numbers on the pages:
+
+ for i in $(seq -f %03g 1 31) ; do pdftk page_$i.pdf stamp number_$i.pdf output new_$i.pdf ; done
+
+Alternatively you can try background instead of stamp but for me it didn't work
+on scanned documents.
+
+And put it all back together:
+
+ pdftk new_???.pdf output single_document_numbered.pdf
+
+Edited 2016-11-17 P. Sunthar wrote me that thanks to multistamp a single command can be used to collate and stamp multiple documents:
+
+ pdftk single_file.pdf multistamp numbers.pdf output single_document_numbered.pdf
+
+** page numbers on latex files with fancyhdr
+https://tex.stackexchange.com/questions/180837/fancyhdr-even-and-odd
+#+begin_src latex
+  \documentclass[twoside]{report}
+
+  \usepackage{lmodern}
+  \usepackage{fancyhdr}
+
+  \pagestyle{fancy}                       % Sets fancy header and footer
+  \fancyfoot{}                            % Delete current footer settings
+
+
+  \fancyhf{}
+
+  \fancyhead[LE,RO]{\bfseries\thepage}    % Page number (boldface) in left on even
+  % pages and right on odd pages
+  \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+
+  \fancyhead[RE]{\bfseries\nouppercase{\leftmark}}      % Chapter in the right on even pages
+  \fancyhead[LO]{\bfseries\nouppercase{\rightmark}\chaptermark}     % Section in the left on odd pages
+
+  \let\headruleORIG\headrule
+  \renewcommand{\headrule}{\color{black} \headruleORIG}
+  \renewcommand{\headrulewidth}{1.0pt}
+  \usepackage{colortbl}
+  \arrayrulecolor{black}
+
+  \fancypagestyle{plain}{
+  \fancyhf{}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+  }
+
+  \begin{document}
+
+  \chapter{Chapter Name}
+
+  \newpage
+  Hello, zero page.
+
+  \section{Section Name}
+  Hello, first page.
+
+  \newpage
+
+  Hello, second page.
+  \end{document}
+
+#+end_src
+
+* Makefile bash variables and $(( math )) $(printf "%04d" $$x)
+https://stackoverflow.com/questions/32719101/how-to-set-a-makefile-variable-from-external-shell-call-from-the-target
+
+* Makefile phony target
+https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html
+.PHONY: target1 target2
+
+* Updating npm and node (nodejs)
+https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/
+https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/
+sudo npm install npm -g
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo aptitude install nodejs
+node -v
+npm -v
+
+* gitbook
+npm install gitbook-cli -g
+https://github.com/GitbookIO/gitbook-cli/issues/68
+Trouble install this
+https://github.com/DreamAndDead/CSAPP-3e-Solutions/issues/58
+went into the docker with -i bash -u root
+Tried to npm install gitbook-cli -g
+* tmux change default directory
+Hi,
+
+if you use tmux you could notice that every time you create new window it starts
+in the directory where you initiated your Tmux session.
+
+Usually I start my Tmux at home directory but when I work for a project I like
+to have all my windows to be opened in this particular project.
+
+Sure I can close the session and start the new one from the project directory
+but… no.
+
+The way you can do it from withing Tmux is press your <prefix>+: to open the
+command mode.
+
+Now enter attach -c <your-default-start-directory>. That’s all.
+
+It works outside of Tmux as well. You can run it this way tmux attach-session -t
+<you session> -c <your-default-start-directory>.
+
+* Creating a bootable USB drive
+
+UEFI:NTFS is a generic bootloader.
+
+In general most UEFI system only provide boot support from a FAT32 partition.
+UEFI:NTFS enables the ability to also boot from NTFS partitions.
+
+That is designed to allow boot form NTFS or exFAT partitions, in pure UEFI mode.
+
+UEFI an BIOS are low-level software that starts when you boot your PC before
+booting your operating system, but UEFI is a more modern solution, supporting
+larger hard drives, faster boot times, more security features, and graphics and
+mouse cursors.
+
+https://rufus.ie/ https://github.com/pbatard/uefi-ntfs
+
+* installing wsl 
+sudo apt-get install x11-apps https://github.com/microsoft/WSL/issues/3039 dbus
+and gnome-terminal
+
+export DISPLAY=localhost:0 export NO_AT_BRIDGE=1 exec dbus-run-session -- bash
+sudo service dbus start gnome-terminal
+
+https://github.com/microsoft/WSL/issues/2339
+https://www.reddit.com/r/bashonubuntuonwindows/comments/9l46br/asking_wsl_ubuntu_1804_dbus_fix_updated/
+https://www.reddit.com/r/bashonubuntuonwindows/comments/9lpc0o/ubuntu_1804_dbus_fix_instructions_with/
+
+* wireless wifi
+** ifconfig
+
+Check for wlan0
+
+** ifconfig wlan0
+
+Turns on the wifi card
+
+** iwconfig wlan0 essid <name> key <password>
+
+<name> : network name <password> : network password
+
+** dhclint wlan0
+
+Obtain IP address from WiFi network
+
+** WPA wifi networks
+https://askubuntu.com/questions/138472/how-do-i-connect-to-a-wpa-wifi-network-using-the-command-line
+
+iw (list/config) can only handle WEP
+
+sudo apt-get install wpasupplicant
+
+/etc/wpa_supplicant.conf : network={ ssid="ssid_name" psk="password" }
+** wpa_supplicant -D[driver] -i[device] -c[/path/to/confi]
+sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant.conf -Dwext sudo dhclient
+wlan0 sudo dhclient -r # release
+
+** wpa_supplicant drivers
+-D wext
+
+Driver specific to each card: hostap : hermes madwifi : atheros atmel wext :
+generic ndiswrapper wl : broadcom ipw : intl roboswitch : broadcom bsd : atheros
+ndis : ndis
+
+wpa_supplicant --help wext hostap madwifi atmel ndiswrapper ipw
+
+** wpa_passphrase <name> <passphrase> > wpa.conf
+
+** iwlist scan
+
+** iwconfig
+
+** wpa_cli
+ > scan scan_results add_network set_network 0 ssid <name> set_network 0 psk
+ > <passphrase> enable_network 0 reconnect status quit
+
+** ifconfi wlan0 up
+
+** iwlist wlan0 scan
+
+** iwlist wlan0 essid <name> key <passphrase>
+
+** checkbox package
+sudo /usr/share/checkbox/create_connection SSID --security=wpa -key=WPA-KEY
+
+** modprobe
+sudo modprobe ndiswrapper sudo iwconfig wlan0 essid <name> mode managed sudo
+wpa_cli identity NAME password PASSPHRASE
+
+** nmcli c up <MY-ESSID>
+
+** nmcli c
+list saved connections
+
+** nmcli d wifi list
+list available WiFi hotspots
+
+** iwlist <WiFiInterface> scan
+
+** ifconfig -a
+list interfaces
+
+** nmcli d disconnect <WifiInterface>
+
+** nmcli d connect <WifiInterface>
+
+** nmcli c down <SavedWifiConn>
+
+** nmcli c up <SavedWifiConn>
+
+** nmcli -a c up <SavedWifiConn>
+automatically recognized interfaces
+
+** nmcli -a d wifi connect <WifiAP>
+
+** nmcli d wifi list --rescan yes
+
+** nmcli radio wifi on
+
+** nmcli radio wifi off
+
+** rfkill
+shows working wifi devices
+** nmtui
+
+** setting country code
+sudo iw reg set <2 letter country code> sudo nano /etc/default/crda
+
+** Steps
+https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant
+*** Enable wireless interface
+1. sudo apt install rfkill
+2. rfkill list
+3. rfkill unblock wifi
+4. sudo systemctl stop NetworkManager     (if using wpa_supplicant)
+5. sudo systemctl disable NetworkManager  (if using wpa_supplicant)
+*** Find wireless interface name and wireless network name
+6. iwconfig  # find name of wireless interfaces
+7. sudo ifconfig wlan0 up
+8. sudo iwlist wlan0 scan | grep EESID
+*** Connect to wifi using wpa_supplicant
+9. sudo apt install wpasupplicant
+10. wpa_passphrase <ESSID> <Passphrase> | sudo tee /etc/wpa_supplicant.conf
+11. sudo wpa_supplicant -c /etc/wpa_supplicant.conf -i wlan0
+12. iwconfig -> check if interface is now associated with an access point.
+13. Ctrl-C
+14. sudo wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlan0
+15. sudo dhclient wlan0
+16. ifconfig wlan0 -> see ip address
+17. sudo dhclient wlan0 -r -> release
+*** Connect to hidden wireless network 
+network={ ssid="name" psk=89add.... scan_ssid=1 }
+*** Autoconnect on startup
+1. sudo cp /lib/systemd/system/wpa_supplicant.service
+/etc/systemd/system/wpa_supplicant.service
+2. sudo nano /etc/systemd/system/wpa_supplicant.service
+
+Find: ExecStart=/sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+
+Change to: ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i
+wlan0
+
+Comment out: Alias=dbus-fi.w1.wpa_supplicant1.service
+
+3. sudo systemctl enable wpa_supplicant.service
+
+4. sudo nano /etc/systemd/system/dhclient.service
+
+   [Unit] Description= DHCP Client Before=network.target
+
+   [Service] Type=simple ExecStart=/sbin/dhclient wlan0 -v
+   ExecStop=/sbin/dhclient wlan0 -r
+
+   [Install] WantedBy=multi-user.target
+
+5. sudo systemctl enable dhclient.service
+
+Note there are other parts in the article
+
+** mac book pro wifi
+https://askubuntu.com/questions/453252/ubuntu-cant-detect-wifi-networks-on-macbookpro-13-3
+
+1. lspci -nn | grep 0280
+
+Will find something by broadcom
+
+2. sudo apt-get install bcmwl-kernel-source
+
+found in restricted/b/bcmwl
+
+3. sudo apt-get install dkms
+
+or download from ubuntu packages
+
+4. sudo dpkg -i *.deb
+
+5. sudo modprobe wl
+
+If bcmwl doesn't work
+
+1. sudo apt-get remove bcmwl-kernel-source
+
+2. sudo apt-get install firmware-b43-installer b43-fwcutter
+
+3. cat /etc/modprobe.d/* | egrep 'bcm'
+
+4. see if blacklist bcm43xx is there
+
+5. if there:
+   1. cd /etc/modprobe.d
+   2. sudo gedit blacklistt
+   3. # blacklist bcm43xx
+   4. reboot 
+
+* network manager
+
+NetworkManager and ifconfig are not (by default) compatible (NetworkManager
+won't configure interfaces listed in /etc/network/interfaces). NetworkManager is
+a sort of settings daemon that makes sure that multiple users can edit network
+connections, this is very smart in a desktop environment (especially on laptops
+that might move around between different wireless networks). Basically
+NetworkManager is a frontend to iproute, dhclient, wpa_supplicant and ppp.
+
+ifconfig is a general tool for configuring network interfaces, you can for
+example do like this:
+
+ifconfig eth1 10.0.0.1 netmask 255.0.0.0 hw ether 10:10:10:10:10:10
+ifconfig eth1 down
+
+to set your IP, netmask and MAC address of eth1, and then down (disable/turn
+off) your interface. ifconfig doesn't read any config files and does only
+exactly what it is told.
+
+ifup and ifdown are helper programs that use ifconfig to configure a network
+interface in accordance to /etc/network/interfaces this will make sure that if
+there are any up, down, pre-up, pre-down, post-up, post-down scripts that need
+to be run they will be.
+
+Ok, then there is wpa_supplicant and dhclient. dhclient is a DHCP client - ifup
+will use this if a network interface is configured for DHCP, as will
+NetworkManager. wpa_supplicant is a tool for configuring encryption on wireless
+networks.
+
+Most of these tools have man pages, for instance the interfaces-file have it's
+own manpage that describe the format of that config file.
+
+man interfaces
+man ifconfig
+man ifup
+
+So that being said i would recommend that you remove (or disable)
+NetworkManager, I don't think that any thing will break from removing
+NetworkManager except the gui tools for setting up network. If you want to
+configure wireless without NetworkManager you might want to look at this.
+
+* jq filter
+https://til.hashrocket.com/posts/uv0bjiokwk-use-jq-to-filter-objects-list-with-regex
+[
+  {name: 'Chris', id: 'aabbcc'},
+  {name: 'Ryan', id: 'ddeeff'},
+  {name: 'Ifu', id: 'aaddgg'}
+] 
+> data | jq '.[]'
+> data | jq '.[] | select(true) | select(.name)'
+> data | jq '.[] | select(.id|test("a."))'
+> data | jq '.[] | select(.id|test("a.")) | .name'
+
+https://gist.github.com/olih/f7437fb6962fb3ee9fe95bda8d2c8fa4
+
+* jq with_entries
+https://stackoverflow.com/questions/40923539/jq-filtering-for-keys
+#+name: activities-json
+#+begin_example 
+  {
+      "activities" : {
+        "-KSndgjqvmQkWVKHCpLh" : {
+        "create_device" : "...",
+        "stop_time_utc" : "2016-11-01T23:08:08Z"
+      },
+        "-KSoBSrBh6PZcjRocGD7" : {
+        "create_device" : "..."
+      },
+        "-KSptboGjo8g4bieUbGM" : {
+        "create_device" : "...",
+        "stop_time_utc" : "2017-01-17T23:08:08Z"
+      }  
+    }
+  }
+#+end_example
+
+#+header: :stdin activities-json
+#+begin_src shell 
+jq .activities
+#+end_src
+
+#+RESULTS:
+| {                    |                      |
+| -KSndgjqvmQkWVKHCpLh | {                    |
+| create_device        | ...                  |
+| stop_time_utc        | 2016-11-01T23:08:08Z |
+| },                   |                      |
+| -KSoBSrBh6PZcjRocGD7 | {                    |
+| create_device        | ...                  |
+| },                   |                      |
+| -KSptboGjo8g4bieUbGM | {                    |
+| create_device        | ...                  |
+| stop_time_utc        | 2017-01-17T23:08:08Z |
+| }                    |                      |
+| }                    |                      |
+
+#+header: :stdin activities-json
+#+begin_src bash 
+jq '.activities | keys'
+#+end_src
+
+#+RESULTS:
+| [                    |
+| -KSndgjqvmQkWVKHCpLh |
+| -KSoBSrBh6PZcjRocGD7 |
+| -KSptboGjo8g4bieUbGM |
+| ]                    |
+
+#+header: :stdin activities-json
+#+begin_src bash 
+jq '.activities | with_entries( select(.value | has("stop_time_utc")))'
+#+end_src
+
+#+RESULTS:
+| {                    |                      |
+| -KSndgjqvmQkWVKHCpLh | {                    |
+| create_device        | ...                  |
+| stop_time_utc        | 2016-11-01T23:08:08Z |
+| },                   |                      |
+| -KSptboGjo8g4bieUbGM | {                    |
+| create_device        | ...                  |
+| stop_time_utc        | 2017-01-17T23:08:08Z |
+| }                    |                      |
+| }                    |                      |
+
+#+header: :stdin activities-json
+#+begin_src bash
+jq '.activities | with_entries( select( (.value.stop_time_utc? | fromdateiso8601?) < now ) ) | keys'
+#+end_src
+
+#+RESULTS:
+| [                    |
+| -KSndgjqvmQkWVKHCpLh |
+| -KSptboGjo8g4bieUbGM |
+| ]                    |
+
+** example 2
+#+name: key-json
+#+begin_example
+  {
+   "key11":1010,"key11_yes":13,"key11_no":14,
+   "key12":12120,"key12_yes":9,"key12_no":25,
+   "key13":12103,"key13_yes":13,"key13_no":20
+  }
+#+end_example
+
+#+header: :stdin key-json
+#+begin_src bash
+jq -e 'with_entries(if (.key|test("key[0-9][0-9]$")) then ({key: .key, value: .value}) else empty end)'
+#+end_src
+
+#+RESULTS:
+| {     |        |
+| key11 | 1010,  |
+| key12 | 12120, |
+| key13 | 12103  |
+| }     |        |
+
+#+header: :stdin key-json
+#+begin_src bash
+mapfile -t arr < <(jq -r 'keys[]'); for i in "${arr[@]}"; do if [[ $i =~ ^key[1-9][2-3](_yes|_no)? ]]; then echo $i 1; else echo $i 2; fi; done 
+#+end_src
+
+#+RESULTS:
+| key11     | 2 |
+| key11_no  | 2 |
+| key11_yes | 2 |
+| key12     | 1 |
+| key12_no  | 1 |
+| key12_yes | 1 |
+| key13     | 1 |
+| key13_no  | 1 |
+| key13_yes | 1 |
+
+- redirecting output to a file
+  https://askubuntu.com/questions/797129/command-output-redirection-using
+
+- mapping lines of the file to an array
+  mapfile -t arr < <(process)
+
+- from processing json with jq 
+  https://unix.stackexchange.com/questions/444915/process-json-format-with-jq-tools
+
+* regex negative lookahead match a line that does not contain substring
+(?!<something>)
+http://www.regular-expressions.info/lookaround.html
+https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word
+
+* Python seek peek
+https://stackoverflow.com/questions/16840554/reading-a-line-from-file-without-advancing-pythonic-approach
+
+* more bash coolness
+http://mywiki.wooledge.org/BashFAQ/001
+
+#+begin_src bash
+  while IFS= read -r line; do arr+=("$line"); done < <(printf '%d\n' {0..5})
+  declare -p arr
+  # declare -a arr='([0]="0" [1]="1" [2]="2" [3]="3" [4]="4" [5]="5")'
+#+end_src
+
+#+RESULTS:
+: 0" [1]="1" [2]="2" [3]="3" [4]="4" [5]="5
+
+* spacemacs emacs helm find-file persistent action symlink truename
+
+Spacemacs selection action vs persistent action are switched from helm defaults.
+In helm c-z is persistent-action and tab is select-action
+
+https://emacs.stackexchange.com/questions/33727/how-does-spacemacs-allow-tab-completion-in-helm
+
+The "tab completion" that spacemacs does in helm is actually the helm command
+helm-execute-persistent-action. By default helm-execute-persistent-action is
+bound to C-z and TAB is bound to helm-select-action, but in spacemacs these
+bindings are switched.
+
+You can switch these bindings in your init.el by adding these lines of elisp
+
+(define-key helm-map (kbd "TAB") #'helm-execute-persistent-action)
+(define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z") #'helm-select-action)
+
+** helm find file and following symlink
+
+You need to use C-u persistent-action to follow the symlink
+
+In spacemacs you do with with C-u tab on the file name and it will change to its
+truename
+
+* pdf driver ubuntu cups
+sudo apt-get install printer-driver-cups-pdf
+
+* pdftk
+https://www.pdflabs.com/docs/install-pdftk-on-redhat-or-centos/
+
+* xmodmap reverting periodically
+https://askubuntu.com/questions/336210/xmodmap-reverting-periodically
+https://askubuntu.com/questions/129769/ubuntu-12-04-forgetting-xmodmap-settings-often
+https://askubuntu.com/questions/325272/permanent-xmodmap-in-ubuntu-13-04/858272#858272
+https://askubuntu.com/questions/749660/how-can-i-persistently-remap-keys-in-ubuntu-16-04
+* grep -P
+
+https://stackoverflow.com/questions/6901171/is-d-not-supported-by-greps-basic-expressions
+
+* table of contents in markdown toc
+https://community.atlassian.com/t5/Bitbucket-questions/How-to-write-a-table-of-contents-in-a-Readme-md/qaq-p/673363
+https://github.com/isaacs/github/issues/215
+http://doctoc.herokuapp.com/
+https://github.com/ekalinin/github-markdown-toc
+
+* git submodules
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+https://github.community/t/adding-a-folder-from-one-repo-to-another/781
+
+* write on the screen
+https://www.youtube.com/watch?v=XtNu8JhQrHI
+
+* keyboard capture
+
+keymon screenkey
+sudo add-apt-repository ppa:nrbrtx/python2-stuff
+sudo aptitude update
+sudo aptitude install key-mon
+  
+* write on screen ubuntu
+Use gromit-mpx
+https://www.reddit.com/r/linux/comments/14tkv1/epic_pen_for_linux/
+https://www.omgubuntu.co.uk/2010/09/ardesia-touchscreen-drawing-app-linux
+https://askubuntu.com/questions/129804/can-i-annotate-the-screen-in-gnome-shell
+https://askubuntu.com/questions/328543/drawing-over-the-desktop/328584#328584
+https://extensions.gnome.org/extension/1683/draw-on-you-screen/
+https://framagit.org/abakkk/DrawOnYourScreen
+https://askubuntu.com/questions/328543/drawing-over-the-desktop
+http://manpages.ubuntu.com/manpages/bionic/man1/gromit.1.html
+https://framagit.org/abakkk/DrawOnYourScreen/-/blob/master/draw.js
+https://wiki.debian.org/WacomTablets
+
+* bash functions
+
+declare -F
+type function_name
+
+https://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell
+
+* shell environment variables in makefile
+${HOME}
+
+* makefile choosing a shell
+SHELL=/bin/bash
+
+by default it uses /bin/sh
+
+* makefile venv
+https://github.com/sio/Makefile.venv
+
+test: venv
+    $(VENV)/python -m unittest
+include Makefile.venv
+
+https://stackoverflow.com/questions/24736146/how-to-use-virtualenv-in-makefile
+
+#+begin_src makefile
+BIN=venv/bin/
+install:
+    $(BIN)pip install -r requirements.txt
+run:
+    $(BIN)python main.py
+#+end_src
+
+#+begin_src makefile
+venv: venv/bin/activate
+
+venv/bin/activate: requirements.txt
+    test -d venv || virtualenv venv
+    . venv/bin/activate; pip install -Ur requirements.txt
+    touch venv/bin/activate
+
+test: venv
+    . venv/bin/activate; nosetests project/test
+
+clean:
+    rm -rf venv
+    find -iname "*.pyc" -delet
+#+end_src
+
+#+begin_src makefile
+.ONESHELL:
+
+.PHONY: install
+install:
+    source path/to/virtualenv/bin/activate
+    pip install -r requirements.txt
+#+end_src
+
+* relative import in __init__.py
+# For relative imports to work in Python 3.6
+import os, sys; sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+Assuming your package is like this:
+
+├── project
+│   ├── package
+│   │   ├── __init__.py
+│   │   ├── module1.py
+│   │   └── module2.py
+│   └── setup.py
+Now use regular imports in you package, like:
+
+# in module2.py
+from module1 import class1
+This works in both python 2 and 3.
+
+https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
+https://stackoverflow.com/questions/10647729/python-import-the-package-in-a-module-that-is-inside-the-same-package
+https://stackoverflow.com/questions/53382383/makefile-cant-use-conda-activate
+
+* python replacing \\n with \n in json string
+jobj['field'].replace("\\n", "\n")
+https://stackoverflow.com/questions/42965689/replacing-a-text-with-n-in-it-with-a-real-n-output
+https://python.readthedocs.io/en/stable/library/json.html
+https://stackoverflow.com/questions/42068/how-do-i-handle-newlines-in-json
+https://stackoverflow.com/questions/31203259/python-write-valid-json-with-newlines-to-file
+
+* block page printing in html
+
+https://www.lifewire.com/block-web-page-printing-3466227
+
+* ubuntu how to switch between terminals
+Alt-tilde
+
+* d3.js animations and python
+http://duspviz.mit.edu/d3-workshop/transitions-animation/
+
+https://www.youtube.com/watch?v=Bzl-Rgmg7vQ
+https://www.youtube.com/watch?v=Bzl-Rgmg7vQ
+https://www.youtube.com/watch?v=aKCXj1DyEhM
+https://www.youtube.com/watch?v=UyQn0BhVqNU
+
+http://fab.cba.mit.edu/classes/864.14/students/Langford_Will/1_bouncing_balls/index.html
+https://github.com/adicu/pantograph
+
+https://blog.jupyter.org/ipycanvas-a-python-canvas-for-jupyter-bbb51e4777f7
+
+https://www.allbuttonspressed.com/blog/django/2010/11/Offline-HTML5-canvas-app-in-Python-with-django-mediagenerator-Part-1-pyjs
+https://stackoverflow.com/questions/12977517/python-equivalent-of-d3-js
+
+* pytest
+
+** unit test frameworks and comparison between unittest and pytest
+https://docs.python-guide.org/writing/tests/
+https://www.slant.co/versus/9148/9149/~unittest_vs_pytest
+** capture
+https://docs.pytest.org/en/stable/capture.html
+~pytest -s~ don't capture stdout
+
+** fixture
+https://docs.pytest.org/en/stable/fixture.html
+
+#+begin_src python
+@pytest.fixture(scope="module")
+def foo():
+   return 0
+
+def test_foo2(foo):
+    usefoo = foo
+
+def test_foo3(foo):
+    usefoo = foo
+#+end_src
+
+* copy all the attributes of a class
+
+destination.__dict__.update(source.__dict__)
+
+https://stackoverflow.com/questions/243836/how-to-copy-all-properties-of-an-object-to-another-object-in-python
+
+* visualization
+https://github.com/altair-viz/altair
+http://jsnetworkx.org/
+http://fab.cba.mit.edu/classes/864.14/students/Langford_Will/1_bouncing_balls/index.html
+http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
+
+* Python cookbook 2nd edition
+contains currying
+https://bookos-z1.org/book/2736866/8fe8fc
+
+* ubuntu fonts
+1. Download the font
+https://design.ubuntu.com/font/
+
+2. unzip and move fonts to .fonts
+3. fc-cache -fv
+
+* sherlock ssh xterm
+ssh 
+
+* docker push
+** steps in creating a docker image
+
+** tutorial
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+** look at existing images
+
+docker images
+
+** Modifying dockerfile
+
+1. Fixing google gpg
+https://www.omgubuntu.co.uk/2017/08/fix-google-gpg-key-linux-repository-error
+
+2. Add this
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+** Building
+docker build - < Dockerfile
+https://docs.docker.com/engine/reference/commandline/build/
+
+** docker login
+frankieliu n.....r
+
+** tag the image
+docker tag <id from docker images> frankieliu/chrome-vnc-openbox
+
+** create a repository in docker hub
+
+** turn off proxy when pushing
+ubuntu/setting/network/proxy -> manual
+https://stackoverflow.com/questions/28332845/docker-network-issue-server-misbehaving
+
+** docker push frankieliu/chrome-vnc-openbox:latest
+
+* Killing vnc display
+x11vnc -display :99 -R stop
+
+* Login into sherlock
+** don't type passwords
+ kinit frankliu@stanford.edu
+** don't do duo pushes
+.ssh/config
+
+** get an interactive job
+srun -c 4 -t 8:00:00 --pty bash 
+-- unfortunately this doesn't let us do xterm
+
+** login from another terminal
+ssh frankliu@sherlock-login.stanford.edu
+ssh sh02-01n29 (compute node)
+module load system x11
+
+* Using X-windows Farmshare
+https://uit.stanford.edu/service/sharedcomputing/moreX
+
+* Example xstartup for vnc
+https://www.terry.im/wiki/terry/Install%2Band%2BConfig%2BVNC%2BServer.html
+
+#+begin_src shell
+#!/bin/sh
+
+# Uncomment the following two lines for normal desktop:
+unset SESSION_MANAGER
+exec /etc/X11/xinit/xinitrc
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+-geometry 1024x768 -ls -title "$VNCDESKTOP Desktop"& gnome-session
+&
+#+end_src
+
+* FarmShare
+FarmShare 2 | Stanford Research Computing Center
+https://srcc.stanford.edu/farmshare2
+
+Getting Connected | Stanford Research Computing Center
+https://srcc.stanford.edu/farmshare2/connecting
+
+Search results - Google Drive
+https://drive.google.com/drive/u/0/search?q=sherlock
+
+how to open maven project in idea - Google Search
+https://www.google.com/search?q=how+to+open+maven+project+in+idea&oq=how+to+open+maven+project+in+idea&aqs=chrome..69i57.9569j0j7&sourceid=chrome&ie=UTF-8
+
+R - Sherlock
+https://www.sherlock.stanford.edu/docs/software/using/R/
+
+FarmShare 2 - FarmShare
+https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/FarmShare_2
+
+List - Sherlock
+https://www.sherlock.stanford.edu/docs/software/list/#chemistry
+
+Schrodinger | ChEM-H Macromolecular Structure Knowledge Center
+http://schrodinger.stanford.edu/#gui
+
+Jupyter Notebooks on Sherlock | Research Computing Lessons
+https://vsoch.github.io/lessons/sherlock-jupyter/
+
+Sherlock changelog
+https://news.sherlock.stanford.edu/posts/running-containers-on-sherlock
+
+Singularity - Sherlock
+https://www.sherlock.stanford.edu/docs/software/using/singularity/
+
+rycus86/intellij-idea - Docker Hub
+https://hub.docker.com/r/rycus86/intellij-idea
+
+docker-intellij-idea/Dockerfile at master · rycus86/docker-intellij-idea
+https://github.com/rycus86/docker-intellij-idea/blob/master/Dockerfile
+
+Hadoop Platform And Application Framework Courses | Coursera
+https://www.coursera.org/search?query=hadoop%20platform%20and%20application%20framework&page=2&index=prod_all_products_term_optimization
+
+Designing data-intensive applications | Coursera
+https://www.coursera.org/learn/data-intensive-applications#syllabus
+
+Big Data Essentials: HDFS, MapReduce and Spark RDD | Coursera
+https://www.coursera.org/learn/big-data-essentials
+
+Bind Paths | Singularity
+https://singularity.lbl.gov/docs-mount
+
+Run X application in a Docker container reliably on a server connected via SSH without "--net host" - Stack Overflow
+https://stackoverflow.com/questions/48235040/run-x-application-in-a-docker-container-reliably-on-a-server-connected-via-ssh-w
+
+x11 application in singularity thru ssh · Issue #3446 · hpcng/singularity
+https://github.com/hpcng/singularity/issues/3446
+
+Can Singularity fully encapsulate X11? · Issue #804 · hpcng/singularity
+https://github.com/hpcng/singularity/issues/804
+
+ringcentral/chrome-vnc - Docker Hub
+https://hub.docker.com/r/ringcentral/chrome-vnc
+
+Install gnome-3-28-1804-sdk on Ubuntu using the Snap Store | Snapcraft
+https://snapcraft.io/install/gnome-3-28-1804-sdk/ubuntu
+
+Can I make text in xterm looks and feels like gnome-terminal? - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/155079/can-i-make-text-in-xterm-looks-and-feels-like-gnome-terminal
+
+themes - What are the default layout settings in gnome-terminal? - Ask Ubuntu
+https://askubuntu.com/questions/118005/what-are-the-default-layout-settings-in-gnome-terminal
+
+right scrollbar on xterm
+https://www.unix.com/solaris/78247-right-scrollbar-xterm.html
+
+XTerm colour set-up and Molokai theme
+http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
+
+Colours and formatting in Gnome/Ubuntu's Terminal - Growing with the Web
+https://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
+
+command line - How to set built-in color scheme for gnome-terminal via CLI in Ubuntu 16? - Ask Ubuntu
+https://askubuntu.com/questions/803230/how-to-set-built-in-color-scheme-for-gnome-terminal-via-cli-in-ubuntu-16
+
+Mayccoll/Gogh: Color Scheme for Gnome Terminal and Pantheon Terminal
+https://github.com/Mayccoll/Gogh
+
+tango color scheme - Google Search
+https://www.google.com/search?q=tango+color+scheme&sxsrf=ALeKk02wDsEuhVBS7WOD3tZ7z2oNDRqvNg:1595000533807&tbm=isch&source=iu&ictx=1&fir=rZx0epD7jEDEXM%252Ck9wi3wgEeyDDJM%252C_&vet=1&usg=AI4_-kTV_TEfQbbJi3MhVlYP7kWdrTK9dg&sa=X&ved=2ahUKEwjFo--B0NTqAhWXHjQIHYn1CuQQ9QEwA3oECAoQIg&biw=1098&bih=605#imgrc=rZx0epD7jEDEXM
+
+Colours and formatting in Gnome/Ubuntu's Terminal - Growing with the Web
+https://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
+
+ubuntu - what's the default background color of gnome-terminal - Stack Overflow
+https://stackoverflow.com/questions/4665389/whats-the-default-background-color-of-gnome-terminal
+
+Color picker utility (color pipette) in Ubuntu - Stack Overflow
+https://stackoverflow.com/questions/9003632/color-picker-utility-color-pipette-in-ubuntu
+
+Install Pick on Ubuntu using the Snap Store | Snapcraft
+https://snapcraft.io/install/pick-colour-picker/ubuntu
+
+Connection - Sherlock
+https://www.sherlock.stanford.edu/docs/advanced-topics/connection/
+
+Convenient SLURM Commands – FASRC DOCS
+https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/
+
+XTerm introduction and TrueType fonts configuration
+http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
+
+command line - How to change the default font size of XTerm? - Ask Ubuntu
+https://askubuntu.com/questions/161652/how-to-change-the-default-font-size-of-xterm
+
+Ubuntu font
+https://design.ubuntu.com/font/
+
+Customize Xterm, the original and best terminal... - Scarygliders
+https://scarygliders.net/2011/12/01/customize-xterm-the-original-and-best-terminal/
+
+How to increase font size of xterm?
+https://www.linuxquestions.org/questions/debian-26/how-to-increase-font-size-of-xterm-776352/
+
+Browser Quickstart  |  Google Drive API  |  Google Developers
+https://developers.google.com/drive/api/v3/quickstart/js
+
+dockerfile/chrome: Chrome Dockerfile for trusted automated Docker builds.
+https://github.com/dockerfile/chrome
+
+kasmweb/chrome - Docker Hub
+https://registry.hub.docker.com/r/kasmweb/chrome
+
+ringcentral/chrome-vnc - Docker Hub
+https://hub.docker.com/r/ringcentral/chrome-vnc
+
+View a Docker container's display using VNC Viewer - Qxf2 blog
+https://qxf2.com/blog/view-docker-container-display-using-vnc-viewer/
+
+SSH Local and Remote Port Forwarding with VNC
+https://cects.com/ssh-local-and-remote-port-forwarding-with-vnc/
+
+An SSH tunnel via multiple hops - Super User
+https://superuser.com/questions/96489/an-ssh-tunnel-via-multiple-hops
+
+networking - Binding ports when running Docker images in Singularity - Stack Overflow
+https://stackoverflow.com/questions/47297645/binding-ports-when-running-docker-images-in-singularity
+
+ringcentral/chrome-vnc - Docker Hub
+https://hub.docker.com/r/ringcentral/chrome-vnc
+
+Debian -- Details of package x11-utils in sid
+https://packages.debian.org/sid/x11-utils
+
+x11docker's Profile - Docker Hub
+https://hub.docker.com/u/x11docker/
+
+consol/ubuntu-xfce-vnc - Docker Hub
+https://hub.docker.com/r/consol/ubuntu-xfce-vnc/
+
+E2E Testing & Monitoring
+https://sakuli.io/contact/
+
+base-vnc-browser/Dockerfile.vnc.chrome at master · ringcentral-docker/base-vnc-browser
+https://github.com/ringcentral-docker/base-vnc-browser/blob/master/base-chrome/Dockerfile.vnc.chrome
+
+what is selenium browser - Google Search
+https://www.google.com/search?sxsrf=ALeKk03hXe3Q3JPz-YQvWhHRbW_Cvet-pg%3A1595006665841&ei=yd4RX470MpnC0PEP5LWm6Ac&q=what+is+selenium+browser&oq=what+is+selenium+browser&gs_lcp=CgZwc3ktYWIQAzICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeOgQIABBHOgcIABAUEIcCOgQIABBDOgUIABDNAlDhIViXM2DgM2gBcAF4AIABa4gBhAWSAQM3LjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjO_Ozt5tTqAhUZITQIHeSaCX0Q4dUDCAw&uact=5
+
+Help:Installing - Openbox
+http://openbox.org/wiki/Help:Installing
+
+twm package : Ubuntu
+https://launchpad.net/ubuntu/+source/twm
+
+Google Chrome blocks downloads - Google Chrome Help
+https://support.google.com/chrome/answer/6261569?visit_id=637306041425924059-4103486519&p=ib_download_blocked&hl=en&rd=1
+
+How to View and Extract Files from rpm, deb, depot and msi Packages
+https://www.thegeekstuff.com/2010/04/view-and-extract-packages/
+
+Ubuntu – Package Download Selection -- openbox_3.6.1-7_amd64.deb
+https://packages.ubuntu.com/bionic/amd64/openbox/download
+
+Slurm Workload Manager - Quick Start User Guide
+https://slurm.schedmd.com/quickstart.html
+
+Slurm Workload Manager - Frequently Asked Questions
+https://slurm.schedmd.com/faq.html
+
+Slurm Workload Manager - sbatch
+https://slurm.schedmd.com/sbatch.html
+
+linux - SSH Tunnel in background - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/328819/ssh-tunnel-in-background
+
+How to use sudo inside a docker container? - Stack Overflow
+https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
+
+How to use sudo inside a docker container? - Stack Overflow
+https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container/49529946
+
+singularity sif — Singularity container 3.1 documentation
+https://sylabs.io/guides/3.1/user-guide/cli/singularity_sif.html#singularity-sif
+
+How to edit docker image in two ways
+https://bobcares.com/blog/edit-docker-image/
+
+Singularity Pull | Singularity
+https://singularity.lbl.gov/docs-pull
+
+Changing Existing Containers | Singularity
+https://singularity.lbl.gov/archive/docs/v2-3/docs-changing-containers
+
+Basic Command Usage | Singularity
+https://singularity.lbl.gov/docs-usage
+
+Build a Container — Singularity container 3.0 documentation
+https://sylabs.io/guides/3.0/user-guide/build_a_container.html
+
+singularity edit container without sudo - Google Search
+https://www.google.com/search?sxsrf=ALeKk01pi4KYiOLGlaVdid-NJMemi7XqHA%3A1595014314847&ei=qvwRX9aoM5HQ9AP9_JrQDA&q=singularity+edit+container+without+sudo&oq=singularity+edit+container+without+sudo&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BAgAEEc6BwgAEBQQhwI6CAguEMcBEK8BOgIIADoGCAAQFhAeOggIABAWEAoQHjoLCC4QxwEQrwEQkwI6CAgAEAgQDRAeOggIIRAWEB0QHjoFCCEQqwI6BwghEAoQoAE6BAghEApQ3c4BWMTzAWCA9QFoBHABeACAAWyIAZMVkgEEMjUuNpgBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjWpZetg9XqAhURKH0KHX2-BsoQ4dUDCAw&uact=5
+
+How to edit docker image in two ways
+https://bobcares.com/blog/edit-docker-image/
+
+How can I view the Dockerfile in an image? - General Discussions - Docker Forums
+https://forums.docker.com/t/how-can-i-view-the-dockerfile-in-an-image/5687/4
+
+base-vnc-browser/driverInfo.txt at master · ringcentral-docker/base-vnc-browser
+https://github.com/ringcentral-docker/base-vnc-browser/blob/master/base-chrome/driverInfo.txt
+
+Use multi-stage builds | Docker Documentation
+https://docs.docker.com/develop/develop-images/multistage-build/
+
+Dockerfile reference | Docker Documentation
+https://docs.docker.com/engine/reference/builder/
+
+Pushing and Pulling to and from Docker Hub
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+DocMagic
+https://www.docmagic.com/esign/authentication/logged-out
+
+Docker Hub
+https://hub.docker.com/repository/docker/frankieliu/chrome-vnc-openbox
+
+dockerfile - denied: requested access to the resource is denied : docker - Stack Overflow
+https://stackoverflow.com/questions/41984399/denied-requested-access-to-the-resource-is-denied-docker?page=2&tab=active#tab-top
+
+Settings
+chrome://settings/downloads
+
+Is there a shutdown/restart command for x11VNC? - Linux (Debian) - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/115107/is-there-a-shutdown-restart-command-for-x11vnc-linux-debian
+
+Google Calendar - Week of July 12, 2020
+https://calendar.google.com/calendar/r/week
+
+x11 - Can you run GUI applications in a Docker container? - Stack Overflow
+https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container
+
+Dockerfile reference | Docker Documentation
+https://docs.docker.com/engine/reference/builder/
+
+Singularity Container Instances | Singularity
+https://singularity.lbl.gov/docs-instances
+
+Singularity Shell | Singularity
+https://singularity.lbl.gov/docs-shell
+
+Stopping a Singularity container - Stack Overflow
+https://stackoverflow.com/questions/59791791/stopping-a-singularity-container
+
+Slurm Workload Manager - Frequently Asked Questions
+https://slurm.schedmd.com/faq.html#x11
+
+Running jobs - Sherlock
+https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/
+
+xorg - How to forward X over SSH to run graphics applications remotely? - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely
+
+Schrodinger | ChEM-H Macromolecular Structure Knowledge Center
+https://mskc.stanford.edu/schrodinger
+
+Openbox - ArchWiki
+https://wiki.archlinux.org/index.php/openbox#Desktop_menu_as_a_panel_menu
+
+Move Running Process to Tmux on Linux
+https://docs.j7k6.org/move-running-process-to-tmux/
+
+How to escape SSH sessions without ending them - TechRepublic
+https://www.techrepublic.com/blog/it-security/how-to-escape-ssh-sessions-without-ending-them/
+
+bash - How to suspend and resume processes - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/2107/how-to-suspend-and-resume-processes
+
+vncserver
+https://tigervnc.org/doc/vncserver.html
+
+Terry : Install and Config VNC Server
+https://www.terry.im/wiki/terry/Install%2Band%2BConfig%2BVNC%2BServer.html
+
+Mail Archive Search: <backticks>
+https://lists.gnu.org/archive/cgi-bin/namazu.cgi?query=backticks&submit=Search%21&idxname=emacs-orgmode&max=20&result=normal&sort=score&whence=20
+
+What is the best way to install Python packages? - Ask Ubuntu
+https://askubuntu.com/questions/95037/what-is-the-best-way-to-install-python-packages
+
+Operating systems: internals and design principles | William Stallings | download
+https://bookos-z1.org/book/1186949/aa3469
+
+New Tab
+chrome://newtab/
+
+Download RStudio Server for Debian & Ubuntu - RStudio
+https://rstudio.com/products/rstudio/download-server/debian-ubuntu/
+
+Docker Build: A Beginner's Guide to Building Docker Images
+https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/
+
+dockerfile install from a local file - Google Search
+https://www.google.com/search?q=dockerfile+install+from+a+local+file&oq=dockerfile+install+from+a+local+file&aqs=chrome..69i57.11199j0j7&sourceid=chrome&ie=UTF-8
+
+Ubuntu – Package Search Results -- jdk
+https://packages.ubuntu.com/search?suite=bionic&section=all&arch=any&keywords=jdk&searchon=names
+
+JDK 14
+https://openjdk.java.net/projects/jdk/14/
+
+ubuntu change java alternatives - Google Search
+https://www.google.com/search?q=ubuntu+change+java+alternatives&oq=ubuntu+change+java+alternatives&aqs=chrome..69i57.7399j0j7&sourceid=chrome&ie=UTF-8
+
+Installation | AdoptOpenJDK - Open source, prebuilt OpenJDK binaries
+https://adoptopenjdk.net/installation.html?variant=openjdk14&jvmVariant=hotspot#x64_linux-jdk
+
+Installing the JDK Software and Setting JAVA_HOME (Using the Java CAPS 6 Installation CLI)
+https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/
+
+Download RStudio - RStudio
+https://rstudio.com/products/rstudio/download/#download
+
+software installation - Install R in my own directory - Unix & Linux Stack Exchange
+https://unix.stackexchange.com/questions/149451/install-r-in-my-own-directory
+
+How To Install R on Ubuntu 18.04 [Quickstart] | DigitalOcean
+https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04-quickstart
+
+How To Install R on Ubuntu 18.04 | DigitalOcean
+https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
+
+Getting tons of debconf messages unless TERM is set to linux · Issue #58 · phusion/baseimage-docker
+https://github.com/phusion/baseimage-docker/issues/58
+
+Build and run your image | Docker Documentation
+https://docs.docker.com/get-started/part2/
+
+Best practices for writing Dockerfiles | Docker Documentation
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+
+Yelp/dumb-init: A minimal init system for Linux containers
+https://github.com/Yelp/dumb-init
+
+How To Remove Docker Images, Containers, and Volumes | DigitalOcean
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+How to remove an image tag in Docker without removing the image itself? - Server Fault
+https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself
+
+Mail - Frankie Yu-Hang Liu - Outlook
+https://outlook.office.com/mail/inbox
+
+RE: AAA insurance - frankie.y.liu@gmail.com - Gmail
+https://mail.google.com/mail/u/0/#inbox/FMfcgxwJWrckXkJPdDXJLdkXKKzhDLCN
+
+Unnamed session - Session Buddy
+chrome-extension://edacconmaakjimmfgnblocblbcdcpbko/main.html#IW4GMuEY6UJ93n6k7LDcgEboOhGNlzxM
+
+Copy All Urls - Chrome Web Store
+https://chrome.google.com/webstore/detail/copy-all-urls/djdmadneanknadilpjiknlnanaolmbfk?hl=en-US
+
+* AppScript google sheets
+https://support.google.com/docs/thread/42793831?hl=en
+
+Cache service
+https://developers.google.com/apps-script/guides/support/best-practices
+
+Dice in google sheets
+https://docs.google.com/spreadsheets/d/1EmZSxtOFwHctRb28bKTn7KhHE-IzU7mP1ayGZtcIJFw/edit#gid=0
+https://docs.google.com/spreadsheets/d/1LolPtLdapMjAbC4AMD7pQXJ-Z1r3pD_rFoXZYQjF0g8/edit#gid=0
+https://support.google.com/docs/thread/35635304?hl=en
+
+
+* Yate's algorithm
+https://cryptoragbag.wordpress.com/2011/04/23/yates-algorithm-for-the-zeta-transform/
+https://codeforces.com/blog/entry/72488
+
+* pytest
+https://stackoverflow.com/questions/38442897/how-do-i-disable-a-test-using-pytest/38442948#38442948
+
+@pytest.mark.skip(reason="add decorator")
+@pytest.mark.skip(os.environ['var']='foo', reason)
+@pytest.mark.xfail             : if you know it is going to fail
+pytest test/test_script.py -k "not test_func_one'
+
+* instagram
+python
+6 months
+4 wks
+python
+full stack 
+design
+design aspect
+data structure and algorithm
+similar
+google netflix
+
+10-4 45 mins coderpad
+intro
+O(n)
+driving the conversation
+bugs syntax
+two question
+warm up question
+20-25 mins
+kevin prep
+2 month ago
+10-4 friday 8/7
+5 min call
+final interview
+4-5 hours
+2 coding
+lb
+
+1-1:15 design scale full stack api facebook friend see the post
+end to end facebook application - google draw whitepaper
+zoom bluegenes google draw
+
+current proj - cross functional - conflict - behavioral
+jennifer moglose
+
+1-18 months
+level 5 - 6 up staff senior
+7 - senior
+ 
+* tmux color prompt
+
+https://techantidote.com/tmux-not-displaying-bash-prompt-colors/
+
+#+begin_src bash
+  vim ~/.tmux.conf
+#+end_src
+
+Add the following line to the tmux config file:
+
+#+begin_src bash
+  set -g default-terminal "screen-256color"
+#+end_src
+
+* alarm for ubuntu
+
+gnome-clocks
+
+* 
