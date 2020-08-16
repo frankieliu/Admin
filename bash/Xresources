@@ -1,23 +1,39 @@
+!
+! Setting new resources
+! ---------------------
 ! xrdb -merge ~/.Xresources
 !
+!
 ! Debugging xterm
+! ---------------
 ! https://forums.gentoo.org/viewtopic-t-1085290-start-0.html
 !
+!
 ! Setting resources for xterm
+! ---------------------------
 ! http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
 !
+!
 ! Setting up Source Code Pro
+! --------------------------
 ! https://www.tigraine.at/2016/09/20/setting-source-code-pro-as-default-font-in-xterm
 ! XTerm*faceName: Source Code Pro
 ! XTerm*faceSize: 12
 !
+!
+! VcXsrv clipboard
+! ----------------
 ! Copy and paste Shift-Insert using VcXsrv
 ! allow clipboard
 !
-! About inconsolata-g
+!
+! inconsolata-g
+! -------------
 ! https://leonardo-m.livejournal.com/77079.html
 !
+!
 ! About setting inconsolata-g in Xresources
+! -----------------------------------------
 ! https://scripter.co/installing-custom-fonts-in-linux/
 !
 ! 1. Create a folder .fonts in your $HOME directory.
@@ -36,6 +52,15 @@
 ! 6. Add xrdb -merge $HOME/.Xdefaults to your shell init script. My shell init
 !    script is ~/.alias.
 !
+! colors
+! ------
+! http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
+!
+!
+!
+
+! Font
+! ----
 XTerm*faceName: Inconsolata\\-g:style=g:size=11
 
 ! Colours are in groups as the second one should be a brighter version.
