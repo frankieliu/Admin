@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: hugo 
+# key: hugo_
+# --
+# -*- mode: org -*-
+#+HUGO_BASE_DIR: ../..
+#+HUGO_SECTION: posts
+#+HUGO_WEIGHT: 2000
+#+HUGO_AUTO_SET_LASTMOD: t
+#+TITLE: "${1:title}"
+#+DATE: `(string-trim (shell-command-to-string "date +%Y-%m-%dT%H:%M:%S%z"))`
+#+HUGO_TAGS: ${2:tags}
+#+HUGO_CATEGORIES: ${3:"categories with space"}
+#+HUGO_MENU_off: :menu "main" :weight 2000
+#+HUGO_CUSTOM_FRONT_MATTER: :foo bar :baz zoo :alpha 1 :beta "two words" :gamma 10 :mathjax true :toc true
+#+HUGO_DRAFT: false
+
+#+STARTUP: indent hidestars showall
