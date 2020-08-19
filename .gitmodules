@@ -1,6 +1,3 @@
-[submodule "Gogh"]
-	path = Gogh
-	url = http://github.com/Mayccoll/Gogh
 [submodule "bin/Gogh"]
 	path = bin/Gogh
 	url = http://github.com/Mayccoll/Gogh
