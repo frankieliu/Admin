@@ -7,3 +7,27 @@
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-protobuf"]
 	path = apps/vim/focal/vim/pack/plugins/start/vim-protobuf
 	url = git://github.com/uarun/vim-protobuf
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-orgmode"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-SyntaxRange"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-SyntaxRange
+	url = https://github.com/inkarkat/vim-SyntaxRange
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-ingo-library"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-repeat"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-repeat
+	url = http://github.com/tpope/vim-repeat
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-tagbar"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-speeddating"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-NrrwRgn"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-calendar"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-calendar
+	url = http://github.com/mattn/calendar-vim
