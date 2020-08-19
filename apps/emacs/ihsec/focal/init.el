@@ -23,6 +23,7 @@
   (setq easy-hugo-url "https://www.frankliu.org/easyhugo")
   (setq easy-hugo-root "~/github/easyhugo")
   (setq easy-hugo-postdir "content/posts")
+  (setq easy-hugo-default-ext ".org")
  )
 
 (custom-set-variables

@@ -35,4 +35,4 @@ git-reset:
 	git reset current-2
 
 bin:
-	ln -s $(ROOT_DIR) ~/bin
+	ln -s $(ROOT_DIR)/bin ~/bin
