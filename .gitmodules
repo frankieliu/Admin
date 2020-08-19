@@ -4,3 +4,9 @@
 [submodule "bin/Gogh"]
 	path = bin/Gogh
 	url = http://github.com/Mayccoll/Gogh
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-go"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-protobuf"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-protobuf
+	url = git://github.com/uarun/vim-protobuf
