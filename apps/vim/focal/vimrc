@@ -1,3 +1,6 @@
+" packloadall
+" silent! helptags ALL
+
 syntax on
 colo pablo
 
@@ -89,3 +92,28 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+let g:org_leader = '\' 
+
+" start of line
+cnoremap <C-A>         <Home>
+" back one character
+cnoremap <C-B>         <Left>
+" delete character under cursor
+cnoremap <C-D>         <Del>
+" end of line
+cnoremap <C-E>         <End>
+" forward one character
+cnoremap <C-F>         <Right>
+" recall newer command-line
+cnoremap <C-N>         <Down>
+" recall previous (older) command-line
+cnoremap <C-P>         <Up>
+" back one word
+cnoremap <Esc><C-B>    <S-Left>
+" forward one word
+cnoremap <Esc><C-F>    <S-Right>
+" delete to end of line
+cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
+
+" q: in command
