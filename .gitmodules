@@ -7,3 +7,6 @@
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-protobuf"]
 	path = apps/vim/focal/vim/pack/plugins/start/vim-protobuf
 	url = git://github.com/uarun/vim-protobuf
+[submodule "apps/vim/focal/vim/pack/vendor/start/nerdtree"]
+	path = apps/vim/focal/vim/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
