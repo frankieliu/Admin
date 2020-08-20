@@ -94,6 +94,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 let g:org_leader = '\' 
+" let g:org_indent = 1
 
 " start of line
 cnoremap <C-A>         <Home>
@@ -117,3 +118,7 @@ cnoremap <Esc><C-F>    <S-Right>
 cnoremap <C-k> <C-\>estrpart(getcmdline(),0,getcmdpos()-1)<CR>
 
 " q: in command
+
+set autochdir
+set hidden
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']

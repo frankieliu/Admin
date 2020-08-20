@@ -34,3 +34,6 @@
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-calendar"]
 	path = apps/vim/focal/vim/pack/plugins/start/vim-calendar
 	url = http://github.com/mattn/calendar-vim
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-ultisnips"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-ultisnips
+	url = http://github.com/SirVer/ultisnips
