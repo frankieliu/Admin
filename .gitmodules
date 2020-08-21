@@ -37,3 +37,21 @@
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-ultisnips"]
 	path = apps/vim/focal/vim/pack/plugins/start/vim-ultisnips
 	url = http://github.com/SirVer/ultisnips
+[submodule "bin/trash-cli"]
+	path = bin/trash-cli
+	url = https://github.com/andreafrancia/trash-cli.git
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-markdown-preview"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-markdown-preview
+	url = http://github.com/iamcco/markdown-preview.nvim
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-markdown"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-fenced-code-blocks"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-fenced-code-blocks
+	url = https://github.com/amiorin/vim-fenced-code-blocks
+[submodule "bin/EasyScreenCast"]
+	path = bin/EasyScreenCast
+	url = https://github.com/EasyScreenCast/EasyScreenCast.git
+[submodule "bin/screenkey"]
+	path = bin/screenkey
+	url = https://gitlab.com/screenkey/screenkey
