@@ -55,3 +55,6 @@
 [submodule "bin/screenkey"]
 	path = bin/screenkey
 	url = https://gitlab.com/screenkey/screenkey
+[submodule "bin/drive"]
+	path = bin/drive
+	url = https://github.com/odeke-em/drive
