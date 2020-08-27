@@ -58,3 +58,6 @@
 [submodule "bin/drive"]
 	path = bin/drive
 	url = https://github.com/odeke-em/drive
+[submodule "bin/ihsec"]
+	path = bin/ihsec
+	url = https://github.com/daedreth/ihsec.git
