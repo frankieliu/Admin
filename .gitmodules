@@ -61,3 +61,9 @@
 [submodule "bin/ihsec"]
 	path = bin/ihsec
 	url = https://github.com/daedreth/ihsec.git
+[submodule "bin/nvm"]
+	path = bin/nvm
+	url = https://github.com/creationix/nvm
+[submodule "bin/vimeo-audio-video"]
+	path = bin/vimeo-audio-video
+	url = http://github.com/AbCthings/vimeo-audio-video
