@@ -3,3 +3,5 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias tp='trash-put'
+alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+alias wvlc="/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe"

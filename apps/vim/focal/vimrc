@@ -14,6 +14,8 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype proto setlocal tabstop=4 shiftwidth=4 softtabstop=4
@@ -126,5 +128,5 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['csharp=cs']

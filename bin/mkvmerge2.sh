@@ -1,1 +1,2 @@
-mkvmerge -o $1.mkv $1.m4v $1.m4a
+name=$(basename $1 .m4)
+mkvmerge -o ${name}.mkv ${name}.m4v ${name}.m4a
