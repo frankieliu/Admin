@@ -1,3 +1,5 @@
+SHELL=bash
+
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 .PHONY: ihsec
 python:
@@ -16,4 +18,13 @@ aptitude: /var/log/aptitude
 ihsec:
 	ln -s $(ROOT_DIR)/emacs/ihsec ~/.ihsec
 
+conda_export_env:
+	if [ "x"$(ENV) != "x" ]; then \
+	conda env export > python/$(ENV).yml; \
+	fi
+
+conda_create_env:
+	if [ "x"$(ENV) != "x" ]; then \
+	conda env create -f python/$(ENV).yml; \
+	fi
 
