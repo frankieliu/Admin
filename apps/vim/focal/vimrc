@@ -130,3 +130,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " plasticboy/vim-markdown
 " let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['csharp=cs']
+let g:vim_markdown_folding_style_pythonic = 1
+
+" Default vim's markdown
+" let g:markdown_folding=1
