@@ -67,3 +67,6 @@
 [submodule "bin/vimeo-audio-video"]
 	path = bin/vimeo-audio-video
 	url = http://github.com/AbCthings/vimeo-audio-video
+[submodule "bin/obkey"]
+	path = bin/obkey
+	url = http://github.com/nsf/obkey

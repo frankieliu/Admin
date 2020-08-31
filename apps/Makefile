@@ -28,3 +28,13 @@ conda_create_env:
 	conda env create -f python/$(ENV).yml; \
 	fi
 
+conda_create_p37:
+	conda create -n py37 python=3.7 pip
+	# conda install -c conda-forge gtk3 pygobject
+
+rc.xml:
+	mkdir ~/.config/openbox
+	cp /etc/xdg/openbox/rc.xml ~/.config/openbox/rc.xml 
+
+rc_link:
+	ln -s ~/github/Admin/apps/openbox/rc.xml ~/.config/openbox/rc.xml
