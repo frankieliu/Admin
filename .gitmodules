@@ -44,7 +44,7 @@
 	path = apps/vim/focal/vim/pack/plugins/start/vim-markdown-preview
 	url = http://github.com/iamcco/markdown-preview.nvim
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-markdown"]
-	path = apps/vim/focal/vim/pack/plugins/start/vim-markdown
+	path = apps/vim/focal/vim/pack/plugins/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
 [submodule "apps/vim/focal/vim/pack/plugins/start/vim-fenced-code-blocks"]
 	path = apps/vim/focal/vim/pack/plugins/start/vim-fenced-code-blocks
