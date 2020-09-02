@@ -4,5 +4,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias tp='trash-put'
 alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
-alias wvlc="/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe"
+# problem with srt and mpeg tx
+# https://trac.videolan.org/vlc/ticket/3075
+alias wvlc="/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe --demux ffmpeg"
 alias py38="conda activate py38"

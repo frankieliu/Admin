@@ -17,9 +17,10 @@ getJson(masterUrl, (err, json) => {
   if (err) {
     throw err;
   }
-  
-  const videoData = json.video.pop();
-  const audioData = json.audio.pop();
+    
+  const videoData = json.video.sort((v1,v2) => v1.height - v2.height).pop();
+  // json.video.find(v=>v.height == 720); 
+  const audioData = json.audio.sort((a1,a2) => a1.avg_bitrate - a2.avg_bitrate).pop();
   
   const videoBaseUrl = url.resolve(url.resolve(masterUrl, json.base_url), videoData.base_url);
   const audioBaseUrl = url.resolve(url.resolve(masterUrl, json.base_url), audioData.base_url);
