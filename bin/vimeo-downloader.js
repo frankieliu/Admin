@@ -9,6 +9,12 @@ const url = require('url');
 const https = require('https');
 
 let masterUrl = process.argv[2];
+
+let height = Number.MAX_SAFE_INTEGER;
+if (process.argv.length == 4) { 
+  height = process.argv[3];
+}
+
 if (!masterUrl.endsWith('?base64_init=1')) {
   masterUrl+= '?base64_init=1';
 }
@@ -17,9 +23,15 @@ getJson(masterUrl, (err, json) => {
   if (err) {
     throw err;
   }
-    
-  const videoData = json.video.sort((v1,v2) => v1.height - v2.height).pop();
-  // json.video.find(v=>v.height == 720); 
+
+  let videoData;
+  if (height == Number.MAX_SAFE_INTEGER) { 
+    videoData = json.video.sort((v1,v2) => v1.height - v2.height).pop();
+  } else {
+    videoData = json.video.sort((v1,v2) => v1.height - v2.height).find(v => v.height >= height);
+    console.log(`Video height: ${videoData.height}`);
+  } // json.video.find(v=>v.height == 720); 
+  
   const audioData = json.audio.sort((a1,a2) => a1.avg_bitrate - a2.avg_bitrate).pop();
   
   const videoBaseUrl = url.resolve(url.resolve(masterUrl, json.base_url), videoData.base_url);
