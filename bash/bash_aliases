@@ -8,3 +8,4 @@ alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe
 # https://trac.videolan.org/vlc/ticket/3075
 alias wvlc="/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe --demux ffmpeg"
 alias py38="conda activate py38"
+alias libgl="export LIBGL_ALWAYS_INDIRECT=0"

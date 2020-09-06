@@ -16,7 +16,8 @@ set fileencoding=utf-8
 
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype proto setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " ts - show existing tab with 4 spaces width
@@ -24,7 +25,10 @@ autocmd Filetype proto setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " sts - control <tab> and <bs> keys to match tabstop
 
 " Control all other files
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
