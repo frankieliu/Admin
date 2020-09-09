@@ -1,0 +1,1 @@
+hugo server --bind $(ipaddr.sh 172) --baseURL=http://localhost --destination ./docs $@

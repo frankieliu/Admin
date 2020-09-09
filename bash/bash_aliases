@@ -3,9 +3,40 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias tp='trash-put'
-alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+
 # problem with srt and mpeg tx
 # https://trac.videolan.org/vlc/ticket/3075
 alias wvlc="/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe --demux ffmpeg"
 alias py38="conda activate py38"
 alias libgl="export LIBGL_ALWAYS_INDIRECT=0"
+alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+
+# http://www.linuxfromscratch.org/blfs/view/svn/postlfs/profile.html
+# Functions to help us manage paths.  Second argument is the name of the
+# path variable to be modified (default: PATH)
+pathremove () {
+        local IFS=':'
+        local NEWPATH
+        local DIR
+        local PATHVARIABLE=${2:-PATH}
+        for DIR in ${!PATHVARIABLE} ; do
+                if [ "$DIR" != "$1" ] ; then
+                  NEWPATH=${NEWPATH:+$NEWPATH:}$DIR
+                fi
+        done
+        export $PATHVARIABLE="$NEWPATH"
+}
+
+pathprepend () {
+        pathremove $1 $2
+        local PATHVARIABLE=${2:-PATH}
+        export $PATHVARIABLE="$1${!PATHVARIABLE:+:${!PATHVARIABLE}}"
+}
+
+pathappend () {
+        pathremove $1 $2
+        local PATHVARIABLE=${2:-PATH}
+        export $PATHVARIABLE="${!PATHVARIABLE:+${!PATHVARIABLE}:}$1"
+}
+
+export -f pathremove pathprepend pathappend

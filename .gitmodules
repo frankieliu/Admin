@@ -73,3 +73,12 @@
 [submodule "apps/vim/focal/vim/pack/plugins/start/lua-support"]
 	path = apps/vim/focal/vim/pack/plugins/start/lua-support
 	url = http://github.com/wolfgangmehner/lua-support
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-asciidoctor"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-asciidoctor
+	url = http://github.com/habamax/vim-asciidoctor.git
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-snippets"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "apps/vim/focal/vim/pack/plugins/start/vim-snippets-asciidoc"]
+	path = apps/vim/focal/vim/pack/plugins/start/vim-snippets-asciidoc
+	url = http://github.com/jhradilek/vim-snippets

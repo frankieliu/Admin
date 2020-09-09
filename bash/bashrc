@@ -131,3 +131,6 @@ if [ "x$VNCDESKTOP" == "x" ]; then
 	export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 	export LIBGL_ALWAYS_INDIRECT=1
 fi
+
+pathappend $HOME/go/bin
+pathappend /usr/local/go/bin

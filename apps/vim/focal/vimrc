@@ -138,3 +138,12 @@ let g:vim_markdown_folding_style_pythonic = 1
 
 " Default vim's markdown
 " let g:markdown_folding=1
+
+" asciidoc
+" Conceal *bold*, _italic_, `code` and urls in lists and paragraphs, default `0`.
+" See limitations in end of the README
+let g:asciidoctor_syntax_conceal = 1
+let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'java', 'cpp']
+
+" Highlight indented text, default `1`.
+let g:asciidoctor_syntax_indented = 0
