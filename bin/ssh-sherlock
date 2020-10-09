@@ -1,0 +1,3 @@
+cmd="ssh -Y frankliu@login.sherlock.stanford.edu"
+echo $cmd
+$cmd

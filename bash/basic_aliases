@@ -1,0 +1,5 @@
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias py38='conda activate py38'
+alias trp='trash-put'

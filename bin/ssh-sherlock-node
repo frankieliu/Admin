@@ -1,0 +1,4 @@
+ssh frankliu@login.sherlock.stanford.edu squeue -u frankliu > ~/sherlock-queue 
+#             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
+#           4309617    normal     bash frankliu  R       1:56      1 sh02-01n13 
+
