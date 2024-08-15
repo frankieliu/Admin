@@ -1,0 +1,16 @@
+# gs
+gs_init.ps seems to be missing in cygwin
+ImageMagik uses this for converting pdf to png
+
+# cygcheck -p gs_init.ps
+Found 3 matches for gs_init.ps
+ghostscript-9.15-1 - ghostscript: GPL PostScript interpreter (utilities)
+(installed binaries and support files)
+ghostscript-9.15-2 - ghostscript: GPL PostScript interpreter (utilities)
+(installed binaries and support files)
+ghostscript-9.19-1 - ghostscript: GPL PostScript interpreter (utilities)
+(installed binaries and support files)
+
+
+# cygcheck -l ghostscript |grep gs_init.ps
+/usr/share/ghostscript/9.19/Resource/Init/gs_init.ps
