@@ -14,8 +14,16 @@
 # 6921538ee451496
 # f046e970166340ef74498ba770002c953e14a084
 default_client_id=6921538ee451496
-
-client_id="${IMGUR_CLIENT_ID:=$default_client_id}"
+access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b
+# https://imgur.com/?state=APPLICATION_STATE#access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b&expires_in=315360000&token_type=bearer&refresh_token=ac06f0fe6c3565171bfcf80b54efd564155e0288&account_username=eehn&account_id=23231394
+#
+# client_id="${IMGUR_CLIENT_ID:=$default_client_id}"
+# curl --location 'https://api.imgur.com/3/image' \
+# --header 'Authorization: Client-ID {{clientId}}' \
+# --form 'image=@"/home/flakrim/Downloads/GHJQTpX.jpeg"' \
+# --form 'type="image"' \
+# --form 'title="Simple upload"' \
+# --form 'description="This is a simple image upload in Imgur"'
 
 # Function to output usage instructions
 function usage {
@@ -34,7 +42,20 @@ function usage {
 # Function to upload a path
 # First argument should be a content spec understood by curl's -F option
 function upload {
-	curl -s -H "Authorization: Client-ID $client_id" -H "Expect: " -F "image=$1" https://api.imgur.com/3/image.xml
+  type=image 
+  title=$(basename $(basename $1) .png)
+  description=$title 
+  curl --location 'https://api.imgur.com/3/image.xml' \
+    --form 'image=@"'$1'"' \
+    --form 'type="image"' \
+    --form 'title="'$title'"' \
+    --form 'description="'$description'"' \
+    --header "Expect: " \
+    --header 'Authorization: Bearer '$access_token
+    # --header 'Authorization: Client-ID '$client_id \
+  # curl -s -H "Authorization: Client-ID $client_id" -H "Expect: " \
+	#  -F "image=$1" https://api.imgur.com/3/image.xml 
+
 	# The "Expect: " header is to get around a problem when using this through
 	# the Squid proxy. Not sure if it's a Squid bug or what.
 }
@@ -74,7 +95,7 @@ while [ $# -gt 0 ]; do
 			errors=true
 			continue
 		fi
-		response=$(upload "@$file") 2>/dev/null
+		response=$(upload "$file") 2>/dev/null
 	fi
 
 	if [ $? -ne 0 ]; then
@@ -88,6 +109,10 @@ while [ $# -gt 0 ]; do
 		errors=true
 		continue
 	fi
+
+  # echo Here is the response
+  # echo $response
+  # echo Here is the end of response
 
 	# Parse the response and output our stuff
 	url="${response##*<link>}"
@@ -124,3 +149,14 @@ fi
 if $errors; then
 	exit 1
 fi
+
+#magick $filename -crop 680x627+1693+179 g01.png
+#magick GoldenBat-0.png -crop 680x627+901+179 g01.png
+#Authorization: Client-ID YOUR_CLIENT_ID
+# For accessing a user's account, please visit the OAuth2 section of the docs.
+# Client ID:
+# e03cf83347181a4
+# Client secret:
+# e1e24b6fd4643a217b14a77d15092716bcac04ff
+# https://imgur.com/?state=APPLICATION_STATE#access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b&expires_in=315360000&token_type=bearer&refresh_token=ac06f0fe6c3565171bfcf80b54efd564155e0288&account_username=eehn&account_id=23231394
+
