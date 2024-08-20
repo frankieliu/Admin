@@ -9,4 +9,3 @@ curl http://my.domain.com --data-binary @file.dat
 $ ./imgur.sh GoldenBat-1-0.png
 https://i.imgur.com/EwtzTUa.png
 Delete page: https://imgur.com/delete/FITVcVbNIWECKWq
-

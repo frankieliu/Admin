@@ -1,20 +1,54 @@
 #!/usr/bin/env bash
 
+# From original Script:
 # Imgur script by Bart Nagel <bart@tremby.net>
 # Improvements by Tino Sino <robottinosino@gmail.com>
 # Version 6 or more
 # I release this into the public domain. Do with it what you will.
 # The latest version can be found at https://github.com/tremby/imgur.sh
 
-# API Key provided by Bart;
+
+# My modifications to the original script in order to use access token instead of anonymous
+#
+# From API docs: https://apidocs.imgur.com/
+# 1. Register app
+# 2. Get client_id and client_secret
+# 3. Request an access token
+#    https://api.imgur.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=REQUESTED_RESPONSE_TYPE&state=APPLICATION_STATE
+# 4. Jot down the new URL:
+#    https://imgur.com/?state=some_app_state#access_token=7c4fa6a11f9bec3b0320589ddeafae8efa10fab8&expires_in=315360000&token_type=bearer&refresh_token=dd9dec732ce055c625a5fd0fdead658f5468e3e8&account_username=eehn&account_id=23231394
+# 5. Change the access_token in this script
+#
+# Note: don't use anonymous (as in the original script from Bart)
+# Why: because it makes it harder to delete and manage your images
+# Better: use the token (although it expires after a month), everything goes
+# to your account, and it is private
+#
+# To get a new token via refresh:
+# 1. use api tester
+# 2. POST to https://api.imgur.com/oauth2/token 
+# {
+#  "refresh_token": "dd9dec732ce055c625a5fd0fdead658f5468e3e8",
+#  "client_id": "6921538ee451496",
+#  "client_secret": "f046e970166340ef74498ba770002c953e14a084",
+#  "grant_type": "refresh_token"
+# }
+# 3. Jot down the new access token
+#
+
 # replace with your own or specify yours as IMGUR_CLIENT_ID environment variable
 # to avoid limits
-# default_client_id=c9a6efb3d7932fd
+# default_client_id=c9a6efb3d7932fd # Original client id from Bart
 
 # 6921538ee451496
 # f046e970166340ef74498ba770002c953e14a084
 default_client_id=6921538ee451496
-access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b
+access_token=7c4fa6a11f9bec3b0320589ddeafae8efa10fab8
+refresh_token=dd9dec732ce055c625a5fd0fdead658f5468e3e8
+
+# account_username=eehn&account_id=23231394
+#
+# access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b
 # https://imgur.com/?state=APPLICATION_STATE#access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b&expires_in=315360000&token_type=bearer&refresh_token=ac06f0fe6c3565171bfcf80b54efd564155e0288&account_username=eehn&account_id=23231394
 #
 # client_id="${IMGUR_CLIENT_ID:=$default_client_id}"
@@ -53,6 +87,9 @@ function upload {
     --header "Expect: " \
     --header 'Authorization: Bearer '$access_token
     # --header 'Authorization: Client-ID '$client_id \
+  # Modified the header above to use the access_token
+  # instead of using the Client-ID
+  #
   # curl -s -H "Authorization: Client-ID $client_id" -H "Expect: " \
 	#  -F "image=$1" https://api.imgur.com/3/image.xml 
 
@@ -149,14 +186,3 @@ fi
 if $errors; then
 	exit 1
 fi
-
-#magick $filename -crop 680x627+1693+179 g01.png
-#magick GoldenBat-0.png -crop 680x627+901+179 g01.png
-#Authorization: Client-ID YOUR_CLIENT_ID
-# For accessing a user's account, please visit the OAuth2 section of the docs.
-# Client ID:
-# e03cf83347181a4
-# Client secret:
-# e1e24b6fd4643a217b14a77d15092716bcac04ff
-# https://imgur.com/?state=APPLICATION_STATE#access_token=8a522a6b3a0aa5e83b269cd50313713e6d45698b&expires_in=315360000&token_type=bearer&refresh_token=ac06f0fe6c3565171bfcf80b54efd564155e0288&account_username=eehn&account_id=23231394
-
