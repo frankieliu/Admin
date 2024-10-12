@@ -5,7 +5,8 @@
 4. Insert screw driver to loosen any holds
 5. Carefully separate the halves
 6. There is a power cable between the two sides
-7. Next to the RAM remove flat wide screw (protection) 
+7. Next to the RAM remove flat wide screw (protection)
+8. Install 2x8B memmory about $25 for two sticks
 
 # Developer mode (enter via Recovery Mode pin)
 1. turn off
@@ -19,7 +20,7 @@
 1. boot up
 2. at the login prompt (have to go through several screens)
 3. Press Ctrl-Alt-F2 (Right-arrow on ChromeOS keyboard)
-4. loging is a chronos
+4. login is a chronos
 
 # Firmware
 1. cd
