@@ -1,5 +1,7 @@
 <script lang=ts>
-    asdf
+    
+impor
+
 </script>
 gt
 <h1>Welcome to SvelteKit</h1>

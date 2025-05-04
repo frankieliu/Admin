@@ -1,5 +1,7 @@
 # Add your own snippet
 
+[snippets](https://code.visualstudio.com/docs/editing/userdefinedsnippets)
+
 File > Preferences > Configure Snippets > svelte
 
 It opens .config/Code/User/
