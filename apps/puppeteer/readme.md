@@ -25,3 +25,5 @@ sudo chown root chrome_sandbox
 sudo chgrp root chrome_sandbox 
 sudo chmod 4755 chrome_sandbox 
 ```
+
+[setting up sandbox](https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md)
