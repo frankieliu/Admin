@@ -1,8 +1,11 @@
-<script lang=ts>
-    
-impor
-
+<script lang="ts">
+	import Slides from '$lib/deck/slides.svelte'
+	import '../app.css';
 </script>
-gt
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+
+<svelte:head>
+	<title>
+		Presentation
+	</title>
+</svelte:head>
+<Slides />
