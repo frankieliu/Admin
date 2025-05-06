@@ -12,3 +12,14 @@
 
 # follow instructions
 [joyofcode](https://joyofcode.xyz/beautiful-presentations-with-svelte)
+
+#
+alternatives Mamin-reveal js
+https://www.youtube.com/watch?v=lfMhNaXqc1c
+
+#
+slide craft
+https://www.youtube.com/watch?v=SAi8-P49F2Y
+
+# quarto
+https://www.youtube.com/watch?v=41yTFhQBXaE
