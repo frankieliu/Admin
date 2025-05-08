@@ -23,3 +23,52 @@ https://www.youtube.com/watch?v=SAi8-P49F2Y
 
 # quarto
 https://www.youtube.com/watch?v=41yTFhQBXaE
+
+# Setting up mathjax, katex, ...
+https://github.com/burgerga/reveal.js-math
+
+```js
+Reveal.initialize({
+  mathjax2: {
+    mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // pass other options into `MathJax.Hub.Config()`
+    tex2jax: {
+      inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ] ],
+      skipTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+    }
+  },
+  plugins: [ RevealMath.MathJax2 ]
+});
+```
+
+```js
+Reveal.initialize({
+  mathjax3: {
+    mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+    tex: {
+      inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ]  ]
+    },
+    options: {
+      skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+    },
+  },
+  plugins: [ RevealMath.MathJax3 ]
+});
+```
+
+```js
+Reveal.initialize({
+  katex: {
+    version: 'latest',
+    delimiters: [
+      {left: '$', right: '$', display: false},
+      {left: '$$', right: '$$', display: true},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+   ],
+   ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+ },
+ plugins: [ RevealMath.KaTeX ]
+});
+```

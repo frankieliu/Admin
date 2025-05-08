@@ -29,3 +29,11 @@ gT
 <number>gt
 
 [stack](https://stackoverflow.com/questions/38957302/is-there-a-quick-change-tabs-function-in-visual-studio-code)
+
+# linked editing
+<tag></tag>
+
+Allows editing of one tag to modify the other:
+Ctrl-,
+Search for `LinkedEditing`
+enable it.
