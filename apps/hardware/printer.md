@@ -30,21 +30,6 @@ I am looking for the proper steps to reset a Brother HL-L2360DW toner light.
 Troubleshooting
 I can find the steps for all kinds of other models, but not the 2260. A new toner cartridge does not reset the light and I have been scouring the internet looking for the proper steps. I figure if anyone can help its reddit. If anyone knows the steps if you would be so kind as to share them with me I would really appreciate it.
 
-
-Upvote
-4
-
-Downvote
-
-5
-Go to comments
-
-
-Share
-Share
-Join the conversation
-Sort by:
-
 Best
 Comments Section
 drwoo_POT
