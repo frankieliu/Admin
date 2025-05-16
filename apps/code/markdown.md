@@ -1,3 +1,7 @@
+# Markdown support
+
+[vs code & markdown](https://code.visualstudio.com/docs/languages/markdown)
+
 # Create a snippet for pasting from clipboard
 
 [auto-link](https://stackoverflow.com/questions/59030873/keyboard-shortcut-in-vscode-for-markdown-links)

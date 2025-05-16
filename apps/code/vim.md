@@ -20,3 +20,6 @@ https://stackoverflow.com/questions/426896/vim-ctrl-v-conflict-with-windows-past
 [visual-block](https://vi.stackexchange.com/questions/3699/is-there-a-command-to-enter-visual-block-mode)
 
 :command! VisualBLock execute "normal! \<C-v>"
+
+# Changing leader key
+[mapping leader](https://www.reddit.com/r/vim/comments/vcj9z2/vs_code_vim_extension_help_changing_map_leader/)
