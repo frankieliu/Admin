@@ -23,6 +23,10 @@
 1. install git
    1. turn off autocrlf
       `git config --global core.autocrlf false`
+   1. to set user.name and user.email correctly you have to do it
+      in git bash (cygwin shell will not save in the correct location)
+      `git config --global user.name "Frankie Liu"`
+      `git config --global user.email "frankie.y.liu@gmail.com"`
 1. install gh
    1. In py311 env:
       `conda install gh --channel conda-forge` 
@@ -30,3 +34,4 @@
    1. gh repo clone frankieliu/Admin
 1. install vs code
    1. sync settings
+   1. to set
