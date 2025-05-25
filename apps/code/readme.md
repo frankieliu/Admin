@@ -1,7 +1,14 @@
 # very important
 
 Ctrl-Shift-P - commands
-Ctrl-, - change settings
+Ctrl-, - change settings - get saved in settings.json
+
+Ctrl-E - Explorer Toggle
+Ctrl-` - Terminal Toggle
+
+User mapping:
+Alt-B - terminal focus - if in editor
+Alt-B - editor focus - if in terminal
 
 # Sync
 
