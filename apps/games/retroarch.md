@@ -18,3 +18,11 @@ https://emulation.gametechwiki.com/index.php/Emulator_files#Dreamcast
 https://r-roms.github.io/
 https://myrient.erista.me/files/Redump/
 https://myrient.erista.me/files/Redump/Sega%20-%20Dreamcast/
+
+# ps2 bios
+psx2 works best with version 2.0
+https://psbios.com/
+
+https://archive.org/details/PlayStation2Bios
+
+https://drive.google.com/drive/folders/1WAzat-LGYSVrF0Cvjc2aHQGsSqKb1Sbd
