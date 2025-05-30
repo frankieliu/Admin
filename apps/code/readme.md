@@ -5,10 +5,14 @@ Ctrl-, - change settings - get saved in settings.json
 
 Ctrl-E - Explorer Toggle
 Ctrl-` - Terminal Toggle
+Ctrl-1 - Editor focus
 
 User mapping:
 Alt-B - terminal focus - if in editor
-Alt-B - editor focus - if in terminal
+Alt-B - editor focus - if in terminal or file
+
+Ctrl-K Ctrl-S - keyboard shortcuts
+- @source=user to find user defined ones
 
 # Sync
 
