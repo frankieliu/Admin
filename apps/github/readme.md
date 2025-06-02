@@ -41,3 +41,8 @@ git branch --set-upstream-to origin/master master
 - Push to your fork via your "origin" remote (the word origin should be able to be omitted (ie: just write git push) if you did Step 4).
 
 git push origin
+
+# remove defaulting to crlf
+
+git config --global core.autocrlf false
+
