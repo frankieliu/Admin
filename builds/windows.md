@@ -20,6 +20,9 @@
    1. `cd ~/bin; . conda.sh`
    1. `conda create --name py311 python=3.11`
    1. `conda activate py311`
+   1. `conda config --add channel conda-forge`
+   1. `conda install pytest exceptiongroup`
+      needed by pytest 
 1. install git
    1. turn off autocrlf
       `git config --global core.autocrlf false`
