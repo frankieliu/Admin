@@ -1,0 +1,2 @@
+[nicely phrased resume](https://stackoverflow.com/questions/79150390/creating-a-two-column-cv-layout-with-golden-ratio-and-timeline-in-html-css)
+[Markdown 2 columns](https://stackoverflow.com/questions/30514408/have-two-columns-in-markdown)r
