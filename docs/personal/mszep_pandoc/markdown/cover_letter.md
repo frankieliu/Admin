@@ -1,0 +1,3 @@
+I would like to recommend Frankie Liu for the [Position] role in your team. Frankie is currently a Staff Engineer at Google, where he leads critical initiatives in Google Cloud infrastructure, combining deep technical expertise with innovative problem-solving. His ability to think outside the box and passion for building intelligent, scalable systems make him an exceptional fit for Apple's culture of excellence.
+
+Beyond his impressive technical acumen, Frankie has a proven track record of driving impactful projects and collaborating across teams.  I've attached his resume for your review and would be happy to provide further details on why he'd be a tremendous asset to your organization.

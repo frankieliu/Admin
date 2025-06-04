@@ -10,3 +10,5 @@ Use <img> tag
 
 # alternative that takes markdown to reveal.js (static)
 https://github.com/MartenBE/mkslides/
+
+y
