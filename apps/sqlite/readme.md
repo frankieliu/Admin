@@ -1,0 +1,1 @@
+alter table `jobs.2025.06.02` add status int;
