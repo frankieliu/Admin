@@ -1,0 +1,12 @@
+
+2Rx8:
+Indicates a dual-rank memory configuration, meaning the RAM chips are arranged on both sides of the memory module. This typically allows for higher capacity RAM sticks. 
+
+PC3L:
+Specifies the RAM type as DDR3 Low Voltage. The "L" signifies that it operates at a lower voltage (1.35V) compared to standard PC3 (1.5V). 
+
+12800S:
+Represents the theoretical bandwidth or data transfer rate, which is 12800 MB/s (Megabytes per second). This is equivalent to DDR3-1600, as it's the effective clock rate. 
+
+S:
+The "S" usually indicates a SO-DIMM (Small Outline Dual In-line Memory Module), meaning it's designed for laptops and other compact devices. 
