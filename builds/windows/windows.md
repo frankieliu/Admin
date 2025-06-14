@@ -37,4 +37,16 @@
    1. gh repo clone frankieliu/Admin
 1. install vs code
    1. sync settings
-   1. to set
+1. powershell enable scripts
+   1. powershell as admin
+   1. `Set-ExecutionPolicy RemoteSigned`
+   1. A (yes to all)
+1. install scoop
+   1. powershell
+   1. `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+   1. `Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression`
+1. install fzf
+   1. `scoop search fzf`
+   1. `scoop install fzf`
+1. install ripgrep
+   1. `scoop install ripgrep`
