@@ -40,3 +40,7 @@ pathappend () {
 }
 
 export -f pathremove pathprepend pathappend
+
+chrome_me () {
+	chrome "$(cygpath -w $(pwd))/$1"
+}
