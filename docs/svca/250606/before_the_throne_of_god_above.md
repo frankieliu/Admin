@@ -470,8 +470,12 @@ gōng yì zhī shén yǐ dé mǎn zú，
 jiàn zhǔ shèng miàn shè miǎn wǒ yóu。
 jiàn zhǔ shèng miàn shè miǎn wǒ yóu。
 
-# Condensed from above
-- taken from above
+# Sent to svca worship group fro 6/20/25
+
+- taken from musescore
+![music](<Screenshot 2025-06-18 084801.png>)
+
+- taken from section above
 
 在高天真神寶座前   在高天真神宝座前
 完美中保作我依靠   完美中保作我依靠
