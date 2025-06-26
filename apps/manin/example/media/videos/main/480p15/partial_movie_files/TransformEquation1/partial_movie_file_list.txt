@@ -1,6 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/TransformEquation1/2289379569_2313583352_223132457.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/TransformEquation1/921762691_2341082278_1194688479.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/TransformEquation1/921762691_3141743221_1549343099.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/TransformEquation1/921762691_1756913726_1971409079.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/TransformEquation1/921762691_667144672_2239873974.mp4'

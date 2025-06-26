@@ -1,3 +1,0 @@
-# freecad
-# selfcad
-# tinkercad

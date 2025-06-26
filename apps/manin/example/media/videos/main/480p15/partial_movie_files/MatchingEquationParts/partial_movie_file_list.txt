@@ -1,6 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/MatchingEquationParts/2289379569_2574473371_2554654304.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/MatchingEquationParts/921762691_1628793731_2873729818.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/MatchingEquationParts/921762691_2341082278_2184005164.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/MatchingEquationParts/921762691_1367247466_158459868.mp4'
-file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/MatchingEquationParts/921762691_2341082278_275492486.mp4'
