@@ -1,1 +1,0 @@
-[vimdiff](https://vimways.org/2018/the-power-of-diff/)
