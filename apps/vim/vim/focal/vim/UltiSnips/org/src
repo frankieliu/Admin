@@ -1,0 +1,5 @@
+snippet src "src" b
+#+BEGIN_SRC ${1:bash}
+$2
+#+END_SRC
+endsnippet
