@@ -45,6 +45,9 @@ change the setting in ipython_config.py
 :!./% arg arg<CR>
 imap <F5> <Esc>:w<CR>:!python %;<CR>
 
+# stackoverflow
+[stack](https://stackoverflow.com/questions/18948491/running-python-code-in-vim)
+
 # Formatting and linting
 ## vim-format
 
