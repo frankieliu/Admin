@@ -1,0 +1,14 @@
+curl 'https://cdn142.akamai-content-network.com/bcdn_token=ujtbsUkOfOpb-V2EHJ-No3C6FpOMOJX_bkq4ZMbbrj0&expires=1685423711&token_path=%2Fe9cfbc76-55fe-4051-98c8-6d3bf3543666%2F/e9cfbc76-55fe-4051-98c8-6d3bf3543666/playlist.m3u8' \
+  -H 'authority: cdn142.akamai-content-network.com' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'origin: https://_.com' \
+  -H 'referer: https://_.com/en/_' \
+  -H 'sec-ch-ua: "Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36' \
+  --compressed

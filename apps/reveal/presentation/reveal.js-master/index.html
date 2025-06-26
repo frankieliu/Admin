@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<script src="plugin/math/math.js"></script>
+	<div class="reveal">
+		<div class="slides">
+			<section>Slide 1</section>
+			<section>Slide 2</section>
+			<section data-auto-animate>
+				<h2>The Lorenz Equations</h2>
+				\[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y -
+				xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
+			</section>
+			<section data-auto-animate>
+				<h2>The Lorenz Equations</h2>
+				\[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y -
+				xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
+			</section>
+			<section>
+				<video data-autoplay src="media/videos/DefaultTemplate.mp4"></video>
+			</section>
+			<section>
+				<video data-autoplay src="media/videos/TransformEquation1.mp4"></video>
+			</section>
+			<section>
+				<video data-autoplay src="media/videos/MatchingEquationParts.mp4"></video>
+			</section>
+			<section
+				data-markdown="round.md"
+				data-separator="^\r?\n---\r?\n$"
+				data-separator-vertical="^\r?\n-\r?\n"
+				data-separator-notes="^Notes?:"
+			>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes,
+				RevealMath.KaTeX],
+			katex: {
+				version: 'latest',
+				delimiters: [
+					{ left: '$$', right: '$$', display: true },
+					{ left: '$', right: '$', display: false },
+					{ left: '\\(', right: '\\)', display: false },
+					{ left: '\\[', right: '\\]', display: true },
+				],
+				ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+			},
+		});
+	</script>
+</body>
+
+</html>

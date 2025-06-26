@@ -1,0 +1,95 @@
+" call SendCommandToTerminal('echo Hello from Vim')
+" function run command in existing terminal or create one if needed
+function! SendCommandToTerminal(cmd) abort
+
+  let term_bufnr = -1
+
+  " Search for an existing terminal buffer
+  for bufnr in range(1, bufnr('$'))
+    if getbufvar(bufnr, '&buftype') ==# 'terminal'
+      let term_bufnr = bufnr
+      break
+    endif
+  endfor
+
+  if term_bufnr != -1
+    " Terminal buffer exists, send command
+    call term_sendkeys(term_bufnr, a:cmd . "\n")
+    " execute 'buffer' term_bufnr
+  else
+    " No terminal buffer, create one and send command
+    exec "terminal ++rows=10" | wincmd w
+    let term_bufnr = bufnr('%')
+    call term_sendkeys(term_bufnr, a:cmd . "\n")
+  endif
+endfunction
+
+" Example usage: resize terminal to 20x80
+" call ResizeTerminal(20, 80)
+function! ResizeTerminal(height, width)
+  " Save current window and tab ID
+  let current_window = win_getid()
+  let current_tab = tabpagenr()
+
+  " Find the terminal window (assuming only one terminal)
+  for winnr in range(1, tabpagewinnr(current_tab, '$'))
+    if gettabwinvar(current_tab, winnr, '&buftype') == 'terminal'
+      let terminal_window_id = win_id2win(win_getid())
+      break
+    endif
+  endfor
+
+  " Switch to the terminal window and resize
+  if exists('terminal_window_id')
+    call win_gotoid(terminal_window_id)
+    if a:height != -1
+      execute 'resize ' . a:height
+    endif
+    if a:width != -1
+      execute 'vertical resize ' . a:width
+    endif
+  endif
+
+  " Go back to the original window
+  call win_gotoid(current_window)
+endfunction
+
+
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+set smartindent
+
+" allow mouse in vim mode
+set mouse=a
+
+" Mapping for python
+" nmap <C-A-n> <Esc>:w<CR>:! clear;python %<CR>
+" nmap <C-A-n> <Esc>:w<CR>:call VimuxRunCommand("clear; python ".bufname("%"))<CR>
+nmap <C-A-n> <Esc>:w<CR>:call SendCommandToTerminal('python '.bufname('%'))<CR>
+nmap <C-A-m> <Esc>:w<CR>:call SendCommandToTerminal('pytest')<CR>
+
+nmap <S-A-f> <Esc>:Autoformat<CR>:w<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+tnoremap <Esc> <C-\><C-n>
+
+au BufWrite *.py :Autoformat
+
+" download vim-plug (plug.vim) to .vim/autoload/
+call plug#begin()
+Plug 'vim-autoformat/vim-autoformat'
+Plug 'dense-analysis/ale'
+Plug 'jpalardy/vim-slime'
+Plug 'preservim/vimux'
+call plug#end()
+
+let g:ale_enabled = 0
+let g:ale_pattern_options = {'\\.py$': {'ale_enabled':0}}
+let g:ale_linters = { 'python': ['pylint'], }
+
+let g:slime_target = "tmux"
+" let g:slime_target = "vimterminal"
+let g:slime_cell_delimiter = "# %%"
+nmap <leader>sc <Plug>SlimeSendCell

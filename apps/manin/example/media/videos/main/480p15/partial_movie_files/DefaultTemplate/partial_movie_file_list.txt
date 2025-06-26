@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/DefaultTemplate/162346569_549496807_223132457.mp4'
+file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/DefaultTemplate/3949404623_3199644086_247722528.mp4'
+file 'file:C:/cygwin64/home/adam/Admin/apps/manin/example/media/videos/main/480p15/partial_movie_files/DefaultTemplate/3949404623_2363910719_247722528.mp4'

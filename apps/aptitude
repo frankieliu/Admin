@@ -1,0 +1,695 @@
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:08:26 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 70 packages, and remove 0 packages.
+112 MB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] adwaita-icon-theme:amd64 3.36.1-2ubuntu0.20.04.2
+[INSTALL, DEPENDENCIES] at-spi2-core:amd64 2.36.0-2
+[INSTALL, DEPENDENCIES] fontconfig:amd64 2.13.1-2ubuntu3
+[INSTALL, DEPENDENCIES] gir1.2-atk-1.0:amd64 2.35.1-1ubuntu2
+[INSTALL, DEPENDENCIES] gir1.2-freedesktop:amd64 1.64.1-1~ubuntu20.04.1
+[INSTALL, DEPENDENCIES] gir1.2-gdkpixbuf-2.0:amd64 2.40.0+dfsg-3
+[INSTALL, DEPENDENCIES] gir1.2-gtk-3.0:amd64 3.24.20-0ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-pango-1.0:amd64 1.44.7-2ubuntu4
+[INSTALL, DEPENDENCIES] gtk-update-icon-cache:amd64 3.24.20-0ubuntu1
+[INSTALL, DEPENDENCIES] hicolor-icon-theme:amd64 0.17-2
+[INSTALL, DEPENDENCIES] humanity-icon-theme:amd64 0.6.15
+[INSTALL, DEPENDENCIES] libatk-bridge2.0-0:amd64 2.34.2-0ubuntu2~20.04.1
+[INSTALL, DEPENDENCIES] libatk1.0-0:amd64 2.35.1-1ubuntu2
+[INSTALL, DEPENDENCIES] libatk1.0-data:amd64 2.35.1-1ubuntu2
+[INSTALL, DEPENDENCIES] libatspi2.0-0:amd64 2.36.0-2
+[INSTALL, DEPENDENCIES] libavahi-client3:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] libavahi-common-data:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] libavahi-common3:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] libblas3:amd64 3.9.0-1build1
+[INSTALL, DEPENDENCIES] libcairo-gobject2:amd64 1.16.0-4ubuntu1
+[INSTALL, DEPENDENCIES] libcairo2:amd64 1.16.0-4ubuntu1
+[INSTALL, DEPENDENCIES] libcolord2:amd64 1.4.4-2
+[INSTALL, DEPENDENCIES] libcups2:amd64 2.3.1-9ubuntu1.1
+[INSTALL, DEPENDENCIES] libdatrie1:amd64 0.2.12-3
+[INSTALL, DEPENDENCIES] libepoxy0:amd64 1.5.4-1
+[INSTALL, DEPENDENCIES] libgdk-pixbuf2.0-0:amd64 2.40.0+dfsg-3
+[INSTALL, DEPENDENCIES] libgdk-pixbuf2.0-bin:amd64 2.40.0+dfsg-3
+[INSTALL, DEPENDENCIES] libgdk-pixbuf2.0-common:amd64 2.40.0+dfsg-3
+[INSTALL, DEPENDENCIES] libgfortran5:amd64 10-20200411-0ubuntu1
+[INSTALL, DEPENDENCIES] libgomp1:amd64 10-20200411-0ubuntu1
+[INSTALL, DEPENDENCIES] libgraphite2-3:amd64 1.3.13-11build1
+[INSTALL, DEPENDENCIES] libgtk-3-0:amd64 3.24.20-0ubuntu1
+[INSTALL, DEPENDENCIES] libgtk-3-bin:amd64 3.24.20-0ubuntu1
+[INSTALL, DEPENDENCIES] libgtk-3-common:amd64 3.24.20-0ubuntu1
+[INSTALL, DEPENDENCIES] libharfbuzz0b:amd64 2.6.4-1ubuntu4
+[INSTALL, DEPENDENCIES] libjbig0:amd64 2.1-3.1build1
+[INSTALL, DEPENDENCIES] libjpeg-turbo8:amd64 2.0.3-0ubuntu1.20.04.1
+[INSTALL, DEPENDENCIES] libjpeg8:amd64 8c-2ubuntu8
+[INSTALL, DEPENDENCIES] liblapack3:amd64 3.9.0-1build1
+[INSTALL, DEPENDENCIES] liblcms2-2:amd64 2.9-4
+[INSTALL, DEPENDENCIES] libmypaint-1.5-1:amd64 1.5.1-1
+[INSTALL, DEPENDENCIES] libmypaint-common:amd64 1.5.1-1
+[INSTALL, DEPENDENCIES] libpango-1.0-0:amd64 1.44.7-2ubuntu4
+[INSTALL, DEPENDENCIES] libpangocairo-1.0-0:amd64 1.44.7-2ubuntu4
+[INSTALL, DEPENDENCIES] libpangoft2-1.0-0:amd64 1.44.7-2ubuntu4
+[INSTALL, DEPENDENCIES] libpangoxft-1.0-0:amd64 1.44.7-2ubuntu4
+[INSTALL, DEPENDENCIES] libpixman-1-0:amd64 0.38.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libquadmath0:amd64 10-20200411-0ubuntu1
+[INSTALL, DEPENDENCIES] librest-0.7-0:amd64 0.8.1-1
+[INSTALL, DEPENDENCIES] librsvg2-2:amd64 2.48.7-1ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] librsvg2-common:amd64 2.48.7-1ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libsoup-gnome2.4-1:amd64 2.70.0-1
+[INSTALL, DEPENDENCIES] libthai-data:amd64 0.1.28-3
+[INSTALL, DEPENDENCIES] libthai0:amd64 0.1.28-3
+[INSTALL, DEPENDENCIES] libtiff5:amd64 4.1.0+git191117-2build1
+[INSTALL, DEPENDENCIES] libwayland-cursor0:amd64 1.18.0-1
+[INSTALL, DEPENDENCIES] libwayland-egl1:amd64 1.18.0-1
+[INSTALL, DEPENDENCIES] libwebp6:amd64 0.6.1-2
+[INSTALL, DEPENDENCIES] libxcb-render0:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxcb-shm0:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxcursor1:amd64 1:1.2.0-2
+[INSTALL, DEPENDENCIES] libxkbcommon0:amd64 0.10.0-1
+[INSTALL, DEPENDENCIES] mypaint-brushes:amd64 2.0.2+ds1-1
+[INSTALL, DEPENDENCIES] mypaint-data:amd64 2.0.0-2
+[INSTALL, DEPENDENCIES] mypaint-data-extras:amd64 2.0.0-2
+[INSTALL, DEPENDENCIES] python3-cairo:amd64 1.16.2-2ubuntu2
+[INSTALL, DEPENDENCIES] python3-gi-cairo:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] python3-numpy:amd64 1:1.17.4-5ubuntu3
+[INSTALL, DEPENDENCIES] ubuntu-mono:amd64 19.04-0ubuntu3
+[INSTALL] mypaint:amd64 2.0.0-2
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:10:51 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 2 packages, and remove 0 packages.
+2763 kB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] xbitmaps:amd64 1.1.1-2
+[INSTALL] x11-apps:amd64 7.7+8
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:18:45 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 14 packages, and remove 0 packages.
+42.0 MB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] cpp:amd64 4:9.3.0-1ubuntu2
+[INSTALL, DEPENDENCIES] cpp-9:amd64 9.3.0-10ubuntu2
+[INSTALL, DEPENDENCIES] gcc-9-base:amd64 9.3.0-10ubuntu2
+[INSTALL, DEPENDENCIES] libfile-readbackwards-perl:amd64 1.05-2
+[INSTALL, DEPENDENCIES] libisl22:amd64 0.22.1-1
+[INSTALL, DEPENDENCIES] libmpc3:amd64 1.1.0-1
+[INSTALL, DEPENDENCIES] libxfont2:amd64 1:2.0.3-1
+[INSTALL, DEPENDENCIES] tigervnc-common:amd64 1.10.1+dfsg-3
+[INSTALL, DEPENDENCIES] x11-xkb-utils:amd64 7.7+5
+[INSTALL, DEPENDENCIES] x11-xserver-utils:amd64 7.7+8
+[INSTALL, DEPENDENCIES] xfonts-base:amd64 1:1.0.5
+[INSTALL, DEPENDENCIES] xfonts-encodings:amd64 1:1.0.5-0ubuntu1
+[INSTALL, DEPENDENCIES] xfonts-utils:amd64 1:7.7+6
+[INSTALL] tigervnc-standalone-server:amd64 1.10.1+dfsg-3
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:24:12 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 18 packages, and remove 0 packages.
+26.5 MB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] giblib1:amd64 1.2.4-12
+[INSTALL, DEPENDENCIES] gnome-icon-theme:amd64 3.12.0-3
+[INSTALL, DEPENDENCIES] libgail-common:amd64 2.24.32-4ubuntu4
+[INSTALL, DEPENDENCIES] libgail18:amd64 2.24.32-4ubuntu4
+[INSTALL, DEPENDENCIES] libgif7:amd64 5.1.9-1
+[INSTALL, DEPENDENCIES] libgtk2.0-0:amd64 2.24.32-4ubuntu4
+[INSTALL, DEPENDENCIES] libgtk2.0-bin:amd64 2.24.32-4ubuntu4
+[INSTALL, DEPENDENCIES] libgtk2.0-common:amd64 2.24.32-4ubuntu4
+[INSTALL, DEPENDENCIES] libid3tag0:amd64 0.15.1b-14
+[INSTALL, DEPENDENCIES] libimlib2:amd64 1.6.1-1
+[INSTALL, DEPENDENCIES] libobrender32v5:amd64 3.6.1-9
+[INSTALL, DEPENDENCIES] libobt2v5:amd64 3.6.1-9
+[INSTALL, DEPENDENCIES] libstartup-notification0:amd64 0.12-6
+[INSTALL, DEPENDENCIES] libxcb-util1:amd64 0.4.0-0ubuntu3
+[INSTALL, DEPENDENCIES] obconf:amd64 1:2.0.4+git20150213-2
+[INSTALL, DEPENDENCIES] obsession:amd64 20140608-2build1
+[INSTALL, DEPENDENCIES] scrot:amd64 1.2-2
+[INSTALL] openbox:amd64 3.6.1-9
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:27:59 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+2329 kB of disk space will be used
+========================================
+[INSTALL] xterm:amd64 353-1ubuntu1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 13:28:23 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+1585 kB of disk space will be used
+========================================
+[INSTALL] tint2:amd64 16.7-1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 19:02:20 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 14 packages, and remove 0 packages.
+7012 kB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] exo-utils:amd64 0.12.11-1ubuntu1
+[INSTALL, DEPENDENCIES] libexo-2-0:amd64 0.12.11-1ubuntu1
+[INSTALL, DEPENDENCIES] libexo-common:amd64 0.12.11-1ubuntu1
+[INSTALL, DEPENDENCIES] libexo-helpers:amd64 0.12.11-1ubuntu1
+[INSTALL, DEPENDENCIES] libvte-2.91-0:amd64 0.60.3-0ubuntu1~20.04
+[INSTALL, DEPENDENCIES] libvte-2.91-common:amd64 0.60.3-0ubuntu1~20.04
+[INSTALL, DEPENDENCIES] libxfce4ui-2-0:amd64 4.14.1-1ubuntu1
+[INSTALL, DEPENDENCIES] libxfce4ui-common:amd64 4.14.1-1ubuntu1
+[INSTALL, DEPENDENCIES] libxfce4util-bin:amd64 4.14.0-1
+[INSTALL, DEPENDENCIES] libxfce4util-common:amd64 4.14.0-1
+[INSTALL, DEPENDENCIES] libxfce4util7:amd64 4.14.0-1
+[INSTALL, DEPENDENCIES] libxfconf-0-3:amd64 4.14.1-1
+[INSTALL, DEPENDENCIES] xfconf:amd64 4.14.1-1
+[INSTALL] xfce4-terminal:amd64 0.8.9.1-1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 19:11:08 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+87.0 kB of disk space will be used
+========================================
+[INSTALL] dconf-cli:amd64 0.36.0-1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 19:11:23 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 0 packages, and remove 0 packages.
+========================================
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 19:41:04 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 360 packages, and remove 0 packages.
+421 MB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] acl:amd64 2.2.53-6
+[INSTALL, DEPENDENCIES] apg:amd64 2.2.3.dfsg.1-5
+[INSTALL, DEPENDENCIES] aptdaemon:amd64 1.1.1+bzr982-0ubuntu32.1
+[INSTALL, DEPENDENCIES] aptdaemon-data:amd64 1.1.1+bzr982-0ubuntu32.1
+[INSTALL, DEPENDENCIES] aspell:amd64 0.60.8-1build1
+[INSTALL, DEPENDENCIES] aspell-en:amd64 2018.04.16-0-1
+[INSTALL, DEPENDENCIES] avahi-daemon:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] avahi-utils:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] bluez:amd64 5.53-0ubuntu3
+[INSTALL, DEPENDENCIES] bubblewrap:amd64 0.4.0-1ubuntu4
+[INSTALL, DEPENDENCIES] cheese-common:amd64 3.34.0-1build1
+[INSTALL, DEPENDENCIES] colord:amd64 1.4.4-2
+[INSTALL, DEPENDENCIES] colord-data:amd64 1.4.4-2
+[INSTALL, DEPENDENCIES] cracklib-runtime:amd64 2.9.6-3.2
+[INSTALL, DEPENDENCIES] crda:amd64 3.18-1build1
+[INSTALL, DEPENDENCIES] cups-pk-helper:amd64 0.2.6-1ubuntu3
+[INSTALL, DEPENDENCIES] desktop-file-utils:amd64 0.24-1ubuntu3
+[INSTALL, DEPENDENCIES] dictionaries-common:amd64 1.28.1
+[INSTALL, DEPENDENCIES] dns-root-data:amd64 2019052802
+[INSTALL, DEPENDENCIES] dnsmasq-base:amd64 2.80-1.1ubuntu1
+[INSTALL, DEPENDENCIES] docbook-xml:amd64 4.5-9
+[INSTALL, DEPENDENCIES] emacsen-common:amd64 3.0.4
+[INSTALL, DEPENDENCIES] enchant-2:amd64 2.2.8-1
+[INSTALL, DEPENDENCIES] evolution-data-server:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] evolution-data-server-common:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] fprintd:amd64 1.90.1-1ubuntu1
+[INSTALL, DEPENDENCIES] gcr:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] gdm3:amd64 3.34.1-1ubuntu1
+[INSTALL, DEPENDENCIES] geoclue-2.0:amd64 2.5.6-0ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-accountsservice-1.0:amd64 0.6.55-0ubuntu12~20.04.1
+[INSTALL, DEPENDENCIES] gir1.2-atspi-2.0:amd64 2.36.0-2
+[INSTALL, DEPENDENCIES] gir1.2-gck-1:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] gir1.2-gcr-3:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] gir1.2-gdesktopenums-3.0:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-gdm-1.0:amd64 3.34.1-1ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-geoclue-2.0:amd64 2.5.6-0ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-gnomebluetooth-1.0:amd64 3.34.1-1
+[INSTALL, DEPENDENCIES] gir1.2-gnomedesktop-3.0:amd64 3.36.3.1-0ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-graphene-1.0:amd64 1.10.0-1build2
+[INSTALL, DEPENDENCIES] gir1.2-gtksource-3.0:amd64 3.24.11-2
+[INSTALL, DEPENDENCIES] gir1.2-gweather-3.0:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] gir1.2-ibus-1.0:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] gir1.2-json-1.0:amd64 1.4.4-2ubuntu2
+[INSTALL, DEPENDENCIES] gir1.2-mutter-6:amd64 3.36.3-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] gir1.2-nm-1.0:amd64 1.22.10-1ubuntu2.1
+[INSTALL, DEPENDENCIES] gir1.2-nma-1.0:amd64 1.8.24-1ubuntu2
+[INSTALL, DEPENDENCIES] gir1.2-notify-0.7:amd64 0.7.9-1ubuntu2
+[INSTALL, DEPENDENCIES] gir1.2-polkit-1.0:amd64 0.105-26ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-rsvg-2.0:amd64 2.48.7-1ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] gir1.2-secret-1:amd64 0.20.3-0ubuntu1
+[INSTALL, DEPENDENCIES] gir1.2-soup-2.4:amd64 2.70.0-1
+[INSTALL, DEPENDENCIES] gir1.2-upowerglib-1.0:amd64 0.99.11-1build2
+[INSTALL, DEPENDENCIES] gir1.2-vte-2.91:amd64 0.60.3-0ubuntu1~20.04
+[INSTALL, DEPENDENCIES] gjs:amd64 1.64.3-1~ubuntu20.04.1
+[INSTALL, DEPENDENCIES] gkbd-capplet:amd64 3.26.1-1
+[INSTALL, DEPENDENCIES] gnome-control-center:amd64 1:3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-control-center-data:amd64 1:3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-control-center-faces:amd64 1:3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-desktop3-data:amd64 3.36.3.1-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-keyring:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] gnome-keyring-pkcs11:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] gnome-menus:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] gnome-online-accounts:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] gnome-session-bin:amd64 3.36.0-2ubuntu1
+[INSTALL, DEPENDENCIES] gnome-session-common:amd64 3.36.0-2ubuntu1
+[INSTALL, DEPENDENCIES] gnome-settings-daemon:amd64 3.36.1-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-settings-daemon-common:amd64 3.36.1-0ubuntu1
+[INSTALL, DEPENDENCIES] gnome-shell:amd64 3.36.4-1ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] gnome-shell-common:amd64 3.36.4-1ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] gnome-startup-applications:amd64 3.36.0-2ubuntu1
+[INSTALL, DEPENDENCIES] gnome-user-docs:amd64 3.36.2+git20200704-0ubuntu0.1
+[INSTALL, DEPENDENCIES] gstreamer1.0-clutter-3.0:amd64 3.0.27-1
+[INSTALL, DEPENDENCIES] gstreamer1.0-gl:amd64 1.16.2-4
+[INSTALL, DEPENDENCIES] gstreamer1.0-plugins-base:amd64 1.16.2-4
+[INSTALL, DEPENDENCIES] gstreamer1.0-plugins-good:amd64 1.16.2-1ubuntu2
+[INSTALL, DEPENDENCIES] gstreamer1.0-pulseaudio:amd64 1.16.2-1ubuntu2
+[INSTALL, DEPENDENCIES] gstreamer1.0-x:amd64 1.16.2-4
+[INSTALL, DEPENDENCIES] hunspell-en-us:amd64 1:2018.04.16-1
+[INSTALL, DEPENDENCIES] ibus:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] ibus-data:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] ibus-gtk:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] ibus-gtk3:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] iio-sensor-proxy:amd64 2.8-1
+[INSTALL, DEPENDENCIES] im-config:amd64 0.44-1ubuntu1.1
+[INSTALL, DEPENDENCIES] ippusbxd:amd64 1.34-2ubuntu1
+[INSTALL, DEPENDENCIES] iw:amd64 5.4-1
+[INSTALL, DEPENDENCIES] language-selector-gnome:amd64 0.204
+[INSTALL, DEPENDENCIES] libaa1:amd64 1.4p5-46
+[INSTALL, DEPENDENCIES] libappindicator3-1:amd64 12.10.1+20.04.20200408.1-0ubuntu1
+[INSTALL, DEPENDENCIES] libasound2-plugins:amd64 1.2.2-1ubuntu1
+[INSTALL, DEPENDENCIES] libaspell15:amd64 0.60.8-1build1
+[INSTALL, DEPENDENCIES] libavahi-core7:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] libavahi-glib1:amd64 0.7-4ubuntu7
+[INSTALL, DEPENDENCIES] libavc1394-0:amd64 0.5.4-5
+[INSTALL, DEPENDENCIES] libbluetooth3:amd64 5.53-0ubuntu3
+[INSTALL, DEPENDENCIES] libboost-thread1.71.0:amd64 1.71.0-6ubuntu6
+[INSTALL, DEPENDENCIES] libcaca0:amd64 0.99.beta19-2.1ubuntu1
+[INSTALL, DEPENDENCIES] libcamel-1.2-62:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libcanberra-gtk3-0:amd64 0.30-7ubuntu1
+[INSTALL, DEPENDENCIES] libcanberra-gtk3-module:amd64 0.30-7ubuntu1
+[INSTALL, DEPENDENCIES] libcanberra-pulse:amd64 0.30-7ubuntu1
+[INSTALL, DEPENDENCIES] libcdparanoia0:amd64 3.10.2+debian-13
+[INSTALL, DEPENDENCIES] libcheese-gtk25:amd64 3.34.0-1build1
+[INSTALL, DEPENDENCIES] libcheese8:amd64 3.34.0-1build1
+[INSTALL, DEPENDENCIES] libclutter-1.0-0:amd64 1.26.4+dfsg-1
+[INSTALL, DEPENDENCIES] libclutter-1.0-common:amd64 1.26.4+dfsg-1
+[INSTALL, DEPENDENCIES] libclutter-gst-3.0-0:amd64 3.0.27-1
+[INSTALL, DEPENDENCIES] libclutter-gtk-1.0-0:amd64 1.8.4-4
+[INSTALL, DEPENDENCIES] libcogl-common:amd64 1.22.6-1
+[INSTALL, DEPENDENCIES] libcogl-pango20:amd64 1.22.6-1
+[INSTALL, DEPENDENCIES] libcogl-path20:amd64 1.22.6-1
+[INSTALL, DEPENDENCIES] libcogl20:amd64 1.22.6-1
+[INSTALL, DEPENDENCIES] libcolord-gtk1:amd64 0.2.0-0ubuntu1
+[INSTALL, DEPENDENCIES] libcolorhug2:amd64 1.4.4-2
+[INSTALL, DEPENDENCIES] libcrack2:amd64 2.9.6-3.2
+[INSTALL, DEPENDENCIES] libdaemon0:amd64 0.14-7
+[INSTALL, DEPENDENCIES] libdbus-glib-1-2:amd64 0.110-5fakssync1
+[INSTALL, DEPENDENCIES] libdbusmenu-glib4:amd64 16.04.1+18.10.20180917-0ubuntu6
+[INSTALL, DEPENDENCIES] libdbusmenu-gtk3-4:amd64 16.04.1+18.10.20180917-0ubuntu6
+[INSTALL, DEPENDENCIES] libdv4:amd64 1.0.0-12
+[INSTALL, DEPENDENCIES] libebackend-1.2-10:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libebook-1.2-20:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libebook-contacts-1.2-3:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libecal-2.0-1:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libedata-book-1.2-26:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libedata-cal-2.0-1:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libedataserver-1.2-24:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libedataserverui-1.2-2:amd64 3.36.4-0ubuntu1
+[INSTALL, DEPENDENCIES] libegl-mesa0:amd64 20.0.8-0ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] libegl1:amd64 1.3.1-1ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libenchant-2-2:amd64 2.2.8-1
+[INSTALL, DEPENDENCIES] libevdev2:amd64 1.9.0+dfsg-1
+[INSTALL, DEPENDENCIES] libexif12:amd64 0.6.21-6ubuntu0.3
+[INSTALL, DEPENDENCIES] libfprint-2-2:amd64 1:1.90.2+tod1-0ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] libgbm1:amd64 20.0.8-0ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] libgck-1-0:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] libgcr-base-3-1:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] libgcr-ui-3-1:amd64 3.36.0-2build1
+[INSTALL, DEPENDENCIES] libgd3:amd64 2.2.5-5.2ubuntu2
+[INSTALL, DEPENDENCIES] libgdata-common:amd64 0.17.12-1
+[INSTALL, DEPENDENCIES] libgdata22:amd64 0.17.12-1
+[INSTALL, DEPENDENCIES] libgdm1:amd64 3.34.1-1ubuntu1
+[INSTALL, DEPENDENCIES] libgee-0.8-2:amd64 0.20.3-1
+[INSTALL, DEPENDENCIES] libgeoclue-2-0:amd64 2.5.6-0ubuntu1
+[INSTALL, DEPENDENCIES] libgeocode-glib0:amd64 3.26.2-2
+[INSTALL, DEPENDENCIES] libgjs0g:amd64 1.64.3-1~ubuntu20.04.1
+[INSTALL, DEPENDENCIES] libgles2:amd64 1.3.1-1ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libgnome-autoar-0-0:amd64 0.2.3-2
+[INSTALL, DEPENDENCIES] libgnome-bluetooth13:amd64 3.34.1-1
+[INSTALL, DEPENDENCIES] libgnome-desktop-3-19:amd64 3.36.3.1-0ubuntu1
+[INSTALL, DEPENDENCIES] libgnomekbd-common:amd64 3.26.1-1
+[INSTALL, DEPENDENCIES] libgnomekbd8:amd64 3.26.1-1
+[INSTALL, DEPENDENCIES] libgoa-1.0-0b:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] libgoa-1.0-common:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] libgoa-backend-1.0-1:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] libgphoto2-6:amd64 2.5.25-0ubuntu0.1
+[INSTALL, DEPENDENCIES] libgphoto2-l10n:amd64 2.5.25-0ubuntu0.1
+[INSTALL, DEPENDENCIES] libgphoto2-port12:amd64 2.5.25-0ubuntu0.1
+[INSTALL, DEPENDENCIES] libgraphene-1.0-0:amd64 1.10.0-1build2
+[INSTALL, DEPENDENCIES] libgsound0:amd64 1.0.2-4
+[INSTALL, DEPENDENCIES] libgssdp-1.2-0:amd64 1.2.2-1
+[INSTALL, DEPENDENCIES] libgstreamer-gl1.0-0:amd64 1.16.2-4
+[INSTALL, DEPENDENCIES] libgstreamer-plugins-base1.0-0:amd64 1.16.2-4
+[INSTALL, DEPENDENCIES] libgstreamer-plugins-good1.0-0:amd64 1.16.2-1ubuntu2
+[INSTALL, DEPENDENCIES] libgtksourceview-3.0-1:amd64 3.24.11-2
+[INSTALL, DEPENDENCIES] libgtksourceview-3.0-common:amd64 3.24.11-2
+[INSTALL, DEPENDENCIES] libgtop-2.0-11:amd64 2.40.0-2
+[INSTALL, DEPENDENCIES] libgtop2-common:amd64 2.40.0-2
+[INSTALL, DEPENDENCIES] libgupnp-1.2-0:amd64 1.2.2-1
+[INSTALL, DEPENDENCIES] libgupnp-av-1.0-2:amd64 0.12.11-2
+[INSTALL, DEPENDENCIES] libgupnp-dlna-2.0-3:amd64 0.10.5-4
+[INSTALL, DEPENDENCIES] libgweather-3-16:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] libgweather-common:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] libharfbuzz-icu0:amd64 2.6.4-1ubuntu4
+[INSTALL, DEPENDENCIES] libhunspell-1.7-0:amd64 1.7.0-2build2
+[INSTALL, DEPENDENCIES] libhyphen0:amd64 2.8.8-7
+[INSTALL, DEPENDENCIES] libibus-1.0-5:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] libical3:amd64 3.0.8-1
+[INSTALL, DEPENDENCIES] libidn11:amd64 1.33-2.2ubuntu2
+[INSTALL, DEPENDENCIES] libiec61883-0:amd64 1.2.0-3
+[INSTALL, DEPENDENCIES] libieee1284-3:amd64 0.2.11-13build1
+[INSTALL, DEPENDENCIES] libimobiledevice6:amd64 1.2.1~git20191129.9f79242-1build1
+[INSTALL, DEPENDENCIES] libinput-bin:amd64 1.15.5-1
+[INSTALL, DEPENDENCIES] libinput10:amd64 1.15.5-1
+[INSTALL, DEPENDENCIES] libjack-jackd2-0:amd64 1.9.12~dfsg-2ubuntu2
+[INSTALL, DEPENDENCIES] libjansson4:amd64 2.12-1build1
+[INSTALL, DEPENDENCIES] libjavascriptcoregtk-4.0-18:amd64 2.28.4-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libldb2:amd64 2:2.0.10-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libmbim-glib4:amd64 1.22.0-2
+[INSTALL, DEPENDENCIES] libmbim-proxy:amd64 1.22.0-2
+[INSTALL, DEPENDENCIES] libmediaart-2.0-0:amd64 1.9.4-2
+[INSTALL, DEPENDENCIES] libmm-glib0:amd64 1.12.8-1
+[INSTALL, DEPENDENCIES] libmozjs-68-0:amd64 68.6.0-1ubuntu1
+[INSTALL, DEPENDENCIES] libmp3lame0:amd64 3.100-3
+[INSTALL, DEPENDENCIES] libmpg123-0:amd64 1.25.13-1
+[INSTALL, DEPENDENCIES] libmtdev1:amd64 1.1.5-1.1
+[INSTALL, DEPENDENCIES] libmutter-6-0:amd64 3.36.3-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libmysqlclient21:amd64 8.0.21-0ubuntu0.20.04.4
+[INSTALL, DEPENDENCIES] libndp0:amd64 1.7-0ubuntu1
+[INSTALL, DEPENDENCIES] libnl-3-200:amd64 3.4.0-1
+[INSTALL, DEPENDENCIES] libnl-genl-3-200:amd64 3.4.0-1
+[INSTALL, DEPENDENCIES] libnl-route-3-200:amd64 3.4.0-1
+[INSTALL, DEPENDENCIES] libnm0:amd64 1.22.10-1ubuntu2.1
+[INSTALL, DEPENDENCIES] libnma0:amd64 1.8.24-1ubuntu2
+[INSTALL, DEPENDENCIES] libnotify4:amd64 0.7.9-1ubuntu2
+[INSTALL, DEPENDENCIES] libnspr4:amd64 2:4.25-1
+[INSTALL, DEPENDENCIES] libnss-mdns:amd64 0.14.1-1ubuntu1
+[INSTALL, DEPENDENCIES] libnss3:amd64 2:3.49.1-1ubuntu1.4
+[INSTALL, DEPENDENCIES] libopenjp2-7:amd64 2.3.1-1ubuntu4
+[INSTALL, DEPENDENCIES] libopus0:amd64 1.3.1-0ubuntu1
+[INSTALL, DEPENDENCIES] liborc-0.4-0:amd64 1:0.4.31-1
+[INSTALL, DEPENDENCIES] libpam-fprintd:amd64 1.90.1-1ubuntu1
+[INSTALL, DEPENDENCIES] libpam-gnome-keyring:amd64 3.36.0-1ubuntu1
+[INSTALL, DEPENDENCIES] libpcsclite1:amd64 1.8.26-3
+[INSTALL, DEPENDENCIES] libphonenumber7:amd64 7.1.0-5ubuntu11
+[INSTALL, DEPENDENCIES] libplist3:amd64 2.1.0-4build2
+[INSTALL, DEPENDENCIES] libprotobuf17:amd64 3.6.1.3-2ubuntu5
+[INSTALL, DEPENDENCIES] libpulse-mainloop-glib0:amd64 1:13.99.1-1ubuntu3.5
+[INSTALL, DEPENDENCIES] libpwquality-common:amd64 1.4.2-1build1
+[INSTALL, DEPENDENCIES] libpwquality1:amd64 1.4.2-1build1
+[INSTALL, DEPENDENCIES] libqmi-glib5:amd64 1.24.8-1
+[INSTALL, DEPENDENCIES] libqmi-proxy:amd64 1.24.8-1
+[INSTALL, DEPENDENCIES] libraw1394-11:amd64 2.1.2-1
+[INSTALL, DEPENDENCIES] librygel-core-2.6-2:amd64 0.38.3-1ubuntu1
+[INSTALL, DEPENDENCIES] librygel-db-2.6-2:amd64 0.38.3-1ubuntu1
+[INSTALL, DEPENDENCIES] librygel-renderer-2.6-2:amd64 0.38.3-1ubuntu1
+[INSTALL, DEPENDENCIES] librygel-server-2.6-2:amd64 0.38.3-1ubuntu1
+[INSTALL, DEPENDENCIES] libsamplerate0:amd64 0.1.9-2
+[INSTALL, DEPENDENCIES] libsane:amd64 1.0.29-0ubuntu5
+[INSTALL, DEPENDENCIES] libsane-common:amd64 1.0.29-0ubuntu5
+[INSTALL, DEPENDENCIES] libsbc1:amd64 1.4-1
+[INSTALL, DEPENDENCIES] libsecret-1-0:amd64 0.20.3-0ubuntu1
+[INSTALL, DEPENDENCIES] libsecret-common:amd64 0.20.3-0ubuntu1
+[INSTALL, DEPENDENCIES] libshout3:amd64 2.4.3-1
+[INSTALL, DEPENDENCIES] libsmbclient:amd64 2:4.11.6+dfsg-0ubuntu1.4
+[INSTALL, DEPENDENCIES] libsnapd-glib1:amd64 1.57-0ubuntu3
+[INSTALL, DEPENDENCIES] libsnmp-base:amd64 5.8+dfsg-2ubuntu2.2
+[INSTALL, DEPENDENCIES] libsnmp35:amd64 5.8+dfsg-2ubuntu2.2
+[INSTALL, DEPENDENCIES] libsoxr0:amd64 0.1.3-2build1
+[INSTALL, DEPENDENCIES] libspeex1:amd64 1.2~rc1.2-1.1ubuntu1
+[INSTALL, DEPENDENCIES] libspeexdsp1:amd64 1.2~rc1.2-1.1ubuntu1
+[INSTALL, DEPENDENCIES] libtag1v5:amd64 1.11.1+dfsg.1-0.3ubuntu2
+[INSTALL, DEPENDENCIES] libtag1v5-vanilla:amd64 1.11.1+dfsg.1-0.3ubuntu2
+[INSTALL, DEPENDENCIES] libtalloc2:amd64 2.3.0-3ubuntu1
+[INSTALL, DEPENDENCIES] libteamdctl0:amd64 1.30-1
+[INSTALL, DEPENDENCIES] libtevent0:amd64 0.10.1-4
+[INSTALL, DEPENDENCIES] libtheora0:amd64 1.1.1+dfsg.1-15ubuntu2
+[INSTALL, DEPENDENCIES] libtwolame0:amd64 0.4.0-2
+[INSTALL, DEPENDENCIES] libudisks2-0:amd64 2.8.4-1ubuntu1
+[INSTALL, DEPENDENCIES] libupower-glib3:amd64 0.99.11-1build2
+[INSTALL, DEPENDENCIES] libusbmuxd6:amd64 2.0.1-2
+[INSTALL, DEPENDENCIES] libv4l-0:amd64 1.18.0-2build1
+[INSTALL, DEPENDENCIES] libv4lconvert0:amd64 1.18.0-2build1
+[INSTALL, DEPENDENCIES] libvisual-0.4-0:amd64 0.4.0-17
+[INSTALL, DEPENDENCIES] libvpx6:amd64 1.8.2-1build1
+[INSTALL, DEPENDENCIES] libwacom-bin:amd64 1.3-2ubuntu1
+[INSTALL, DEPENDENCIES] libwacom-common:amd64 1.3-2ubuntu1
+[INSTALL, DEPENDENCIES] libwacom2:amd64 1.3-2ubuntu1
+[INSTALL, DEPENDENCIES] libwavpack1:amd64 5.2.0-1
+[INSTALL, DEPENDENCIES] libwayland-server0:amd64 1.18.0-1
+[INSTALL, DEPENDENCIES] libwbclient0:amd64 2:4.11.6+dfsg-0ubuntu1.4
+[INSTALL, DEPENDENCIES] libwebkit2gtk-4.0-37:amd64 2.28.4-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] libwebpdemux2:amd64 0.6.1-2
+[INSTALL, DEPENDENCIES] libwebrtc-audio-processing1:amd64 0.3.1-0ubuntu3
+[INSTALL, DEPENDENCIES] libwhoopsie-preferences0:amd64 22
+[INSTALL, DEPENDENCIES] libwhoopsie0:amd64 0.2.69ubuntu0.1
+[INSTALL, DEPENDENCIES] libwoff1:amd64 1.0.2-1build2
+[INSTALL, DEPENDENCIES] libxatracker2:amd64 20.0.8-0ubuntu1~20.04.1
+[INSTALL, DEPENDENCIES] libxcb-icccm4:amd64 0.4.1-1.1
+[INSTALL, DEPENDENCIES] libxcb-image0:amd64 0.4.0-1build1
+[INSTALL, DEPENDENCIES] libxcb-keysyms1:amd64 0.4.0-1build1
+[INSTALL, DEPENDENCIES] libxcb-render-util0:amd64 0.3.9-1build1
+[INSTALL, DEPENDENCIES] libxcb-res0:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxcb-xfixes0:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxcb-xkb1:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxcb-xv0:amd64 1.14-2
+[INSTALL, DEPENDENCIES] libxkbcommon-x11-0:amd64 0.10.0-1
+[INSTALL, DEPENDENCIES] libxklavier16:amd64 5.4-4
+[INSTALL, DEPENDENCIES] libxss1:amd64 1:1.2.3-1
+[INSTALL, DEPENDENCIES] libxvmc1:amd64 2:1.0.12-2
+[INSTALL, DEPENDENCIES] libyelp0:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] mobile-broadband-provider-info:amd64 20190618-3
+[INSTALL, DEPENDENCIES] modemmanager:amd64 1.12.8-1
+[INSTALL, DEPENDENCIES] mousetweaks:amd64 3.32.0-2
+[INSTALL, DEPENDENCIES] mutter:amd64 3.36.3-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] mutter-common:amd64 3.36.3-0ubuntu0.20.04.1
+[INSTALL, DEPENDENCIES] mysql-common:amd64 5.8+1.0.5ubuntu2
+[INSTALL, DEPENDENCIES] network-manager:amd64 1.22.10-1ubuntu2.1
+[INSTALL, DEPENDENCIES] network-manager-gnome:amd64 1.8.24-1ubuntu2
+[INSTALL, DEPENDENCIES] network-manager-pptp:amd64 1.2.8-2
+[INSTALL, DEPENDENCIES] p11-kit:amd64 0.23.20-1build1
+[INSTALL, DEPENDENCIES] p11-kit-modules:amd64 0.23.20-1build1
+[INSTALL, DEPENDENCIES] pinentry-gnome3:amd64 1.1.0-3build1
+[INSTALL, DEPENDENCIES] ppp:amd64 2.4.7-2+4.1ubuntu5.1
+[INSTALL, DEPENDENCIES] pptp-linux:amd64 1.10.0-1build1
+[INSTALL, DEPENDENCIES] pulseaudio:amd64 1:13.99.1-1ubuntu3.5
+[INSTALL, DEPENDENCIES] pulseaudio-module-bluetooth:amd64 1:13.99.1-1ubuntu3.5
+[INSTALL, DEPENDENCIES] python3-aptdaemon:amd64 1.1.1+bzr982-0ubuntu32.1
+[INSTALL, DEPENDENCIES] python3-aptdaemon.gtk3widgets:amd64 1.1.1+bzr982-0ubuntu32.1
+[INSTALL, DEPENDENCIES] python3-cups:amd64 1.9.73-3build1
+[INSTALL, DEPENDENCIES] python3-cupshelpers:amd64 1.5.12-0ubuntu1
+[INSTALL, DEPENDENCIES] python3-defer:amd64 1.0.6-2.1
+[INSTALL, DEPENDENCIES] python3-ibus-1.0:amd64 1.5.22-2ubuntu2.1
+[INSTALL, DEPENDENCIES] python3-macaroonbakery:amd64 1.3.1-1
+[INSTALL, DEPENDENCIES] python3-protobuf:amd64 3.6.1.3-2ubuntu5
+[INSTALL, DEPENDENCIES] python3-rfc3339:amd64 1.1-2
+[INSTALL, DEPENDENCIES] python3-talloc:amd64 2.3.0-3ubuntu1
+[INSTALL, DEPENDENCIES] python3-tz:amd64 2019.3-1
+[INSTALL, DEPENDENCIES] rtkit:amd64 0.12-4
+[INSTALL, DEPENDENCIES] rygel:amd64 0.38.3-1ubuntu1
+[INSTALL, DEPENDENCIES] samba-libs:amd64 2:4.11.6+dfsg-0ubuntu1.4
+[INSTALL, DEPENDENCIES] sane-utils:amd64 1.0.29-0ubuntu5
+[INSTALL, DEPENDENCIES] session-migration:amd64 0.3.5
+[INSTALL, DEPENDENCIES] sgml-base:amd64 1.29.1
+[INSTALL, DEPENDENCIES] sgml-data:amd64 2.0.11
+[INSTALL, DEPENDENCIES] switcheroo-control:amd64 2.1-1
+[INSTALL, DEPENDENCIES] system-config-printer:amd64 1.5.12-0ubuntu1
+[INSTALL, DEPENDENCIES] system-config-printer-common:amd64 1.5.12-0ubuntu1
+[INSTALL, DEPENDENCIES] system-config-printer-udev:amd64 1.5.12-0ubuntu1
+[INSTALL, DEPENDENCIES] ubuntu-docs:amd64 20.04.3
+[INSTALL, DEPENDENCIES] ubuntu-session:amd64 3.36.0-2ubuntu1
+[INSTALL, DEPENDENCIES] ubuntu-wallpapers:amd64 20.04.2-0ubuntu1
+[INSTALL, DEPENDENCIES] ubuntu-wallpapers-focal:amd64 20.04.2-0ubuntu1
+[INSTALL, DEPENDENCIES] unzip:amd64 6.0-25ubuntu1
+[INSTALL, DEPENDENCIES] update-inetd:amd64 4.50
+[INSTALL, DEPENDENCIES] upower:amd64 0.99.11-1build2
+[INSTALL, DEPENDENCIES] usb-modeswitch:amd64 2.5.2+repack0-2ubuntu3
+[INSTALL, DEPENDENCIES] usb-modeswitch-data:amd64 20191128-3
+[INSTALL, DEPENDENCIES] usbmuxd:amd64 1.1.1~git20191130.9af2b12-1
+[INSTALL, DEPENDENCIES] wamerican:amd64 2018.04.16-1
+[INSTALL, DEPENDENCIES] whoopsie-preferences:amd64 22
+[INSTALL, DEPENDENCIES] wireless-regdb:amd64 2018.05.09-0ubuntu1
+[INSTALL, DEPENDENCIES] wpasupplicant:amd64 2:2.9-1ubuntu4.1
+[INSTALL, DEPENDENCIES] xdg-dbus-proxy:amd64 0.1.2-1
+[INSTALL, DEPENDENCIES] xml-core:amd64 0.18+nmu1
+[INSTALL, DEPENDENCIES] xserver-common:amd64 2:1.20.8-2ubuntu2.2
+[INSTALL, DEPENDENCIES] xserver-xephyr:amd64 2:1.20.8-2ubuntu2.2
+[INSTALL, DEPENDENCIES] xserver-xorg:amd64 1:7.7+19ubuntu14
+[INSTALL, DEPENDENCIES] xserver-xorg-core:amd64 2:1.20.8-2ubuntu2.2
+[INSTALL, DEPENDENCIES] xserver-xorg-input-all:amd64 1:7.7+19ubuntu14
+[INSTALL, DEPENDENCIES] xserver-xorg-input-libinput:amd64 0.29.0-1
+[INSTALL, DEPENDENCIES] xserver-xorg-input-wacom:amd64 1:0.39.0-0ubuntu1
+[INSTALL, DEPENDENCIES] xserver-xorg-legacy:amd64 2:1.20.8-2ubuntu2.2
+[INSTALL, DEPENDENCIES] xserver-xorg-video-all:amd64 1:7.7+19ubuntu14
+[INSTALL, DEPENDENCIES] xserver-xorg-video-amdgpu:amd64 19.1.0-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-ati:amd64 1:19.1.0-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-fbdev:amd64 1:0.5.0-1ubuntu1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-intel:amd64 2:2.99.917+git20200226-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-nouveau:amd64 1:1.0.16-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-qxl:amd64 0.1.5+git20200331-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-radeon:amd64 1:19.1.0-1
+[INSTALL, DEPENDENCIES] xserver-xorg-video-vesa:amd64 1:2.4.0-2
+[INSTALL, DEPENDENCIES] xserver-xorg-video-vmware:amd64 1:13.3.0-3
+[INSTALL, DEPENDENCIES] xwayland:amd64 2:1.20.8-2ubuntu2.2
+[INSTALL, DEPENDENCIES] yaru-theme-gnome-shell:amd64 20.04.7
+[INSTALL, DEPENDENCIES] yelp:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] yelp-xsl:amd64 3.36.0-1
+[INSTALL, DEPENDENCIES] zenity:amd64 3.32.0-5
+[INSTALL, DEPENDENCIES] zenity-common:amd64 3.32.0-5
+[INSTALL] meld:amd64 3.20.2-1ubuntu1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 22:49:19 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 2 packages, and remove 0 packages.
+5527 kB of disk space will be used
+========================================
+[INSTALL, DEPENDENCIES] xsel:amd64 1.2.0+git9bfc13d.20180109-3
+[INSTALL] hub:amd64 2.7.0~ds1-1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Fri, Aug 14 2020 23:52:27 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+393 kB of disk space will be used
+========================================
+[INSTALL] make:amd64 4.2.1-1.2
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Sat, Aug 15 2020 09:23:03 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+638 kB of disk space will be used
+========================================
+[INSTALL] zip:amd64 3.0-11build1
+========================================
+
+Log complete.
+
+===============================================================================
+
+Aptitude 0.8.12: log report
+Sat, Aug 15 2020 11:20:43 -0700
+
+  IMPORTANT: this log only lists intended actions; actions which fail
+  due to dpkg problems may not be completed.
+
+Will install 1 packages, and remove 0 packages.
+406 kB of disk space will be used
+========================================
+[INSTALL] unrar:amd64 1:5.6.6-2build1
+========================================
+
+Log complete.
+
+===============================================================================
+
