@@ -58,3 +58,9 @@ Retroarch bios files
 https://retroarchemu.gitlab.io/bios/
 
 unzip into .config/retroarch/system
+
+# serial of t460:
+PF0IDJX8
+
+Wireless card
+sierra em745
