@@ -1,6 +1,9 @@
 # Vim key bindings
 [vim](https://github.com/VSCodeVim/Vim)
 
+# left and right tabs
+gt and gT
+
 # Explorer
 Ctrl-w l and Ctrl-w h
 Allow you to move to explorer and back
