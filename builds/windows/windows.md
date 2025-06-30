@@ -50,3 +50,4 @@
    1. `scoop install fzf`
 1. install ripgrep
    1. `scoop install ripgrep`
+1. fzf and ripgrep are useful like find -r and can be used in vscode
