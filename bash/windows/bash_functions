@@ -1,0 +1,13 @@
+pathprepend() {
+  for arg in "$@"; do
+    echo $arg
+    if [ -d "$arg" ]; then # Check if the argument is a valid directory
+      # Remove the directory if it already exists in PATH to avoid duplicates
+      PATH=$(echo "$PATH" | sed -e "s|:$arg||g" -e "s|$arg:||g" -e "s|$arg||g")
+      # Prepend the directory to PATH
+      PATH="$arg${PATH:+:$PATH}"
+    fi
+    echo $PATH
+  done
+  export PATH
+}
