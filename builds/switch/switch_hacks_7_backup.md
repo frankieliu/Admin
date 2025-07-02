@@ -1,3 +1,5 @@
+[Skip to content](https://switch.hacks.guide/user_guide/all/making_essential_backups.html#VPContent)
+
 [NH Switch Guide](https://switch.hacks.guide/)
 
 Main Navigation [User Guide](https://switch.hacks.guide/user_guide/getting_started.html)[Homebrew](https://switch.hacks.guide/homebrew/)[Tutorials](https://switch.hacks.guide/extras/)[FAQ](https://switch.hacks.guide/faq.html)[About](https://switch.hacks.guide/about.html)
