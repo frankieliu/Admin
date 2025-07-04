@@ -30,3 +30,35 @@ Renaming a Git repository's default branch from "master" to "main" is a common p
    - Check your CI/CD pipelines or other systems that reference the master branch and update them to use main.
    - If you have branch protection rules set up for master, ensure they are updated to apply to main.
    - GitHub now allows you to rename the default branch directly from the web interface, making this process even easier. You can find this option in the repository settings under "Branches". 
+
+# rename
+[stackoverflow](https://stackoverflow.com/questions/71951105/how-to-change-current-branch-in-git-from-master-to-main)
+
+1. rename your local branch:
+    
+    ```
+    git branch --unset-upstream
+    git branch -m master main
+    ```
+    
+2. change the tracked branch
+    
+    ```
+    git fetch -p origin
+    git branch -u origin/master main
+    ```
+    
+3. change the main local branch
+    
+    ```
+    git remote set-head origin -a
+    ```
+    
+4. optionally, remove the master branch, local and remotely:
+    
+    ```
+    git branch -D master
+    git push origin :master
+    ```
+
+

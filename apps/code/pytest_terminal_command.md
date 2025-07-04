@@ -1,0 +1,1 @@
+[running command in terminal](https://stackoverflow.com/questions/43342733/shortcut-to-run-current-python-unit-test-in-vscode)

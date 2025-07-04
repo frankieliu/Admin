@@ -65,6 +65,9 @@
 # Whenever displaying the prompt, write the previous line to disk
 # export PROMPT_COMMAND="history -a"
 
+# links
+export CYGWIN=winsymlinks:nativestrict
+
 # Aliases
 #
 # Some people use a different file for aliases
@@ -184,3 +187,9 @@ fi
 # }
 #
 # alias cd=cd_func
+#
+
+# Disable the Ctrl-S suspend XOFF or software flow control
+stty -ixon
+bind -r "\C-s"
+
