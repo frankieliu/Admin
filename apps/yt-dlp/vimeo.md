@@ -22,5 +22,14 @@
    yt-dlp <URL ...> -S "height:360"
    yt-dlp <URL ...> -f "bv[height<=360]+ba"
 
+1. 264 = 426x240 = 372MB
+1. 321 = 640x360 = 453MB
+1. 431 = 960x540 = 608MB
+1. 510 = 1280x720 = 719MB
+1. 729 = 1920x1080 = 1GB
 
+Notes:
 
+321 is too low resolution - can't read slides well
+
+yt-dlp -f hls-fastly_skyfire-431 <frame> --referer <URL>
