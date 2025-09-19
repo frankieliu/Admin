@@ -193,7 +193,5 @@ fi
 stty -ixon
 bind -r "\C-s"
 
-
-
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
