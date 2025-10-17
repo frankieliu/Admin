@@ -1,0 +1,2 @@
+.vimrc
+syntax on
