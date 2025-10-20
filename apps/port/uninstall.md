@@ -1,0 +1,1 @@
+sudo port -fp uninstall --follow-dependents installed
