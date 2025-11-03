@@ -13,3 +13,21 @@
         }
     ]
 }
+
+{ "comment": "keep esc as esc since keep hitting it anyway"}
+
+{
+    "description": "` to esc, application to grave",
+    "manipulators": [
+        {
+            "from": { "key_code": "grave_accent_and_tilde" },
+            "to": [{ "key_code": "escape" }],
+            "type": "basic"
+        },
+        {
+            "from": { "key_code": "application" },
+            "to": [{ "key_code": "grave_accent_and_tilde" }],
+            "type": "basic"
+        }
+    ]
+}
