@@ -1,4 +1,5 @@
 Rating of the best games by average score among gaming publications (metascore) for Nintendo Switch:
+
 1. Hades II
 Metascore (platform): 98
 2. The Legend of Zelda - Breath of the Wild
@@ -27,7 +28,6 @@ Metascore (platform): 93
 Metascore (platform): 93
 14. Super Smash Bros. Ultimate
 Metascore (platform): 93
-
 15. Ori and the Will of the Wisps
 Metascore (platform): 93
 16. Undertale
@@ -38,7 +38,7 @@ Metascore (platform): 93
 Metascore (platform): 92
 19. Xenoblade Chronicles 3 - Expansion Pass Wave 4 - Future Redeemed
 Metascore (platform): 92
-20. A Monsters Expedition
+- 20. A Monsters Expedition
 Metascore (platform): 92
 21. Spelunky 2
 Metascore (platform): 92
@@ -72,8 +72,9 @@ Metascore (platform): 91
 Metascore (platform): 90
 36. Animal Crossing - New Horizons
 Metascore (platform): 90
-37. The Forgotten City
+- 37. The Forgotten City
 Metascore (platform): 90
+
 38. Animal Well
 Metascore (platform): 90
 39. Tsukihime - A Piece of Blue Glass Moon
