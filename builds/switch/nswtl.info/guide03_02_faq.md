@@ -1,8 +1,4 @@
 # Frequently Asked Questions
-- If you are a MacOS user, use these tips to avoid memory card problems.
-- Make backups of your saves as often as possible!
-- If the console freezes or shows no signs of life, turn it off by holding the (POWER) button for 30 seconds, then turn it on and forward the payload!
-
 This section contains answers to the most frequently asked questions. The section containing the most common problems and their solutions is located here - Problems and Solutions
 
 Feel free to search for this section. To do this, press Ctrl+F.

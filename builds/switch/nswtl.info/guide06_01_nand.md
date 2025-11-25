@@ -1,13 +1,4 @@
-This guide is based on the guides of xНЯ, the developer of KEFIR .
-You can solve most of the problems that arise using KEFIR
-We strongly recommend using DBI to install games.
-The best way to get games, DLC, and updates today is the Switch Torrent Library Telegram bot.
-NAND backup
-You can find most of the answers to typical questions in the FAQ section.
-If something goes wrong, don't panic! First, read the Problems and Solutions section.
-If you are a MacOS user, use these tips to avoid memory card problems.
-Make backups of your saves as often as possible!
-If the console freezes or shows no signs of life, turn it off by holding the (POWER) button for 30 seconds, then turn it on and forward the payload!
+# NAND backup
 Skipping this step is highly recommended! If you already have a backup, you don't need to do it again. However, make sure your backup is complete (RAW, BOOT0/1, keys).
 
 Each console's backup and keys are unique! You won't be able to restore your console using another console's backup. Furthermore, restoring someone else's backup will result in a bricked console that can only be restored by creating your own backup. Please approach this matter responsibly.

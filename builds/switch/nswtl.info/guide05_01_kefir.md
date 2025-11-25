@@ -1,13 +1,5 @@
-This guide is based on the guides of xНЯ, the developer of KEFIR .
-You can solve most of the problems that arise using KEFIR
-We strongly recommend using DBI to install games.
-The best way to get games, DLC, and updates today is the Switch Torrent Library Telegram bot.
-Kefir
-You can find most of the answers to typical questions in the FAQ section.
-If something goes wrong, don't panic! First, read the Problems and Solutions section.
-If you are a MacOS user, use these tips to avoid memory card problems.
-Make backups of your saves as often as possible!
-If the console freezes or shows no signs of life, turn it off by holding the (POWER) button for 30 seconds, then turn it on and forward the payload!
+# Kefir
+
 KEFIR 780 - Download the latest version
 kefir
 

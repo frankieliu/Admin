@@ -235,7 +235,7 @@ Launch on Android
 ## Launching the payload
 The set-top box must be in RCM mode !
 
-1. Open this web page.
+1. Open this web page. [sdsetup](https://webcfw.sdsetup.com/)
 2. In the “ Payload Sending Settings ” section, select a payload from the “ Upload your payload ” list, click “ Choose file ”, and then select  .bin  your payload file.
    - Don't select a payload from the list! Use the one in the archive, otherwise you risk getting an error at one stage or another!
 3. Click “ Deliver payload! ”
