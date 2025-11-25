@@ -1,3 +1,7 @@
+In order to install games you need to install sigpatch
+
+Also need prod.keys and title.keys installed in atmosphere folder
+
 [sigpatches 2025](https://github.com/AK478BB/Sigpatches/releases)
 
 
