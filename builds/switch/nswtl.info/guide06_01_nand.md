@@ -3,107 +3,120 @@ Skipping this step is highly recommended! If you already have a backup, you don'
 
 Each console's backup and keys are unique! You won't be able to restore your console using another console's backup. Furthermore, restoring someone else's backup will result in a bricked console that can only be restored by creating your own backup. Please approach this matter responsibly.
 
-What you will need
-Freshly brewed kefir ▼
-A working microSD card with at least 32 GB of free space, 64 GB for OLED, formatted as FAT32
-Be sure to check your card before making a backup!
-Format your memory card to FAT32
-Yes, FAT32. No, there won't be any issues with games larger than 4GB.
-Do this even if your memory card contains no data.
-Follow these instructions exactly.
-Creating a backup copy
-Part I - Dumping Keys
-Establish kefir ▼ according to the instructions in its repository
-If you've already done it, there's no need to do it again.
-Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
-Hold (VOL-) on the console when the kefir logo appears to enter hekate
-Skip this step if you are already in hekate
-Go to the “ Payloads ” menu
-Select “ Lockpick_RCM.bin ”
-Select “ Dump keys from SysNAND ”
-Menu navigation is done with the volume buttons, and selection is done with the (POWER) button
-Dumping will begin immediately
-Press (POWER) to return to the main program menu
-Select “ Reboot to hekate ” to boot into the firmware
-Part II - NAND Backup
-Method I - Using hekate
-Part I - dumping the console's internal memory (NAND)
+# What you will need
+- Freshly brewed kefir ▼
+- A working microSD card with at least 32 GB of free space, 64 GB for OLED, formatted as FAT32
+  - Be sure to check your card before making a backup!
+- Format your memory card to FAT32
+  - Yes, FAT32. No, there won't be any issues with games larger than 4GB.
+  - Do this even if your memory card contains no data.
+  - Follow these instructions exactly.
+# Creating a backup copy
+## Part I - Dumping Keys
+1. Establish kefir ▼ according to the instructions in its repository
+   - If you've already done it, there's no need to do it again.
+2. Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
+   1. Hold (VOL-) on the console when the kefir logo appears to enter hekate
+      - Skip this step if you are already in hekate
+3. Go to the “ Payloads ” menu
+4. Select “ Lockpick_RCM.bin ”
+5. Select “ Dump keys from SysNAND ”
+   - Menu navigation is done with the volume buttons, and selection is done with the (POWER) button
+   - Dumping will begin immediately
+6. Press (POWER) to return to the main program menu
+7. Select “ Reboot to hekate ” to boot into the firmware
+## Part II - NAND Backup
+### Method I - Using hekate
+#### Part I - dumping the console's internal memory (NAND)
 This method requires a memory card with at least 32GB of free space, or 64GB for OLED devices. If you don't have a memory card but have a smaller one, the backup will be created in parts. Once the current capacity on the card is full, a message will appear on the screen informing you to transfer the backup folder to your PC, then return the card to the console and continue creating the backup.
 
-Refresh kefir ▼ follow the instructions from the repository if you haven't done this before
-Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
-Hold (VOL-) on the console when the kefir logo appears to enter hekate
-Skip this step if you are already in hekate
-Go to menu “ Tools ” -> “ Backup eMMC ”
-Select “ eMMC RAW GPP ”
-Wait for the backup to complete
-The backup takes about 20 minutes, depending on the speed of the memory card.
-Click the “ Close ” button to return to the previous menu.
+1. Refresh kefir ▼ follow the instructions from the repository if you haven't done this before
+2. Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
+   1. Hold (VOL-) on the console when the kefir logo appears to enter hekate
+      - Skip this step if you are already in hekate
+3. Go to menu “ Tools ” -> “ Backup eMMC ”
+4. Select “ eMMC RAW GPP ”
+   - Wait for the backup to complete
+   - The backup takes about 20 minutes, depending on the speed of the memory card.
+5. Click the “ Close ” button to return to the previous menu.
+
 If you backed up the NAND on a new console that hasn't had any games installed on it yet, archiving the backup will give you a high-quality result.
 
 Part I - dumping the console's internal memory (NAND)
+#### Part II - Dumping the Boot Partitions (BOOT0/BOOT1)
+1. Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
+    1. Hold (VOL-) on the console when the kefir logo appears to enter hekate
+      - Skip this step if you are already in hekate
+2. Go to menu “ Tools ” -> “ Backup eMMC ”
+3. Select “ eMMC BOOT0 & BOOT1 ”
+4. Click the “ Close ” button to return to the previous menu.
 Part II - Dumping the Boot Partitions (BOOT0/BOOT1)
-Log in to hekate ▼ using an exploit supported on your console, by running the payload  payload.bin  from the kefir  .zip  archive ▼
-Hold (VOL-) on the console when the kefir logo appears to enter hekate
-Skip this step if you are already in hekate
-Go to menu “ Tools ” -> “ Backup eMMC ”
-Select “ eMMC BOOT0 & BOOT1 ”
-Click the “ Close ” button to return to the previous menu.
-Part II - Dumping the Boot Partitions (BOOT0/BOOT1)
+
 Method I - Using hekate
-Method II - Using a PC
-NAND dump
+
+### Method II - Using a PC
+#### NAND dump
 This method is more complex than the previous one, but it doesn't require a large memory card. Backup speeds using this method will be no more than 6 MB/s.
 
 This method only works on consoles of the first revision - Erista ▼
 
-Turn off the console
-Insert the console's memory card into the PC
-Make sure you enable showing file extensions if you are on Windows.
-Copy the contents of the folder  sample  from the memloader  .zip  archive to the root of your memory card.
-Return the memory card back to the Switch
-Copy the payload to the folder from which you transfer them to the Switch (or to the folder for launching via hekate)  memloader.bin   \bootloader\payloads 
-Run the payload with Fusée Gelée  memloader.bin 
-On the console screen, select  ums_eMMC.ini  and launch
-To navigate through the menu use the (VOL-) and (VOL+) keys, to select - (POWER)
-Please note that you selected “ums_ eMMC .ini”
-Ignore files whose names begin with a period if they are present.
-ATTENTION!!! If you see a dialog box during this guide asking you to format the disk, click Cancel !
+1. Turn off the console
+2. Insert the console's memory card into the PC
+3. Make sure you enable showing file extensions if you are on Windows.
+4. Copy the contents of the folder  sample  from the [memloader](https://switchtools.sshnuke.net/)  .zip  archive to the root of your memory card.
+5. Return the memory card back to the Switch
+6. Copy the payload to the folder from which you transfer them to the Switch (or to the folder for launching via hekate)  memloader.bin   \bootloader\payloads 
+7. Run the payload with Fusée Gelée  memloader.bin 
+8. On the console screen, select  ums_eMMC.ini  and launch
+   - To navigate through the menu use the (VOL-) and (VOL+) keys, to select - (POWER)
+   - Please note that you selected “ums_ eMMC .ini”
+   - Ignore files whose names begin with a period if they are present.
 
-![]((/assets/images/switch/screenshots/format.png)
+   - ATTENTION!!! If you see a dialog box during this guide asking you to format the disk, click Cancel !
 
-![]((/assets/images/switch/screenshots/format_mac.png)
+   - ![]((/assets/images/switch/screenshots/format.png)
 
-The console screen will remain black.
-You will have several new disks
+   - ![]((/assets/images/switch/screenshots/format_mac.png)
+
+   - The console screen will remain black.
+   - You will have several new disks
+
 Select your operating system:
 
 Windows
+
 What you will need
-The latest version of TegraRcmGUI
-Latest version of HDD Raw Copy Tool
+
+- The latest version of [TegraRcmGUI](https://github.com/eliboa/TegraRcmGUI/releases/latest)
+- Latest version of [HDD Raw Copy Tool](http://hddguru.com/software/HDD-Raw-Copy-Tool/HDDRawCopy1.10Portable.exe)
+
 Installing drivers
+
 If the drivers have already been installed, skip this part.
 
-Run  TegraRcmGUI.exe  as Administrator
-Go to the tab  Settings  and click “ Install Driver ”
-Install the driver
-After the driver is successfully installed, close the program.
+1. Run  TegraRcmGUI.exe  as Administrator
+2. Go to the tab  Settings  and click “ Install Driver ”
+3. Install the driver
+4. After the driver is successfully installed, close the program.
+   
 Backup
-Launch “ Device Manager ” and make sure that in the “ Disk devices ” tree a device named “ LINUX UMS DISK 0 ” appears.
-If there is none there,
-Remove all devices with an exclamation mark (also check the box to remove drivers)
-Remove all devices labeled “ USB Download Gadget ”.
-After removing the devices, select “ Actions ” -> “ Scan for hardware changes ” in the Device Manager
-If after all these steps the disk still doesn't appear, turn off the Switch, reboot the PC, reinstall the drivers and run the payload again  memloader.bin  using Fusée Gelée
-Run HDD Raw Copy Tool as administrator
-Select “ LINUX UMS DISK 0 ” and click “ Continue ”
-Double-click on the inscription “ Double-click to open file ” and save the backup with the name  rawnand 
-Pay attention to the line “ File type ”, make sure it is set to Raw image
-Click “ Continue ”
-Click “ START ” to begin the backup.
-If everything went well, the NAND dump will appear in the directory you specified. Save it in a safe place!
+
+1. Launch “ Device Manager ” and make sure that in the “ Disk devices ” tree a device named “ LINUX UMS DISK 0 ” appears.
+   - If there is none there,
+     - Remove all devices with an exclamation mark (also check the box to remove drivers)
+     - Remove all devices labeled “ USB Download Gadget ”.
+     - After removing the devices, select “ Actions ” -> “ Scan for hardware changes ” in the Device Manager
+   - If after all these steps the disk still doesn't appear, turn off the Switch, reboot the PC, reinstall the drivers and run the payload again  memloader.bin  using Fusée Gelée [fusee](./guide03_01_fusee_gelee.md)
+2. Run HDD Raw Copy Tool as administrator
+3. Select “ LINUX UMS DISK 0 ” and click “ Continue ”
+4. Double-click on the inscription “ Double-click to open file ” and save the backup with the name  rawnand 
+   - Pay attention to the line “ File type ”, make sure it is set to Raw image
+5. Click “ Continue ”
+6. Click “ START ” to begin the backup.
+7. If everything went well, the NAND dump will appear in the directory you specified. Save it in a safe place!
+
 Windows
+
 macOS
 Launch Disk Utility and make sure that an external drive named “Linux UMS disk 0 Media” appears there.
 If there isn't one, turn off the Switch and run the payload again  memloader.bin  using Fusée Gelée

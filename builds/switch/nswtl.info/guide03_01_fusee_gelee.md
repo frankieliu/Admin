@@ -1,15 +1,3 @@
-- This guide is based on the guides of xНЯ, the developer of KEFIR .
-- You can solve most of the problems that arise using KEFIR
-- We strongly recommend using DBI to install games.
-- The best way to get games, DLC, and updates today is the Switch Torrent Library Telegram bot.
-- You can find most of the answers to typical questions in the FAQ section.
-- If something goes wrong, don't panic! First, read the Problems and Solutions section.
-- If you are a MacOS user, use these tips to avoid memory card problems.
-
-Make backups of your saves as often as possible!
-
-If the console freezes or shows no signs of life, turn it off by holding the (POWER) button for 30 seconds, then turn it on and forward the payload!
-
 # Launching the payloader via Fusée Gelée
 
 ## Video instructions
@@ -32,7 +20,7 @@ Fusée Gelée is a chain of exploits for the Nintendo Switch built around a hard
 RCM is the default recovery mode on Tegra devices. To enter it, turn off the console and then press (POWER) + (VOL+) + (HOME). Not the (HOME) button you see on the right Joy-Con, but the button NVIDIA Tegra identifies as such. Unfortunately, it's not on the console itself. We'll need to turn off the console, short a specific contact where the right Joy-Con attaches to ground (using a shorting device), connect the console to the PC, and send a payload to it using any convenient method. We'll cover how to do this in more detail below.
 
 # How does it all happen?
-In general, the chain is as follows: you insert a contactor into the attachment, enter it into the RCM ▼ and transfer the payload to it, which in turn executes code on the console itself. The payload, also known as the payload ,▼ , can be transferred via a PC, smartphone or a special dongle ▼ , created exclusively for this purpose. For simplicity, we'll call any device capable of transmitting a payload a host . To simplify firmware installation, the host can be built into the console itself . A host built into the console is called a chip . The difference between a chip and a dongle is primarily that the former is always present in the console, launches the payload immediately upon power-on, and also monitors the console's battery to ensure it doesn't drain completely. It's important to understand that this isn't the same chip used to hack Mariko consoles and patched first-revision consoles. In this case, the chip simply replaces the dongle. With Mariko chipping, the chip itself is the hack. This means that on a Mariko console, you won't be able to hack the console at all without a chip, but in the case of a console vulnerable to Fusée Gelée, you can easily do without a chip by passing the payload through a dongle or a PC.
+In general, the chain is as follows: you insert a contactor into the attachment, enter it into the RCM ▼ and transfer the payload to it, which in turn executes code on the console itself. The payload, also known as the payload ,▼ , can be transferred via a PC, smartphone or a special dongle ▼ , created exclusively for this purpose. For simplicity, we'll call any device capable of transmitting a payload a host . To simplify firmware installation, the host can be built into the [console](https://gbatemp.net/threads/internal-modchip-samd21-trinket-m0-gemma-m0-itsybitsy-m0-express-guide-files-support.508068/) itself . A host built into the console is called a chip . The difference between a chip and a dongle is primarily that the former is always present in the console, launches the payload immediately upon power-on, and also monitors the console's battery to ensure it doesn't drain completely. It's important to understand that this isn't the same chip used to hack Mariko consoles and patched first-revision consoles. In this case, the chip simply replaces the dongle. With Mariko chipping, the chip itself is the hack. This means that on a Mariko console, you won't be able to hack the console at all without a chip, but in the case of a console vulnerable to Fusée Gelée, you can easily do without a chip by passing the payload through a dongle or a PC.
 
  ▼ payload A file with executable code in the format .bin that we load into the console, most often a bootloader
 
@@ -46,10 +34,10 @@ In general, the chain is as follows: you insert a contactor into the attachment,
 ## Closer
 To properly activate the circuit, we'll need to short-circuit pins 9 and 10 (or pins 7 and 10, or pins 1 and 10—all options work equally well) at the right controller's installation location. This can be accomplished in several ways:
 
-- Use a regular paper clip
-- More methods
-- Use a 3D printed contactor or buy one on Aliexpress.
-- And other ways
+- Use a regular [paper clip](https://www.reddit.com/r/SwitchHacks/comments/8f0ugz/hardwarediy_switch_paperclip_jig_for_rcm_mode/)
+- More [methods](https://nh-server.github.io/switch-guide/user_guide/emummc/entering_rcm)
+- Use a [3D printed](https://www.thingiverse.com/thing:2877484) contactor or buy one on Aliexpress.
+- And [other ways](https://gbatemp.net/threads/the-ultimate-list-of-mods-to-enter-rcm.502145/)
 
 Further in the instructions, the word “shorter” will mean any of these methods
 
@@ -243,4 +231,4 @@ The set-top box must be in RCM mode !
 5. The payload will launch on the console.
 6. You can take out the switch.
 Runs on any platform that has a browser
-Next Step: Preparatory Work
+Next Step: Preparatory Work [prep](./guide04_01_prep_fusee.md)

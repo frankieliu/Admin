@@ -186,11 +186,11 @@ Full support of 20.5.0
 
 780
 
-[ Updated ] MissionControl 0.13.6 — official update with 20.5.0 support
+[ Updated ] [MissionControl 0.13.6](https://github.com/ndeadly/MissionControl/releases/tag/v0.13.6) — official update with 20.5.0 support
 
 779
 
-[ Updated ] Atmosphere 1.9.5 — built with the latest commits for basic support of 20.5.0
-More details about Atmosphere changes
+[ Updated ] [Atmosphere 1.9.5](https://github.com/rashevskyv/Kefirosphere) — built with the latest commits for basic support of 20.5.0
+More [details](https://github.com/Atmosphere-NX/Atmosphere/releases) about Atmosphere changes
 
 Spoiler
