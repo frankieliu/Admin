@@ -3,6 +3,11 @@
 1. scope install y-dlp
 1. install firefox
 
+On mac os
+
+1. pip install "yt-dlp[default,curl-cffi]"
+2. Need to install with curl-cffi to impersonate browser requests
+
 # use
 
 1. Open video site
