@@ -5,7 +5,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -23,7 +23,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -41,7 +41,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -59,7 +59,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -77,7 +77,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -95,7 +95,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 10730 },
                         { "product_id": 258 }
                     ],
@@ -113,7 +113,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 1452 },
                         { "product_id": 591 }
                     ],
@@ -131,7 +131,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 1452 },
                         { "product_id": 591 }
                     ],
@@ -149,7 +149,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 1452 },
                         { "product_id": 591 }
                     ],
@@ -167,7 +167,7 @@
             "conditions": [
                 {
                     "identifiers": [
-                        { "is_built_in_keyboard": true },
+                        { "is_built_in_keyboard": false },
                         { "vendor_id": 1452 },
                         { "product_id": 591 }
                     ],
@@ -179,6 +179,38 @@
                 "modifiers": { "optional": ["any"] }
             },
             "to": [{ "key_code": "right_command" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "identifiers": [
+                        { "is_built_in_keyboard": true }
+                    ],
+                    "type": "device_if"
+                }
+            ],
+            "from": {
+                "key_code": "left_command",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "left_control" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "identifiers": [
+                        { "is_built_in_keyboard": true }
+                    ],
+                    "type": "device_if"
+                }
+            ],
+            "from": {
+                "key_code": "left_control",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "left_command" }],
             "type": "basic"
         }
     ]
