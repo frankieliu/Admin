@@ -1,0 +1,1 @@
+[mermaid](https://docs.mermaidchart.com/mermaid-oss/syntax/entityRelationshipDiagram.html#entity-relationship-diagrams)
