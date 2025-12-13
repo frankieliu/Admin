@@ -195,3 +195,6 @@ bind -r "\C-s"
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+#
+export ANTHROPIC_AUTH_TOKEN=e68da1a32bd043f1a64ca166f2398af9.DvZAgmd1W1gsutRM
+export ANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic
