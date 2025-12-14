@@ -1,0 +1,1 @@
+[dbdiagram](https://dbdiagram.io/d)
