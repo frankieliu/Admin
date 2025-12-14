@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /css
+Disallow: /js
+Disallow: /cgi-bin
+Disallow: /files
+Disallow: /game-news
+Disallow: /shop
+Disallow: /webalizer
+Disallow: /search
+
+Sitemap: https://nswtl.info/sitemap.xml

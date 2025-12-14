@@ -1,0 +1,2002 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover the latest gaming news, reviews, ratings, top game lists, and DOWNLOAD games FREE without ads. Stay updated, find, and GET your next favorite game!">
+    <meta name="author" content="Lord of the Bots">
+    <meta property="og:title" content="NSWTL.INFO" />
+    <meta property="og:image" content="https://nswtl.info/images/favs/android-chrome-512x512.png" />
+    <meta property="og:description" content="Discover the latest gaming news, reviews, ratings, top game lists, and DOWNLOAD games FREE without ads. Stay updated, find, and GET your next favorite game!" />
+    <title>Запуск пейлоадера через Fusée Gelée - NSWTL.INFO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#7952b3">
+    <link rel="stylesheet" href="https://fonts.bitrix24.ru/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900">
+
+    <style>
+        * {
+            font-family: Roboto;
+        }
+
+        body {
+            background-image: url('../images/back2.jpg');
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .spoiler [type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            pointer-events: none;
+        }
+
+        .spoiler-header {
+            display: contents;
+        }
+
+        .spoiler-header label {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0px;
+            }
+        }
+
+        .main-h1 {
+            margin: 0 0 20px 0;
+        }
+
+
+        @media (min-width: 1200px) {
+            .main-desc {
+                font-size: 46px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 1100px) and (max-width: 1200px) {
+            .main-desc {
+                font-size: 42px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 991px) and (max-width: 1100px) {
+            .main-desc {
+                font-size: 42px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 900px) and (max-width: 991px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 32px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 900px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 32px
+            }
+
+            .main-h1 span {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 16px
+            }
+
+            .main-h1 span {
+                font-size: 24px;
+            }
+        }
+
+        .project_list_row img {
+            margin-top: 5px;
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .project_list_row h2 {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .project_list_row_ {
+            padding: 5px;
+            background: rgba(100, 100, 100, 0.1);
+            cursor: pointer;
+        }
+
+        .project_list_row_:hover {
+            background: rgba(100, 100, 100, 0.5);
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+        }
+
+        .title_a:link {
+            text-decoration: none;
+        }
+
+        .title_a:visited {
+            text-decoration: none;
+        }
+
+        .title_a:hover {
+            text-decoration: none;
+        }
+
+        .title_a:active {
+            text-decoration: none;
+        }
+
+        .left-text-hide {
+            text-align: left;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        @media (min-width: 991px) and (max-width: 1200px) {
+            .left-text-hide {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .left-text-hide {
+                display: none;
+            }
+        }
+
+        .top-bar {
+            display: flex;
+            flex-direction: row;
+            height: 80px;
+            background-color: #41464b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        .column,
+        .column-hide {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+        }
+
+        .column a,
+        .column-hide a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a.transp {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .fixed-column {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            background-color: #41464b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: calc(100% - 80px);
+            z-index: 9997;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.7;
+            overflow-y: scroll;
+        }
+
+        .fixed-column::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        .fixed-column {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .fixed-content {
+            padding-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .game {
+            font-size: 18px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .half-line-break {
+            height: 0.5em;
+            /* Половина высоты строки */
+            width: 100%;
+            /* Ширина разрыва */
+        }
+
+        .collection-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+
+            .top-bar,
+            .fixed-column {
+                position: static;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                line-height: 1;
+            }
+
+            .fixed-column {
+                position: static;
+                top: calc(var(--top-bar-height));
+                width: 100%;
+                height: auto;
+                line-height: 2;
+                overflow-y: visible;
+            }
+
+            .fixed-content {
+                padding-top: 20px;
+            }
+
+            .widescrG {
+            display: none;
+            }
+
+            .game {
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+
+            .fixed-column-image {
+                display: none;
+            }
+
+            .text-hide-low {
+                display: none;
+            }
+
+        }
+
+        .bots-container {
+            display: inline-block;
+        }
+
+        @media (min-width: 769px) and (max-width: 1099px) {
+
+            .top-bar,
+            .column {
+                font-size: 12px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 13px;
+            }
+
+            .fixed-column-image img {
+                max-height: 140px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 1100px) {
+
+            .top-bar,
+            .column {
+                font-size: 18px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 15px;
+            }
+
+            .game {
+                font-size: 18px;
+            }
+
+            .fixed-column-image img {
+                max-height: 160px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 2000px) {
+
+            .top-bar,
+            .column {
+                font-size: 22px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 16px;
+            }
+
+            .game {
+                font-size: 20px;
+            }
+
+            .fixed-column-image img {
+                max-height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 2600px) {
+
+            .top-bar,
+            .column {
+                font-size: 26px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 18px;
+            }
+
+            .game {
+                font-size: 30px;
+            }
+
+            .fixed-column-image img {
+                max-height: 320px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .fixed-column {
+                width: calc((100% / 7) * 2);
+            }
+
+            .narrowG {
+            display: none;
+            }
+
+            .game {
+                margin-top: 20px;
+            }
+
+            .hided-name-fixed-column {
+                display: none;
+            }
+
+            .label-fixed-column {
+                text-decoration: underline;
+                font-size: 1.25em;
+            }
+        }
+
+        @media (min-width: 769px) {
+            main {
+                margin-top: calc(var(--top-bar-height)) + 20px;
+                margin-left: calc((100% / 7) * 2 + 40px);
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin-top: calc(40px + var(--top-bar-height)) + var(--fixed-column-height);
+            }
+
+            .spoiler input,
+            .spoiler div {
+                display: none;
+            }
+
+            .spoiler label::before {
+                content: '►';
+                margin-right: 5px;
+            }
+
+            .spoiler :checked+label::before {
+                content: '▼';
+            }
+
+            .spoiler :checked~div {
+                display: block;
+                padding: 10px;
+            }
+
+            .spoiler-header {
+                display: contents;
+                text-align: center;
+            }
+
+            .spoiler-header label {
+                display: block;
+                color: #fff;
+                height: 30px;
+                padding: 5px 0 5px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-column-1 img {
+                width: 100%;
+            }
+
+            .hided-name-fixed-column {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1099px) {
+            .game-column-1 img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .game {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .game-column-1 {
+                width: 90%;
+            }
+
+            .game-column-1 img {
+                width: 350px;
+            }
+
+            .game-column-1,
+            .game-column-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        .pulse-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+         .b-head, .b-pager__sorted {
+             display: none;
+            }
+
+    </style>
+
+    <link href="../carousel.css" rel="stylesheet">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93670892, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93670892" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta name="google-site-verification" content="QbzhH9yjQaqCtti7Do5mi3F7xio10k5jPFJulO6QcvM" />
+
+</head>
+
+<body>
+
+
+            <div class="top-bar">
+                <div class="column" style="background-color: #0d6efd;"><a href="../">NSWTL.INFO</a></div>
+                <div class="column" style="background-color: #dc3545;"><a href="https://t.me/Switch_library_bot"
+                        target="_blank">Switch Torrent Library</a></div>
+                <div class="spoiler spoiler-header">
+                    <input type="checkbox" id="spoiler1">
+                    <label for="spoiler1" style="color: white;">Switch: Инструкции</label>
+                    <div class="column-hide"><a href="menu.html">
+                            Список гайдов
+                        </a></div>
+                    <div class="column-hide"><a href="kefir.html">
+                            KEFIR
+                        </a></div>
+                    <div class="column-hide"><a href="emunand.html">
+                            Emunand
+                        </a></div>
+                    <div class="column-hide"><a href="update-fw.html">
+                            Обновление прошивки
+                        </a></div>
+                    <div class="column-hide"><a href="backup-nand.html">
+                            Бэкап и восстановление
+                        </a></div>
+                </div>
+            </div>
+            
+
+<div class="fixed-column">
+    <span class="widescrG" style="width: 95%;">
+        <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;http://nswtl.info/search/searchresults.html&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;#41464b&quot;,&quot;fontsize&quot;:12,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;en&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;NSWTL.INFO search&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;com&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:true,&quot;searchid&quot;:8000053,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;GAMEHUB games search&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#41464b&quot;}"><form action="https://yandex.com/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="8000053"/><input type="hidden" name="l10n" value="en"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Search"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+    </span>
+    <a href="https://t.me/NSWTL_GameHub_bot" target="_blank">
+        <div class="fixed-column-image"><img src="../images/gamehub.jpg" style="margin-bottom: 20px; width: 100%; display: block;"></div>
+    </a>
+    <div class="hided-name-fixed-column" style="background-color: #dc3545;"><a href="https://t.me/NSWTL_GameHub_bot" class="transp">NSWTL GAMEHUB</a></div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler2">
+        <label for="spoiler2" style="color: white;"><span class="label-fixed-column">Game Ratings</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/metascore.html" class="transp">Metascore tops</a><br>
+            <a href="../collections/goty.html" class="transp">GOTY 2005-2025</a><br>
+            <a href="../collections/genre.html" class="transp">Tops by genre</a><br>
+            <a href="../collections/actual.html" class="transp">Most viewed this month</a><br>
+        </div>
+    </div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler3">
+        <label for="spoiler3" style="color: white;"><span class="label-fixed-column">Upcoming Releases</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/switchUpcoming.html" class="transp">Nintendo Switch</a><br>
+            <a href="../collections/switch2Upcoming.html" class="transp">Nintendo Switch 2</a><br>
+            <a href="../collections/ps5Upcoming.html" class="transp">Playstation 5</a><br>
+            <a href="../collections/ps4Upcoming.html" class="transp">Playstation 4</a><br>
+            <a href="../collections/xseriesUpcoming.html" class="transp">Xbox Series S/X</a><br>
+            <a href="../collections/xoneUpcoming.html" class="transp">Xbox One</a><br>
+            <a href="../collections/pcUpcoming.html" class="transp">PC</a><br>
+        </div>
+    </div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler4">
+        <label for="spoiler4" style="color: white;"><span class="label-fixed-column">Recent Releases</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/switchRecent.html" class="transp">Nintendo Switch</a><br>
+            <a href="../collections/switch2Recent.html" class="transp">Nintendo Switch 2</a><br>
+            <a href="../collections/ps5Recent.html" class="transp">Playstation 5</a><br>
+            <a href="../collections/ps4Recent.html" class="transp">Playstation 4</a><br>
+            <a href="../collections/xseriesRecent.html" class="transp">Xbox Series S/X</a><br>
+            <a href="../collections/xoneRecent.html" class="transp">Xbox One</a><br>
+            <a href="../collections/pcRecent.html" class="transp">PC</a><br>
+        </div>
+    </div>
+    <span class="label-fixed-column"><a href="../list/500.html" class="transp">Games Index</a></span>
+    <span class="narrowG" style="width: 95%;">
+        <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;http://nswtl.info/search/searchresults.html&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;#41464b&quot;,&quot;fontsize&quot;:12,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;en&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;NSWTL.INFO search&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;com&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:true,&quot;searchid&quot;:8000053,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;GAMEHUB games search&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#41464b&quot;}"><form action="https://yandex.com/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="8000053"/><input type="hidden" name="l10n" value="en"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Search"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+    </span>
+</div>
+
+    <main>
+
+
+       <div id="shadow-host-guide"></div>
+
+       <script>
+        document.body.style.backgroundImage = "url('../images/white.jpg')";
+        
+        const host = document.getElementById('shadow-host-guide');
+
+            const shadowRoot = host.attachShadow({ mode: 'open' });
+
+            shadowRoot.innerHTML = `
+              <link rel="stylesheet" href="../styleGuides.css">
+
+              <style>
+                .guideContainer {
+                    width: 90%;
+                    line-height: 1.1em;
+                    font-size: 1em;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                }
+              </style>
+
+          <div class="guideContainer">
+          <div class="notice--danger">
+<li>
+<b>
+   Настоящее руководство создано на основе гайдов xHЯ — разработчика
+   <a href="https://github.com/rashevskyv/kefir/releases/latest" target="_blank">
+    KEFIR
+   </a>
+   .
+  </b>
+</li>
+</div>
+<div class="notice--warning">
+<b>
+<li>
+   Большинство возникающих проблем вы можете решить,
+   <a href="kefir.html" target="_blank">
+    используя KEFIR
+   </a>
+</li>
+<li>
+   Для установки игр мы настоятельно рекоммендуем
+   <a href="https://github.com/rashevskyv/dbi/releases" target="_blank">
+    использовать DBI
+   </a>
+</li>
+<li>
+   Лучший способ получения игр, DLC и обновлений на сегодняшний день - телеграмм бот
+   <a href="https://t.me/Switch_library_bot" target="_blank">
+    Switch Torrent Library
+   </a>
+</li>
+</b>
+</div>
+<div class="page__inner-wrap">
+<header>
+<h1 class="page__title" itemprop="headline">
+   Запуск пейлоадера через Fusée Gelée
+  </h1>
+<div class="language-selector-container">
+<!-- Не показуємо текст "lang: uk", а показуємо перемикач мов -->
+</div>
+</header>
+<div class="notice--warning">
+<b>
+<li>
+    Большую часть ответов на типовые вопросы вы можете найти в разделе
+    <a href="faq.html">
+     F.A.Q.
+    </a>
+</li>
+<li>
+    Если что то идет не так, не парикуйте! В первую очередь прочтите раздел
+    <a href="troubleshooting.html">
+     Проблемы и их решения
+    </a>
+</li>
+</b>
+</div>
+<div class="notice--warning">
+  Если вы пользователь MacOS, воспользуйтесь
+  <a href="sd-macos.html" target="_blank">
+   этими рекомендациями
+  </a>
+  , чтобы избежать проблем с картой памяти
+ </div>
+<div class="notice">
+  Делайте
+  <a href="backup-saves.html" target="_blank">
+   бэкапы сохранений
+  </a>
+  как можно чаще!
+ </div>
+<div class="notice--warning">
+<strong>
+   Если приставка зависла или не подаёт признаков жизни, выключите её удержанием кнопки (POWER) 30 секунд, затем включите и пробросьте пейлоад!
+  </strong>
+</div>
+<hr/>
+<details class="spoiler" id="spoiler-7a2962a0">
+<summary>
+   Видеоинструкция
+  </summary>
+<div class="spoiler-content">
+<p class="notice--warning">
+    ВНИМАНИЕ!!! Мы не рекомендуем слепо следовать видео-инструкции! Используйте её только в качестве вспомогательной! Дело в том, что текстовый гайд постоянно обновляется. Невозможно следить за всеми обновлениями в гайде и каждый раз менять видео-инструкцию вслед за ним! Поэтому текстовый гайд всегда будет более точным и более актуальным, чем видео!
+   </p>
+<div class="text-center notice--info" style="margin:0 auto;">
+<div class="ytcontainer">
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="yt" height="100%" src="https://www.youtube.com/embed/jxrkxHPfec8?start=" width="70%">
+</iframe>
+</div>
+</div>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-7a2962a0'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Видеоинструкция
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<p class="notice--warning">
+  Эта страница является пояснительной. На этой странице не рассматривается непосредственно запуск кастомной прошивки, а дана лишь теоретическая часть. Практическая часть будет дана далее, в процессе выполнения руководства.
+ </p>
+<h2 id="информация-об-fusée-gelée">
+  Информация об Fusée Gelée
+ </h2>
+<p>
+  Некоторые мобильные процессоры NVIDIA Tegra, выпущенные до 2016 года, содержат уязвимость переполнения буфера в режиме восстановления BootROM (
+  <span class="tooltip_container">
+   RCM
+   <span class="tooltip">
+    ▼
+    <span class="bottom">
+     Режим восстановления на устройствах с процессором Nvidia Tegra, коим является и Switch. Конкретно в свитче вызывается с помощью одновременного нажатия кнопки включения, кнопки увеличения громкости и замыкания с помощью специального замыкателя определённых контактов в планшете. RCM есть во всех Nintendo Switch, но не каждую можно из этого режима прошить.
+    </span>
+</span>
+</span>
+  ). Злоумышленник с физическим доступом к USB-порту устройства и возможностью принудительной перезагрузки устройства в
+  <span class="tooltip_container">
+   RCM
+   <span class="tooltip">
+    ▼
+    <span class="bottom">
+     Режим восстановления на устройствах с процессором Nvidia Tegra, коим является и Switch. Конкретно в свитче вызывается с помощью одновременного нажатия кнопки включения, кнопки увеличения громкости и замыкания с помощью специального замыкателя определённых контактов в планшете. RCM есть во всех Nintendo Switch, но не каждую можно из этого режима прошить.
+    </span>
+</span>
+</span>
+  , может использовать уязвимость для выполнения непроверенного кода.
+ </p>
+<p>
+<strong>
+   Fusée Gelée
+  </strong>
+  - это цепочка эксплойтов для Nintendo Switch, построенная вокруг аппаратной уязвимости чипа Nvidia Tegra. С её помощью можно будет запускать не подписанный код на Nintendo Switch. Поскольку уязвимость аппаратная, её невозможно закрыть не меняя ревизии железа. Последние версии приставки, однако, лишены этой дыры, поэтому будьте внимательны при покупке устройства для прошивки. Узнать прошивается ли ваша приставка можно
+  <a href="get-started.html" target="_blank">
+   тут
+  </a>
+</p>
+<h2 id="что-такое-rcm">
+  Что такое RCM
+ </h2>
+<p>
+  RCM - это штатный режим восстановления на Tegra-устройствах. Для того, чтобы войти в него, нужно выключить консоли, а затем зажать (POWER) + (VOL+) + (HOME). Но не тот (HOME), что мы видим на правом джойконе, а кнопку которую NVIDIA Tegra считает таковой. К сожалению, на самой приставке её нет. Нам понадобится отключить консоль, замкнуть определённый контакт на месте крепления правого joy-con и землю (для этого используется замыкатель), подключить консоль к ПК и отправить на неё пейлоадер любым удобным способом. Ниже мы рассмотрим подробнее как это делать.
+ </p>
+<h2 id="как-все-это-происходит">
+  Как все это происходит
+ </h2>
+<p>
+  В общем виде цепочка такая - вы вставляете
+  <a href="/ru.html">
+   замыкатель
+  </a>
+  в приставку, вводите её в
+  <span class="tooltip_container">
+   RCM
+   <span class="tooltip">
+    ▼
+    <span class="bottom">
+     Режим восстановления на устройствах с процессором Nvidia Tegra, коим является и Switch. Конкретно в свитче вызывается с помощью одновременного нажатия кнопки включения, кнопки увеличения громкости и замыкания с помощью специального замыкателя определённых контактов в планшете. RCM есть во всех Nintendo Switch, но не каждую можно из этого режима прошить.
+    </span>
+</span>
+</span>
+  и передаёте на неё полезную нагрузку, которая в свою очередь выполняет код на самой приставке. Полезную нагрузку, она же
+  <span class="tooltip_container">
+   пейлоад
+   <span class="tooltip">
+    ▼
+    <span class="bottom">
+     Файл с исполняемым кодом в формате
+     <code class="language-plaintext highlighter-rouge">
+      .bin
+     </code>
+     , которые мы загружаем в приставку, чаще всего - загрузчик
+    </span>
+</span>
+</span>
+  , можно передать через ПК, смартфон или специальный
+  <span class="tooltip_container">
+   донгл
+   <span class="tooltip">
+    ▼
+    <span class="bottom">
+     Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+    </span>
+</span>
+</span>
+  , созданный исключительно для этого. Для простоты, любое устройство, способное передавать пейлоад мы будем назвать
+  <strong>
+   хостом
+  </strong>
+  . Для упрощения запуска прошивки, хост
+  <a href="https://gbatemp.net/threads/internal-modchip-samd21-trinket-m0-gemma-m0-itsybitsy-m0-express-guide-files-support.508068/" target="_blank">
+   можно встроить в саму приставку
+  </a>
+  . Хост встроенный в приставку называется
+  <strong>
+   чипом
+  </strong>
+  . Разница между чипом и донглом в первую очередь в том, что первый всегда находится в приставке, запускает пейлоад сразу при её включении, а так же следит за тем, чтобы не допустить полного разряда приставки. Стоит понимать, что это не тот же самый чип, с помощью которого взламываются приставки на Mariko и патченные приставки первой ревизии. В этом случае, чип просто заменяет собой донгл. В случае же с чиповкой на Mariko, чип сам по себе и является взломом. То есть, на Mariko без чипа вы не сможете взломать приставку вообще, а в случае с приставкой, уязвимой к Fusée Gelée, без чипа вполне себе можно обойтись, пробросив пейлоад через Донгл или ПК.
+ </p>
+<h2 id="что-понадобится">
+  Что понадобится
+ </h2>
+<ul>
+<li>
+<strong>
+    Замыкатель
+   </strong>
+</li>
+<li>
+<strong>
+    Хост
+   </strong>
+</li>
+<li>
+   Карта памяти (рекомендуемый объем 64Гб и более, для OLED - 128 и более)
+  </li>
+</ul>
+<h3 id="замыкатель">
+  Замыкатель
+ </h3>
+<p>
+  Для корректной активации цепочки нам понадобится замкнуть между собой 9-й и 10-й контакты (либо 7-й и 10-й, или 1-й и 10-й, все варианты работают одинаково хорошо) на месте установки правого контроллера. Это можно сделать несколькими способами:
+ </p>
+<ul>
+<li>
+   Использовать обычную
+   <a href="https://www.reddit.com/r/SwitchHacks/comments/8f0ugz/hardwarediy_switch_paperclip_jig_for_rcm_mode/" target="_blank">
+    канцелярскую скрепку
+   </a>
+</li>
+<li>
+<a href="https://nh-server.github.io/switch-guide/user_guide/emummc/entering_rcm" target="_blank">
+    Ещё методы
+   </a>
+</li>
+<li>
+   Использовать
+   <a href="https://www.thingiverse.com/thing:2877484" target="_blank">
+    замыкатель, распечатанный на 3D-принтере
+   </a>
+   или купить готовый на Aliexpress
+  </li>
+<li>
+<a href="https://gbatemp.net/threads/the-ultimate-list-of-mods-to-enter-rcm.502145/" target="_blank">
+    И другие способы
+   </a>
+</li>
+</ul>
+<p>
+  Далее в инструкции под словом “замыкатель” будет подразумеваться любой из этих способов
+ </p>
+<h3 id="хост">
+  Хост
+ </h3>
+<p>
+  В качестве хоста можно использовать:
+ </p>
+<ul>
+<li>
+   Донгл
+  </li>
+<li>
+   ПК
+   <ul>
+<li>
+     Вам так же понадобится USB-C / USB-A кабель, чтобы подключить приставку к ПК. Обратите внимание,
+     <strong>
+      кабель должен поддерживать передачу данных
+     </strong>
+     !
+    </li>
+</ul>
+</li>
+<li>
+   Мобильный телефон
+   <ul>
+<li>
+     Вам так же понадобится USB-C / USB-C кабель, чтобы подключить приставку к телефону, либо USB-C / USB-A кабель и OTG-переходник. Телефон так же должен поддерживать OTG. Если у вас iPhone, то на нём должен быть jailbrake!
+    </li>
+</ul>
+</li>
+</ul>
+<h2 id="инструкция">
+  Инструкция
+ </h2>
+<h3 id="часть-i---вход-в-rcm">
+  Часть I - Вход в RCM
+ </h3>
+<ol>
+<li>
+   Если в приставку вставлен картридж - вытащите его
+  </li>
+<li>
+   Выключите консоль
+  </li>
+<li>
+<p>
+    Отсоедините правый joy-con и ставьте
+    <strong>
+     замыкатель
+    </strong>
+    в направляющую
+    <strong>
+     правого
+    </strong>
+    джойкона до упора
+   </p>
+<p class="text-center notice--info">
+<img alt="" src="../images/52e69bd058c5f59ef94f53c6d81c93c2_preview_featured.jpg"/>
+</p>
+</li>
+<li>
+   Зажмите (VOL+) и включите приставку, не отпуская кнопку громкости
+  </li>
+<li>
+   Можете достать замыкатель
+  </li>
+</ol>
+<p class="notice--warning">
+  На экране приставки не должно ничего происходить. Если после подключения кабеля экран остаётся чёрным, то вы все делаете правильно! Если экран загорается надписью Nintendo - отключите консоль и повторите всё заново.
+ </p>
+<p>
+  Может не получаться по следующим причинам:
+ </p>
+<ul>
+<li>
+   Замкнуты не те контакты
+  </li>
+<li>
+   Замыкатель ничего не замыкает, например проволока порвалась и контакты не замыкаются, или он изначально собран с ошибками
+  </li>
+<li>
+   Кнопки зажаты не одновременно. Пробуйте зажимать вначале (VOL+), а затем, не отпуская её, нажмите (POWER)
+  </li>
+</ul>
+<details class="spoiler" id="spoiler-dab4836e">
+<summary>
+   Видеоинструкция
+  </summary>
+<div class="spoiler-content">
+<p class="notice--warning">
+    ВНИМАНИЕ!!! Мы не рекомендуем слепо следовать видео-инструкции! Используйте её только в качестве вспомогательной! Дело в том, что текстовый гайд постоянно обновляется. Невозможно следить за всеми обновлениями в гайде и каждый раз менять видео-инструкцию вслед за ним! Поэтому текстовый гайд всегда будет более точным и более актуальным, чем видео!
+   </p>
+<div class="text-center notice--info" style="margin:0 auto;">
+<div class="ytcontainer">
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="yt" height="100%" src="https://www.youtube.com/embed/jxrkxHPfec8?start=" width="70%">
+</iframe>
+</div>
+</div>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-dab4836e'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Видеоинструкция
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<p class="notice--success">
+  В случае успеха на экране не будет происходить ничего. В случае неудачи запустится официальная прошивка
+ </p>
+<h3 id="часть-ii---проброс-пейлоада">
+  Часть II - Проброс пейлоада
+ </h3>
+<p class="notice--warning">
+  К этому моменту приставка уже должна находиться в режиме RCM!
+ </p>
+<p>
+  В зависимости от ситуации, пробрасываемый пейлоад может быть разным. Мы намеренно не указываем на этой странице какой пейлоад нужно пробросить. В явном виде это будет сказано на соответствующих страницах. Чаще всего вы будет пробрасывать гекату, которая находится в составе кефира в виде
+  <code class="language-plaintext highlighter-rouge">
+   payload.bin
+  </code>
+</p>
+<details class="spoiler" id="spoiler-d438cf66">
+<summary>
+   Запуск через донгл
+  </summary>
+<div class="spoiler-content">
+<p>
+    Донгл - это автономное устройство, которое создано исключительно для удобного запуска взлома.
+   </p>
+<h2 id="что-понадобится">
+    Что понадобится
+   </h2>
+<p class="notice--warning">
+<span class="tooltip_container">
+     Донгл
+     <span class="tooltip">
+      ▼
+      <span class="bottom">
+       Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+      </span>
+</span>
+</span>
+    необходимо зарядить комплектным кабелем, либо вставить во
+    <strong>
+     включённую
+    </strong>
+    приставку
+   </p>
+<ul>
+<li>
+     Сам
+     донгл
+  ▼
+      
+          Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+    </li>
+<li>
+     Установленная на донгле
+     <span class="tooltip_container">
+      hekate
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Кастомный бутлоадер для Nintendo Switch. С его помощью мы делаем резервное копирование, запускаем кастом, запускаем различные пейлоады. Один из самых важных инструментов из тех, что мы будем использовать.
+       </span>
+</span>
+</span>
+<ul>
+<li>
+       Инструкция для
+       <a href="r4.html" target="_blank">
+        R4S
+       </a>
+</li>
+<li>
+       Инструкция для
+       <a href="rcmloader.html" target="_blank">
+        RCMLoader
+       </a>
+</li>
+</ul>
+</li>
+<li>
+     Приставка должна находиться в режиме
+     <a href="menu.html">
+      RCM
+     </a>
+</li>
+</ul>
+<h2 id="инструкция">
+    Инструкция
+   </h2>
+<ul>
+<li>
+     Для запуска кастомной прошивки вставьте донгл в приставку
+     <ul>
+<li>
+       Приставка должна находиться в
+       <a href="fusee-gelee.html" target="_blank">
+        режиме RCM
+       </a>
+       .
+      </li>
+</ul>
+</li>
+<li>
+     Для запуска
+     <span class="tooltip_container">
+      hekate
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Кастомный бутлоадер для Nintendo Switch. С его помощью мы делаем резервное копирование, запускаем кастом, запускаем различные пейлоады. Один из самых важных инструментов из тех, что мы будем использовать.
+       </span>
+</span>
+</span>
+     просто вставьте
+     <span class="tooltip_container">
+      донгл
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+       </span>
+</span>
+</span>
+     в приставку, когда появится сплешскрин кефира, нажмите кнопку уменьшения громкости
+    </li>
+<li>
+     Для запуска любого другого пейлоада читайте дальше
+    </li>
+</ul>
+<h4 id="что-понадобится-1">
+    Что понадобится
+   </h4>
+<ul>
+<li>
+<span class="tooltip_container">
+      Пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать
+     <ul>
+<li>
+       Для запуска
+       <span class="tooltip_container">
+        hekate
+        <span class="tooltip">
+         ▼
+         <span class="bottom">
+          Кастомный бутлоадер для Nintendo Switch. С его помощью мы делаем резервное копирование, запускаем кастом, запускаем различные пейлоады. Один из самых важных инструментов из тех, что мы будем использовать.
+         </span>
+</span>
+</span>
+       она должна быть прошита в
+       <span class="tooltip_container">
+        донгл
+        <span class="tooltip">
+         ▼
+         <span class="bottom">
+          Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+         </span>
+</span>
+</span>
+       , дополнительно её никуда не нужно скидывать
+      </li>
+</ul>
+</li>
+<li>
+     Приставка должна быть в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+</li>
+</ul>
+<p class="notice--info">
+    Ниже описан метод запуска вообще любого пейлоада с помощью
+    <span class="tooltip_container">
+     донгла
+     <span class="tooltip">
+      ▼
+      <span class="bottom">
+       Специальное устройство небольшого размера, единственной задачей которого является отправка пейлоада на консоль.
+      </span>
+</span>
+</span>
+    , на котором прошита
+    <span class="tooltip_container">
+     hekate
+     <span class="tooltip">
+      ▼
+      <span class="bottom">
+       Кастомный бутлоадер для Nintendo Switch. С его помощью мы делаем резервное копирование, запускаем кастом, запускаем различные пейлоады. Один из самых важных инструментов из тех, что мы будем использовать.
+      </span>
+</span>
+</span>
+</p>
+<ol>
+<li>
+     Установите на приставку
+     <span class="tooltip_container">
+<a href="kefir.html" target="_blank">
+       kefir
+      </a>
+<span class="tooltip">
+       ▼
+       <span class="bottom">
+        Сборник, состоящий из выбранного кастома, необходимых программ и скриптов, которые все это установят правильным образом. Состав кефира и инструкцию по установке можно посмотреть в его репозитории
+       </span>
+</span>
+</span>
+</li>
+<li>
+     Вставьте донгл в консоль
+    </li>
+<li>
+     Когда появится сплешскрин кефира, нажмите (VOL-), вы попадёте в гекату
+    </li>
+<li>
+     Находясь в hekate перейдите в
+     <strong>
+      Tools
+     </strong>
+     -&gt;
+     <strong>
+      USB Tools
+     </strong>
+     -&gt;
+     <strong>
+      SD Card
+     </strong>
+     . Ваша карта памяти смонтируется на вашем ПК
+     <ul>
+<li>
+       Фактически ваш свитч будет использоваться в виде картридера
+      </li>
+<li>
+       Вместо этого вы можете просто вытащить карту памяти из приставки и вставить её в ПК, однако лучше всего приучить себя этого не делать, поскольку слот для карты памяти на приставке весьма хлипкий
+      </li>
+</ul>
+</li>
+<li>
+     Поместите
+     <span class="tooltip_container">
+      пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать в папку
+     <code class="language-plaintext highlighter-rouge">
+      bootloader/payloads
+     </code>
+</li>
+<li>
+<a href="https://ru.wikipedia.org/wiki/Безопасное_извлечение_устройства" target="_blank">
+      Безопасно извлеките
+     </a>
+     вашу карту памяти из ПК (устройство будет назвыаться “
+     <strong>
+      UMS
+     </strong>
+     ”) и нажмите в hekate “
+     <strong>
+      Close
+     </strong>
+     ”
+     <ul>
+<li>
+       Если вы вытаскивали карту из приставки, просто вставьте её обратно в приставку
+      </li>
+</ul>
+</li>
+<li>
+     В hekate перейдите в главное меню и нажмите
+     <strong>
+      Payloads…
+     </strong>
+     -&gt;
+     <strong>
+      %ваш_пейлоад%.bin
+     </strong>
+</li>
+<li>
+     Пейлоад запустится на консоли
+    </li>
+</ol>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-d438cf66'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Запуск через донгл
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<details class="spoiler" id="spoiler-bec2f179">
+<summary>
+   Запуск на Windows
+  </summary>
+<div class="spoiler-content">
+<h2 id="что-понадобится">
+    Что понадобится
+   </h2>
+<ul>
+<li>
+     Свежая версия
+     <a href="https://github.com/eliboa/TegraRcmGUI/releases/latest" target="_blank">
+      TegraRcmGUI
+     </a>
+</li>
+<li>
+<span class="tooltip_container">
+      Пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать на приставке
+    </li>
+<li>
+     USB type-С на USB type-A кабель для подключения Switch к ПК
+    </li>
+<li>
+     Приставка должна быть в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+</li>
+</ul>
+<h2 id="установка-драйверов">
+    Установка драйверов
+   </h2>
+<p class="notice--info">
+    Если драйвера уже были установлены, пропустите эту часть
+   </p>
+<ol>
+<li>
+     Запустите
+     <a href="https://github.com/eliboa/TegraRcmGUI/releases/latest" target="_blank">
+<code class="language-plaintext highlighter-rouge">
+       TegraRcmGUI.exe
+      </code>
+</a>
+     от имени Администратора
+    </li>
+<li>
+     Перейдите во вкладку
+     <code class="language-plaintext highlighter-rouge">
+      Settings
+     </code>
+     и нажмите “
+     <strong>
+      Install Driver
+     </strong>
+     ”
+    </li>
+<li>
+     Установите драйвер
+    </li>
+<li>
+     После успешной установки драйвера закройте программу
+    </li>
+</ol>
+<h2 id="запуск-пейлоада">
+    Запуск пейлоада
+   </h2>
+<ol>
+<li>
+     Подключите приставку, находящуюся в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+     к ПК
+    </li>
+<li>
+     Запустите
+     <a href="https://github.com/eliboa/TegraRcmGUI/releases/latest" target="_blank">
+<code class="language-plaintext highlighter-rouge">
+       TegraRcmGUI.exe
+      </code>
+</a>
+     от имени Администратора
+    </li>
+</ol>
+<p class="text-center notice--info">
+    ![]((/assets/images/switch/screenshots/tegrarcmgui.png)
+   </p>
+<ol>
+<li>
+     Нажмите на кнопку
+     <img alt="" src="../images/search.png"/>
+     и выберите пейлоад, который собираетесь запустить
+    </li>
+<li>
+     Нажмите на кнопку “
+     <strong>
+      Inject Payload
+     </strong>
+     ”, чтобы отправить пейлоад на консоль
+    </li>
+<li>
+     Пейлоад запустится на консоли
+     <ul>
+<li>
+       Если пейлоад не запускается, проверьте правильно ли установлены драйвера. Правильно установленный драйвер устройства будет отображаться в диспетчере устройств как
+       <code class="language-plaintext highlighter-rouge">
+        libusbK USB Devices
+       </code>
+</li>
+<li>
+       Попробуйте передать пейлоад ещё раз
+      </li>
+<li>
+       Кнопкой
+       <img alt="" src="../images/add_to_fav.png"/>
+       можно добавить пейлоад в избранное
+      </li>
+</ul>
+</li>
+</ol>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-bec2f179'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Запуск на Windows
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<details class="spoiler" id="spoiler-a248cf40">
+<summary>
+   Запуск на macOS
+  </summary>
+<div class="spoiler-content">
+<h2 id="что-понадобится">
+    Что понадобится
+   </h2>
+<ul>
+<li>
+<span class="tooltip_container">
+      Пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать на приставке
+    </li>
+<li>
+     USB type-С на USB type-A для подключения Switch к Маку
+    </li>
+<li>
+     Приставка должна быть в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+</li>
+</ul>
+<h2 id="установка-nxboot">
+    Установка NXBoot
+   </h2>
+<p>
+    Установить и запустить NXBoot можно двумя способами:
+   </p>
+<h3 id="в-ручном-режиме">
+<em>
+     В ручном режиме
+    </em>
+</h3>
+<p>
+    Для установки утилиты NXBoot, с помощью которой пейлоадеры будут доставляться на консоль, необходимо открыть программу Terminal и вставить следующий код:
+   </p>
+<p>
+<code class="language-plaintext highlighter-rouge">
+     sudo curl -L https://mologie.de/~oliver/mologie.github.io/nxboot/bin/nxboot -o /usr/local/bin/nxboot &amp;&amp; sudo chmod +x /usr/local/bin/nxboot
+    </code>
+</p>
+<p>
+    Таким образом, за одну операцию с
+    <a href="https://mologie.github.io/nxboot/" target="_blank">
+     официального сайта
+    </a>
+    скачивается утилита, сохраняется в директории
+    <code class="language-plaintext highlighter-rouge">
+     /usr/local/bin/
+    </code>
+    для того, чтоб не указывать путь до файла при запуске, и задаются права на исполнение.
+   </p>
+<h3 id="автоматически">
+<em>
+     Автоматически
+    </em>
+</h3>
+<p>
+    Для автоматической загрузки NXBoot и доставки пейлоада на консоль необходимо запустить программу
+    <a href="https://github.com/KnightOfSteel/payload_starter/releases" target="_blank">
+     PayloadStarter
+    </a>
+    и выбрать нужный
+    <span class="tooltip_container">
+     пейлоад
+     <span class="tooltip">
+      ▼
+      <span class="bottom">
+       Файл с исполняемым кодом в формате
+       <code class="language-plaintext highlighter-rouge">
+        .bin
+       </code>
+       , которые мы загружаем в приставку, чаще всего - загрузчик
+      </span>
+</span>
+</span>
+    .
+   </p>
+<h2 id="запуск-пейлоада">
+    Запуск пейлоада
+   </h2>
+<p>
+    Запустить пейлоад можно также двумя способами:
+   </p>
+<h3 id="в-ручном-режиме-1">
+<strong>
+     В ручном режиме.
+    </strong>
+</h3>
+<p class="notice--warning">
+    Приставка должна быть в
+    <a href="fusee-gelee.html" target="_blank">
+     режиме RCM
+    </a>
+</p>
+<ol>
+<li>
+     Откройте программу
+     <strong>
+      Terminal
+     </strong>
+     и выполните следующую команду:
+     <code class="language-plaintext highlighter-rouge">
+      nxboot /путь/до/пейлоада
+     </code>
+<ul>
+<li>
+       Путь должен быть прописан непосредственно до
+       <code class="language-plaintext highlighter-rouge">
+        .bin
+       </code>
+       -файла пейлоада
+      </li>
+<li>
+       Чтоб не прописывать путь вручную, можно написать в терминале
+       <code class="language-plaintext highlighter-rouge">
+        nxboot
+       </code>
+       и перетянуть туда мышкой
+       <code class="language-plaintext highlighter-rouge">
+        .bin
+       </code>
+       -файл пейлоада
+      </li>
+<li>
+       Если пейлоад не запускается, скорее всего консоль находится не в режиме RCM
+      </li>
+</ul>
+</li>
+<li>
+     После успешного выполнения
+     <code class="language-plaintext highlighter-rouge">
+      nxboot
+     </code>
+     вы увидите на экране следующий текст
+     <code class="language-plaintext highlighter-rouge">
+      success: payload was run. exiting, fair winds!
+     </code>
+</li>
+<li>
+     Можете доставать замыкатель
+    </li>
+</ol>
+<h3 id="в-автоматическом-режиме">
+<strong>
+     В автоматическом режиме.
+    </strong>
+</h3>
+<p class="notice--warning">
+    Приставка должна быть в
+    <a href="fusee-gelee.html" target="_blank">
+     режиме RCM
+    </a>
+</p>
+<ol>
+<li>
+     Подключите Switch к компьютеру
+    </li>
+<li>
+     Запустите
+     <strong>
+      PayloadStarter
+     </strong>
+</li>
+<li>
+     Выберите требуемый
+     <code class="language-plaintext highlighter-rouge">
+      payload.bin
+     </code>
+</li>
+<li>
+     Дождитесь завершения процесса (зависит от вашего интернет-соединения и быстродействия компьютера)
+    </li>
+<li>
+     Если все прошло успешно, то на вашем Switch запуститься выбранный payload и можно достать замыкатель
+    </li>
+</ol>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-a248cf40'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Запуск на macOS
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<details class="spoiler" id="spoiler-6709e4ee">
+<summary>
+   Запуск на Android
+  </summary>
+<div class="spoiler-content">
+<h2 id="что-понадобится">
+    Что понадобится
+   </h2>
+<ul>
+<li>
+<span class="tooltip_container">
+      Пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать на приставке
+    </li>
+<li>
+     Устройство на базе Android, работающее с OTG
+    </li>
+<li>
+     USB type-С на USB type-С для подключения Switch к устройству на Android, либо OTG-переходник
+    </li>
+<li>
+     Установленная программа
+     <a href="https://github.com/MenosGrante/Rekado/releases/latest" target="_blank">
+      Rekado
+     </a>
+</li>
+<li>
+     Приставка должна быть в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+</li>
+</ul>
+<h2 id="запуск-пейлоада">
+    Запуск пейлоада
+   </h2>
+<ol>
+<li>
+     Запустите
+     <strong>
+      Rekado
+     </strong>
+     на вашем Android-смартфоне
+    </li>
+<li>
+     Перейдите в раздел “
+     <strong>
+      Payloads
+     </strong>
+     ” и дайте права на работу с накопителем, если программа их попросит
+    </li>
+<li>
+     Нажмите на кнопку
+     <code class="language-plaintext highlighter-rouge">
+      +
+     </code>
+     и выберите необходимый для запуска пейлоад
+    </li>
+<li>
+     Подключите Switch к вашему устройству с помощью кабеля
+    </li>
+<li>
+     Телефон спросит использовать ли
+     <strong>
+      Rekado
+     </strong>
+     для подключения по умолчанию. Ответьте утвердительно
+    </li>
+<li>
+     Нажмите “
+     <strong>
+      Boot Payload
+     </strong>
+     ” и выберите ваш пейлоад
+    </li>
+</ol>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-6709e4ee'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Запуск на Android
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<details class="spoiler" id="spoiler-81550dd1">
+<summary>
+   Запуск на любой платформе, на которой есть браузер
+  </summary>
+<div class="spoiler-content">
+<h2 id="что-понадобится">
+    Что понадобится
+   </h2>
+<ul>
+<li>
+<span class="tooltip_container">
+      Пейлоад
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Файл с исполняемым кодом в формате
+        <code class="language-plaintext highlighter-rouge">
+         .bin
+        </code>
+        , которые мы загружаем в приставку, чаще всего - загрузчик
+       </span>
+</span>
+</span>
+     , который вы собираетесь запускать на приставке
+    </li>
+<li>
+     USB type-С на USB type-A кабель для подключения Switch к
+     <span class="tooltip_container">
+      хосту
+      <span class="tooltip">
+       ▼
+       <span class="bottom">
+        Устройство, позволяющее отправить на консоль пейлоад, в качестве хоста может использоваться ПК, смартфон на Android (iOS, если есть джейлбрейк) или специальное устройство – донгл
+       </span>
+</span>
+</span>
+</li>
+<li>
+     Браузер Chrome (с другими браузерами работать не будет!)
+    </li>
+<li>
+     Приставка должна быть в
+     <a href="fusee-gelee.html" target="_blank">
+      режиме RCM
+     </a>
+</li>
+</ul>
+<h2 id="запуск-пейлоада">
+    Запуск пейлоада
+   </h2>
+<p class="notice--info">
+    Приставка должна находиться в
+    <a href="fusee-gelee.html" target="_blank">
+     режиме RCM
+    </a>
+    !
+   </p>
+<ol>
+<li>
+     Откройте эту
+     <a href="https://webcfw.sdsetup.com/" target="_blank">
+      веб-страницу.
+     </a>
+</li>
+<li>
+     В части “
+     <strong>
+      Настройки отправки пейлоада
+     </strong>
+     ” выберите пейлоад из списка “
+     <strong>
+      Загрузить свой пейлоад
+     </strong>
+     ”, нажмите “
+     <strong>
+      Выберите файл
+     </strong>
+     ”, после чего выберите
+     <code class="language-plaintext highlighter-rouge">
+      .bin
+     </code>
+     -файл вашего пейлоада
+     <ul>
+<li>
+       Не выбирайте пейлоад из списка! Используйте тот, что в архиве, иначе вы рискуете получить ошибку на том или ином этапе прошивки!
+      </li>
+</ul>
+</li>
+<li>
+     Нажмите “
+     <strong>
+      Deliver payload!
+     </strong>
+     ”
+    </li>
+<li>
+     В открывшемся окне выберите “
+     <strong>
+      APX
+     </strong>
+     ” и нажмите “
+     <strong>
+      Подключение
+     </strong>
+     ”
+    </li>
+<li>
+     Пейлоад запустится на консоли
+    </li>
+<li>
+     Можете доставать замыкатель
+    </li>
+</ol>
+</div>
+<div aria-label="Згорнути спойлер" class="spoiler-close-footer" onclick="var el = document.getElementById('spoiler-81550dd1'); if (!el.open) return; el.open = false; setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);" role="button" tabindex="0">
+   Запуск на любой платформе, на которой есть браузер
+   <span aria-hidden="true" class="close-icon">
+</span>
+</div>
+</details>
+<hr/>
+<h1 class="notice--success" id="следующий-шаг-подготовительные-работы">
+  Следующий шаг:
+  <a href="preparation-fuse.html">
+   Подготовительные работы
+  </a>
+</h1>
+</div>
+          </div>
+        `;
+        
+      </script>
+      
+   
+   <div class="row" style="width: 90%; margin-bottom: 0; margin: 0 auto;">
+    <hr/>
+    <div class="col-lg-6 col-sm-12 text-center mb-1">
+     <div class="main-h1 mb-1">
+      <a href="https://t.me/Switch_library_bot" class="title_a" style="" target="_blank">
+       <b>
+        <span class="text-primary mb-1" style="font-size: 40px;">SWITCH </span><span style="color: #41464b; font-size: 40px;">TORRENT </span><span class="text-danger" style="font-size: 40px;">LIBRARY</span><br>
+        <span style="color: #41464b; font-size: 40px;">TELEGRAM BOT</span>
+       </b>
+      </a>
+     </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 text-center">
+     <div class="text-center display-5 main-desc mb-1" style="font-size: 25px;">
+      <span id="link-text-2" style="color: inherit; text-decoration: inherit; cursor: pointer;">
+      САМАЯ БОЛЬШАЯ БЕСПЛАТНАЯ БИБЛИОТЕКА ИГР ДЛЯ NINTENDO SWITCH
+      </span>
+     </div>
+     <script>
+       var linkText = document.getElementById("link-text-2");
+       linkText.addEventListener("click", function() {
+       window.open("https://t.me/Switch_library_bot", "_blank");
+       });
+     </script>
+     <div class="text-center pt-2 mb-2" style="font-size: 20px; padding: 10px;">
+      <a href="https://t.me/Switch_library_bot" class="btn btn-primary pulse-button"
+         style="font-size: 20px; display: inline-block; padding 0 20px; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);"
+         target="_blank">ПРИСОЕДИНЯЙТЕСЬ. ПАРОЛЬ: LONDON</a>
+     </div>
+    </div>
+    <hr>
+   </div>
+
+
+        <footer class="container">
+            <div class="row">
+                <div class="col-lg-12 pt-4">
+                    <div type="button" id="btn-back-to-top">
+                        <img src="../images/to_top.png">
+                    </div>
+                    <p><a href="../" class="transp">&copy; 2022–2025 Switch torrent library.</a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.3.7.0.min.js"></script>
+    <script>
+        $('.projects_list > div').each(function () {
+            let link = $(this).data('link');
+            $(this).find('.project_list_row_').on('click', function () {
+                window.open("https://t.me/" + link, '_blank');
+            });
+        });
+
+        $("#btn-back-to-top").on('click', function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+        $(window).on('scroll', function () {
+            toggle_to_top_btn();
+        });
+        toggle_to_top_btn();
+        function toggle_to_top_btn() {
+            $("#btn-back-to-top").toggle(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20);
+        }
+        setTimeout(toggle_to_top_btn, 100);
+
+    </script>
+    <script>
+        const topBarEl = document.querySelector('.top-bar');
+        const fixedColumnEl = document.querySelector('.fixed-column');
+
+        function adjustFixedColumnTop() {
+            var topBarHeight = topBarEl.offsetHeight;
+            fixedColumnEl.style.top = topBarHeight + 'px';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            adjustFixedColumnTop();
+
+            window.addEventListener("resize", adjustFixedColumnTop);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover the latest gaming news, reviews, ratings, top game lists, and DOWNLOAD games FREE without ads. Stay updated, find, and GET your next favorite game!">
+    <meta name="author" content="Lord of the Bots">
+    <meta property="og:title" content="NSWTL.INFO" />
+    <meta property="og:image" content="https://nswtl.info/images/favs/android-chrome-512x512.png" />
+    <meta property="og:description" content="Discover the latest gaming news, reviews, ratings, top game lists, and DOWNLOAD games FREE without ads. Stay updated, find, and GET your next favorite game!" />
+    <title>Сброс к заводским настройкам - NSWTL.INFO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#7952b3">
+    <link rel="stylesheet" href="https://fonts.bitrix24.ru/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900">
+
+    <style>
+        * {
+            font-family: Roboto;
+        }
+
+        body {
+            background-image: url('../images/back2.jpg');
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .spoiler [type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            pointer-events: none;
+        }
+
+        .spoiler-header {
+            display: contents;
+        }
+
+        .spoiler-header label {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0px;
+            }
+        }
+
+        .main-h1 {
+            margin: 0 0 20px 0;
+        }
+
+
+        @media (min-width: 1200px) {
+            .main-desc {
+                font-size: 46px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 1100px) and (max-width: 1200px) {
+            .main-desc {
+                font-size: 42px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 991px) and (max-width: 1100px) {
+            .main-desc {
+                font-size: 42px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 900px) and (max-width: 991px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 32px
+            }
+
+            .main-h1 span {
+                font-size: 46px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 900px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 32px
+            }
+
+            .main-h1 span {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .big-image {
+                display: none;
+            }
+
+            .main-desc {
+                font-size: 16px
+            }
+
+            .main-h1 span {
+                font-size: 24px;
+            }
+        }
+
+        .project_list_row img {
+            margin-top: 5px;
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .project_list_row h2 {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .project_list_row_ {
+            padding: 5px;
+            background: rgba(100, 100, 100, 0.1);
+            cursor: pointer;
+        }
+
+        .project_list_row_:hover {
+            background: rgba(100, 100, 100, 0.5);
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+        }
+
+        .title_a:link {
+            text-decoration: none;
+        }
+
+        .title_a:visited {
+            text-decoration: none;
+        }
+
+        .title_a:hover {
+            text-decoration: none;
+        }
+
+        .title_a:active {
+            text-decoration: none;
+        }
+
+        .left-text-hide {
+            text-align: left;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        @media (min-width: 991px) and (max-width: 1200px) {
+            .left-text-hide {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .left-text-hide {
+                display: none;
+            }
+        }
+
+        .top-bar {
+            display: flex;
+            flex-direction: row;
+            height: 80px;
+            background-color: #41464b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        .column,
+        .column-hide {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+        }
+
+        .column a,
+        .column-hide a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a.transp {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .fixed-column {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            background-color: #41464b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: calc(100% - 80px);
+            z-index: 9997;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.7;
+            overflow-y: scroll;
+        }
+
+        .fixed-column::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        .fixed-column {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .fixed-content {
+            padding-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .game {
+            font-size: 18px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .half-line-break {
+            height: 0.5em;
+            /* Половина высоты строки */
+            width: 100%;
+            /* Ширина разрыва */
+        }
+
+        .collection-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+
+            .top-bar,
+            .fixed-column {
+                position: static;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                line-height: 1;
+            }
+
+            .fixed-column {
+                position: static;
+                top: calc(var(--top-bar-height));
+                width: 100%;
+                height: auto;
+                line-height: 2;
+                overflow-y: visible;
+            }
+
+            .fixed-content {
+                padding-top: 20px;
+            }
+
+            .widescrG {
+            display: none;
+            }
+
+            .game {
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+
+            .fixed-column-image {
+                display: none;
+            }
+
+            .text-hide-low {
+                display: none;
+            }
+
+        }
+
+        .bots-container {
+            display: inline-block;
+        }
+
+        @media (min-width: 769px) and (max-width: 1099px) {
+
+            .top-bar,
+            .column {
+                font-size: 12px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 13px;
+            }
+
+            .fixed-column-image img {
+                max-height: 140px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 1100px) {
+
+            .top-bar,
+            .column {
+                font-size: 18px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 15px;
+            }
+
+            .game {
+                font-size: 18px;
+            }
+
+            .fixed-column-image img {
+                max-height: 160px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 2000px) {
+
+            .top-bar,
+            .column {
+                font-size: 22px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 16px;
+            }
+
+            .game {
+                font-size: 20px;
+            }
+
+            .fixed-column-image img {
+                max-height: 250px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 2600px) {
+
+            .top-bar,
+            .column {
+                font-size: 26px;
+            }
+
+            .fixed-column,
+            .fixed-content {
+                font-size: 18px;
+            }
+
+            .game {
+                font-size: 30px;
+            }
+
+            .fixed-column-image img {
+                max-height: 320px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .fixed-column {
+                width: calc((100% / 7) * 2);
+            }
+
+            .narrowG {
+            display: none;
+            }
+
+            .game {
+                margin-top: 20px;
+            }
+
+            .hided-name-fixed-column {
+                display: none;
+            }
+
+            .label-fixed-column {
+                text-decoration: underline;
+                font-size: 1.25em;
+            }
+        }
+
+        @media (min-width: 769px) {
+            main {
+                margin-top: calc(var(--top-bar-height)) + 20px;
+                margin-left: calc((100% / 7) * 2 + 40px);
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin-top: calc(40px + var(--top-bar-height)) + var(--fixed-column-height);
+            }
+
+            .spoiler input,
+            .spoiler div {
+                display: none;
+            }
+
+            .spoiler label::before {
+                content: '►';
+                margin-right: 5px;
+            }
+
+            .spoiler :checked+label::before {
+                content: '▼';
+            }
+
+            .spoiler :checked~div {
+                display: block;
+                padding: 10px;
+            }
+
+            .spoiler-header {
+                display: contents;
+                text-align: center;
+            }
+
+            .spoiler-header label {
+                display: block;
+                color: #fff;
+                height: 30px;
+                padding: 5px 0 5px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-column-1 img {
+                width: 100%;
+            }
+
+            .hided-name-fixed-column {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1099px) {
+            .game-column-1 img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .game {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .game-column-1 {
+                width: 90%;
+            }
+
+            .game-column-1 img {
+                width: 350px;
+            }
+
+            .game-column-1,
+            .game-column-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        .pulse-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+         .b-head, .b-pager__sorted {
+             display: none;
+            }
+
+    </style>
+
+    <link href="../carousel.css" rel="stylesheet">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93670892, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93670892" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta name="google-site-verification" content="QbzhH9yjQaqCtti7Do5mi3F7xio10k5jPFJulO6QcvM" />
+
+</head>
+
+<body>
+
+
+            <div class="top-bar">
+                <div class="column" style="background-color: #0d6efd;"><a href="../">NSWTL.INFO</a></div>
+                <div class="column" style="background-color: #dc3545;"><a href="https://t.me/Switch_library_bot"
+                        target="_blank">Switch Torrent Library</a></div>
+                <div class="spoiler spoiler-header">
+                    <input type="checkbox" id="spoiler1">
+                    <label for="spoiler1" style="color: white;">Switch: Инструкции</label>
+                    <div class="column-hide"><a href="menu.html">
+                            Список гайдов
+                        </a></div>
+                    <div class="column-hide"><a href="kefir.html">
+                            KEFIR
+                        </a></div>
+                    <div class="column-hide"><a href="emunand.html">
+                            Emunand
+                        </a></div>
+                    <div class="column-hide"><a href="update-fw.html">
+                            Обновление прошивки
+                        </a></div>
+                    <div class="column-hide"><a href="backup-nand.html">
+                            Бэкап и восстановление
+                        </a></div>
+                </div>
+            </div>
+            
+
+<div class="fixed-column">
+    <span class="widescrG" style="width: 95%;">
+        <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;http://nswtl.info/search/searchresults.html&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;#41464b&quot;,&quot;fontsize&quot;:12,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;en&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;NSWTL.INFO search&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;com&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:true,&quot;searchid&quot;:8000053,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;GAMEHUB games search&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#41464b&quot;}"><form action="https://yandex.com/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="8000053"/><input type="hidden" name="l10n" value="en"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Search"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+    </span>
+    <a href="https://t.me/NSWTL_GameHub_bot" target="_blank">
+        <div class="fixed-column-image"><img src="../images/gamehub.jpg" style="margin-bottom: 20px; width: 100%; display: block;"></div>
+    </a>
+    <div class="hided-name-fixed-column" style="background-color: #dc3545;"><a href="https://t.me/NSWTL_GameHub_bot" class="transp">NSWTL GAMEHUB</a></div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler2">
+        <label for="spoiler2" style="color: white;"><span class="label-fixed-column">Game Ratings</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/metascore.html" class="transp">Metascore tops</a><br>
+            <a href="../collections/goty.html" class="transp">GOTY 2005-2025</a><br>
+            <a href="../collections/genre.html" class="transp">Tops by genre</a><br>
+            <a href="../collections/actual.html" class="transp">Most viewed this month</a><br>
+        </div>
+    </div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler3">
+        <label for="spoiler3" style="color: white;"><span class="label-fixed-column">Upcoming Releases</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/switchUpcoming.html" class="transp">Nintendo Switch</a><br>
+            <a href="../collections/switch2Upcoming.html" class="transp">Nintendo Switch 2</a><br>
+            <a href="../collections/ps5Upcoming.html" class="transp">Playstation 5</a><br>
+            <a href="../collections/ps4Upcoming.html" class="transp">Playstation 4</a><br>
+            <a href="../collections/xseriesUpcoming.html" class="transp">Xbox Series S/X</a><br>
+            <a href="../collections/xoneUpcoming.html" class="transp">Xbox One</a><br>
+            <a href="../collections/pcUpcoming.html" class="transp">PC</a><br>
+        </div>
+    </div>
+    <div class="spoiler">
+        <input type="checkbox" id="spoiler4">
+        <label for="spoiler4" style="color: white;"><span class="label-fixed-column">Recent Releases</span></label>
+        <div class="fixed-content spoiler-content">
+            <a href="../collections/switchRecent.html" class="transp">Nintendo Switch</a><br>
+            <a href="../collections/switch2Recent.html" class="transp">Nintendo Switch 2</a><br>
+            <a href="../collections/ps5Recent.html" class="transp">Playstation 5</a><br>
+            <a href="../collections/ps4Recent.html" class="transp">Playstation 4</a><br>
+            <a href="../collections/xseriesRecent.html" class="transp">Xbox Series S/X</a><br>
+            <a href="../collections/xoneRecent.html" class="transp">Xbox One</a><br>
+            <a href="../collections/pcRecent.html" class="transp">PC</a><br>
+        </div>
+    </div>
+    <span class="label-fixed-column"><a href="../list/500.html" class="transp">Games Index</a></span>
+    <span class="narrowG" style="width: 95%;">
+        <div class="ya-site-form ya-site-form_inited_no" data-bem="{&quot;action&quot;:&quot;http://nswtl.info/search/searchresults.html&quot;,&quot;arrow&quot;:false,&quot;bg&quot;:&quot;#41464b&quot;,&quot;fontsize&quot;:12,&quot;fg&quot;:&quot;#000000&quot;,&quot;language&quot;:&quot;en&quot;,&quot;logo&quot;:&quot;rb&quot;,&quot;publicname&quot;:&quot;NSWTL.INFO search&quot;,&quot;suggest&quot;:true,&quot;target&quot;:&quot;_self&quot;,&quot;tld&quot;:&quot;com&quot;,&quot;type&quot;:3,&quot;usebigdictionary&quot;:true,&quot;searchid&quot;:8000053,&quot;input_fg&quot;:&quot;#000000&quot;,&quot;input_bg&quot;:&quot;#ffffff&quot;,&quot;input_fontStyle&quot;:&quot;normal&quot;,&quot;input_fontWeight&quot;:&quot;normal&quot;,&quot;input_placeholder&quot;:&quot;GAMEHUB games search&quot;,&quot;input_placeholderColor&quot;:&quot;#000000&quot;,&quot;input_borderColor&quot;:&quot;#41464b&quot;}"><form action="https://yandex.com/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="8000053"/><input type="hidden" name="l10n" value="en"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Search"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+    </span>
+</div>
+
+    <main>
+
+
+       <div id="shadow-host-guide"></div>
+
+       <script>
+        document.body.style.backgroundImage = "url('../images/white.jpg')";
+        
+        const host = document.getElementById('shadow-host-guide');
+
+            const shadowRoot = host.attachShadow({ mode: 'open' });
+
+            shadowRoot.innerHTML = `
+              <link rel="stylesheet" href="../styleGuides.css">
+
+              <style>
+                .guideContainer {
+                    width: 90%;
+                    line-height: 1.1em;
+                    font-size: 1em;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                }
+              </style>
+
+          <div class="guideContainer">
+          <div class="notice--danger">
+<li>
+<b>
+   Настоящее руководство создано на основе гайдов xHЯ — разработчика
+   <a href="https://github.com/rashevskyv/kefir/releases/latest" target="_blank">
+    KEFIR
+   </a>
+   .
+  </b>
+</li>
+</div>
+<div class="notice--warning">
+<b>
+<li>
+   Большинство возникающих проблем вы можете решить,
+   <a href="kefir.html" target="_blank">
+    используя KEFIR
+   </a>
+</li>
+<li>
+   Для установки игр мы настоятельно рекоммендуем
+   <a href="https://github.com/rashevskyv/dbi/releases" target="_blank">
+    использовать DBI
+   </a>
+</li>
+<li>
+   Лучший способ получения игр, DLC и обновлений на сегодняшний день - телеграмм бот
+   <a href="https://t.me/Switch_library_bot" target="_blank">
+    Switch Torrent Library
+   </a>
+</li>
+</b>
+</div>
+<div class="page__inner-wrap">
+<header>
+<h1 class="page__title" itemprop="headline">
+   Сброс к заводским настройкам
+  </h1>
+<div class="language-selector-container">
+<!-- Не показуємо текст "lang: uk", а показуємо перемикач мов -->
+</div>
+</header>
+<div class="notice--warning">
+<b>
+<li>
+    Большую часть ответов на типовые вопросы вы можете найти в разделе
+    <a href="faq.html">
+     F.A.Q.
+    </a>
+</li>
+<li>
+    Если что то идет не так, не парикуйте! В первую очередь прочтите раздел
+    <a href="troubleshooting.html">
+     Проблемы и их решения
+    </a>
+</li>
+</b>
+</div>
+<div class="notice--warning">
+  Если вы пользователь MacOS, воспользуйтесь
+  <a href="sd-macos.html" target="_blank">
+   этими рекомендациями
+  </a>
+  , чтобы избежать проблем с картой памяти
+ </div>
+<div class="notice">
+  Делайте
+  <a href="backup-saves.html" target="_blank">
+   бэкапы сохранений
+  </a>
+  как можно чаще!
+ </div>
+<div class="notice--warning">
+<strong>
+   Если приставка зависла или не подаёт признаков жизни, выключите её удержанием кнопки (POWER) 30 секунд, затем включите и пробросьте пейлоад!
+  </strong>
+</div>
+<hr/>
+<p class="notice--danger">
+  Сброс к заводским настройкам удалит все данные из вашей системы, включая игры, сохранения и прочее!
+ </p>
+<p class="notice--danger">
+<strong>
+   Будьте готовы к тому, что на лайте это безвозвратно пожрёт 15% аккумулятора.
+  </strong>
+  Для остальных приставок такой проблемы не замечено
+ </p>
+<p class="notice--warning">
+  Рекомендуется сделать бекап перед сбросом!
+ </p>
+<ol>
+<li>
+   Запустите
+   <span class="tooltip_container">
+    hekate
+    <span class="tooltip">
+     ▼
+     <span class="bottom">
+      Кастомный бутлоадер для Nintendo Switch. С его помощью мы делаем резервное копирование, запускаем кастом, запускаем различные пейлоады. Один из самых важных инструментов из тех, что мы будем использовать.
+     </span>
+</span>
+</span>
+   -&gt;
+   <strong>
+    Payloads
+   </strong>
+   -&gt;
+   <code class="language-plaintext highlighter-rouge">
+    TegraExplorer.bin
+   </code>
+</li>
+<li>
+   Выберите
+   <code class="language-plaintext highlighter-rouge">
+    SystemWipe.te
+   </code>
+</li>
+<li>
+   Выберите
+   <strong>
+    Wipe sysmmc
+   </strong>
+   , чтобы сбросить к заводским
+   <span class="tooltip_container">
+    SysNAND
+    <span class="tooltip">
+     ▼
+     <span class="bottom">
+      В этом гайде под этим термином подразумевается прошивка, запущенная из внутренней памяти приставки (не из EmuNAND). Приставка из магазина будет идти именно с такой прошивкой. 
+Часто является антонимом к EmuNAND. Сток может быть пропатченный атмосферой, может использоваться для лицензии, может использоваться для пиратки, однако говоря сток чаще всего  мы имеем ввиду, что прошивка консоли запущена из внутренней карты памяти для использования консоли для игры в лицензию.
+     </span>
+</span>
+</span>
+   и
+   <strong>
+    Wipe emummc
+   </strong>
+   , чтобы сбросить
+   <span class="tooltip_container">
+    EmuNAND
+    <span class="tooltip">
+     ▼
+     <span class="bottom">
+      Полная копия NAND, расположенная на карте памяти. Применяется для того, чтобы оставить официальную прошивку в максимально нетронутом виде. Например, вы можете играть в EmuNAND в пиратку, а в стоке (так называют оригинальную прошивку, расположенную во внутренней памяти консоли) пользоваться онлайном и купленными играми. Таким образом будет минимизирован шанс получить бан.
+     </span>
+</span>
+</span>
+</li>
+<li>
+   Нажмите кнопку (POWER) для подтверждения сброса
+  </li>
+</ol>
+</div>
+          </div>
+        `;
+        
+      </script>
+      
+   
+   <div class="row" style="width: 90%; margin-bottom: 0; margin: 0 auto;">
+    <hr/>
+    <div class="col-lg-6 col-sm-12 text-center mb-1">
+     <div class="main-h1 mb-1">
+      <a href="https://t.me/Switch_library_bot" class="title_a" style="" target="_blank">
+       <b>
+        <span class="text-primary mb-1" style="font-size: 40px;">SWITCH </span><span style="color: #41464b; font-size: 40px;">TORRENT </span><span class="text-danger" style="font-size: 40px;">LIBRARY</span><br>
+        <span style="color: #41464b; font-size: 40px;">TELEGRAM BOT</span>
+       </b>
+      </a>
+     </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 text-center">
+     <div class="text-center display-5 main-desc mb-1" style="font-size: 25px;">
+      <span id="link-text-2" style="color: inherit; text-decoration: inherit; cursor: pointer;">
+      САМАЯ БОЛЬШАЯ БЕСПЛАТНАЯ БИБЛИОТЕКА ИГР ДЛЯ NINTENDO SWITCH
+      </span>
+     </div>
+     <script>
+       var linkText = document.getElementById("link-text-2");
+       linkText.addEventListener("click", function() {
+       window.open("https://t.me/Switch_library_bot", "_blank");
+       });
+     </script>
+     <div class="text-center pt-2 mb-2" style="font-size: 20px; padding: 10px;">
+      <a href="https://t.me/Switch_library_bot" class="btn btn-primary pulse-button"
+         style="font-size: 20px; display: inline-block; padding 0 20px; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);"
+         target="_blank">ПРИСОЕДИНЯЙТЕСЬ. ПАРОЛЬ: LONDON</a>
+     </div>
+    </div>
+    <hr>
+   </div>
+
+
+        <footer class="container">
+            <div class="row">
+                <div class="col-lg-12 pt-4">
+                    <div type="button" id="btn-back-to-top">
+                        <img src="../images/to_top.png">
+                    </div>
+                    <p><a href="../" class="transp">&copy; 2022–2025 Switch torrent library.</a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.3.7.0.min.js"></script>
+    <script>
+        $('.projects_list > div').each(function () {
+            let link = $(this).data('link');
+            $(this).find('.project_list_row_').on('click', function () {
+                window.open("https://t.me/" + link, '_blank');
+            });
+        });
+
+        $("#btn-back-to-top").on('click', function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+        $(window).on('scroll', function () {
+            toggle_to_top_btn();
+        });
+        toggle_to_top_btn();
+        function toggle_to_top_btn() {
+            $("#btn-back-to-top").toggle(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20);
+        }
+        setTimeout(toggle_to_top_btn, 100);
+
+    </script>
+    <script>
+        const topBarEl = document.querySelector('.top-bar');
+        const fixedColumnEl = document.querySelector('.fixed-column');
+
+        function adjustFixedColumnTop() {
+            var topBarHeight = topBarEl.offsetHeight;
+            fixedColumnEl.style.top = topBarHeight + 'px';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            adjustFixedColumnTop();
+
+            window.addEventListener("resize", adjustFixedColumnTop);
+        });
+    </script>
+
+</body>
+
+</html>

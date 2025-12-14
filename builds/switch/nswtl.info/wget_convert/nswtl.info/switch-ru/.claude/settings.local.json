@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(for:*)",
+      "Bash(do echo:*)",
+      "Bash(done)",
+      "Bash(grep:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}
