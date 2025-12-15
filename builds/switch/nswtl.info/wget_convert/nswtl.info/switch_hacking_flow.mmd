@@ -1,0 +1,128 @@
+---
+title: Nintendo Switch Hacking Decision Tree Flow
+---
+
+graph TD
+    START([Start: Want to Hack Nintendo Switch]) --> CHECK_SERIAL{Check Console Serial Number}
+
+    %% Serial Number Analysis
+    CHECK_SERIAL --> ERISTA_UNPATCHED[Erista Unpatched<br/>XAW10000000000-XAW10074000000<br/>XAJ10000000000-XAJ10020000000]
+    CHECK_SERIAL --> ERISTA_PATCHED[Erista Patched<br/>XAW10074000000+<br/>XAJ10020000000+]
+    CHECK_SERIAL --> MARIKO[Mariko/OLED/Lite<br/>XK*, XJ*<br/>All newer models]
+
+    %% Firmware Check for Caffeine
+    ERISTA_UNPATCHED --> CHECK_FW_UNPATCHED{Check Firmware Version}
+    ERISTA_PATCHED --> CHECK_FW_PATCHED{Check Firmware Version}
+    MARIKO --> CHECK_FW_MARIKO{Check Firmware Version}
+
+    %% Caffeine Branch (4.0.0-4.1.0)
+    CHECK_FW_UNPATCHED -->|4.0.0-4.1.0| CAFFEINE_CHOICE{Choose Method}
+    CHECK_FW_PATCHED -->|4.0.0-4.1.0| CAFFEINE_ONLY[Caffeine Only Option]
+    CHECK_FW_MARIKO -->|4.0.0-4.1.0| CAFFEINE_ONLY
+
+    CAFFEINE_CHOICE -->|Prefer Software| CAFFEINE_PATH[Path B: Caffeine Exploit]
+    CAFFEINE_CHOICE -->|Prefer Hardware| FUSEE_PATH[Path A: Fusée Gelée]
+    CAFFEINE_ONLY --> CAFFEINE_PATH
+
+    %% Other Firmware Versions
+    CHECK_FW_UNPATCHED -->|Other Versions| FUSEE_PATH
+    CHECK_FW_PATCHED -->|Other Versions| MODCHIP_PATH[Path C: Modchip Required]
+    CHECK_FW_MARIKO -->|Other Versions| MODCHIP_PATH
+
+    %% Path A: Fusée Gelée Details
+    FUSEE_PATH --> FUSEE_PREP[Preparation]
+    FUSEE_PREP --> JIG_CHOICE{Choose Jig Method}
+    JIG_CHOICE -->|DIY| PAPERCLIP_JIG[Paperclip Jig]
+    JIG_CHOICE -->|Buy| COMMERCIAL_JIG[Commercial Jig]
+
+    PAPERCLIP_JIG --> INJECTOR_CHOICE{Choose Payload Injector}
+    COMMERCIAL_JIG --> INJECTOR_CHOICE
+
+    INJECTOR_CHOICE -->|PC| PC_INJECTOR[TegraRcmGUI/NXBoot]
+    INJECTOR_CHOICE -->|Android| ANDROID_INJECTOR[ReiNX/NXLoader]
+    INJECTOR_CHOICE -->|Dongle| DONGLE_INJECTOR[RCM Loader/SX Pro]
+
+    PC_INJECTOR --> RCM_PROCESS[RCM Entry Process]
+    ANDROID_INJECTOR --> RCM_PROCESS
+    DONGLE_INJECTOR --> RCM_PROCESS
+
+    RCM_PROCESS --> PAYLOAD_INJECT[Inject Hekate Payload]
+    PAYLOAD_INJECT --> INSTALL_KEFIR_A[Install KEFIR]
+
+    %% Path B: Caffeine Details
+    CAFFEINE_PATH --> CAFFEINE_PREP[Preparation]
+    CAFFEINE_PREP --> BROWSER_SETUP[Browser & Certificate Setup]
+    BROWSER_SETUP --> CAFFEINE_WARNING{⚠️ Cannot Update Firmware}
+    CAFFEINE_WARNING --> CAFFEINE_EXPLOIT[Launch Browser Exploit]
+    CAFFEINE_EXPLOIT --> INSTALL_KEFIR_B[Install KEFIR]
+
+    %% Path C: Modchip Details
+    MODCHIP_PATH --> CHIP_CHOICE{Choose Installation}
+    CHIP_CHOICE -->|Professional| PROFESSIONAL_INSTALL[Professional Installation<br/>$80-250 total]
+    CHIP_CHOICE -->|DIY| DIY_WARNING{⚠️ Advanced Soldering Required}
+
+    DIY_WARNING -->|Experienced| DIY_INSTALL[DIY Installation]
+    DIY_WARNING -->|Not Sure| PROFESSIONAL_INSTALL
+
+    PROFESSIONAL_INSTALL --> CHIP_TYPE{Choose Chip Type}
+    DIY_INSTALL --> CHIP_TYPE
+
+    CHIP_TYPE -->|Modern| PICOFLY[PicoFly/RP2040<br/>Recommended]
+    CHIP_TYPE -->|Established| HWFLY[HWFly<br/>More Expensive]
+    CHIP_TYPE -->|Legacy| SXCORE[SX Core/Lite<br/>Discontinued]
+
+    PICOFLY --> INSTALL_CHIP[Install Chip]
+    HWFLY --> INSTALL_CHIP
+    SXCORE --> INSTALL_CHIP
+
+    INSTALL_CHIP --> TEST_CHIP[Test Chip Function]
+    TEST_CHIP --> INSTALL_KEFIR_C[Install KEFIR]
+
+    %% Common Post-Installation Flow
+    INSTALL_KEFIR_A --> NAND_BACKUP[NAND Backup<br/>⚠️ ESSENTIAL]
+    INSTALL_KEFIR_B --> NAND_BACKUP
+    INSTALL_KEFIR_C --> NAND_BACKUP
+
+    NAND_BACKUP --> EMUNAND_DECISION{Want Online Play?}
+
+    %% EmuNAND Decision
+    EMUNAND_DECISION -->|Yes + Not Banned| CREATE_EMUNAND[Create EmuNAND]
+    EMUNAND_DECISION -->|No/Already Banned| SKIP_EMUNAND[Skip EmuNAND]
+    EMUNAND_DECISION -->|Caffeine User| EMUNAND_REQUIRED[EmuNAND Required<br/>for newer games]
+
+    EMUNAND_REQUIRED --> CREATE_EMUNAND
+
+    CREATE_EMUNAND --> EMUNAND_SETUP[EmuNAND Setup<br/>32GB/64GB required]
+    EMUNAND_SETUP --> ADVANCED_SETUP
+    SKIP_EMUNAND --> ADVANCED_SETUP[Advanced Setup]
+
+    %% Advanced Features
+    ADVANCED_SETUP --> SAVE_BACKUP[Setup Save Backups<br/>JKSV/Checkpoint]
+    SAVE_BACKUP --> GAME_INSTALL[Game Installation<br/>DBI/Tinfoil/Awoo]
+    GAME_INSTALL --> OPTIONAL_FEATURES{Optional Features}
+
+    OPTIONAL_FEATURES -->|Convenience| AUTORCM[AutoRCM<br/>Auto-boot to RCM]
+    OPTIONAL_FEATURES -->|Performance| OVERCLOCK[Overclocking<br/>sys-clk]
+    OPTIONAL_FEATURES -->|Cheats| CHEAT_SETUP[Cheat Codes<br/>EdiZon]
+    OPTIONAL_FEATURES -->|Network| NETWORK_FEATURES[LAN Play<br/>FTP Server]
+    OPTIONAL_FEATURES -->|Done| COMPLETE[✅ Setup Complete]
+
+    AUTORCM --> COMPLETE
+    OVERCLOCK --> COMPLETE
+    CHEAT_SETUP --> COMPLETE
+    NETWORK_FEATURES --> COMPLETE
+
+    %% Styling
+    classDef pathA fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef pathB fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef pathC fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef warning fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef success fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef decision fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+
+    class FUSEE_PATH,FUSEE_PREP,JIG_CHOICE,PAPERCLIP_JIG,COMMERCIAL_JIG,INJECTOR_CHOICE,PC_INJECTOR,ANDROID_INJECTOR,DONGLE_INJECTOR,RCM_PROCESS,PAYLOAD_INJECT,INSTALL_KEFIR_A pathA
+    class CAFFEINE_PATH,CAFFEINE_PREP,BROWSER_SETUP,CAFFEINE_EXPLOIT,INSTALL_KEFIR_B,EMUNAND_REQUIRED pathB
+    class MODCHIP_PATH,CHIP_CHOICE,PROFESSIONAL_INSTALL,DIY_INSTALL,CHIP_TYPE,PICOFLY,HWFLY,SXCORE,INSTALL_CHIP,TEST_CHIP,INSTALL_KEFIR_C pathC
+    class CAFFEINE_WARNING,DIY_WARNING,NAND_BACKUP warning
+    class COMPLETE success
+    class CHECK_SERIAL,CHECK_FW_UNPATCHED,CHECK_FW_PATCHED,CHECK_FW_MARIKO,CAFFEINE_CHOICE,EMUNAND_DECISION,OPTIONAL_FEATURES decision

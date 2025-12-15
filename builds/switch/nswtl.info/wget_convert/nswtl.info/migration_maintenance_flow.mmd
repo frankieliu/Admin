@@ -1,0 +1,124 @@
+---
+title: Nintendo Switch Migration and Maintenance Workflows
+---
+
+graph TD
+    %% Migration Entry Points
+    MIGRATION_START([Need to Migrate/Maintain]) --> MIGRATION_TYPE{Select Operation}
+
+    MIGRATION_TYPE -->|SX OS → Atmosphere| SXOS_MIGRATION[SX OS Migration]
+    MIGRATION_TYPE -->|Add EmuNAND Safety| EMUNAND_TRANSITION[EmuNAND Transition]
+    MIGRATION_TYPE -->|Update Firmware| FIRMWARE_UPDATE[Firmware Update]
+    MIGRATION_TYPE -->|Downgrade Firmware| FIRMWARE_DOWNGRADE[Firmware Downgrade]
+    MIGRATION_TYPE -->|System Reset| SYSTEM_RESET[System Reset]
+    MIGRATION_TYPE -->|AutoRCM Setup| AUTORCM_SETUP[AutoRCM Configuration]
+
+    %% SX OS Migration Flow
+    SXOS_MIGRATION --> SXOS_BACKUP[Backup All Saves<br/>JKSV/Checkpoint]
+    SXOS_BACKUP --> SXOS_DOCUMENT[Document Current Setup]
+    SXOS_DOCUMENT --> SXOS_REMOVE[Remove SX OS Files<br/>/sxos/, /reinx/]
+    SXOS_REMOVE --> INSTALL_KEFIR[Install Fresh KEFIR]
+    INSTALL_KEFIR --> SXOS_TEST[Test Atmosphere Boot]
+    SXOS_TEST --> SXOS_VERIFY{Everything Works?}
+    SXOS_VERIFY -->|Yes| SXOS_RESTORE[Restore Game Saves]
+    SXOS_VERIFY -->|No| SXOS_TROUBLESHOOT[Troubleshoot Issues]
+    SXOS_RESTORE --> SXOS_COMPLETE[✅ Migration Complete]
+
+    %% EmuNAND Transition Flow
+    EMUNAND_TRANSITION --> EMU_ASSESSMENT[Assess Current Setup]
+    EMU_ASSESSMENT --> EMU_BACKUP[Backup Everything]
+    EMU_BACKUP --> EMU_CREATE[Create EmuNAND<br/>Hekate Tools]
+    EMU_CREATE --> EMU_CONFIGURE[Configure Boot Options]
+    EMU_CONFIGURE --> EMU_DNS[Set Up DNS Blocking<br/>EmuNAND: 90DNS<br/>SysNAND: Clear]
+    EMU_DNS --> EMU_TEST[Test Both Environments]
+    EMU_TEST --> EMU_TRAIN[Train Usage Patterns]
+    EMU_TRAIN --> EMU_COMPLETE[✅ EmuNAND Setup Complete]
+
+    %% Firmware Update Flow
+    FIRMWARE_UPDATE --> UPDATE_CHECK{Check Console Type}
+    UPDATE_CHECK -->|Caffeine| UPDATE_NEVER[❌ NEVER UPDATE<br/>Stay on 4.0.0-4.1.0]
+    UPDATE_CHECK -->|Fusée Gelée| UPDATE_PRESERVE[Update with Fuse Preservation]
+    UPDATE_CHECK -->|Modchip| UPDATE_FREE[Update Freely]
+
+    UPDATE_PRESERVE --> UPDATE_METHOD{Choose Method}
+    UPDATE_FREE --> UPDATE_METHOD
+
+    UPDATE_METHOD -->|Safest| CARTRIDGE_UPDATE[Game Cartridge Update]
+    UPDATE_METHOD -->|Manual| CHOIDUJOURNX_UPDATE[ChoiDujourNX<br/>No Burn Fuses]
+    UPDATE_METHOD -->|CFW Tool| DBI_UPDATE[DBI Update Tool]
+
+    CARTRIDGE_UPDATE --> UPDATE_VERIFY[Verify Update Success]
+    CHOIDUJOURNX_UPDATE --> UPDATE_VERIFY
+    DBI_UPDATE --> UPDATE_VERIFY
+    UPDATE_VERIFY --> UPDATE_COMPLETE[✅ Update Complete]
+
+    %% Firmware Downgrade Flow
+    FIRMWARE_DOWNGRADE --> DOWNGRADE_CHECK{Console Compatible?}
+    DOWNGRADE_CHECK -->|Unpatched Erista| DOWNGRADE_POSSIBLE[Downgrade Possible]
+    DOWNGRADE_CHECK -->|Patched/Mariko| DOWNGRADE_IMPOSSIBLE[❌ Cannot Downgrade]
+
+    DOWNGRADE_POSSIBLE --> HAVE_OLD_BACKUP{Have Old NAND Backup?}
+    HAVE_OLD_BACKUP -->|Yes| NAND_RESTORE_DOWN[Restore Old NAND Backup]
+    HAVE_OLD_BACKUP -->|No| CHOIDUJOUR_DOWN[Use ChoiDujourNX]
+
+    NAND_RESTORE_DOWN --> DOWNGRADE_TEST[Test Downgraded System]
+    CHOIDUJOUR_DOWN --> FUSE_PRESERVE[Preserve Fuses Option]
+    FUSE_PRESERVE --> MANUAL_INSTALL[Manual Firmware Install]
+    MANUAL_INSTALL --> DOWNGRADE_TEST
+    DOWNGRADE_TEST --> DOWNGRADE_COMPLETE[✅ Downgrade Complete]
+
+    %% System Reset Flow
+    SYSTEM_RESET --> RESET_REASON{Reset Purpose}
+    RESET_REASON -->|Selling Console| COMPLETE_WIPE[Complete Data Wipe]
+    RESET_REASON -->|Performance Issues| PERFORMANCE_RESET[Performance Reset]
+    RESET_REASON -->|Starting Fresh| CLEAN_SLATE[Clean Slate Reset]
+
+    COMPLETE_WIPE --> BACKUP_CRITICAL[Backup Critical Data]
+    PERFORMANCE_RESET --> BACKUP_CRITICAL
+    CLEAN_SLATE --> BACKUP_CRITICAL
+
+    BACKUP_CRITICAL --> FACTORY_RESET[Factory Reset via Settings]
+    FACTORY_RESET --> RESET_VERIFY[Verify Clean State]
+    RESET_VERIFY --> RESET_COMPLETE[✅ Reset Complete]
+
+    %% AutoRCM Setup Flow
+    AUTORCM_SETUP --> AUTORCM_DECISION{Enable or Disable?}
+    AUTORCM_DECISION -->|Enable| AUTORCM_CHECK[Check Compatibility]
+    AUTORCM_DECISION -->|Disable| AUTORCM_DISABLE[Disable AutoRCM]
+
+    AUTORCM_CHECK --> CAFFEINE_WARNING{Using Caffeine?}
+    CAFFEINE_WARNING -->|Yes| AUTORCM_DANGER[❌ CRITICAL: Will Brick!<br/>DO NOT USE]
+    CAFFEINE_WARNING -->|No| AUTORCM_ENABLE[Enable AutoRCM<br/>Hekate Tools]
+
+    AUTORCM_ENABLE --> AUTORCM_TEST[Test Auto-Boot]
+    AUTORCM_DISABLE --> AUTORCM_TEST
+    AUTORCM_TEST --> AUTORCM_COMPLETE[✅ AutoRCM Configured]
+
+    %% Common Endpoints
+    SXOS_COMPLETE --> MAINTENANCE_SUCCESS[✅ Maintenance Complete]
+    EMU_COMPLETE --> MAINTENANCE_SUCCESS
+    UPDATE_COMPLETE --> MAINTENANCE_SUCCESS
+    DOWNGRADE_COMPLETE --> MAINTENANCE_SUCCESS
+    RESET_COMPLETE --> MAINTENANCE_SUCCESS
+    AUTORCM_COMPLETE --> MAINTENANCE_SUCCESS
+
+    %% Error Handling
+    SXOS_TROUBLESHOOT --> COMMUNITY_HELP[Seek Community Help]
+    UPDATE_NEVER --> EMUNAND_REQUIRED[Use EmuNAND for<br/>Newer Games]
+    DOWNGRADE_IMPOSSIBLE --> CONSIDER_ALTERNATIVES[Consider EmuNAND<br/>Alternatives]
+    AUTORCM_DANGER --> RECOVERY_MODE[Emergency Recovery<br/>if Already Enabled]
+
+    %% Styling
+    classDef migration fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
+    classDef update fill:#00bcd4,stroke:#00838f,stroke-width:2px
+    classDef danger fill:#f44336,stroke:#c62828,stroke-width:3px
+    classDef success fill:#4caf50,stroke:#2e7d32,stroke-width:2px
+    classDef warning fill:#ff9800,stroke:#ef6c00,stroke-width:2px
+    classDef process fill:#2196f3,stroke:#1565c0,stroke-width:2px
+
+    class SXOS_MIGRATION,EMUNAND_TRANSITION,SYSTEM_RESET migration
+    class FIRMWARE_UPDATE,FIRMWARE_DOWNGRADE,UPDATE_METHOD update
+    class UPDATE_NEVER,AUTORCM_DANGER,DOWNGRADE_IMPOSSIBLE,RECOVERY_MODE danger
+    class MAINTENANCE_SUCCESS,SXOS_COMPLETE,EMU_COMPLETE,UPDATE_COMPLETE success
+    class CAFFEINE_WARNING,EMUNAND_REQUIRED,CONSIDER_ALTERNATIVES warning
+    class INSTALL_KEFIR,EMU_CREATE,CARTRIDGE_UPDATE,FACTORY_RESET process
