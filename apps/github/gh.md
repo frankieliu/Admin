@@ -12,5 +12,7 @@ gh pr create
 --head (specify feature branch)
 gh pr create --base main --head your-feature-branch
 
-HHHHHHHH
+# switch auth
+
+gh auth switch
 
