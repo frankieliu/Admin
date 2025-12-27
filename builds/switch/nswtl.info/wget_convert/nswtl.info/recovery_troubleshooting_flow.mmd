@@ -1,0 +1,111 @@
+---
+title: Nintendo Switch Recovery and Troubleshooting Workflows
+---
+
+graph TD
+    %% Emergency Recovery Entry Point
+    PROBLEM([Console Issue Detected]) --> SYMPTOMS{Identify Symptoms}
+
+    %% Boot Issues
+    SYMPTOMS -->|Won't Boot/Black Screen| BOOT_ISSUES[Boot Failure Analysis]
+    SYMPTOMS -->|Hangs on Logo| LOGO_HANG[Logo Hang Diagnosis]
+    SYMPTOMS -->|Can't Enter RCM| RCM_ISSUES[RCM Problems]
+    SYMPTOMS -->|Games Won't Work| GAME_ISSUES[Game Issues]
+    SYMPTOMS -->|SD Card Problems| SD_ISSUES[Storage Issues]
+
+    %% Boot Failure Branch
+    BOOT_ISSUES --> TEST_STOCK{Can Boot to Stock?}
+    TEST_STOCK -->|Yes| MODULE_CHECK[Check System Modules]
+    TEST_STOCK -->|No| EMERGENCY_RECOVERY[Emergency Recovery]
+
+    MODULE_CHECK --> TEGRAEXPLORER[Use TegraExplorer<br/>kefir-helper.te]
+    TEGRAEXPLORER --> MODULE_WORKS{Works Now?}
+    MODULE_WORKS -->|Yes| IDENTIFY_MODULE[Identify Problematic Module]
+    MODULE_WORKS -->|No| CLEAN_INSTALL[Clean KEFIR Install]
+
+    CLEAN_INSTALL --> FORMAT_SD[Format SD as FAT32]
+    FORMAT_SD --> REINSTALL_KEFIR[Reinstall KEFIR]
+    REINSTALL_KEFIR --> TEST_BOOT[Test Boot]
+
+    %% Logo Hang Branch
+    LOGO_HANG --> WAIT_TIME[Wait 1-2 Minutes]
+    WAIT_TIME --> STILL_HANGING{Still Hanging?}
+    STILL_HANGING -->|Yes| VOL_MINUS[Hold VOL- for Payload Menu]
+    STILL_HANGING -->|No| BOOT_SUCCESS[✅ Boot Successful]
+
+    VOL_MINUS --> PAYLOAD_MENU{Payload Menu Appears?}
+    PAYLOAD_MENU -->|Yes| SELECT_ALT[Select Alternative Boot]
+    PAYLOAD_MENU -->|No| FW_CHECK[Check Firmware Version]
+
+    FW_CHECK --> SUPPORTED_FW{FW ≤ 21.0.0?}
+    SUPPORTED_FW -->|No| FW_UNSUPPORTED[❌ Firmware Too New]
+    SUPPORTED_FW -->|Yes| CLEAN_INSTALL
+
+    %% RCM Issues Branch
+    RCM_ISSUES --> JIG_CHECK[Check Jig Contact]
+    JIG_CHECK --> CLEAN_RAILS[Clean Joy-Con Rails]
+    CLEAN_RAILS --> TRY_ALT_JIG[Try Different Jig]
+    TRY_ALT_JIG --> SERIAL_CHECK[Check Serial Number]
+    SERIAL_CHECK --> PATCHED_CONSOLE{Console Patched?}
+    PATCHED_CONSOLE -->|Yes| MODCHIP_REQUIRED[❌ Modchip Required]
+    PATCHED_CONSOLE -->|No| TECHNIQUE_CHECK[Check RCM Technique]
+
+    %% Game Issues Branch
+    GAME_ISSUES --> INSTALLER_UPDATE[Update DBI Installer]
+    INSTALLER_UPDATE --> SPACE_CHECK[Check Storage Space]
+    SPACE_CHECK --> FILE_CHECK[Verify Game Files]
+    FILE_CHECK --> ALT_INSTALLER[Try Alternative Installer]
+    ALT_INSTALLER --> GAME_WORKING{Games Work?}
+    GAME_WORKING -->|Yes| ISSUE_RESOLVED[✅ Issue Resolved]
+    GAME_WORKING -->|No| SYSTEM_ISSUE[System-Level Problem]
+
+    %% SD Card Issues Branch
+    SD_ISSUES --> FAT32_CHECK[Verify FAT32 Format]
+    FAT32_CHECK --> CARD_TEST[Test Different SD Card]
+    CARD_TEST --> CLEAN_CONTACTS[Clean SD Contacts]
+    CLEAN_CONTACTS --> PC_TEST[Test Card in PC]
+    PC_TEST --> FAKE_CHECK[Check for Fake Card<br/>H2testw]
+
+    %% Emergency Recovery Procedures
+    EMERGENCY_RECOVERY --> HAVE_BACKUP{Have NAND Backup?}
+    HAVE_BACKUP -->|Yes| NAND_RESTORE[Restore NAND Backup]
+    HAVE_BACKUP -->|No| RECOVERY_MODE[Try Recovery Mode]
+
+    NAND_RESTORE --> HEKATE_BOOT[Boot into Hekate]
+    HEKATE_BOOT --> RESTORE_TOOLS[Tools → Restore Options]
+    RESTORE_TOOLS --> SELECT_BACKUP[Select NAND Backup]
+    SELECT_BACKUP --> EXECUTE_RESTORE[Execute Restore]
+    EXECUTE_RESTORE --> TEST_RECOVERY[Test Recovery]
+
+    RECOVERY_MODE --> SAFE_MODE[Try Safe Mode Boot]
+    SAFE_MODE --> LIMITED_RECOVERY[Limited Recovery Options]
+
+    %% Final Resolution Points
+    TEST_BOOT --> BOOT_SUCCESS
+    TEST_RECOVERY --> RECOVERY_SUCCESS{Recovery Successful?}
+    RECOVERY_SUCCESS -->|Yes| BOOT_SUCCESS
+    RECOVERY_SUCCESS -->|No| PROFESSIONAL_HELP[Professional Repair Needed]
+
+    SELECT_ALT --> BOOT_SUCCESS
+    TECHNIQUE_CHECK --> BOOT_SUCCESS
+    ISSUE_RESOLVED --> END_SUCCESS[✅ Problem Solved]
+    BOOT_SUCCESS --> END_SUCCESS
+
+    %% Failure End Points
+    FW_UNSUPPORTED --> CONTACT_SUPPORT[Contact Community Support]
+    MODCHIP_REQUIRED --> CONTACT_SUPPORT
+    PROFESSIONAL_HELP --> CONTACT_SUPPORT
+    SYSTEM_ISSUE --> CONTACT_SUPPORT
+
+    %% Styling
+    classDef recovery fill:#ffeb3b,stroke:#f57f17,stroke-width:2px
+    classDef success fill:#4caf50,stroke:#2e7d32,stroke-width:2px
+    classDef failure fill:#f44336,stroke:#c62828,stroke-width:2px
+    classDef process fill:#2196f3,stroke:#1565c0,stroke-width:2px
+    classDef decision fill:#ff9800,stroke:#ef6c00,stroke-width:2px
+
+    class EMERGENCY_RECOVERY,NAND_RESTORE,RECOVERY_MODE recovery
+    class BOOT_SUCCESS,ISSUE_RESOLVED,END_SUCCESS success
+    class FW_UNSUPPORTED,MODCHIP_REQUIRED,PROFESSIONAL_HELP,CONTACT_SUPPORT failure
+    class TETRAEXPLORER,CLEAN_INSTALL,FORMAT_SD,REINSTALL_KEFIR,HEKATE_BOOT process
+    class SYMPTOMS,TEST_STOCK,MODULE_WORKS,STILL_HANGING,PATCHED_CONSOLE decision

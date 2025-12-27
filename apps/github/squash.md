@@ -3,7 +3,7 @@
 git checkout feature_branch
 git rebase -i HEAD~5 (The five last commits)
 
-# to squash all commits in current brnach on top of another branch (like main)
+# to squash all commits in current branch on top of another branch (like main)
 git rebase -i main
 
 # Editor will open showing a list of commits

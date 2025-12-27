@@ -1,0 +1,165 @@
+---
+title: Nintendo Switch Daily Usage and Advanced Configuration
+---
+
+graph TD
+    %% Daily Usage Entry
+    DAILY_START([Daily Switch Usage]) --> USAGE_TYPE{Select Activity}
+
+    USAGE_TYPE -->|Boot Console| BOOT_PROCESS[Console Boot Process]
+    USAGE_TYPE -->|Install Games| GAME_INSTALL[Game Installation]
+    USAGE_TYPE -->|Manage Saves| SAVE_MANAGEMENT[Save Management]
+    USAGE_TYPE -->|Homebrew Access| HOMEBREW_ACCESS[Homebrew Applications]
+    USAGE_TYPE -->|System Maintenance| MAINTENANCE[System Maintenance]
+
+    %% Boot Process Flow
+    BOOT_PROCESS --> CONSOLE_TYPE{Console Type}
+    CONSOLE_TYPE -->|RCM Method| RCM_BOOT[RCM Boot Process]
+    CONSOLE_TYPE -->|Modchip| MODCHIP_BOOT[Modchip Auto-Boot]
+
+    RCM_BOOT --> POWER_ON[Power On Console]
+    POWER_ON --> ENTER_RCM[Enter RCM Mode<br/>Jig + Power + Vol+]
+    ENTER_RCM --> INJECT_PAYLOAD[Inject Payload<br/>Hekate/KEFIR]
+    INJECT_PAYLOAD --> SELECT_BOOT[Select Boot Option]
+
+    MODCHIP_BOOT --> MODCHIP_POWER[Power On Normally]
+    MODCHIP_POWER --> AUTO_LAUNCH[Auto-Launch to Menu]
+    AUTO_LAUNCH --> SELECT_BOOT
+
+    SELECT_BOOT --> BOOT_CHOICE{Choose Environment}
+    BOOT_CHOICE -->|SysNAND Stock| STOCK_BOOT[Official Firmware<br/>Online Safe]
+    BOOT_CHOICE -->|SysNAND CFW| SYSNAND_CFW[CFW on Internal<br/>Homebrew Access]
+    BOOT_CHOICE -->|EmuNAND| EMUNAND_BOOT[EmuNAND Environment<br/>Piracy Safe]
+
+    %% Game Installation Flow
+    GAME_INSTALL --> INSTALL_SOURCE{Installation Source}
+    INSTALL_SOURCE -->|Local Files| LOCAL_INSTALL[Local Installation]
+    INSTALL_SOURCE -->|Network| NETWORK_INSTALL[Network Installation]
+
+    LOCAL_INSTALL --> DBI_LOCAL[Launch DBI]
+    DBI_LOCAL --> SELECT_FILES[Select Game Files<br/>NSP/XCI]
+    SELECT_FILES --> CHOOSE_LOCATION[Choose Install Location<br/>SD/Internal]
+    CHOOSE_LOCATION --> INSTALL_EXECUTE[Execute Installation]
+
+    NETWORK_INSTALL --> DBI_NETWORK[DBI Network Install]
+    DBI_NETWORK --> CONNECT_SOURCE[Connect to Source<br/>PC/FTP/HTTP]
+    CONNECT_SOURCE --> BROWSE_GAMES[Browse Game Library]
+    BROWSE_GAMES --> INSTALL_EXECUTE
+
+    INSTALL_EXECUTE --> VERIFY_INSTALL[Verify Installation]
+    VERIFY_INSTALL --> INSTALL_COMPLETE[✅ Game Installed]
+
+    %% Save Management Flow
+    SAVE_MANAGEMENT --> SAVE_ACTION{Save Action}
+    SAVE_ACTION -->|Backup Saves| BACKUP_SAVES[Backup Process]
+    SAVE_ACTION -->|Restore Saves| RESTORE_SAVES[Restore Process]
+    SAVE_ACTION -->|Transfer Saves| TRANSFER_SAVES[Transfer Process]
+
+    BACKUP_SAVES --> LAUNCH_JKSV[Launch JKSV/Checkpoint]
+    LAUNCH_JKSV --> SELECT_GAME[Select Game]
+    SELECT_GAME --> EXPORT_SAVE[Export Save Data]
+    EXPORT_SAVE --> SAVE_LOCATION[Choose Save Location<br/>SD/PC]
+    SAVE_LOCATION --> BACKUP_COMPLETE[✅ Backup Complete]
+
+    RESTORE_SAVES --> LAUNCH_JKSV
+    SELECT_GAME --> IMPORT_SAVE[Import Save Data]
+    IMPORT_SAVE --> SELECT_BACKUP[Select Backup File]
+    SELECT_BACKUP --> RESTORE_COMPLETE[✅ Restore Complete]
+
+    %% Homebrew Access Flow
+    HOMEBREW_ACCESS --> HOMEBREW_METHOD{Access Method}
+    HOMEBREW_METHOD -->|Album Method| ALBUM_ACCESS[Hold L + Open Album]
+    HOMEBREW_METHOD -->|Tesla Overlay| TESLA_ACCESS[Hold L + R In-Game]
+    HOMEBREW_METHOD -->|Direct Launch| DIRECT_LAUNCH[Launch from Home]
+
+    ALBUM_ACCESS --> HOMEBREW_MENU[Homebrew Launcher]
+    TESLA_ACCESS --> OVERLAY_MENU[Tesla Overlay Menu]
+    DIRECT_LAUNCH --> SPECIFIC_APP[Specific Homebrew App]
+
+    HOMEBREW_MENU --> APP_SELECTION[Select Application]
+    OVERLAY_MENU --> OVERLAY_FUNCTION[Select Overlay Function]
+    APP_SELECTION --> APP_LAUNCH[Launch Selected App]
+    OVERLAY_FUNCTION --> FEATURE_USE[Use Feature]
+
+    %% System Maintenance Flow
+    MAINTENANCE --> MAINTENANCE_TYPE{Maintenance Task}
+    MAINTENANCE_TYPE -->|Update CFW| UPDATE_CFW[Update Custom Firmware]
+    MAINTENANCE_TYPE -->|Clean System| CLEAN_SYSTEM[System Cleanup]
+    MAINTENANCE_TYPE -->|Check Health| SYSTEM_HEALTH[System Health Check]
+
+    UPDATE_CFW --> DOWNLOAD_KEFIR[Download Latest KEFIR]
+    DOWNLOAD_KEFIR --> BACKUP_CURRENT[Backup Current Setup]
+    BACKUP_CURRENT --> INSTALL_UPDATE[Install Updated CFW]
+    INSTALL_UPDATE --> TEST_BOOT[Test Boot Process]
+    TEST_BOOT --> CFW_UPDATED[✅ CFW Updated]
+
+    CLEAN_SYSTEM --> CLEAR_CACHE[Clear System Cache]
+    CLEAR_CACHE --> ORGANIZE_FILES[Organize SD Card Files]
+    ORGANIZE_FILES --> CHECK_SPACE[Check Storage Space]
+    CHECK_SPACE --> CLEANUP_COMPLETE[✅ Cleanup Complete]
+
+    SYSTEM_HEALTH --> CHECK_SD[Check SD Card Health]
+    CHECK_SD --> VERIFY_BACKUPS[Verify Backup Integrity]
+    VERIFY_BACKUPS --> TEST_FUNCTIONS[Test Key Functions]
+    TEST_FUNCTIONS --> HEALTH_REPORT[Generate Health Report]
+
+    %% Advanced Configuration
+    ADVANCED_CONFIG([Advanced Configuration]) --> CONFIG_TYPE{Configuration Type}
+    CONFIG_TYPE -->|Overclocking| OVERCLOCK_SETUP[Overclocking Setup]
+    CONFIG_TYPE -->|Theme/Mods| THEME_SETUP[Theme and Mods]
+    CONFIG_TYPE -->|Network Config| NETWORK_SETUP[Network Configuration]
+    CONFIG_TYPE -->|Security Config| SECURITY_SETUP[Security Configuration]
+
+    %% Overclocking Flow
+    OVERCLOCK_SETUP --> SYSCLK_INSTALL[Install sys-clk Module]
+    SYSCLK_INSTALL --> OC_CONFIGURE[Configure Overclock Profiles]
+    OC_CONFIGURE --> OC_WARNING{Stability Warning}
+    OC_WARNING -->|Accept Risk| OC_ENABLE[Enable Overclocking]
+    OC_WARNING -->|Too Risky| OC_SKIP[Skip Overclocking]
+    OC_ENABLE --> OC_TEST[Test Stability]
+    OC_TEST --> OC_COMPLETE[✅ Overclocking Active]
+
+    %% Network Configuration
+    NETWORK_SETUP --> DNS_CONFIG[Configure DNS Settings]
+    DNS_CONFIG --> DNS_TYPE{DNS Purpose}
+    DNS_TYPE -->|Block Nintendo| SET_90DNS[Set 90DNS<br/>163.172.141.219]
+    DNS_TYPE -->|Allow Nintendo| CLEAR_DNS[Clear DNS/Use Auto]
+    SET_90DNS --> TEST_BLOCKING[Test Server Blocking]
+    CLEAR_DNS --> TEST_ONLINE[Test Online Access]
+    TEST_BLOCKING --> NETWORK_COMPLETE[✅ Network Configured]
+    TEST_ONLINE --> NETWORK_COMPLETE
+
+    %% Final Success States
+    STOCK_BOOT --> USAGE_SUCCESS[✅ Ready for Use]
+    SYSNAND_CFW --> USAGE_SUCCESS
+    EMUNAND_BOOT --> USAGE_SUCCESS
+    INSTALL_COMPLETE --> USAGE_SUCCESS
+    BACKUP_COMPLETE --> USAGE_SUCCESS
+    RESTORE_COMPLETE --> USAGE_SUCCESS
+    APP_LAUNCH --> USAGE_SUCCESS
+    FEATURE_USE --> USAGE_SUCCESS
+    CFW_UPDATED --> USAGE_SUCCESS
+    CLEANUP_COMPLETE --> USAGE_SUCCESS
+    HEALTH_REPORT --> USAGE_SUCCESS
+    OC_COMPLETE --> USAGE_SUCCESS
+    OC_SKIP --> USAGE_SUCCESS
+    NETWORK_COMPLETE --> USAGE_SUCCESS
+
+    %% Styling
+    classDef boot fill:#3f51b5,stroke:#283593,stroke-width:2px
+    classDef install fill:#009688,stroke:#00695c,stroke-width:2px
+    classDef save fill:#ff9800,stroke:#ef6c00,stroke-width:2px
+    classDef homebrew fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
+    classDef maintenance fill:#795548,stroke:#5d4037,stroke-width:2px
+    classDef success fill:#4caf50,stroke:#2e7d32,stroke-width:2px
+    classDef warning fill:#ff5722,stroke:#d84315,stroke-width:2px
+    classDef process fill:#2196f3,stroke:#1565c0,stroke-width:2px
+
+    class BOOT_PROCESS,RCM_BOOT,MODCHIP_BOOT,STOCK_BOOT,EMUNAND_BOOT boot
+    class GAME_INSTALL,DBI_LOCAL,DBI_NETWORK,INSTALL_EXECUTE install
+    class SAVE_MANAGEMENT,BACKUP_SAVES,RESTORE_SAVES,LAUNCH_JKSV save
+    class HOMEBREW_ACCESS,ALBUM_ACCESS,TESLA_ACCESS,APP_LAUNCH homebrew
+    class MAINTENANCE,UPDATE_CFW,CLEAN_SYSTEM,SYSTEM_HEALTH maintenance
+    class USAGE_SUCCESS,INSTALL_COMPLETE,BACKUP_COMPLETE,CFW_UPDATED success
+    class OC_WARNING,DNS_TYPE warning
+    class POWER_ON,INJECT_PAYLOAD,SELECT_FILES,EXPORT_SAVE process
