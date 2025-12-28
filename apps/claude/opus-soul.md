@@ -1,0 +1,1 @@
+[opus soul](https://www.lesswrong.com/posts/vpNG99GhbBoLov9og/claude-4-5-opus-soul-document)
