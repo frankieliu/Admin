@@ -1,0 +1,2 @@
+- claude --continue: from latest chat history
+- claude --resume: from a pick list
