@@ -4,3 +4,6 @@ https://freedium.cfd/https://medium.com/@datasciencedisciple/i-tested-gpt-5-agai
 
 Type the medium location after 
 http://freedium.cfd/<medium link>
+
+# reddit
+[reddit](https://www.reddit.com/r/Piracy/comments/16b9jzn/how_can_i_read_medium_articles_for_free_as/)
