@@ -18,6 +18,28 @@ This creates linked working directories, saving space and keeping history synced
    git worktree remove ../feature-branch-dir
    ```
 6. Git documentation (https://git-scm.com/docs/git-worktree). [2, 5]  
+# Add
+
+git worktree add -b <new_branch_name> <path-to-new-worktree>
+
+git worktree add <path-to-new-worktree> <existing_branch_name>
+
+git worktree add -d <path-to-new-worktree>  # with a detached HEAD
+
+# List
+
+git worktree list
+- lists all worktrees associated with repo
+
+# Remove
+
+git worktree remove <path-to-worktree>
+
+# Prune
+
+git worktree prune
+- if a worktree was deleted manually this cleans up internal references
+  
 
 Using Multiple Clones (Simpler but less efficient) 
 This creates fully separate copies of your repository. 
@@ -28,8 +50,8 @@ This creates fully separate copies of your repository.
    git checkout feature/another-branch
    ```
    Git documentation (https://git-scm.com/docs/git-clone). 
-3. **Change directories** into the new clone and check out the desired branch: 
-4. **Repeat** for any other branches you need. [6, 7, 8]  
+2. **Change directories** into the new clone and check out the desired branch: 
+3. **Repeat** for any other branches you need. [6, 7, 8]  
 
 # When to Use Which 
 

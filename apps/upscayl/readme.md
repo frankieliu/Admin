@@ -1,0 +1,1 @@
+[upscayl](https://github.com/upscayl/upscayl/releases/tag/v2.15.0)

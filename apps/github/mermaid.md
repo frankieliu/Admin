@@ -1,0 +1,1 @@
+[rendering mermaid in github markdown](https://nielsvaneck.com/post/2021-01-20-rendering-mermaid-graphs-in-markdown-on-github/)
